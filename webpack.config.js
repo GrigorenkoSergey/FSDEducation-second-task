@@ -46,7 +46,13 @@ let conf = {
        {
          test: /\.pug$/,
          loader: 'pug-loader'
-      }
+      },
+       {
+         test: /\.(png|svg|jpg|gif)$/,
+         use: [
+           'file-loader',
+         ],
+       },
     ]
   }
 };
