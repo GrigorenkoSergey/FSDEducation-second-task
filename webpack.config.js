@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -14,16 +15,23 @@ let conf = {
   entry: `${PAGES_DIR}/index.pug`,
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: "main.js",
+    filename: "[name].js",
     publicPath: "/dist",
+  },
+  
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 
   devServer: {
     overlay: true,
-    port: 3000
+    port: 3000,
   },
 
   plugins: [
+  new CleanWebpackPlugin(),
 
   ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
