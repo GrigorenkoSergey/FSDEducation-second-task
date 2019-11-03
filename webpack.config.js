@@ -14,12 +14,12 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".p
 
 let conf = {
   entry: {
-    app: `${PAGES_DIR}/index.pug`,
+    app: `${PAGES_DIR}/index.js`,
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].js",
-    //publicPath: "/dist",
+    publicPath: "",
   },
   
   optimization: {
@@ -56,7 +56,7 @@ let conf = {
          test: /\.css$/,
          use: [
           MiniCssExtractPlugin.loader,
-          "style-loader",
+          //"style-loader", //конфликтует с mini-css-extract-plugin )))
           "css-loader"
         ]
      },
@@ -65,8 +65,6 @@ let conf = {
         use: [
           MiniCssExtractPlugin.loader,
           // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
           "sass-loader",
