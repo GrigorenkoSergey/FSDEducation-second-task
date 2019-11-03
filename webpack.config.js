@@ -14,7 +14,7 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".p
 
 let conf = {
   entry: {
-    app: `${PAGES_DIR}/index.js`,
+    app: `${PATHS.src}/index.js`,
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
