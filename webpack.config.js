@@ -14,7 +14,7 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".p
 
 let conf = {
   entry: {
-    app: `${PATHS.src}/index.js`,
+    main: `${PATHS.src}/index.js`,
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -31,6 +31,12 @@ let conf = {
   devServer: {
     overlay: true,
     port: 3000,
+  },
+
+  resolve: {
+    alias: {
+      "~": "src",
+    }
   },
 
   plugins: [
@@ -77,13 +83,25 @@ let conf = {
        {
          test: /\.(png|svg|jpg|gif)$/,
          use: [
-           "file-loader",
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "assets/images"
+            }
+          }
          ],
        },
        {
          test: /\.(woff|woff2|eot|ttf|otf)$/,
          use: [
-           "file-loader",
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "assets/fonts"
+            }
+          }
          ],
        },
     ]
