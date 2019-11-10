@@ -9,12 +9,8 @@ html(lang="en")
     
 -var imgSrc = "src/assets/images/"
   body
+    div.logo 
+      img(src=`${imgSrc}Logo.png`)
     main
-      h1 This one is the sub-section or widget-title 
-      h2 Next one is the item title inside widgets
-  
-      h3 THIS IS A LABEL OR CTA TEXT
-
-      p This is the body text which is used for most of the design, like paragraphs, lists, etc. 
-
-      img(src=`${imgSrc}Group.png`)
+      include colors_&_type
+    
