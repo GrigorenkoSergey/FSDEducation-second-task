@@ -3,6 +3,7 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, "./src"),
@@ -33,26 +34,6 @@ let conf = {
     port: 3000,
   },
 
-  resolve: {
-    alias: {
-      "~": "src",
-    }
-  },
-
-  plugins: [
-  new CleanWebpackPlugin(),
-
-  ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, ".html")}`
-  })),
-
-  new MiniCssExtractPlugin({
-    filename: "[name].css",
-    chunkFilename: "[id].css"
-  }),
-  ],
-
   module: {
     rules: [{
       test: /\.js$/,
@@ -61,14 +42,15 @@ let conf = {
        {
          test: /\.css$/,
          use: [
+          "style-loader",
           MiniCssExtractPlugin.loader,
-          //"style-loader", //конфликтует с mini-css-extract-plugin )))
           "css-loader"
         ]
      },
      {
         test: /\.s[ac]ss$/i,
         use: [
+          "style-loader",
           MiniCssExtractPlugin.loader,
           // Creates `style` nodes from JS strings
           "css-loader",
@@ -105,7 +87,25 @@ let conf = {
          ],
        },
     ]
-  }
+  },
+
+  plugins: [
+    new CleanWebpackPlugin(),
+
+    ...PAGES.map(page => new HtmlWebpackPlugin({
+         template: `${PAGES_DIR}/${page}`,
+         filename: `./${page.replace(/\.pug/, ".html")}`
+     })),
+
+    new MiniCssExtractPlugin({
+       filename: "assets/css/[name].css",
+       chunkFilename: "[id].css"
+    }),
+  
+    new CopyPlugin([
+      { from: `${PATHS.src}/assets/images/`, to: 'assets/images/' },
+    ]),
+  ],
 };
 
 module.exports = (env, options) => {
