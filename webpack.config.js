@@ -10,14 +10,19 @@ const PATHS = {
   dist: path.join(__dirname, "./dist"),
 }
 
+const PAGES_DIR = `${PATHS.src}/pages/colors_&_type/`
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
+
 let conf = {
   entry: {
-    index: `${PATHS.src}`,
+    "index": `${PATHS.src}`,
+    "colors_&_type": `${PATHS.src}/pages/colors_&_type/colors_&_type.js`
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name].js",
-    publicPath: "",
+    filename: (chunkData) => {
+      return chunkData.chunk.name === "index" ? "[name].js" : "pages/[name]/[name].js"
+    },
   },
 
   optimization: {
@@ -66,7 +71,6 @@ let conf = {
           loader: "file-loader",
           options: {
             name: "[name].[ext]",
-            outputPath: "assets/images"
           }
         }
       ],
@@ -78,7 +82,6 @@ let conf = {
           loader: "file-loader",
           options: {
             name: "[name]/[name].[ext]",
-            outputPath: "assets/fonts"
           }
         }
       ],
@@ -93,14 +96,21 @@ let conf = {
       template: `${PATHS.src}/index.pug`,
       filename: './index.html'
     }),
-    
+
+    ...PAGES.map(page => new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/${page}`,
+      filename: `./pages/${page.replace(/\.pug/,'/$`.html')}`
+    })),
+ 
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      //filename: "[name].css",
+      moduleFilename: ({name}) => name === "index" ? "[name].css" : "pages/[name]/[name].css",
       chunkFilename: "[id].css"
     }),
 
     new CopyPlugin([
-      { from: `${PATHS.src}/assets/images/`, to: 'assets/images/' },
+      { from: `${PATHS.src}/assets/images/`, to: `${PATHS.dist}/assets/images/` },
+      { from: `${PATHS.src}/assets/fonts/`, to: `${PATHS.dist}/assets/fonts/` },
     ]),
   ],
 };
