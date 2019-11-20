@@ -10,19 +10,13 @@ const PATHS = {
   dist: path.join(__dirname, "./dist"),
 }
 
-const PAGES_DIR = `${PATHS.src}/pages/colors_&_type/`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
-
 let conf = {
   entry: {
     "index": `${PATHS.src}`,
-    "colors_&_type": `${PATHS.src}/pages/colors_&_type/colors_&_type.js`
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: (chunkData) => {
-      return chunkData.chunk.name === "index" ? "[name].js" : "pages/[name]/[name].js"
-    },
+    filename: "[name].js"
   },
 
   optimization: {
@@ -97,14 +91,8 @@ let conf = {
       filename: './index.html'
     }),
 
-    ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./pages/${page.replace(/\.pug/,'/$`.html')}`
-    })),
- 
     new MiniCssExtractPlugin({
-      //filename: "[name].css",
-      moduleFilename: ({name}) => name === "index" ? "[name].css" : "pages/[name]/[name].css",
+      filename: "[name].css",
       chunkFilename: "[id].css"
     }),
 

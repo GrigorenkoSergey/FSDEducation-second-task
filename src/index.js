@@ -1,1 +1,1 @@
-console.log("hello!");
+import "./pages/colors_&_type/colors_&_type.js";
