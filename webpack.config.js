@@ -8,15 +8,25 @@ const CopyPlugin = require('copy-webpack-plugin');
 const PATHS = {
   src: path.join(__dirname, "./src"),
   dist: path.join(__dirname, "./dist"),
+  pages: path.join(__dirname, "./src/pages")
 }
 
+const PAGES_DIR = `${PATHS.src}/pages/`;
+const PAGES = fs.readdirSync(`${PATHS.pages}/`).map(item => fs.readdirSync(PAGES_DIR + item));
+let pugPages = [].concat(...PAGES).filter(fileName => fileName.endsWith('.pug'));
+
+let entries = {"index": `${PATHS.src}`};
+
+pugPages.forEach((item, index) => {
+  let key = item.replace(/\.pug/, "");
+  entries[key] = `${PATHS.src}/pages/${key}/${key}.js`;
+});
+
 let conf = {
-  entry: {
-    "index": `${PATHS.src}`,
-  },
+  entry: entries,
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name].js"
+    filename: (data) => data.chunk.name == "index" ? "index.js" : "pages/[name]/[name].js"
   },
 
   optimization: {
@@ -88,12 +98,19 @@ let conf = {
 
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.pug`,
-      filename: './index.html'
+      filename: './index.html',
+      chunks: ['index'],
     }),
 
+    ...pugPages.map(page => new HtmlWebpackPlugin({
+      template: `${PATHS.pages}/${page.replace(/\.pug/, "")}/${page}`,
+      filename: `./pages/${page.replace(/\.pug/,'/$`.html')}`,
+      chunks: [`${page.replace(/\.pug/,'')}`],
+    })),
+
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      moduleFilename: ({name}) => name === "index" ? "[name].css" : "pages/[name]/[name].css",
+      chunkFilename: "[id].css",
     }),
 
     new CopyPlugin([
