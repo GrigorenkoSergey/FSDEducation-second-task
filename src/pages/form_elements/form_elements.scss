@@ -1,0 +1,47 @@
+@import "src/assets/blocks/template/template.scss";
+
+$inputWidth: 320px;
+
+::-webkit-input-placeholder { color: $dark_25; }
+::-moz-placeholder          { color: $dark_25; } /* Firefox 19+ */
+:-moz-placeholder           { color: $dark_25; } /* Firefox 18- */
+:-ms-input-placeholder      { color: $dark_25; }
+
+input {
+    width: $inputWidth;
+    height: 44px;
+    border: 1px solid $dark_25;
+    border-radius: 4px;
+    vertical-align: middle;
+    padding-left: 15px;
+}
+
+.input-example {
+    position: relative;
+}
+
+.input-example__title {
+    height: 13px;
+    width: $inputWidth;
+    position: absolute;
+    top: -25px;
+}
+
+.input-example__title span{
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    @extend h3;
+    text-align: right;
+    color: $dark_50;
+    font-weight: normal;
+}
+
+main {
+    padding-top: 162px;
+    padding-left: 142px;
+}
+
+.input-example__title h3{
+    display: inline-block;
+}

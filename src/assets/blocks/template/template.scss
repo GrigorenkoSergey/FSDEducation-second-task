@@ -87,7 +87,7 @@ q:before, q:after {
   font-style: normal;
 }
 
-body {
+body{
   width: 1440px;
   height: 900px;
   background: white;
@@ -133,4 +133,8 @@ h3 {
   line-height: 15px;
   text-transform: uppercase;
   color: $dark_100;
+}
+
+input {
+  font: inherit;
 }

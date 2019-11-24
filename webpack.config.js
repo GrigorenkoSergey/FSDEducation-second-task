@@ -11,16 +11,18 @@ const PATHS = {
   pages: path.join(__dirname, "./src/pages")
 }
 
-const PAGES_DIR = `${PATHS.src}/pages/`;
+const PAGES_DIR = `${PATHS.pages}/`;
 const PAGES = fs.readdirSync(`${PATHS.pages}/`).map(item => fs.readdirSync(PAGES_DIR + item));
 let pugPages = [].concat(...PAGES).filter(fileName => fileName.endsWith('.pug'));
 
 let entries = {"index": `${PATHS.src}`};
-
+/*
+//Добавить уже после всего
 pugPages.forEach((item, index) => {
   let key = item.replace(/\.pug/, "");
   entries[key] = `${PATHS.src}/pages/${key}/${key}.js`;
 });
+*/
 
 let conf = {
   entry: entries,
@@ -37,7 +39,8 @@ let conf = {
 
   devServer: {
     overlay: true,
-    port: 8081,
+    port: 3000,
+    //contentBase: './dist',
   },
 
   module: {
@@ -101,13 +104,14 @@ let conf = {
       filename: './index.html',
       chunks: ['index'],
     }),
-
+/*
+      //для финального бандла
     ...pugPages.map(page => new HtmlWebpackPlugin({
       template: `${PATHS.pages}/${page.replace(/\.pug/, "")}/${page}`,
       filename: `./pages/${page.replace(/\.pug/,'/$`.html')}`,
       chunks: [`${page.replace(/\.pug/,'')}`],
     })),
-
+*/
     new MiniCssExtractPlugin({
       moduleFilename: ({name}) => name === "index" ? "[name].css" : "pages/[name]/[name].css",
       chunkFilename: "[id].css",

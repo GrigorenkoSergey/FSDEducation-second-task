@@ -1,1 +1,1 @@
-import "./pages/colors_&_type/colors_&_type.js";
+import "./pages/form_elements/form_elements.js";
