@@ -28,7 +28,8 @@ let conf = {
   entry: entries,
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: (data) => data.chunk.name == "index" ? "index.js" : "pages/[name]/[name].js"
+    filename: (data) => data.chunk.name == "index" ? "index.js" : "pages/[name]/[name].js", 
+    publicPath: "",
   },
 
   optimization: {
@@ -40,7 +41,6 @@ let conf = {
   devServer: {
     overlay: true,
     port: 3000,
-    //contentBase: './dist',
   },
 
   module: {
@@ -102,10 +102,10 @@ let conf = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.pug`,
       filename: './index.html',
-      chunks: ['index'],
+      //chunks: ['index'], //c этой строкой не происходит автоматического обновления страницы, нужно обновлять вручную.. 
     }),
 /*
-      //для финального бандла
+      //когда все страницы будут готовы, нужно раскомментировать этот блок кода.
     ...pugPages.map(page => new HtmlWebpackPlugin({
       template: `${PATHS.pages}/${page.replace(/\.pug/, "")}/${page}`,
       filename: `./pages/${page.replace(/\.pug/,'/$`.html')}`,
