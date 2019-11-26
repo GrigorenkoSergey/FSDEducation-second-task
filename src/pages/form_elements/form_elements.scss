@@ -7,29 +7,51 @@ $inputWidth: 320px;
 :-moz-placeholder           { color: $dark_25; } /* Firefox 18- */
 :-ms-input-placeholder      { color: $dark_25; }
 
-input {
+.form__input {
     width: $inputWidth;
     height: 44px;
     border: 1px solid $dark_25;
     border-radius: 4px;
     vertical-align: middle;
-    padding-left: 15px;
+    padding-left: 14px;
+    color: $dark_75;
+    background: white;
+}
+
+.form__input:focus,
+.form__input:hover {
+    border-color: $dark_75;
+    outline: none;
+}
+.form__input.hover {
+    border-color: $dark_75;
+    outline: none;  
+}
+
+input[type="date"] {
+    text-transform: uppercase;
+    color: $dark_25;
+    line-height: 24px;
+}
+.masket-text-field {
+    position: relative;
+    top: 3px;
 }
 
 .input-example {
-    position: relative;
+    margin-bottom: 25px;
 }
 
 .input-example__title {
-    height: 13px;
+    height: 15px;
     width: $inputWidth;
-    position: absolute;
-    top: -25px;
+    position: relative;
+    top: -10px;
 }
 
 .input-example__title span{
     position: absolute;
-    top: 2px;
+    top: 5px;
     right: 0px;
     @extend h3;
     text-align: right;
@@ -37,11 +59,17 @@ input {
     font-weight: normal;
 }
 
-main {
-    padding-top: 162px;
-    padding-left: 142px;
-}
-
 .input-example__title h3{
     display: inline-block;
+}
+
+main {
+    padding-top: 148px;
+    padding-left: 141px;
+}
+
+.input-example select {
+    background: url("/assets/images/expand_more.png") no-repeat;
+    background-position: 95%;
+    appearance: none;
 }

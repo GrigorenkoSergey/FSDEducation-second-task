@@ -2,9 +2,32 @@ include ../../assets/blocks/template/template.pug
 +template("Form Elements")
 
 main
-    .input-example
+    .input-example   
         .input-example__title
             h3 text field
             span default
-        input(type="text" placeholder="Email")
+        input.form__input(type="text" placeholder="Email")
+
+    .input-example  
+        .input-example__title
+            h3 text field
+            span hover / focus
+        input.form__input(type="text" class="hover" value="This is pretty awesome")
+
+    .input-example  
+        .input-example__title
+            h3 dropdown
+            span default
+        select.form__input
+            option(selected) Сколько гостей 
+            option 1 гость
+            option 2 гостя
+            option 3 гостя
+
+
+    .input-example.masket-text-field  
+        .input-example__title
+            h3 masked text field
+            span default
+        input.form__input(type="date")
 

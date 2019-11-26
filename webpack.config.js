@@ -52,7 +52,11 @@ let conf = {
       test: /\.css$/,
       use: [
         MiniCssExtractPlugin.loader,
-        "css-loader"
+        "css-loader",
+                {
+          loader: 'postcss-loader',
+          options: { sourceMap: true, config: { path: 'src/postcss.config.js' } }
+        },
       ]
     },
     {
@@ -60,6 +64,10 @@ let conf = {
       use: [
         MiniCssExtractPlugin.loader,
         "css-loader",
+        {
+          loader: 'postcss-loader',
+          options: { sourceMap: true, config: { path: 'src/postcss.config.js' } }
+        },
         "sass-loader",
       ],
     },
