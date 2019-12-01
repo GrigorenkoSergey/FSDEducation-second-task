@@ -2,7 +2,7 @@ include ../../assets/blocks/template/template.pug
 +template("Form Elements")
 
 main
-    .input-example   
+    .input-example 
         .input-example__title
             h3 text field
             span default
@@ -18,16 +18,47 @@ main
         .input-example__title
             h3 dropdown
             span default
-        select.form__input
+        select.form__input(class=["select"])
             option(selected) Сколько гостей 
             option 1 гость
             option 2 гостя
             option 3 гостя
 
 
-    .input-example.masket-text-field  
+    .input-example.masket-text-field
         .input-example__title
             h3 masked text field
             span default
         input.form__input(type="date")
+
+    br
+    .date-dropdown-example  
+        .wrapper
+            .input-example__title
+                h3 date dropdown
+            select.form__date-dropdown(class=["select"])
+                option(selected) ДД.ММ.ГГГГ
+                option 19.08.2019
+                option 20.08.2019
+                option 21.08.2019
+
+        .wrapper       
+            .input-example__title
+                h3 date dropdown          
+            select.form__date-dropdown(class=["select"])
+                option ДД.ММ.ГГГГ
+                option(selected) 19.08.2019
+                option 20.08.2019
+                option 21.08.2019
+
+    .input-example_filter
+        .input-example__title
+            h3 filter date dropdown
+        select.form__filter-date.select
+            option(selected) 19 авг - 23 авг  
+
+    .input-example_email
+        .input-example__title
+            h3 subscription text field
+        input.form__input_email(type="email" placeholder="Email")
 

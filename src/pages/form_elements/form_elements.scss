@@ -2,10 +2,23 @@
 
 $inputWidth: 320px;
 
-::-webkit-input-placeholder { color: $dark_25; }
-::-moz-placeholder          { color: $dark_25; } /* Firefox 19+ */
-:-moz-placeholder           { color: $dark_25; } /* Firefox 18- */
-:-ms-input-placeholder      { color: $dark_25; }
+::-webkit-input-placeholder {
+    color: $dark_25;
+}
+
+::-moz-placeholder {
+    color: $dark_25;
+}
+
+/* Firefox 19+ */
+:-moz-placeholder {
+    color: $dark_25;
+}
+
+/* Firefox 18- */
+:-ms-input-placeholder {
+    color: $dark_25;
+}
 
 .form__input {
     width: $inputWidth;
@@ -18,38 +31,36 @@ $inputWidth: 320px;
     background: white;
 }
 
+.form__input[type="date"] {
+    color: $dark_25;
+    text-transform: uppercase;
+    line-height: 24px;    
+}
+
 .form__input:focus,
 .form__input:hover {
     border-color: $dark_75;
     outline: none;
 }
-.form__input.hover {
-    border-color: $dark_75;
-    outline: none;  
-}
-
-input[type="date"] {
-    text-transform: uppercase;
-    color: $dark_25;
-    line-height: 24px;
-}
-.masket-text-field {
-    position: relative;
-    top: 3px;
-}
 
 .input-example {
     margin-bottom: 25px;
+    width: $inputWidth;
+}
+
+.date-dropdown-example {
+    @extend .input-example;
+    display: flex;
+    justify-content: space-between;
 }
 
 .input-example__title {
     height: 15px;
-    width: $inputWidth;
     position: relative;
     top: -10px;
 }
 
-.input-example__title span{
+.input-example__title span {
     position: absolute;
     top: 5px;
     right: 0px;
@@ -59,7 +70,7 @@ input[type="date"] {
     font-weight: normal;
 }
 
-.input-example__title h3{
+.input-example__title h3 {
     display: inline-block;
 }
 
@@ -68,8 +79,38 @@ main {
     padding-left: 141px;
 }
 
-.input-example select {
+.select {
     background: url("/assets/images/expand_more.png") no-repeat;
-    background-position: 95%;
+    background-position: right;
     appearance: none;
+}
+
+.form__date-dropdown {
+    @extend .form__input;
+    width: 150px;
+    outline: none;
+    color: $dark_75;
+    padding-left: 15px;
+}
+
+.form__filter-date {
+    @extend .form__input;
+    width: 266px;
+}
+
+.input-example_filter {
+    @extend .input-example;
+    position: relative;
+    top: 20px;
+}
+
+.form__input_email {
+    @extend .form__input;
+    width: 266px;
+    background: url("/assets/images/arrow_forward.png") no-repeat;
+    background-position: right;
+}
+
+.input-example_email {
+    margin-top: 66px;
 }
