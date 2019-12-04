@@ -1,56 +1,58 @@
-include ../../assets/blocks/template/template.pug
-+template("Colors_&_type")
-
-main
--
-  let shadesList = [
-    {
-      title: "Dark Shade 100%",
-      class: "shades_color_dark_100",
-      colorCode: "#1F2041"
-    },
-    {
-      title: "Dark Shade 75%",
-      class: "shades_color_dark_75",
-      colorCode: "#1F2041"
-    },
-    {
-      title: "Dark Shade 50%",
-      class: "shades_color_dark_50",
-      colorCode: "#1F2041"
-    },
-    {
-      title: "Dark Shade 25%",
-      class: "shades_color_dark_25",
-      colorCode: "#1F2041"
-    },
-    {
-      title: "Dark Shade 5%",
-      class: "shades_color_dark_5",
-      colorCode: "#1F2041"
-    },
-    {
-      title: "Purple",
-      class: "shades_color_purple",
-      colorCode: "#BC9CFF"
-    },
-    {
-      title: "Green",
-      class: "shades_color_green",
-      colorCode: "#6FCF97"
-    },
-  ];
-
-ul.shades
-  each val in shadesList
-    li.shades__li
-      .shades__rect(class= val.class)
-      .shades__title  <b>#{val.title}</b><br/> #{val.colorCode}
-
-.example-text
-  h1  <span class="example-text_title">H1</span> This one is the sub-section or widget title
-
-  h2  <span class="example-text_title">H2</span> Next one is the item title inside widgets
-  h3  <span class="example-text_title">H3</span> This is a label or cta text
-  p <span class="example-text_title">Body</span> This is the body text which is used for most of the design, like paragraphs, lists, etc.
+extends ../../assets/blocks/template/template.pug
+block variables
+  - var titleName = "Colors and types"
   
+block content
+  main
+  -
+    let shadesList = [
+      {
+        title: "Dark Shade 100%",
+        class: "shades_color_dark_100",
+        colorCode: "#1F2041"
+      },
+      {
+        title: "Dark Shade 75%",
+        class: "shades_color_dark_75",
+        colorCode: "#1F2041"
+      },
+      {
+        title: "Dark Shade 50%",
+        class: "shades_color_dark_50",
+        colorCode: "#1F2041"
+      },
+      {
+        title: "Dark Shade 25%",
+        class: "shades_color_dark_25",
+        colorCode: "#1F2041"
+      },
+      {
+        title: "Dark Shade 5%",
+        class: "shades_color_dark_5",
+        colorCode: "#1F2041"
+      },
+      {
+        title: "Purple",
+        class: "shades_color_purple",
+        colorCode: "#BC9CFF"
+      },
+      {
+        title: "Green",
+        class: "shades_color_green",
+        colorCode: "#6FCF97"
+      },
+    ];
+
+  ul.shades
+    each val in shadesList
+      li.shades__li
+        .shades__rect(class= val.class)
+        .shades__title  <b>#{val.title}</b><br/> #{val.colorCode}
+
+  .example-text
+    h1  <span class="example-text_title">H1</span> This one is the sub-section or widget title
+
+    h2  <span class="example-text_title">H2</span> Next one is the item title inside widgets
+    h3  <span class="example-text_title">H3</span> This is a label or cta text
+    p <span class="example-text_title">Body</span> This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    

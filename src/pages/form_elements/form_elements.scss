@@ -39,8 +39,13 @@ $inputWidth: 320px;
 
 .form__input:focus,
 .form__input:hover {
-    border-color: $dark_75;
+    border-color: $dark_50;
     outline: none;
+}
+
+.form__input.hover {
+    border-color: $dark_75;
+    outline: none;    
 }
 
 .input-example {
@@ -107,10 +112,87 @@ main {
 .form__input_email {
     @extend .form__input;
     width: 266px;
-    background: url("/assets/images/arrow_forward.png") no-repeat;
-    background-position: right;
+    background: url("/assets/images/arrow_forward.png") right no-repeat;
 }
 
 .input-example_email {
     margin-top: 66px;
 }
+
+.input-example_dropdown {
+    width: 266px;
+    margin-top: 105px;
+}
+
+.form__dropdown {
+    @extend .form__input_email;
+    background: url("/assets/images/expand_more.png") right no-repeat;
+}
+
+.input-example_dropdown_expanded {
+    margin-top: 25px;
+    width: 266px;
+}
+
+.form__dropdown_expanded {
+    @extend .form__dropdown;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: $dark_50;
+    outline: none;     
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font: $bodyFont;
+    font-size: 18px;
+    line-height: 22px;
+    color: $dark_50;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $dark_25;
+}
+
+.circle.disabled {
+    border-color: $dark_10;
+}
+.form__dropdown__conteiner {
+    display: flex;
+    border: 1px solid $dark_50;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top: 0;
+    @extend h3;    
+}
+.form__dropdown__items {
+    width: 196px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 11px;
+    padding-bottom: 15px;
+    padding-left: 13px;
+    height: 116px; 
+
+}
+
+.form__dropdown__counters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 7px;
+}
+.trigger {
+    width: 99px;
+    padding-right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
