@@ -25,7 +25,6 @@ $inputWidth: 320px;
     height: 44px;
     border: 1px solid $dark_25;
     border-radius: 4px;
-    vertical-align: middle;
     padding-left: 14px;
     color: $dark_75;
     background: white;
@@ -195,4 +194,54 @@ main {
     justify-content: space-between;
 }
 
+.example__expandable-checkbox-list {
+    margin-top: 40px;
+}
 
+.expandable-checkbox-list {
+    width: 266px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.example__expandable-checkbox-list_expanded {
+    margin-top: 20px;
+}
+.toggler {
+    width: 44px;
+    height: 44px;
+    background: url("/assets/images/expand_more.png") right no-repeat;
+}
+.toggler.expanded {
+    transform: rotate(180deg);
+}
+
+.additions {
+    font: $bodyFont;
+    margin-top: -6px;
+}
+.additions li {
+    line-height: 18px;
+    position: relative;
+    margin-left: 29px;
+    margin-bottom: 12px;
+    color: $dark_50;
+}
+
+.additions li::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid $dark_25;
+    border-radius: 4px;
+}
+.additions li.checked::before {
+    background: url("/assets/images/check.png") center no-repeat;   
+    border-color: $purple;
+}
