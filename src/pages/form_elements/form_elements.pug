@@ -4,14 +4,21 @@ block variables
 
     - 
         var list1 = {
-            "breakfast" : "Завтрак",
-            "desk" : "Письменный стол",
-            "highchair" : "Стул для кормления",
-            "crib" : "Кроватка",
-            "tv_1" : "Телевизор",
-            "shampoo_1" : "Шампунь",    
-            "tv_2" : "Телевизор",
-            "shampoo_2" : "Шампунь",
+            "breakfast": "Завтрак",
+            "desk": "Письменный стол",
+            "highchair": "Стул для кормления",
+            "crib": "Кроватка",
+            "tv_1": "Телевизор",
+            "shampoo_1": "Шампунь",    
+            "tv_2": "Телевизор",
+            "shampoo_2": "Шампунь",
+        }
+
+    -
+        var list2 = {
+            "smoking": "Можно курить",
+            "pets": "Можно с питомцами",
+            "guests": "Можно пригласить гостей\n(до 10 человек)",         
         }
 
 mixin counter(value)
@@ -32,10 +39,10 @@ mixin checkbox(id, value)
         input.checkbox__input(type="checkbox" id= id name= id)
         label.checkbox__label(for= id) !{value}  
 
-mixin ulCheckboxContainer(list)
-    ul.checkbox-container
+mixin ulCheckboxContainer(list, className)
+    ul(class= className)
         each val, key in list
-            li.checkbox-container__li
+            li(class= `${className}__li`)
                 +checkbox(key, val)
 
 block content
@@ -133,38 +140,31 @@ block content
                     .expandable-checkbox-list__title
                         h3 expandable checkbox list
                         .expandable-checkbox-list__toggler.expanded
-                    +ulCheckboxContainer(list1)
+                    +ulCheckboxContainer(list1, "checkbox-list")
                         
 
-            .example__buns
+            .example-buns
                 .buns
                     .buns__img_smile
                     .buns__title Комфорт
                     .buns__description Шумопоглощающие стены
-
-            .example__buns
+                .example-buns__blank
                 .buns
                     .buns__img_city
                     .buns__title Удобство
                     .buns__description Окно в каждой из спален
 
-        //- .second-column
-        //-     .example__checkbox-buttons
-        //-         .example__checkbox-buttons__title
-        //-             h3 checkbox buttons
-        //-         ul.checkbox-container
-        //-             li.checkbox-container__li
-        //-                 +checkbox("smoking", "Можно курить")
-        //-             li.checkbox-container__li
-        //-                 +checkbox("pets", "Можно с питомцами")
-        //-             li.checkbox-container__li
-        //-                 +checkbox("guests", "Можно пригласить гостей\n(до 10 человек)")
+        .second-column
+            .example-checkbox-buttons
+                .example-checkbox-buttons__title
+                    h3 checkbox buttons
+                +ulCheckboxContainer(list2, "checkbox-buttons")
 
-        //-     .example__radio-buttons
-        //-         .example__radio-buttons__title
-        //-             h3 radio buttons
-        //-         .radio-buttons
-        //-             +radioButton("man", "sex", "Мужчина")
-        //-             +radioButton("woman", "sex", "Женщина")
+            .example-radio-buttons
+                .example-radio-buttons__title
+                    h3 radio buttons
+                .radio-buttons
+                    +radioButton("man", "sex", "Мужчина")
+                    +radioButton("woman", "sex", "Женщина")
 
 
