@@ -22,6 +22,7 @@ $inputWidth: 320px;
 
 main {
   display: flex;
+  height: 1853px - 148px;
 }
 .second-column {
   margin-left: 125px;
@@ -208,25 +209,27 @@ main {
 .expandable-checkbox-list {
   width: 266px;
 
-  margin-bottom: 10px;
-}
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+  }
 
-.title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  &__toggler {
+    width: 44px;
+    height: 44px;
+    background: url("/assets/images/expand_more.png") right no-repeat;
+  }
+
+  &__toggler.expanded {
+    transform: rotate(180deg);  
+  }
 }
 
 .example__expandable-checkbox-list_expanded {
   margin-top: 20px;
-}
-.toggler {
-  width: 44px;
-  height: 44px;
-  background: url("/assets/images/expand_more.png") right no-repeat;
-}
-.toggler.expanded {
-  transform: rotate(180deg);
+  margin-bottom: 40px;
 }
 
 .checkboxes {
@@ -258,78 +261,46 @@ main {
 }
 
 .example__buns {
-  margin-top: 42px;
-  margin-bottom: -1px;
+  margin-top: 20px;
 }
 
-.buns__img_smile {
-  width: 48px;
-  height: 48px;
-  background: url("/assets/images/smile.png") center no-repeat;
-  float: left;
-  margin-right: 10px;
+.buns {
+  box-sizing: border-box;
+  border-bottom: 1px solid $dark_10;
+  padding-bottom: 20px;
+
+  &__img_smile {
+    width: 48px;
+    height: 48px;
+    background: url("/assets/images/smile.png") center no-repeat;
+    float: left;
+    margin-right: 10px;
+  }
+
+  &__img_city {
+    @extend .buns__img_smile;
+    background: url("/assets/images/city.png") center no-repeat;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
 }
 
-.buns__img_city {
-  @extend .buns__img_smile;
-  background: url("/assets/images/city.png") center no-repeat;
-}
-
-.buns__title {
-  font-weight: bold;
-}
-
-
-
-
-.example__radio-buttons {
-    margin-top: 42px;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  display: none;
-}
-
-
-.radio-buttons {
-    width: 221px;
-    display: flex;
-    justify-content: space-between;
-}
-.radio-buttons__title {
-    margin-bottom: 10px;
-}
-
-
-.example__checkbox-buttons__title {
-  margin-bottom: 14px;
-}
-.example__checkbox-buttons {
-  margin-left: 1px;
-  width: 222px;
-}
-
-input[type="checkbox"] + label {
-    color: $dark_50;
-}
 .checkbox {
   position: relative;
-}
-.checkbox__label {
-  display: inline-block;
-  margin-left: 30px;
-  line-height: 18px;
-}
 
-.checkbox-container__li {
-  margin-bottom: 8px;
-}
+  &__label {
+    display: inline-block;
+    margin-left: 30px;
+    line-height: 18px;
+    color: $dark_50;
+  }
 
-input[type="checkbox"] + label:before {
+  &__label::before {
     content: "";
     position: absolute;
-    left: 0;     
+    left: 0;
     top: 3px;
     display: inline-block;
     border: 1px solid $dark_25;
@@ -337,18 +308,46 @@ input[type="checkbox"] + label:before {
     width: 20px;
     box-sizing: border-box;
     border-radius: 4px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked + &__label::before {
+    border-color: $purple;
+    background: url("/assets/images/check.png") center no-repeat;
+  }
 }
 
-input[type="checkbox"]:checked + label:before {
-  border-color: $purple;
-  background: url("/assets/images/check.png") center no-repeat;
+.checkbox-container__li {
+  margin-bottom: 6px;
 }
 
+.example__radio-buttons {
+  margin-top: 38px;
 
+  &__title {
+    margin-bottom: 10px;
+  }
+}
 
-input[type="radio"] + label:before {
+.radio-buttons {
+  width: 221px;
+  display: flex;
+  justify-content: space-between;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+  }
+
+  &__label::before {
     content: "";
-    position: relative;    
+    position: relative;
     display: inline-block;
     border: 1px solid $dark_25;
     height: 20px;
@@ -358,13 +357,13 @@ input[type="radio"] + label:before {
     margin-right: 11px;
     top: 6px;
     left: 1px;
-}
+  }
 
-input[type="radio"]:checked + label:before {
+  &__input:checked + &__label::before {
     border-color: $purple;
-}
+  }
 
-input[type="radio"]:checked + label:after {
+  &__input:checked + &__label::after {
     content: "";
     position: absolute;
     top: 10px;
@@ -372,6 +371,7 @@ input[type="radio"]:checked + label:after {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
     border-radius: 10px;
+  }
 }
