@@ -18,24 +18,24 @@ block variables
         var list2 = {
             "smoking": "Можно курить",
             "pets": "Можно с питомцами",
-            "guests": "Можно пригласить гостей\n(до 10 человек)",         
+            "guests": "Можно пригласить гостей\n(до 10 человек)" 
         }
 
 mixin counter(value)
-    .trigger
+    .dropdown__trigger
         if (value) 
-            .circle -
+            .dropdown__circle(data-direction = "-") -
         else 
-            .circle.disabled -
+            .dropdown__circle(data-direction = "-").dropdown__circle_disabled -
         span= value
-        .circle +
+        .dropdown__circle(data-direction = "+") +
 
 mixin radioButton(id, name, value, checked)
     if (checked === "checked")
         input.radio-buttons__input(type="radio" id= id name= name checked)
     else
         input.radio-buttons__input(type="radio" id= id name= name)   
-        
+
     label.radio-buttons__label(for= id) !{value}
 
 mixin checkbox(id, value, className, checked)
@@ -52,6 +52,16 @@ mixin ulCheckboxContainer(list, className)
             li(class= `${className}__li`)
                 +checkbox(key, val, "checkbox")
 
+mixin rateButton(starsNumDeafault)
+    - var n = 0;
+    .rate-button(data-stars_num= starsNumDeafault)
+        while (++n < 6)
+            if (n <= starsNumDeafault)
+                .rate-button__star_checked(data-star= n)
+            else
+                .rate-button__star(data-star= n)
+            
+
 block content
     main
         .first-column
@@ -59,19 +69,19 @@ block content
                 .input-example__title
                     h3 text field
                     span default
-                input.form__input(type="text" placeholder="Email")
+                input.input(type="text" placeholder="Email")
 
             .input-example  
                 .input-example__title
                     h3 text field
                     span hover / focus
-                input.form__input(type="text" class="hover" value="This is pretty awesome")
+                input.input(type="text" class="hover" value="This is pretty awesome")
 
             .input-example  
                 .input-example__title
                     h3 dropdown
                     span default
-                select.form__input(class=["select"])
+                select.input(class=["select"])
                     option(selected) Сколько гостей 
                     option 1 гость
                     option 2 гостя
@@ -82,7 +92,7 @@ block content
                 .input-example__title
                     h3 masked text field
                     span default
-                input.form__input(type="date")
+                input.input(type="date")
 
             br
             .date-dropdown-example  
@@ -113,7 +123,7 @@ block content
             .input-example_email
                 .input-example__title
                     h3 subscription text field
-                input.form__input_email(type="email" placeholder="Email")
+                input.input_email(type="email" placeholder="Email")
 
             .input-example_dropdown
                 .input-example__title
@@ -125,68 +135,95 @@ block content
                 .input-example__title
                     h3 dropdown
                     span expanded
-                input.form__dropdown_expanded(type="text" value="2 спальни, 2 кровати...")
-                .form__dropdown__conteiner 
-                    .form__dropdown__items
-                        span Cпальни 
-                        span Кровати
-                        span Ванные комнаты
-                    .form__dropdown__counters
-                        +counter(2)
-                        +counter(2)
-                        +counter(0)
-
-            .example__expandable-checkbox-list
-                .expandable-checkbox-list
-                    .expandable-checkbox-list__title
-                        h3 expandable checkbox list
-                        .expandable-checkbox-list__toggler
-
-            .example__expandable-checkbox-list_expanded
-                .expandable-checkbox-list
-                    .expandable-checkbox-list__title
-                        h3 expandable checkbox list
-                        .expandable-checkbox-list__toggler.expanded
-                    +ulCheckboxContainer(list1, "checkbox-list")
-                        
-
-            .example-buns
-                .buns
-                    .buns__img_smile
-                    .buns__title Комфорт
-                    .buns__description Шумопоглощающие стены
-                .example-buns__blank
-                .buns
-                    .buns__img_city
-                    .buns__title Удобство
-                    .buns__description Окно в каждой из спален
-
-        .second-column
-            .example-checkbox-buttons
-                .example-checkbox-buttons__title
-                    h3 checkbox buttons
-                +ulCheckboxContainer(list2, "checkbox-buttons")
-
-            .example-radio-buttons
-                .example-radio-buttons__title
-                    h3 radio buttons
-                .radio-buttons
-                    +radioButton("man", "sex", "Мужчина", "checked")
-                    +radioButton("woman", "sex", "Женщина")
-
-            .example-toggle
-                .example-toggle__title
-                    h3 toggle
-                +checkbox("get_special_offers", "Получать спецпредложения", "toggler", "checked") 
-                +checkbox("get_special_offers_1", "Получать спецпредложения", "toggler") 
-
-            .example-like-buttons
-                .example-like-buttons__title
-                    h3 like button
-                .example-like-buttons__container
-                    button.like-button
-                        span.like-button__counter 2
-                    button.like-button(class="like-button_pushed")
-                        span.like-button__counter 12
+                .dropdown.dropdown_expanded.dropdown_rooms
+                    .dropdown__input.dropdown__input_expanded
+                        span 2 спальни, 2 кровати...
+                    .dropdown__container.dropdown__container_expanded
+                        .dropdown__items
+                            span Cпальни 
+                            span Кровати
+                            span Ванные комнаты
+                        .dropdown__counters
+                            +counter(2)
+                            +counter(2)
+                            +counter(0)
 
 
+
+        //-     .example__expandable-checkbox-list
+        //-         .expandable-checkbox-list
+        //-             .expandable-checkbox-list__title
+        //-                 h3 expandable checkbox list
+        //-                 .expandable-checkbox-list__toggler
+
+        //-     .example__expandable-checkbox-list_expanded
+        //-         .expandable-checkbox-list
+        //-             .expandable-checkbox-list__title
+        //-                 h3 expandable checkbox list
+        //-                 .expandable-checkbox-list__toggler.expanded
+        //-             +ulCheckboxContainer(list1, "checkbox-list")
+
+
+        //-     .example-buns
+        //-         .buns
+        //-             .buns__img_smile
+        //-             .buns__title Комфорт
+        //-             .buns__description Шумопоглощающие стены
+        //-         .example-buns__blank
+        //-         .buns
+        //-             .buns__img_city
+        //-             .buns__title Удобство
+        //-             .buns__description Окно в каждой из спален
+
+        //- .second-column
+        //-     .example-checkbox-buttons
+        //-         .example-checkbox-buttons__title
+        //-             h3 checkbox buttons
+        //-         +ulCheckboxContainer(list2, "checkbox-buttons")
+
+        //-     .example-radio-buttons
+        //-         .example-radio-buttons__title
+        //-             h3 radio buttons
+        //-         .radio-buttons
+        //-             +radioButton("man", "sex", "Мужчина", "checked")
+        //-             +radioButton("woman", "sex", "Женщина")
+
+        //-     .example-toggle
+        //-         .example-toggle__title
+        //-             h3 toggle
+        //-         +checkbox("get_special_offers", "Получать спецпредложения", "toggler", "checked") 
+        //-         +checkbox("get_special_offers_1", "Получать спецпредложения", "toggler") 
+
+        //-     .example-like-buttons
+        //-         .example-like-buttons__title
+        //-             h3 like button
+        //-         .example-like-buttons__container
+        //-             button.like-button
+        //-                 span.like-button__counter 2
+        //-             button.like-button(class="like-button_pushed")
+        //-                 span.like-button__counter 12
+
+        //-     .example-rate-buttons
+        //-         .example-rate-buttons__title
+        //-             h3 rate button
+        //-         .example-rate-buttons__container
+        //-             +rateButton(4)
+        //-             +rateButton(5)
+
+        //-     .example-guest-dropdown
+        //-         .example-guest-dropdown__title
+        //-             h3 dropdown
+        //-         .dropdown_expanded.dropdown_guests
+        //-             input.input(type="text" value="Сколько гостей")
+        //-             .dropdown__conteiner 
+        //-                 .dropdown__items
+        //-                     span Взрослые 
+        //-                     span Дети
+        //-                     span Младенцы
+        //-                 .dropdown__counters
+        //-                     +counter(0)
+        //-                     +counter(0)
+        //-                     +counter(0)
+
+
+                
