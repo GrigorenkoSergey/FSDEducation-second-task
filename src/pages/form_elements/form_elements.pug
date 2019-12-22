@@ -18,16 +18,16 @@ block variables
         var list2 = {
             "smoking": "Можно курить",
             "pets": "Можно с питомцами",
-            "guests": "Можно пригласить гостей\n(до 10 человек)" 
+            "guests": "Можно пригласить гостей (до 10 человек)" 
         }
 
-mixin counter(value)
+mixin counter(value, dataItem)
     .dropdown__trigger
         if (value) 
             .dropdown__circle(data-direction = "-") -
         else 
-            .dropdown__circle(data-direction = "-").dropdown__circle_disabled -
-        span= value
+            .dropdown__circle(data-direction = "-").dropdown__circle_disabled                                                                                                                                                             -
+        span(data-item= dataItem)= value
         .dropdown__circle(data-direction = "+") +
 
 mixin radioButton(id, name, value, checked)
@@ -140,13 +140,13 @@ block content
                         span 2 спальни, 2 кровати...
                     .dropdown__container.dropdown__container_expanded
                         .dropdown__items
-                            span Cпальни 
-                            span Кровати
-                            span Ванные комнаты
+                            span(data-item = "bedrooms") Cпальни 
+                            span(data-item = "beds") Кровати
+                            span(data-item = "bathrooms") Ванные комнаты
                         .dropdown__counters
-                            +counter(2)
-                            +counter(2)
-                            +counter(0)
+                            +counter(2, "rooms_num")
+                            +counter(2, "beds_num")
+                            +counter(0, "bathrooms_num")
 
 
 
