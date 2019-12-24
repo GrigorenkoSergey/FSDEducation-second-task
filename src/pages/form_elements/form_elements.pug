@@ -26,9 +26,10 @@ mixin counter(value, dataItem)
         if (value) 
             .dropdown__circle(data-direction = "-") -
         else 
-            .dropdown__circle(data-direction = "-").dropdown__circle_disabled                                                                                                                                                             -
+            .dropdown__circle(data-direction = "-").dropdown__circle_disabled                                                                                                                                                            -
         span(data-item= dataItem)= value
         .dropdown__circle(data-direction = "+") +
+
 
 mixin radioButton(id, name, value, checked)
     if (checked === "checked")
@@ -60,7 +61,7 @@ mixin rateButton(starsNumDeafault)
                 .rate-button__star_checked(data-star= n)
             else
                 .rate-button__star(data-star= n)
-            
+
 
 block content
     main
@@ -131,11 +132,13 @@ block content
                     span default
                 input.form__dropdown(type="text" value="2 спальни, 2 кровати...")
 
+
+
             .input-example_dropdown_expanded
                 .input-example__title
                     h3 dropdown
                     span expanded
-                .dropdown.dropdown_expanded.dropdown_rooms
+                .dropdown(data-name="rooms").dropdown_expanded.dropdown_rooms
                     .dropdown__input.dropdown__input_expanded
                         span 2 спальни, 2 кровати...
                     .dropdown__container.dropdown__container_expanded
@@ -148,82 +151,82 @@ block content
                             +counter(2, "beds_num")
                             +counter(0, "bathrooms_num")
 
+            .example__expandable-checkbox-list
+                .expandable-checkbox-list
+                    .expandable-checkbox-list__title
+                        h3 expandable checkbox list
+                        .expandable-checkbox-list__toggler
+
+            .example__expandable-checkbox-list_expanded
+                .expandable-checkbox-list
+                    .expandable-checkbox-list__title
+                        h3 expandable checkbox list
+                        .expandable-checkbox-list__toggler.expanded
+                    +ulCheckboxContainer(list1, "checkbox-list")
 
 
-        //-     .example__expandable-checkbox-list
-        //-         .expandable-checkbox-list
-        //-             .expandable-checkbox-list__title
-        //-                 h3 expandable checkbox list
-        //-                 .expandable-checkbox-list__toggler
+            .example-buns
+                .buns
+                    .buns__img_smile
+                    .buns__title Комфорт
+                    .buns__description Шумопоглощающие стены
+                .example-buns__blank
+                .buns
+                    .buns__img_city
+                    .buns__title Удобство
+                    .buns__description Окно в каждой из спален
 
-        //-     .example__expandable-checkbox-list_expanded
-        //-         .expandable-checkbox-list
-        //-             .expandable-checkbox-list__title
-        //-                 h3 expandable checkbox list
-        //-                 .expandable-checkbox-list__toggler.expanded
-        //-             +ulCheckboxContainer(list1, "checkbox-list")
+        .second-column
+            .example-checkbox-buttons
+                .example-checkbox-buttons__title
+                    h3 checkbox buttons
+                +ulCheckboxContainer(list2, "checkbox-buttons")
 
+            .example-radio-buttons
+                .example-radio-buttons__title
+                    h3 radio buttons
+                .radio-buttons
+                    +radioButton("man", "sex", "Мужчина", "checked")
+                    +radioButton("woman", "sex", "Женщина")
 
-        //-     .example-buns
-        //-         .buns
-        //-             .buns__img_smile
-        //-             .buns__title Комфорт
-        //-             .buns__description Шумопоглощающие стены
-        //-         .example-buns__blank
-        //-         .buns
-        //-             .buns__img_city
-        //-             .buns__title Удобство
-        //-             .buns__description Окно в каждой из спален
+            .example-toggle
+                .example-toggle__title
+                    h3 toggle
+                +checkbox("get_special_offers", "Получать спецпредложения", "toggler", "checked") 
+                +checkbox("get_special_offers_1", "Получать спецпредложения", "toggler") 
 
-        //- .second-column
-        //-     .example-checkbox-buttons
-        //-         .example-checkbox-buttons__title
-        //-             h3 checkbox buttons
-        //-         +ulCheckboxContainer(list2, "checkbox-buttons")
+            .example-like-buttons
+                .example-like-buttons__title
+                    h3 like button
+                .example-like-buttons__container
+                    button.like-button
+                        span.like-button__counter 2
+                    button.like-button(class="like-button_pushed")
+                        span.like-button__counter 12
 
-        //-     .example-radio-buttons
-        //-         .example-radio-buttons__title
-        //-             h3 radio buttons
-        //-         .radio-buttons
-        //-             +radioButton("man", "sex", "Мужчина", "checked")
-        //-             +radioButton("woman", "sex", "Женщина")
+            .example-rate-buttons
+                .example-rate-buttons__title
+                    h3 rate button
+                .example-rate-buttons__container
+                    +rateButton(4)
+                    +rateButton(5)
 
-        //-     .example-toggle
-        //-         .example-toggle__title
-        //-             h3 toggle
-        //-         +checkbox("get_special_offers", "Получать спецпредложения", "toggler", "checked") 
-        //-         +checkbox("get_special_offers_1", "Получать спецпредложения", "toggler") 
+            .example-dropdown-guests
+                .example-dropdown-guests__title
+                    h3 dropdown
+                .dropdown(data-name="guests").dropdown_expanded.dropdown_guests
+                    .dropdown__input.dropdown__input_expanded
+                        span Сколько гостей
+                    .dropdown__container.dropdown__container_expanded
+                        .dropdown__items
+                            span(data-item = "adults") Взрослые 
+                            span(data-item = "kids") Дети
+                            span(data-item = "babies") Младенцы
+                        .dropdown__counters
+                            +counter(0, "adults_num")
+                            +counter(0, "kids_num")
+                            +counter(0, "babies_num")
+                        .dropdown__buttons
+                            .dropdown__button-reset(hidden) Очистить                      
+                            .dropdown__button-apply Применить
 
-        //-     .example-like-buttons
-        //-         .example-like-buttons__title
-        //-             h3 like button
-        //-         .example-like-buttons__container
-        //-             button.like-button
-        //-                 span.like-button__counter 2
-        //-             button.like-button(class="like-button_pushed")
-        //-                 span.like-button__counter 12
-
-        //-     .example-rate-buttons
-        //-         .example-rate-buttons__title
-        //-             h3 rate button
-        //-         .example-rate-buttons__container
-        //-             +rateButton(4)
-        //-             +rateButton(5)
-
-        //-     .example-guest-dropdown
-        //-         .example-guest-dropdown__title
-        //-             h3 dropdown
-        //-         .dropdown_expanded.dropdown_guests
-        //-             input.input(type="text" value="Сколько гостей")
-        //-             .dropdown__conteiner 
-        //-                 .dropdown__items
-        //-                     span Взрослые 
-        //-                     span Дети
-        //-                     span Младенцы
-        //-                 .dropdown__counters
-        //-                     +counter(0)
-        //-                     +counter(0)
-        //-                     +counter(0)
-
-
-                
