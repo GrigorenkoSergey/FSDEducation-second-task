@@ -47,6 +47,22 @@ mixin checkbox(id, value, className, checked)
             input(class=`${className}__input` type="checkbox" id= id name= id)        
         label(class=`${className}__label` for= id) !{value}  
 
+//- mixin rich-checkbox(id, value, desctiption, classList, checked)
+//-     - let classesArr = classList.split(" ");
+//-     - let mainClass = classesArr[0];
+//-     - let lastClasses = classesArr.slice(1).join(" ");
+//-     div(class = `${classList}`)
+//-         if (checked === "checked")
+//-             input(class=`${mainClass}__input ${lastClasses}` type="checkbox" id= id name= id checked)
+//-         else 
+//-             input(class=`${mainClass}__input ${lastClasses}` type="checkbox" id= id name= id)        
+//-         label(class=`${mainClass}__label ${lastClasses}` for= id) !{value} 
+//-         span.rich-checkbox__span Ширина коридоров в номере не менее 91 см.
+
+mixin rich-checkbox(id, value, discription, classList, checked)
+    +checkbox(id, value, "rich-checkbox", checked)
+    span.rich-checkbox__span !{discription}
+
 mixin ulCheckboxContainer(list, className)
     ul(class= className)
         each val, key in list
@@ -153,8 +169,7 @@ block content
 
             .example__expandable-checkbox-list
                 .expandable-checkbox-list
-                    .expandable-checkbox-list__title
-                        h3 expandable checkbox list
+                    .expandable-checkbox-list__title expandable checkbox list
                         .expandable-checkbox-list__toggler
 
             .example__expandable-checkbox-list_expanded
@@ -201,7 +216,7 @@ block content
                 .example-like-buttons__container
                     button.like-button
                         span.like-button__counter 2
-                    button.like-button(class="like-button_pushed")
+                    button.like-button.like-button_pushed
                         span.like-button__counter 12
 
             .example-rate-buttons
@@ -212,9 +227,8 @@ block content
                     +rateButton(5)
 
             .example-dropdown-guests
-                .example-dropdown-guests__title
-                    h3 dropdown
                 .dropdown(data-name="guests").dropdown_expanded.dropdown_guests
+                    .dropdown__title dropdown
                     .dropdown__input.dropdown__input_expanded
                         span Сколько гостей
                     .dropdown__container.dropdown__container_expanded
@@ -230,3 +244,17 @@ block content
                             .dropdown__button-reset(hidden) Очистить                      
                             .dropdown__button-apply Применить
 
+            .example-rich-checkbox-buttons
+                .rich-checkbox__title   rich checkbox buttons
+                +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
+                +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
+
+            .example-reviews
+                .review
+                    img.review__avatar(src="/assets/images/image.png")
+                    span.review__name Мурад Сарафанов
+                    span.review__term 5 дней назад
+                    .review__like-button
+                        button.like-button.like-button_pushed
+                            span.like-button__counter 12
+                    p.review__content Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару - никто не жаловался из соседей.
