@@ -47,18 +47,6 @@ mixin checkbox(id, value, className, checked)
             input(class=`${className}__input` type="checkbox" id= id name= id)        
         label(class=`${className}__label` for= id) !{value}  
 
-//- mixin rich-checkbox(id, value, desctiption, classList, checked)
-//-     - let classesArr = classList.split(" ");
-//-     - let mainClass = classesArr[0];
-//-     - let lastClasses = classesArr.slice(1).join(" ");
-//-     div(class = `${classList}`)
-//-         if (checked === "checked")
-//-             input(class=`${mainClass}__input ${lastClasses}` type="checkbox" id= id name= id checked)
-//-         else 
-//-             input(class=`${mainClass}__input ${lastClasses}` type="checkbox" id= id name= id)        
-//-         label(class=`${mainClass}__label ${lastClasses}` for= id) !{value} 
-//-         span.rich-checkbox__span Ширина коридоров в номере не менее 91 см.
-
 mixin rich-checkbox(id, value, discription, classList, checked)
     +checkbox(id, value, "rich-checkbox", checked)
     span.rich-checkbox__span !{discription}
@@ -258,3 +246,12 @@ block content
                         button.like-button.like-button_pushed
                             span.like-button__counter 12
                     p.review__content Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару - никто не жаловался из соседей.
+
+        .third-column
+            .range-slider
+                .range-slider__title range slider
+                .range-slider__range 5 000&#8381 - 10 000&#8381
+                .range-slider__roller-container
+                    .range-slider__roller
+                        .range-slider__roller-left
+                        .range-slider__roller-right
