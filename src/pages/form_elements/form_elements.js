@@ -104,7 +104,7 @@ guestsDropdown.inputContentRender = function () {
 
     let guestsEnds = ["ей", "ь", "я", "я", "я", "ей", "ей", "ей", "ей", "ей", "ей"];
 
-    input.textContent = `${adultsNum + kidsNum} гост${guestsEnds[adultsNum + kidsNum]}`;
+    input.textContent = `${adultsNum + kidsNum} гост${guestsEnds[adultsNum + kidsNum]}, `;
     resetButton.hidden = false;
 };
 
@@ -203,7 +203,7 @@ for (let item of rollersArr) {
         let lowRange = Math.floor(5 / 74 * item.offsetLeft) * 1000;
         let topRange = Math.floor(10 / 175 * (item.offsetLeft + item.offsetWidth)) * 1000;
         
-        topRange = Math.max(lowRange, topRange); 
+        //topRange = Math.max(lowRange, topRange); 
 
         lowRange = lowRange.toLocaleString('ru-RU');
         topRange = topRange.toLocaleString('ru-RU');
