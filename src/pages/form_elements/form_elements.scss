@@ -587,6 +587,9 @@ main {
 .example-dropdown-guests {
   margin-top: 197px;
 }
+.example-dropdown-guests_new-avatar {
+  margin-top: 233px;
+}
 
 .example-rich-checkbox-buttons {
   margin-top: 256px;
@@ -927,9 +930,44 @@ main {
       top: 14.5px;
     }
   }
-  
+
   &__description {
     display: inline-block;
     padding-top: 7px;
+  }
+}
+
+.example-bullet-list {
+  position: absolute;
+  width: 292px;
+  height: 147px;
+  left: 979px;
+  top: 1196px;
+
+  &__title {
+    margin-bottom: 13px;
+  }
+}
+
+.bullet-list {
+  &__li {
+    list-style-type: none;
+    margin-left: 20px;
+    font: $bodyFont;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  &__li::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background: $dark_25;
+    border-radius: 50px;
+    
   }
 }

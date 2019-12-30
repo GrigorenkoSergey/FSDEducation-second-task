@@ -282,3 +282,33 @@ block content
                                 a.pagination__a(href = "#") !{val}
                         li.pagination__next-arrow
                     span.pagination__description 1 - 12 из 100+ вариантов аренды
+
+            .example-dropdown-guests_new-avatar
+                .dropdown(data-name="guests").dropdown_expanded.dropdown_guests
+                    .dropdown__title dropdown
+                    .dropdown__input.dropdown__input_expanded
+                        span 3 гостя
+                    .dropdown__container.dropdown__container_expanded
+                        .dropdown__items
+                            span(data-item = "adults") Взрослые 
+                            span(data-item = "kids") Дети
+                            span(data-item = "babies") Младенцы
+                        .dropdown__counters
+                            +counter(2, "adults_num")
+                            +counter(1, "kids_num")
+                            +counter(0, "babies_num")
+                        .dropdown__buttons
+                            .dropdown__button-reset Очистить                      
+                            .dropdown__button-apply Применить
+
+            .example-bullet-list
+                .example-bullet-list__title
+                    h3 bullet list
+                    - 
+                        let bulletListArr = ["Нельзя с питомцами", 
+                                              "Без вечеринок и мероприятий", 
+                                              "Время прибытия — после 13:00,<br /> а выезд до 12:00"]                     
+                ul.bullet-list
+                    each val in bulletListArr
+                        li.bullet-list__li !{val}
+                        
