@@ -1,5 +1,14 @@
 extends ../../assets/blocks/template/template.pug
+
+block includes
+    include ../../assets/blocks/dropdown/dropdown.pug
+
+block scripts
+    script
+        include ../../assets/blocks/dropdown/dropdown.js
+
 block variables
+
     - var titleName = 'From Elements'
 
     - 
@@ -21,14 +30,32 @@ block variables
             "guests": "Можно пригласить гостей (до 10 человек)" 
         }
 
-mixin counter(value, dataItem)
-    .dropdown__trigger
-        if (value) 
-            .dropdown__circle(data-direction = "-") -
-        else 
-            .dropdown__circle(data-direction = "-").dropdown__circle_disabled                                                                                                                                                            -
-        span(data-item= dataItem)= value
-        .dropdown__circle(data-direction = "+") +
+    - 
+        let dropdownRooms = {
+            name: "rooms", 
+            additionalClasses: {
+                dropdown: ["dropdown_expanded", "dropdown_rooms"], 
+                input: ["dropdown__input_expanded"],
+                container: ["dropdown__container_expanded"],
+            },
+
+            content: {
+                title: "dropdown",
+                input: "2 спальни, 2 кровати...",
+                items: {
+                    bedrooms: "Спальни",
+                    beds: "Кровати",
+                    bathrooms: "Ванные комнаты"
+                },
+                counters: {
+                    rooms_num: 2,
+                    beds_num: 2,
+                    bathrooms_num: 0
+                },   
+            },
+            //- покажем кнопки "Очистить" и "применить"?
+            showButtons: false, 
+        }
 
 
 mixin radioButton(id, name, value, checked)
@@ -137,23 +164,10 @@ block content
                 input.form__dropdown(type="text" value="2 спальни, 2 кровати...")
 
 
-
-            .input-example_dropdown_expanded
-                .input-example__title
-                    h3 dropdown
-                    span expanded
-                .dropdown(data-name="rooms").dropdown_expanded.dropdown_rooms
-                    .dropdown__input.dropdown__input_expanded
-                        span 2 спальни, 2 кровати...
-                    .dropdown__container.dropdown__container_expanded
-                        .dropdown__items
-                            span(data-item = "bedrooms") Cпальни 
-                            span(data-item = "beds") Кровати
-                            span(data-item = "bathrooms") Ванные комнаты
-                        .dropdown__counters
-                            +counter(2, "rooms_num")
-                            +counter(2, "beds_num")
-                            +counter(0, "bathrooms_num")
+            //- todo
+            .example-dropdown_expanded
+                span.example__modifier expanded
+                +dropdown(dropdownRooms)
 
             .example__expandable-checkbox-list
                 .expandable-checkbox-list
@@ -213,24 +227,9 @@ block content
                 .example-rate-buttons__container
                     +rateButton(4)
                     +rateButton(5)
-
+                    
             .example-dropdown-guests
-                .dropdown(data-name="guests").dropdown_expanded.dropdown_guests
-                    .dropdown__title dropdown
-                    .dropdown__input.dropdown__input_expanded
-                        span Сколько гостей
-                    .dropdown__container.dropdown__container_expanded
-                        .dropdown__items
-                            span(data-item = "adults") Взрослые 
-                            span(data-item = "kids") Дети
-                            span(data-item = "babies") Младенцы
-                        .dropdown__counters
-                            +counter(0, "adults_num")
-                            +counter(0, "kids_num")
-                            +counter(0, "babies_num")
-                        .dropdown__buttons
-                            .dropdown__button-reset(hidden) Очистить                      
-                            .dropdown__button-apply Применить
+                +dropdown
 
             .example-rich-checkbox-buttons
                 .rich-checkbox__title   rich checkbox buttons
@@ -284,22 +283,9 @@ block content
                     span.pagination__description 1 - 12 из 100+ вариантов аренды
 
             .example-dropdown-guests_new-avatar
-                .dropdown(data-name="guests").dropdown_expanded.dropdown_guests
-                    .dropdown__title dropdown
-                    .dropdown__input.dropdown__input_expanded
-                        span 3 гостя
-                    .dropdown__container.dropdown__container_expanded
-                        .dropdown__items
-                            span(data-item = "adults") Взрослые 
-                            span(data-item = "kids") Дети
-                            span(data-item = "babies") Младенцы
-                        .dropdown__counters
-                            +counter(2, "adults_num")
-                            +counter(1, "kids_num")
-                            +counter(0, "babies_num")
-                        .dropdown__buttons
-                            .dropdown__button-reset Очистить                      
-                            .dropdown__button-apply Применить
+                - let obj = dropdownDefault;
+                - obj.showReset = true;
+                +dropdown(obj)
 
             .example-bullet-list
                 .example-bullet-list__title
