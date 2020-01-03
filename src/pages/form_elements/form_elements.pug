@@ -2,10 +2,12 @@ extends ../../assets/blocks/template/template.pug
 
 block includes
     include ../../assets/blocks/dropdown/dropdown.pug
+    include ../../assets/blocks/checkboxes/checkboxes.pug
 
 block scripts
-    script
-        include ../../assets/blocks/dropdown/dropdown.js
+    script(src="/assets/blocks/dropdown/dropdown.js")
+    script(src="/assets/blocks/date-dropdown/date-dropdown.js")
+    script(src="/assets/blocks/checkboxes/checkboxes.js")
 
 block variables
 
@@ -27,14 +29,14 @@ block variables
         var list2 = {
             "smoking": "Можно курить",
             "pets": "Можно с питомцами",
-            "guests": "Можно пригласить гостей (до 10 человек)" 
+            "guests": "Можно пригласить гостей <br />(до 10 человек)" 
         }
 
     - 
-        let dropdownRooms = {
+        var dropdownRooms = {
             name: "rooms", 
             additionalClasses: {
-                dropdown: ["dropdown_expanded", "dropdown_rooms"], 
+                dropdown: ["dropdown_rooms"], 
                 input: ["dropdown__input_expanded"],
                 container: ["dropdown__container_expanded"],
             },
@@ -57,7 +59,6 @@ block variables
             showButtons: false, 
         }
 
-
 mixin radioButton(id, name, value, checked)
     if (checked === "checked")
         input.radio-buttons__input(type="radio" id= id name= name checked)
@@ -66,23 +67,10 @@ mixin radioButton(id, name, value, checked)
 
     label.radio-buttons__label(for= id) !{value}
 
-mixin checkbox(id, value, className, checked)
-    div(class=`${className}`)
-        if (checked === "checked")
-            input(class=`${className}__input` type="checkbox" id= id name= id checked)
-        else 
-            input(class=`${className}__input` type="checkbox" id= id name= id)        
-        label(class=`${className}__label` for= id) !{value}  
 
 mixin rich-checkbox(id, value, discription, classList, checked)
     +checkbox(id, value, "rich-checkbox", checked)
     span.rich-checkbox__span !{discription}
-
-mixin ulCheckboxContainer(list, className)
-    ul(class= className)
-        each val, key in list
-            li(class= `${className}__li`)
-                +checkbox(key, val, "checkbox")
 
 mixin rateButton(starsNumDeafault)
     - var n = 0;
@@ -93,93 +81,83 @@ mixin rateButton(starsNumDeafault)
             else
                 .rate-button__star(data-star= n)
 
-
 block content
     main
         .first-column
-            .input-example 
-                .input-example__title
+            .example-input
+                .example-input__title
                     h3 text field
                     span default
                 input.input(type="text" placeholder="Email")
 
-            .input-example  
-                .input-example__title
+            .example-input 
+                .example-input__title
                     h3 text field
                     span hover / focus
                 input.input(type="text" class="hover" value="This is pretty awesome")
 
-            .input-example  
-                .input-example__title
-                    h3 dropdown
-                    span default
-                select.input(class=["select"])
-                    option(selected) Сколько гостей 
-                    option 1 гость
-                    option 2 гостя
-                    option 3 гостя
+            .example-dropdown-default  
+                span.example__modifier default
+                - var obj = Object.assign({}, dropdownDefault);
+                - obj.additionalClasses = {};
+                +dropdown(obj)
 
 
-            .input-example.masket-text-field
-                .input-example__title
+            .example-masket-text-field
+                .example-input__title
                     h3 masked text field
                     span default
-                input.input(type="date")
+                input.input.input_type-date(type="date")
 
             br
-            .date-dropdown-example  
+            .example-date-dropdown  
                 .wrapper
-                    .input-example__title
+                    .example-input__title
                         h3 date dropdown
-                    select.form__date-dropdown(class=["select"])
+                    select.date-dropdown
                         option(selected) ДД.ММ.ГГГГ
                         option 19.08.2019
                         option 20.08.2019
                         option 21.08.2019
 
                 .wrapper       
-                    .input-example__title
+                    .example-input__title
                         h3 date dropdown          
-                    select.form__date-dropdown(class=["select"])
+                    select.date-dropdown
                         option ДД.ММ.ГГГГ
                         option(selected) 19.08.2019
                         option 20.08.2019
                         option 21.08.2019
 
-            .input-example_filter
-                .input-example__title
+            .example-input_filter
+                .example-input__title
                     h3 filter date dropdown
                 select.form__filter-date.select
                     option(selected) 19 авг - 23 авг  
 
-            .input-example_email
-                .input-example__title
+            .example-input_email
+                .example-input__title
                     h3 subscription text field
                 input.input_email(type="email" placeholder="Email")
 
-            .input-example_dropdown
-                .input-example__title
+            .example-input_dropdown
+                .example-input__title
                     h3 dropdown
                     span default
                 input.form__dropdown(type="text" value="2 спальни, 2 кровати...")
 
 
-            //- todo
             .example-dropdown_expanded
                 span.example__modifier expanded
                 +dropdown(dropdownRooms)
 
             .example__expandable-checkbox-list
-                .expandable-checkbox-list
-                    .expandable-checkbox-list__title expandable checkbox list
-                        .expandable-checkbox-list__toggler
+                +expandable-checkbox-list({}, false)
 
             .example__expandable-checkbox-list_expanded
-                .expandable-checkbox-list
-                    .expandable-checkbox-list__title
-                        h3 expandable checkbox list
-                        .expandable-checkbox-list__toggler.expanded
-                    +ulCheckboxContainer(list1, "checkbox-list")
+                +expandable-checkbox-list(list1, true)
+
+
 
 
             .example-buns
@@ -195,9 +173,7 @@ block content
 
         .second-column
             .example-checkbox-buttons
-                .example-checkbox-buttons__title
-                    h3 checkbox buttons
-                +ulCheckboxContainer(list2, "checkbox-buttons")
+                +checkboxButtons(list2)
 
             .example-radio-buttons
                 .example-radio-buttons__title
@@ -273,7 +249,7 @@ block content
                     h3 pagination
                 .pagination
                     ul.pagination__list
-                        - let pages = [1, 2, 3, "...", 15];
+                        - var pages = [1, 2, 3, "...", 15];
                         li.pagination__li.pagination__li_selected
                             a.pagination__a.pagination__a_selected(href = "#") !{pages[0]}
                         each val in pages.slice(1)
@@ -283,7 +259,7 @@ block content
                     span.pagination__description 1 - 12 из 100+ вариантов аренды
 
             .example-dropdown-guests_new-avatar
-                - let obj = dropdownDefault;
+                - var obj = Object.assign({}, dropdownDefault);
                 - obj.showReset = true;
                 +dropdown(obj)
 
@@ -291,7 +267,7 @@ block content
                 .example-bullet-list__title
                     h3 bullet list
                     - 
-                        let bulletListArr = ["Нельзя с питомцами", 
+                        var bulletListArr = ["Нельзя с питомцами", 
                                               "Без вечеринок и мероприятий", 
                                               "Время прибытия — после 13:00,<br /> а выезд до 12:00"]                     
                 ul.bullet-list
