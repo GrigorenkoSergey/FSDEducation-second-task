@@ -1,40 +1,5 @@
 import "./form_elements.scss";
 
-let togglers = document.getElementsByClassName("toggler");
-for (let item of togglers) {
-    item.addEventListener("mousedown", (e) => e.preventDefault());
-}
-
-let likeButtons = document.getElementsByClassName("like-button");
-for (let item of likeButtons) {
-    item.addEventListener("click", function (e) {
-        this.classList.toggle("like-button_pushed");
-
-        let counter = this.getElementsByClassName("like-button__counter")[0];
-
-        if (this.classList.contains("like-button_pushed")) {
-
-            counter.textContent = +(counter.textContent) + 1;
-        } else {
-            counter.textContent = +(counter.textContent) - 1;
-        }
-    })
-}
-
-let rateButtons = document.getElementsByClassName("rate-button");
-for (let item of rateButtons) {
-    item.addEventListener("click", function (e) {
-        let stars = +e.target.dataset.star;
-        for (let i = 0; i < 5; i++) {
-            if (i < stars) {
-                item.children[i].className = "rate-button__star_checked"
-            } else {
-                item.children[i].className = "rate-button__star"
-            }
-        }
-    })
-}
-
 let rollersArr = document.getElementsByClassName("range-slider__roller");
 for (let item of rollersArr) {
 
