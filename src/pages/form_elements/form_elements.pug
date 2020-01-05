@@ -3,10 +3,13 @@ extends ../../assets/blocks/template/template.pug
 block includes
     include ../../assets/blocks/dropdown/dropdown.pug
     include ../../assets/blocks/checkboxes/checkboxes.pug
+    include ../../assets/blocks/buns/buns.pug
     include ../../assets/blocks/radio-buttons/radio-buttons.pug
     include ../../assets/blocks/toggler/toggler.pug
     include ../../assets/blocks/like-button/like-button.pug 
     include ../../assets/blocks/rate-button/rate-button.pug   
+    include ../../assets/blocks/comment/comment.pug  
+    include ../../assets/blocks/range-slider/range-slider.pug 
 
 block scripts
     script(src="/assets/blocks/dropdown/dropdown.js")
@@ -15,6 +18,7 @@ block scripts
     script(src="/assets/blocks/toggler/toggler.js")
     script(src="/assets/blocks/like-button/like-button.js")
     script(src="/assets/blocks/rate-button/rate-button.js")
+    script(src="/assets/blocks/comment/comment.js")
 
 block variables
 
@@ -89,7 +93,6 @@ block content
                 - obj.additionalClasses = {};
                 +dropdown(obj)
 
-
             .example-masket-text-field
                 .example-input__title
                     h3 masked text field
@@ -131,7 +134,6 @@ block content
                 span.example__modifier default
                 +dropdown(dropdownRooms)
 
-
             .example-dropdown_expanded
                 span.example__modifier expanded
                 +dropdown(dropdownRooms, true)
@@ -142,19 +144,9 @@ block content
             .example__expandable-checkbox-list_expanded
                 +expandable-checkbox-list(list1, true)
 
-
-
-
             .example-buns
-                .buns
-                    .buns__img_smile
-                    .buns__title Комфорт
-                    .buns__description Шумопоглощающие стены
-                .example-buns__blank
-                .buns
-                    .buns__img_city
-                    .buns__title Удобство
-                    .buns__description Окно в каждой из спален
+                - var buns = bunsArr;
+                +buns(buns)
 
         .second-column
             .example-checkbox-buttons
@@ -193,24 +185,12 @@ block content
                 +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
                 +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
 
-            .example-reviews
-                .review
-                    img.review__avatar(src="/assets/images/image.png")
-                    span.review__name Мурад Сарафанов
-                    span.review__term 5 дней назад
-                    .review__like-button
-                        button.like-button.like-button_pushed
-                            span.like-button__counter 12
-                    p.review__content Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару - никто не жаловался из соседей.
-
+            .example-comments
+                +comment(reviewer)
+        
         .third-column
-            .range-slider
-                .range-slider__title range slider
-                .range-slider__range 5 000&#8381 - 10 000&#8381
-                .range-slider__roller-container
-                    .range-slider__roller
-                        .range-slider__roller-left
-                        .range-slider__roller-right
+            .example-range-slider
+                +rangeSlider
 
             .example-button
                 .example-button__title

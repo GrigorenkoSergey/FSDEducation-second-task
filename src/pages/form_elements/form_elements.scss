@@ -2,10 +2,14 @@
 @import "src/assets/blocks/dropdown/dropdown.scss";
 @import "src/assets/blocks/date-dropdown/date-dropdown.scss";
 @import "src/assets/blocks/checkboxes/checkboxes.scss";
+@import "src/assets/blocks/buns/buns.scss";
 @import "src/assets/blocks/radio-buttons/radio-buttons.scss";
 @import "src/assets/blocks/toggler/toggler.scss";
 @import "src/assets/blocks/like-button/like-button.scss";
 @import "src/assets/blocks/rate-button/rate-button.scss";
+@import "src/assets/blocks/comment/comment.scss";
+@import "src/assets/blocks/range-slider/range-slider.scss";
+
 
 $inputWidth: 320px;
 
@@ -37,12 +41,12 @@ main {
 
 .second-column {
   margin-left: 126px;
-  margin-top: -5px;
+  margin-top: 20px;
 }
 
 .third-column {
-  margin-left: 73px;
-  margin-top: -5px;
+  margin-left: 72px;
+  margin-top: 21px;
 }
 
 .input {
@@ -117,12 +121,6 @@ main {
   justify-content: space-between;
 }
 
-// .select {
-//   background: url("/assets/images/expand_more.png") no-repeat;
-//   background-position: right;
-//   appearance: none;
-// }
-
 .filter-date {
   @extend .input;
   width: 266px;
@@ -154,11 +152,6 @@ main {
   margin-left: -1px;
 }
 
-// .form__dropdown {
-//   @extend .input_email;
-//   background: url("/assets/images/expand_more.png") right no-repeat;
-// }
-
 .example-dropdown_expanded {
   margin-top: 20px;
   margin-left: -1px;
@@ -188,37 +181,6 @@ main {
   margin-top: 35px;
   margin-left: -1px
 }
-.example-buns__blank { //пока еще не понял, как будут встречаться экземляры данного класса
-  height: 20px;
-}
-
-.buns {
-  box-sizing: border-box;
-  border-bottom: 1px solid $dark_10;
-  padding-bottom: 20px;
-
-  &__img_smile {
-    width: 48px;
-    height: 48px;
-    background: url("/assets/images/smile.png") center no-repeat;
-    float: left;
-    margin-right: 10px;
-  }
-
-  &__img_city {
-    @extend .buns__img_smile;
-    background: url("/assets/images/city.png") center no-repeat;
-  }
-
-  &__title {
-    font-weight: bold;
-  }
-}
-
-
-.example-checkbox-buttons {
-  margin-top: 25px;
-}
 
 .example-radio-buttons {
   margin-top: 38px;
@@ -246,7 +208,7 @@ main {
   width: 89.72px;
 
   &__title {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
   }
 
   &__container {
@@ -270,7 +232,7 @@ main {
 }
 
 .example-dropdown-guests {
-  margin-top: 196px;
+  margin-top: 197px;
 }
 .example-dropdown-guests_new-avatar {
   margin-top: 233px;
@@ -280,7 +242,7 @@ main {
   margin-top: 256px;
 }
 
-.example-reviews {
+.example-comments {
   position: absolute;
   top: 1573px;
   left: 586px;
@@ -288,88 +250,8 @@ main {
   height: 133px;
 }
 
-.review {
-  position: relative;
+.example-range-slider {
 
-  &__avatar {
-    float: left;
-    margin-right: 10px;
-    width: 48px;
-    height: 48px;
-  }
-
-  &__like-button {
-    margin-left: 5px;
-    margin-top: 12px;
-  }
-
-  &__name {
-    display: block;
-    font-weight: bold;
-  }
-
-  &__content {
-    margin-left: 59px;
-    margin-top: -27px;
-  }
-}
-
-.range-slider {
-  width: 266px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  &__title {
-    @extend h3;
-  }
-
-  &__range {
-    @extend h3;
-    font-weight: normal;
-    color: $dark_50;
-  }
-
-  &__roller-container {
-    width: 100%;
-    height: 6px;
-    margin-top: 23px;
-    border: 1px solid $dark_25;
-    box-sizing: border-box;
-    border-radius: 3px;
-    position: relative;
-  }
-
-  &__roller {
-    position: absolute;
-    top: -1px;
-    left: 74px;
-    right: 89px;
-    height: 6px;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-    border-radius: 3px;
-  }
-
-  &__roller-left,
-  &__roller-right {
-    content: "";
-    width: 12px;
-    height: 12px;
-    box-sizing: content-box;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-    border: 2px solid white;
-    border-radius: 10px;
-    position: absolute;
-    top: -5px;
-    cursor: pointer;
-  }
-
-  &__roller-left {
-    left: 0;
-  }
-  &__roller-right {
-    right: 0;
-  }
 }
 
 .example-button {
