@@ -19,6 +19,7 @@ block scripts
     script(src="/assets/blocks/like-button/like-button.js")
     script(src="/assets/blocks/rate-button/rate-button.js")
     script(src="/assets/blocks/comment/comment.js")
+    script(src="/assets/blocks/range-slider/range-slider.js")
 
 block variables
 
@@ -46,12 +47,8 @@ block variables
     - 
         var dropdownRooms = {
             name: "rooms", 
-            additionalClasses: {
-                dropdown: ["dropdown_rooms"], 
-                //- input: ["dropdown__input_expanded"],
-                //- container: ["dropdown__container_expanded"],
-                input: [],
-                container: [],
+            extraClasses: {
+                dropdownClass: "dropdown_rooms", 
             },
 
             content: {
@@ -189,8 +186,7 @@ block content
                 +comment(reviewer)
         
         .third-column
-            .example-range-slider
-                +rangeSlider
+            +rangeSlider
 
             .example-button
                 .example-button__title
