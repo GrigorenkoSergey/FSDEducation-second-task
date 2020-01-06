@@ -1,0 +1,30 @@
+.buns {
+  box-sizing: border-box;
+  border-bottom: 1px solid $dark_10;
+  padding-bottom: 20px;
+
+  &__item {
+    margin-bottom: 41px;
+  }
+
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+
+  &__img_smile {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-right: 10px;
+    background: url("/assets/blocks/buns/smile.png") center no-repeat;
+  }
+
+  &__img_city {
+    @extend .buns__img_smile;
+    background: url("/assets/blocks/buns/city.png") center no-repeat;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,8 @@
+mixin rateButton(starsNumDeafault)
+    - var n = 0;
+    .rate-button(data-stars_num= starsNumDeafault)
+        while (++n < 6)
+            if (n <= starsNumDeafault)
+                .rate-button__star_checked(data-star= n)
+            else
+                .rate-button__star(data-star= n)

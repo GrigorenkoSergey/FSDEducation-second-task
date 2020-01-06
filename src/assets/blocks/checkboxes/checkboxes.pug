@@ -1,0 +1,31 @@
+mixin checkbox(name, value, checked)
+    - let isChecked = checked === "checked";
+    div.checkbox
+        input.checkbox__input(type="checkbox" id= name name= name checked= isChecked) 
+        label.checkbox__label(for= name) !{value}  
+
+
+mixin ulCheckboxContainer(list, expanded)
+    - let isHidden = expanded !== true;
+    ul.checkbox-list(hidden= isHidden)
+        each val, key in list
+            li.checkbox-list__li
+                +checkbox(key, val)
+
+mixin expandable-checkbox-list(list, expanded)
+    - let className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
+    .expandable-checkbox-list
+        .expandable-checkbox-list__title(class= `${className}`) expandable checkbox list
+        +ulCheckboxContainer(list, expanded)
+
+mixin checkboxButtons(list)
+    .checkbox-buttons
+        .checkbox-buttons__title checkbox buttons
+        +ulCheckboxContainer(list, true)
+
+mixin rich-checkbox(name, value, description, checked)
+    - let isChecked = checked === "checked";
+    div.checkbox
+        input.rich-checkbox__input(type="checkbox" id= name name= name checked= isChecked) 
+        label.rich-checkbox__label(for= name) !{value}  
+    span.rich-checkbox__span !{description}

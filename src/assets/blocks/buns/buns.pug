@@ -1,0 +1,20 @@
+//- Пример массива плюшек
+- 
+    var bunsArr = [
+        {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
+        {name: "city", title: "Удобство", description: "Окно в каждой из спален"},
+    ]
+    //- bunsArr.extraClasses = {
+    //-     nameClass: "green_background",
+    //-     titleClass: "red",
+    //-     descriptionClass: "red"
+    //- }
+mixin buns(bunsArr)
+    - let { extraClasses = {} } = bunsArr;
+    - let {nameClass = "", titleClass = "", descriptionClass = ""} = extraClasses;
+    .buns
+        each item in bunsArr
+            .buns__item
+                div(class= `buns__img_${item.name}` class= nameClass)
+                .buns__title(class= titleClass) #{item.title}
+                .buns__description(class= descriptionClass) #{item.description}

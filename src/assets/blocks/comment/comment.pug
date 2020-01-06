@@ -1,0 +1,25 @@
+//- Пример комментатора
+- 
+    let reviewer = {
+        avatarSrc: "/assets/blocks/comment/image.png",
+        name: "Мурад Сарафанов",
+        term: "5 дней назад", 
+        likeButton: {
+            counter: 12,
+            isPushed: true,
+        },
+        content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару - никто не жаловался из соседей.",
+    }
+
+mixin comment(reviewer)
+    .comment
+        img.comment__avatar(src= reviewer.avatarSrc)
+        span.comment__name #{reviewer.name}
+        span.comment__term #{reviewer.term}
+        .comment__like-button
+            button.like-button(
+                class= reviewer.likeButton.isPushed ? "like-button_pushed" : ""
+            )
+                span.like-button__counter #{reviewer.likeButton.counter}
+        p.comment__content #{reviewer.content}
+

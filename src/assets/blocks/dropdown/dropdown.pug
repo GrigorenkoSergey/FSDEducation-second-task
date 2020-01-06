@@ -1,0 +1,65 @@
+//- example of description object
+- 
+    let dropdownDefault = {
+        name: "guests", 
+        extraClasses: {
+            dropdownClass: "dropdown_guests", 
+        },
+
+        content: {
+            title: "dropdown",
+            input: "Сколько гостей",
+            items: {
+                adults: "Взрослые",
+                kids: "Дети",
+                babies: "Младенцы"
+            },
+            counters: {
+                adults_num: 0,
+                kids_num: 0,
+                babies_num: 0
+            },   
+        },
+        //- покажем кнопки "Очистить" и "применить"?
+        showButtons: true,
+        //-showReset действует, только если shohwButtons: true
+        showReset: false, 
+    }
+
+mixin counter(dataItem, value)
+    .dropdown__trigger
+        if (value) 
+            .dropdown__circle(data-direction = "-") -
+        else 
+            .dropdown__circle(data-direction = "-").dropdown__circle_disabled                                                                                                                                                            -
+        span(data-item= dataItem)= value
+        .dropdown__circle(data-direction = "+") +
+
+mixin dropdown(obj, expanded)
+    - let {name, extraClasses = {} } = obj;
+    - let {title, input, items, counters, } = obj.content;
+    - let {inputClass = "", containerClass = "", dropdownClass = ""} = extraClasses;
+    - 
+        if (expanded === true) {
+            inputClass = "dropdown__input_expanded";
+            containerClass = "dropdown__container_expanded";
+        }
+        
+    .dropdown(data-name= name class= dropdownClass)
+        .dropdown__title #{title}
+        .dropdown__input(class= inputClass)
+            span #{input}
+        .dropdown__container(class= containerClass)
+            .dropdown__items
+                each val, key in items
+                    span(data-item= key) #{val}
+            .dropdown__counters
+                each val, key in counters
+                    +counter(key, val)
+            if (obj.showButtons)
+                .dropdown__buttons
+                    if (obj.showReset) 
+                        .dropdown__button-reset Очистить
+                    else 
+                        .dropdown__button-reset(hidden) Очистить                    
+                    .dropdown__button-apply Применить

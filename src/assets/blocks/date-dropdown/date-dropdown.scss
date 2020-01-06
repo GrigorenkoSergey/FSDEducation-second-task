@@ -1,0 +1,18 @@
+.date-dropdown {
+    width: 150px;
+    height: 44px;
+    border: 1px solid $dark_25;
+    border-radius: 4px;
+    padding-left: 15px;
+    color: $dark_75;
+    background: url("/assets/blocks/date-dropdown/expand_more.png") right no-repeat; 
+    //оставлю пока флажок выбора, т.к. еще не определился с назначением и архитектурой блока
+    appearance: none;  //удалить стандартный флажок выбора  
+    cursor: pointer;
+    outline: none;
+  
+    &:focus,
+    &:hover {
+      border-color: $dark_50;
+    }
+  }

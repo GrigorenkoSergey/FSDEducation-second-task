@@ -1,0 +1,17 @@
+mixin radioButton(id, name, value, checked)
+    input.radio-buttons__input(type="radio" id= id name= name checked= checked)   
+    label.radio-buttons__label(for= id) !{value}
+
+
+//- Пример массива кнопок buttonsArr
+- 
+    let buttonsListDefault = [
+        {id: "man", name: "sex", value: "Мужчина", checked: true}, 
+        {id: "woman", name: "sex", value: "Женщина", checked: false},                         
+    ];
+
+mixin radioButtonsGroup(buttonsArr)
+    .radio-buttons
+        each item in buttonsArr
+            - let {id, name, value, checked} = item;
+            +radioButton(id, name, value, checked)
