@@ -1,5 +1,6 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/dropdown/dropdown.scss";
+@import '~js-datepicker/src/datepicker';
 
 body {
   background: #f4f4f6;
@@ -25,4 +26,8 @@ body {
   &__title {
     width: 320px;
   }
+}
+
+.search-form__dropdown {
+  margin-top: 105px;
 }

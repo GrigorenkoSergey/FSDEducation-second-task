@@ -34,5 +34,7 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "js-datepicker": "^5.2.1"
+  }
 }
