@@ -1,0 +1,22 @@
+extends ../../assets/blocks/template/template.pug
+
+block includes
+    include ../../assets/blocks/dropdown/dropdown.pug 
+
+block scripts
+    script(src="/assets/blocks/dropdown/dropdown.js")
+
+block variables
+    - 
+        var titleName = 'Cards'
+block content
+
+    .search-form-entry_1
+        form.form
+            .form__title 
+                h1 Найдём номера под ваши пожелания
+            .search-form
+                .date-dropdown
+                +dropdown(dropdownDefault)
+                
+    

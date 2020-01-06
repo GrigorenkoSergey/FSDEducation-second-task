@@ -12,6 +12,7 @@ $primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
 /*стили текста */
 $bodyFont: normal 14px/24px Montserrat;
+$titleFont: 'Quicksand', 'OpenSans', Arial, sans-serif;
 
 /* сброс стилей браузера */
 * { box-sizing: border-box; }
@@ -89,6 +90,15 @@ q:before, q:after {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/assets/fonts/OpenSansBold/OpenSansBold.eot');
+  src: url('/assets/fonts/OpenSansBold/OpenSansBold.woff') format('woff'),
+       url('/assets/fonts/OpenSansBold/OpenSansBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body{
   width: 1440px;
   height: 1853px;
@@ -108,7 +118,7 @@ body{
 }
 
 h1 {
-  font-family: Quicksand;
+  font-family: $titleFont;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
