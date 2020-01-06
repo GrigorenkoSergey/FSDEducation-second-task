@@ -1,0 +1,10 @@
+mixin button(modifiers, innerText)
+    //- usage
+    //- +button("button_white button_disabled", "click me")
+    button.button(class= modifiers) #{innerText}
+
+mixin button-text(modifiers, innerText)
+    button.button-text(class= modifiers) #{innerText}
+
+mixin button-payment(modifiers, innerText)
+    button.button-payment(class= modifiers) #{innerText}

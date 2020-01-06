@@ -9,6 +9,9 @@
 @import "src/assets/blocks/rate-button/rate-button.scss";
 @import "src/assets/blocks/comment/comment.scss";
 @import "src/assets/blocks/range-slider/range-slider.scss";
+@import "src/assets/blocks/buttons/buttons.scss";
+@import "src/assets/blocks/pagination/pagination.scss";
+@import "src/assets/blocks/bullet-list/bullet-list.scss";
 
 
 $inputWidth: 320px;
@@ -190,7 +193,6 @@ main {
   }
 }
 
-
 .example-toggle {
   margin-top: 40px;
 
@@ -218,7 +220,7 @@ main {
 }
 
 .example-rate-buttons {
-  margin-top: 40px;
+  margin-top: 41px;
   width: 261px;
 
   &__title {
@@ -234,12 +236,13 @@ main {
 .example-dropdown-guests {
   margin-top: 197px;
 }
+
 .example-dropdown-guests_new-avatar {
   margin-top: 233px;
 }
 
 .example-rich-checkbox-buttons {
-  margin-top: 256px;
+  margin-top: 257px;
 }
 
 .example-comments {
@@ -248,10 +251,6 @@ main {
   left: 586px;
   width: 711px;
   height: 133px;
-}
-
-.example-range-slider {
-
 }
 
 .example-button {
@@ -277,221 +276,22 @@ main {
   }
 }
 
-.button {
-  width: 99px;
-  height: 44px;
-  border-radius: 22px;
-  @extend h3;
-  color: white;
-  position: relative;
-  z-index: 1;
-  background: none;
-  outline: none;
-
-  &_default::before,
-  &_disabled::before,
-  &_white::before {
-    content: "";
-    display: block;
-    width: 99px;
-    height: 44px;
-    border-radius: 22px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background: $primary-gradient;
-  }
-
-  &_disabled::before {
-    opacity: 0.5;
-  }
-
-  &_white {
-    color: $purple;
-  }
-
-  &_white::after {
-    content: "";
-    display: block;
-    width: 95px;
-    height: 40px;
-    background: white;
-    border-radius: 22px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    z-index: -1;
-  }
-
-  &-text {
-    @extend h3;
-    color: $purple;
-    border: none;
-    background: none;
-    outline: none;
-  }
-  &-text_disabled {
-    color: $dark_50;
-  }
-}
-
 .example-button-payment {
   margin-top: 30px;
 }
 
-.button-payment {
-  @extend .button;
-  width: 320px;
-  background: $primary-gradient;
-  position: relative;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 15px;
-    height: 2px;
-    background-color: white;
-    position: absolute;
-    left: 290px;
-    top: 21.5px;
-  }
-
-  &::after {
-    content: "";
-    display: inline-block;
-    width: 9px;
-    height: 9px;
-    border: 2px solid white;
-    border-bottom: none;
-    border-left: none;
-    transform: rotate(45deg);
-    position: absolute;
-    left: 293px;
-    top: 17px;
-  }
-}
-
 .example-pagination {
-  margin-top: 114px;
+  margin-top: 113px;
 
   &__title {
-    margin-bottom: 17px;
+    margin-bottom: 16px;
   }
 }
-
-.pagination {
-  width: 241px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  &__li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-  }
-  &__li_selected {
-    border-radius: 50%;
-    background: $primary-gradient;
-  }
-
-  &__a {
-    text-decoration: none;
-    color: $dark_50;
-    font: $bodyFont;
-    line-height: 15px;
-    font-size: 12px;
-  }
-  &__a_selected {
-    font-weight: bold;
-    color: white;
-  }
-
-  &__next-arrow {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-    position: relative;
-
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 15px;
-      height: 2px;
-      background-color: white;
-      position: absolute;
-      left: 12px;
-      top: 19px;
-    }
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      border: 2px solid white;
-      border-bottom: none;
-      border-left: none;
-      transform: rotate(45deg);
-      position: absolute;
-      left: 15px;
-      top: 14.5px;
-    }
-  }
-
-  &__description {
-    display: inline-block;
-    padding-top: 7px;
-  }
-}
-
 .example-bullet-list {
-  position: absolute;
-  width: 292px;
-  height: 147px;
-  left: 979px;
-  top: 1196px;
+  margin-top: 257px;
 
   &__title {
     margin-bottom: 13px;
   }
 }
 
-.bullet-list {
-  &__li {
-    list-style-type: none;
-    margin-left: 20px;
-    font: $bodyFont;
-    margin-bottom: 10px;
-    position: relative;
-  }
-
-  &__li::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    left: -20px;
-    top: 7px;
-    width: 10px;
-    height: 10px;
-    background: $dark_25;
-    border-radius: 50px;
-  }
-}
-
-.red {
-  color: red;
-}
-.green_background {
-  background: green;
-}

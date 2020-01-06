@@ -1,0 +1,11 @@
+mixin pagination   
+    .pagination
+        ul.pagination__list
+            - var pages = [1, 2, 3, "...", 15];
+            li.pagination__li.pagination__li_selected
+                a.pagination__a.pagination__a_selected(href = "#") !{pages[0]}
+            each val in pages.slice(1)
+                li.pagination__li
+                    a.pagination__a(href = "#") !{val}
+            li.pagination__next-arrow
+        span.pagination__description 1 - 12 из 100+ вариантов аренды

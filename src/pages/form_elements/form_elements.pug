@@ -10,6 +10,9 @@ block includes
     include ../../assets/blocks/rate-button/rate-button.pug   
     include ../../assets/blocks/comment/comment.pug  
     include ../../assets/blocks/range-slider/range-slider.pug 
+    include ../../assets/blocks/buttons/buttons.pug    
+    include ../../assets/blocks/pagination/pagination.pug
+    include ../../assets/blocks/bullet-list/bullet-list.pug
 
 block scripts
     script(src="/assets/blocks/dropdown/dropdown.js")
@@ -22,10 +25,9 @@ block scripts
     script(src="/assets/blocks/range-slider/range-slider.js")
 
 block variables
-
-    - var titleName = 'From Elements'
-
     - 
+        var titleName = 'From Elements'
+
         var list1 = {
             "breakfast": "Завтрак",
             "desk": "Письменный стол",
@@ -37,14 +39,12 @@ block variables
             "shampoo_2": "Шампунь",
         }
 
-    -
         var list2 = {
             "smoking": "Можно курить",
             "pets": "Можно с питомцами",
             "guests": "Можно пригласить гостей <br />(до 10 человек)" 
         }
 
-    - 
         var dropdownRooms = {
             name: "rooms", 
             extraClasses: {
@@ -192,33 +192,32 @@ block content
                 .example-button__title
                     h3 buttons
                 .example-button__container
-                    button.button.button_default click me
-                    button.button.button_disabled click me
-                    button.button.button_white click me
-                    button.button.button_white.button_disabled click me
-                    button.button-text click me
-                    button.button-text.button-text_disabled.button_moved click me
+                    +button("button_default", "click me")
+                    +button("button_disabled", "click me")
+                    +button("button_white", "click me")
+                    +button("button_white button_disabled", "click me")
+                    +button-text("", "click me")
+                    +button-text("button-text_disabled button_moved", "click me")
+
                 .example-button-payment
-                    button.button-payment перейти к оплате
+                    +button-payment("", "перейти к оплате")
 
             .example-pagination
                 .example-pagination__title
                     h3 pagination
-                .pagination
-                    ul.pagination__list
-                        - var pages = [1, 2, 3, "...", 15];
-                        li.pagination__li.pagination__li_selected
-                            a.pagination__a.pagination__a_selected(href = "#") !{pages[0]}
-                        each val in pages.slice(1)
-                            li.pagination__li
-                                a.pagination__a(href = "#") !{val}
-                        li.pagination__next-arrow
-                    span.pagination__description 1 - 12 из 100+ вариантов аренды
+                +pagination
 
             .example-dropdown-guests_new-avatar
-                - var obj = Object.assign({}, dropdownDefault);
-                - obj.showReset = true;
-                +dropdown(obj)
+                - 
+                    var obj = Object.assign({}, dropdownDefault);
+                    obj.content.input = "3 гостя"
+                    obj.content.counters = {
+                        adults_num: 2,
+                        kids_num: 1,
+                        babies_num: 0
+                    }
+                    obj.showReset = true;
+                +dropdown(obj, true)
 
             .example-bullet-list
                 .example-bullet-list__title
@@ -226,8 +225,6 @@ block content
                     - 
                         var bulletListArr = ["Нельзя с питомцами", 
                             "Без вечеринок и мероприятий", 
-                            "Время прибытия — после 13:00,<br /> а выезд до 12:00"]                     
-                ul.bullet-list
-                    each val in bulletListArr
-                        li.bullet-list__li !{val}
+                            "Время прибытия — после 13:00,<br />а выезд до 12:00"]                     
+                +bullet-list(bulletListArr)
 

@@ -36,10 +36,11 @@ mixin counter(dataItem, value)
         .dropdown__circle(data-direction = "+") +
 
 mixin dropdown(obj, expanded)
-    - let {name, extraClasses = {} } = obj;
-    - let {title, input, items, counters, } = obj.content;
-    - let {inputClass = "", containerClass = "", dropdownClass = ""} = extraClasses;
-    - 
+    -  
+        let {name, extraClasses = {} } = obj;
+        let {title, input, items, counters, } = obj.content;
+        let {inputClass = "", containerClass = "", dropdownClass = ""} = extraClasses;
+
         if (expanded === true) {
             inputClass = "dropdown__input_expanded";
             containerClass = "dropdown__container_expanded";
