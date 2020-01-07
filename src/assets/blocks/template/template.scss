@@ -12,7 +12,8 @@ $primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
 /*стили текста */
 $bodyFont: normal 14px/24px Montserrat;
-$titleFont: 'Quicksand', 'OpenSans', Arial, sans-serif;
+$titleFont-family: 'Quicksand', 'OpenSans', Arial, sans-serif;
+$titleFont: bold 19px/24px $titleFont-family;
 
 /* сброс стилей браузера */
 * { box-sizing: border-box; }
@@ -118,7 +119,7 @@ body{
 }
 
 h1 {
-  font-family: $titleFont;
+  font-family: $titleFont-family;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;

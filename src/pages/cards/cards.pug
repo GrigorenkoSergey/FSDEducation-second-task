@@ -1,6 +1,6 @@
 extends ../../assets/blocks/template/template.pug
 
-    
+
 block includes
     include ../../assets/blocks/dropdown/dropdown.pug 
 
@@ -18,9 +18,13 @@ block content
                 h1 Найдём номера под ваши пожелания
             .search-form
                 .date-dropdown
-                    input(type="text" id="picker")
+                    input(type="text" name= "arrivalDate")
+                    input(type="text" name= "departureDate")
                 .search-form__dropdown
                     - dropdownDefault.content.title = "Гости"
                     +dropdown(dropdownDefault)
-                
-    
+
+    .calendar
+        .date-dropdown
+            input(type="text" name= "arrivalDate_1" value= "19.08.2019" class="_invisible")
+            input(type="text", name= "departureDate_1" value= "23.08.2019" class="_invisible")           

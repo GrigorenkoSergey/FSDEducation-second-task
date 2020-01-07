@@ -1,0 +1,315 @@
+$width: 320px;
+$radius: $width * 0.016891;
+$transition: 0.3s;
+$font-size: 19px;
+
+/*
+  All a user has to do to change the calendar size is
+  change the font-size on the container and everything
+  magically resizes accordingly. Relative units ftw!
+*/
+.qs-datepicker-container {
+  position: absolute;
+  width: $width;
+  display: flex;
+  flex-direction: column;
+  z-index: 9001;
+  user-select: none;
+  border: 1px solid $dark_25;
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+
+  &.qs-centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.qs-hidden {
+    display: none;
+  }
+}
+
+.qs-datepicker {
+  .qs-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity $transition;
+    display: flex;
+    flex-direction: column;
+
+    &.qs-hidden {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .qs-overlay-year {
+      // Overlay year input element.
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid white;
+      border-radius: 0;
+      color: white;
+      font-size: $font-size;
+      padding: 0.25em 0;
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+
+    .qs-close {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .qs-submit {
+      cursor: pointer;
+
+      &.qs-disabled {
+        color: $dark_25;
+        border-color: gray;
+        cursor: not-allowed;
+      }
+    }
+
+    .qs-overlay-month-container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+
+    .qs-overlay-month {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: calc(100% / 3);
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity $transition / 2;
+
+      &.active,
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .qs-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: $titleFont;
+    margin-top: 19px;
+
+    &.qs-blur {
+      filter: blur(5px);
+    }
+  }
+
+  .qs-arrow {
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -12px;
+      display: inline-block;
+      width: 23.93px;
+      height: 24px;
+      background: url("/assets/blocks/datepicker/arrow_forward.png") center no-repeat;
+    }
+
+    &.qs-left:after {
+      left: 19px;
+      transform: rotate(180deg);
+    }
+
+    &.qs-right:after {
+      right: 19px;
+    }
+  }
+
+  .qs-month-year {
+    cursor: pointer;
+    text-align: center;
+    color: $dark_100;
+
+    &:focus,
+    &:active:focus {
+      outline: none;
+    }
+  }
+
+  .qs-squares {
+    display: flex;
+    flex-wrap: wrap;
+    filter: blur(0px);
+    transition: filter $transition;
+    padding-top: 30px;
+    padding-left: 20.2px;
+    font: $bodyFont;
+    font-size: 12px;
+    line-height: 40px;
+
+    &.qs-blur {
+      filter: blur(5px);
+    }
+  }
+
+  .qs-square {
+    width: 39.88px;
+    height: 40px;
+    text-align: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    cursor: pointer;
+    position: relative;
+    color: $dark_50;
+    // transition: background .1s;
+    // border-radius: $radius;
+
+    &.qs-current {
+      font-weight: bold;
+
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    &.qs-active {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        left: 1px;
+        background: $primary-gradient;
+        border-radius: 50%;
+      }
+
+      span {
+        color: white;
+        font-weight: bold;
+        position: absolute;
+        left: 13px;
+      }
+    }
+
+    &.qs-range-date-middle {
+      position: relative;
+      span::before {
+        content: "";
+        display: inline-block;
+        width: 39.88px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        background: $primary-gradient;
+        opacity: 0.25;
+      }
+
+      &:not(.qs-range-date-0):not(.qs-range-date-6) {
+        border-radius: 0;
+      }
+    }
+
+    &.qs-disabled {
+      span {
+        // color: $dark_25;
+      }
+    }
+
+    &.qs-empty {
+      cursor: default;
+      color: $dark_25;
+    }
+
+    &.qs-disabled {
+      cursor: not-allowed;
+    }
+
+    &.qs-day {
+      cursor: default;
+      font-weight: bold;
+      color: $purple;
+    }
+
+    &.qs-num {
+      // color: $dark_50;
+    }
+
+    &:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active) {
+      &:hover {
+        background: orange;
+      }
+    }
+  }
+
+  .qs-event {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: $width * 0.03;
+      height: $width * 0.03;
+      border-radius: 50%;
+      background: #07f;
+      bottom: 0;
+      right: 0;
+    }
+
+    &.qs-disabled,
+    &.qs-empty {
+      &:after {
+        background: lighten(#07f, 40);
+      }
+    }
+  }
+}
+
+.qs-range-date-start {
+  span::after {
+    content: "";
+    display: inline-block;
+    width: 19.94px;
+    height: 40px;
+    position: absolute;
+    left: 7px;
+    background: $primary-gradient;
+    opacity: 0.25;
+    z-index: -1;
+  }
+}
+
+.qs-range-date-end {
+  span::after {
+    content: "";
+    display: inline-block;
+    width: 19.94px;
+    height: 40px;
+    position: absolute;
+    right: 7.5px;
+    background: $primary-gradient;
+    opacity: 0.25;
+    z-index: -1;
+  }
+}

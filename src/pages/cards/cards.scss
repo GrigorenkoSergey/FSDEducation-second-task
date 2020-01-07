@@ -1,6 +1,6 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/dropdown/dropdown.scss";
-@import '~js-datepicker/src/datepicker';
+@import "src/assets/blocks/datepicker/datepicker.scss";
 
 body {
   background: #f4f4f6;
@@ -12,6 +12,17 @@ body {
   top: 150px;
 }
 
+.calendar {
+  position: absolute;
+  left: 980px;
+  top: 120px;
+}
+
+._invisible {
+  visibility: hidden;
+}
+
+
 .form {
   width: 380px;
   height: 374px; //потом убрать
@@ -22,6 +33,7 @@ body {
   border-radius: 4px;
   padding-top: 39px;
   padding-left: 29px;
+
 
   &__title {
     width: 320px;
