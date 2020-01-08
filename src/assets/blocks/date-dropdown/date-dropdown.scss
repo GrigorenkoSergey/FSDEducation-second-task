@@ -1,18 +1,58 @@
 .date-dropdown {
+  width: 320px;
+  // position: relavive;
+  display: flex;
+  justify-content: space-between;
+
+  .qs-datepicker-container {
+    height: 368px;
+  }
+
+  &:focus,
+  &:hover {
+    border-color: $dark_50;
+  }
+
+  &__item {
     width: 150px;
+  }
+  &__input {
+    width: inherit;
     height: 44px;
+    margin-top: 5px;
     border: 1px solid $dark_25;
     border-radius: 4px;
     padding-left: 15px;
+    line-height: 18px;
     color: $dark_75;
-    background: url("/assets/blocks/date-dropdown/expand_more.png") right no-repeat; 
-    //оставлю пока флажок выбора, т.к. еще не определился с назначением и архитектурой блока
-    appearance: none;  //удалить стандартный флажок выбора  
+    background: url("/assets/blocks/date-dropdown/expand_more.png") right no-repeat;
     cursor: pointer;
     outline: none;
-  
-    &:focus,
-    &:hover {
-      border-color: $dark_50;
-    }
   }
+
+  &__buttons {
+    cursor: pointer;
+    font-family: $bodyFont-family;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 328px;
+    z-index: 9002;
+  }
+
+  &__button-reset {
+    float: left;
+    color: $dark_50;
+    text-align: left;
+  }
+
+  &__button-apply {
+    float: right;
+    color: $purple;
+  }
+}

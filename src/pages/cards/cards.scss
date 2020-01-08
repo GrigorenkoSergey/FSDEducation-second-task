@@ -1,6 +1,7 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/dropdown/dropdown.scss";
 @import "src/assets/blocks/datepicker/datepicker.scss";
+@import "src/assets/blocks/date-dropdown/date-dropdown.scss";
 
 body {
   background: #f4f4f6;
@@ -15,7 +16,7 @@ body {
 .calendar {
   position: absolute;
   left: 980px;
-  top: 120px;
+  top: 101px;
 }
 
 ._invisible {
@@ -41,5 +42,10 @@ body {
 }
 
 .search-form__dropdown {
-  margin-top: 105px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.search-form-date-dropdown {
+  margin-top: 21px;
 }

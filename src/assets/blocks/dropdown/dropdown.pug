@@ -59,8 +59,5 @@ mixin dropdown(obj, expanded)
                     +counter(key, val)
             if (obj.showButtons)
                 .dropdown__buttons
-                    if (obj.showReset) 
-                        .dropdown__button-reset Очистить
-                    else 
-                        .dropdown__button-reset(hidden) Очистить                    
+                    .dropdown__button-reset(hidden= !obj.showReset) Очистить                    
                     .dropdown__button-apply Применить

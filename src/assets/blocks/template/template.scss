@@ -9,9 +9,12 @@ $purple: #BC9CFF;
 $green: #6FCF97;
 
 $primary-gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$secondary-gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 
 /*стили текста */
+$bodyFont-family: Montserrat;
 $bodyFont: normal 14px/24px Montserrat;
+
 $titleFont-family: 'Quicksand', 'OpenSans', Arial, sans-serif;
 $titleFont: bold 19px/24px $titleFont-family;
 

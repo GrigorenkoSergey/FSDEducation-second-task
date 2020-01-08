@@ -1,15 +1,11 @@
+//Передедал исходную таблицу стилей
 $width: 320px;
-$radius: $width * 0.016891;
 $transition: 0.3s;
 $font-size: 19px;
 
-/*
-  All a user has to do to change the calendar size is
-  change the font-size on the container and everything
-  magically resizes accordingly. Relative units ftw!
-*/
 .qs-datepicker-container {
   position: absolute;
+  transition: top $transition;
   width: $width;
   display: flex;
   flex-direction: column;
@@ -37,6 +33,7 @@ $font-size: 19px;
     position: absolute;
     top: 0;
     left: 0;
+    background: rgba(0, 0, 0, 0.75);
     color: white;
     width: 100%;
     z-index: 1;
@@ -72,12 +69,17 @@ $font-size: 19px;
     .qs-close {
       cursor: pointer;
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 3px;
+      right: 7px;
     }
 
     .qs-submit {
+      border: 1px solid white;
+      border-radius: 4px;
+      padding: 0.5em;
+      margin: 0 auto auto;
       cursor: pointer;
+      background: rgba(128, 128, 128, 0.4);
 
       &.qs-disabled {
         color: $dark_25;
@@ -115,6 +117,8 @@ $font-size: 19px;
     align-items: center;
     font: $titleFont;
     margin-top: 19px;
+    filter: blur(0px);
+    transition: filter $transition;
 
     &.qs-blur {
       filter: blur(5px);
@@ -176,20 +180,17 @@ $font-size: 19px;
     width: 39.88px;
     height: 40px;
     text-align: center;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     cursor: pointer;
     position: relative;
     color: $dark_50;
-    // transition: background .1s;
-    // border-radius: $radius;
 
     &.qs-current {
       font-weight: bold;
-
+      background: $secondary-gradient;
+      border-radius: 50%;
       span {
-        text-decoration: underline;
+        color: white;
+        font-weight: bold;
       }
     }
 
@@ -200,7 +201,7 @@ $font-size: 19px;
         width: inherit;
         height: inherit;
         position: absolute;
-        left: 1px;
+        left: 0px;
         background: $primary-gradient;
         border-radius: 50%;
       }
@@ -209,7 +210,24 @@ $font-size: 19px;
         color: white;
         font-weight: bold;
         position: absolute;
-        left: 13px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &.qs-range-date-start {
+      span::after {
+        content: "";
+        display: inline-block;
+        width: 39.88px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        background: $primary-gradient;
+        opacity: 0.25;
+        z-index: -1;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
       }
     }
 
@@ -226,14 +244,24 @@ $font-size: 19px;
         opacity: 0.25;
       }
 
-      &:not(.qs-range-date-0):not(.qs-range-date-6) {
+      &:not(.qs-range-date-0):not(.qs-range-date-6):not(.qs-current) {
         border-radius: 0;
       }
     }
 
-    &.qs-disabled {
-      span {
-        // color: $dark_25;
+    &.qs-range-date-end {
+      span::after {
+        content: "";
+        display: inline-block;
+        width: 39.88px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        background: $primary-gradient;
+        opacity: 0.25;
+        z-index: -1;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
       }
     }
 
@@ -252,29 +280,32 @@ $font-size: 19px;
       color: $purple;
     }
 
-    &.qs-num {
-      // color: $dark_50;
-    }
-
     &:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active) {
       &:hover {
-        background: orange;
+        background: $purple;
+        border-radius: 50%;
+        color: white;
+        font-weight: bold;
       }
     }
   }
 
   .qs-event {
     position: relative;
+    color: white;
+    font-weight: bold;
 
+    //Пришлось переделать исключительно для того, чтобы выделить дату как в макете
     &:after {
       content: "";
       position: absolute;
-      width: $width * 0.03;
-      height: $width * 0.03;
+      width: 39.88px;
+      height: 40px;
       border-radius: 50%;
-      background: #07f;
+      background: $secondary-gradient;
       bottom: 0;
       right: 0;
+      z-index: -1;
     }
 
     &.qs-disabled,
@@ -283,33 +314,5 @@ $font-size: 19px;
         background: lighten(#07f, 40);
       }
     }
-  }
-}
-
-.qs-range-date-start {
-  span::after {
-    content: "";
-    display: inline-block;
-    width: 19.94px;
-    height: 40px;
-    position: absolute;
-    left: 7px;
-    background: $primary-gradient;
-    opacity: 0.25;
-    z-index: -1;
-  }
-}
-
-.qs-range-date-end {
-  span::after {
-    content: "";
-    display: inline-block;
-    width: 19.94px;
-    height: 40px;
-    position: absolute;
-    right: 7.5px;
-    background: $primary-gradient;
-    opacity: 0.25;
-    z-index: -1;
   }
 }
