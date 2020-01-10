@@ -7,6 +7,16 @@ for (let item of dropdown) {
     input.addEventListener("click", function (e) {
         container.classList.toggle("dropdown__container_expanded");
         this.classList.toggle("dropdown__input_expanded");
+
+        document.addEventListener("click", handleClickOutsideBlock);
+
+        function handleClickOutsideBlock(e) {
+            if (e.target.closest(".dropdown")) return;
+
+            document.removeEventListener("click", handleClickOutsideBlock);
+            input.classList.remove("dropdown__input_expanded");
+            container.classList.remove("dropdown__container_expanded");
+        }
     });
 
     container.addEventListener("click", function (e) {
@@ -63,7 +73,7 @@ for (item of guestsDropdownArr) {
     applyButton.addEventListener("click", sendDataToServer);
     resetButton.addEventListener("click", cleanInput)
 
-    item.inputContentRender = function () {     
+    item.inputContentRender = function () {
         let adultsNum = +this.querySelector("span[data-item = 'adults_num']").textContent;
         let kidsNum = +this.querySelector("span[data-item = 'kids_num']").textContent;
         let babiesNum = +this.querySelector("span[data-item = 'babies_num']").textContent;
@@ -88,10 +98,3 @@ for (item of guestsDropdownArr) {
         console.log("sending data to server");
     }
 }
-
-
-
-
-
-
-

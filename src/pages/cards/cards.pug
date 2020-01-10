@@ -2,10 +2,9 @@ extends ../../assets/blocks/template/template.pug
 
 
 block includes
-    include ../../assets/blocks/dropdown/dropdown.pug 
-
+    include ../../assets/blocks/search-form/search-form.pug
 block scripts
-    script(src="/assets/blocks/dropdown/dropdown.js")
+    //- script(src="/assets/blocks/dropdown/dropdown.js")
 
 block variables
     - 
@@ -13,21 +12,7 @@ block variables
 block content
 
     .search-form-entry_1
-        form.form
-            .form__title 
-                h1 Найдём номера под ваши пожелания
-            .search-form
-                .search-form-date-dropdown
-                    .date-dropdown
-                        .date-dropdown__item
-                            h3 Прибытие
-                            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." name= "arrivalDate")
-                        .date-dropdown__item
-                            h3 Выезд
-                            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." name= "departureDate")
-                .search-form__dropdown
-                    - dropdownDefault.content.title = "Гости"
-                    +dropdown(dropdownDefault)
+        +search-form()
 
     .calendar
         .date-dropdown

@@ -1,1 +1,8 @@
-//- Пока не описал, не пойму, как это будет работать
+mixin date-dropdown(arrivalTitle, departureTitle)
+    .date-dropdown
+        .date-dropdown__item
+            h3 !{arrivalTitle ? arrivalTitle : "Прибытие"}
+            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." name= "arrival")
+        .date-dropdown__item
+            h3 !{departureTitle ? departureTitle : "Выезд"}
+            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." name= "departure")

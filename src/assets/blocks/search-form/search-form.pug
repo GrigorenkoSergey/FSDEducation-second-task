@@ -1,0 +1,13 @@
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+
+mixin search-form()
+    form.form
+        .form__title 
+            h1 Найдём номера под ваши пожелания
+        .search-form
+            .search-form-date-dropdown
+                +date-dropdown()
+            .search-form__dropdown
+                - dropdownDefault.content.title = "Гости"
+                +dropdown(dropdownDefault)
