@@ -11,9 +11,12 @@ pickerOptions.id = 2;
 pickerOptions.position = "bl";
 
 
-const arrivalDate_1 = datepicker(document.querySelector("[name = arrivalDate_1]"), pickerOptions)
+const arrival_2 = datepicker(document.querySelector("[name = arrivalDate_1]"), pickerOptions)
+arrival_2.el.classList.add("_invisible");
 pickerOptions.alwaysShow = false;
-const departureDate_1 = datepicker(document.querySelector("[name =  departureDate_1]"), pickerOptions)
 
-arrivalDate_1.setDate(new Date(2019, 7, 19), true)
-departureDate_1.setDate(new Date(2019, 7, 23), true)
+const departure_2 = datepicker(document.querySelector("[name =  departureDate_1]"), pickerOptions)
+departure_2.el.classList.add("_invisible");
+
+arrival_2.setDate(new Date(2019, 7, 19), true)
+departure_2.setDate(new Date(2019, 7, 23), true)

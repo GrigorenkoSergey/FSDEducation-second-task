@@ -1,0 +1,19 @@
+@import "src/assets/blocks/dropdown/dropdown.scss";
+@import "src/assets/blocks/date-dropdown/date-dropdown.scss";
+@import "src/assets/blocks/buttons/buttons.scss";
+
+.search-form {
+  &__dropdown {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  &__date-dropdown {
+    margin-top: 22px;
+  }
+
+  &__payment {
+      margin-top: 31px;
+      margin-bottom: 29px;
+  }
+}

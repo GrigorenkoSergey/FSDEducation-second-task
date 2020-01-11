@@ -1,6 +1,6 @@
 @import "src/assets/blocks/template/template.scss";
-@import "src/assets/blocks/dropdown/dropdown.scss";
-@import "src/assets/blocks/date-dropdown/date-dropdown.scss";
+@import "src/assets/blocks/search-form/search-form.scss";
+
 
 body {
   background: #f4f4f6;
@@ -23,28 +23,8 @@ body {
 }
 
 
-.form {
-  width: 380px;
-  height: 374px; //потом убрать
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  padding-top: 39px;
-  padding-left: 29px;
 
 
-  &__title {
-    width: 320px;
-  }
-}
 
-.search-form__dropdown {
-  margin-top: 20px;
-  position: relative;
-}
 
-.search-form-date-dropdown {
-  margin-top: 21px;
-}
+

@@ -1,13 +1,16 @@
 include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
+include ../buttons/buttons.pug
 
 mixin search-form()
     form.form
         .form__title 
             h1 Найдём номера под ваши пожелания
         .search-form
-            .search-form-date-dropdown
+            .search-form__date-dropdown
                 +date-dropdown()
             .search-form__dropdown
                 - dropdownDefault.content.title = "Гости"
                 +dropdown(dropdownDefault)
+            .search-form__payment
+                +button-payment("", "Подобрать номер")

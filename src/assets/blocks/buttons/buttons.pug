@@ -7,4 +7,5 @@ mixin button-text(modifiers, innerText)
     button.button-text(class= modifiers) #{innerText}
 
 mixin button-payment(modifiers, innerText)
-    button.button-payment(class= modifiers) #{innerText}
+    button.button-payment(class= modifiers) 
+        span.button-payment__span #{innerText}
