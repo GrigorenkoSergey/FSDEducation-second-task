@@ -1,22 +1,18 @@
 import "./cards.scss";
 import "../../assets/blocks/search-form/search-form.js";
-import dateDropdown from "../../assets/blocks/date-dropdown/date-dropdown.js";
+import dateDropdowns from "../../assets/blocks/date-dropdown/date-dropdown.js";
+import "../../assets/blocks/final-check/final-check.js";
 
-//Отдельно сгенерируем календарик(мы не создавали для него отдельный блок)
-import datepicker from 'js-datepicker';
+let arrivals = dateDropdowns.arrivals;
+let departures = dateDropdowns.departures;
 
-let pickerOptions = dateDropdown.pickerOptions.arrival;
-pickerOptions.alwaysShow = true;
-pickerOptions.id = 2;
-pickerOptions.position = "bl";
+let arrival = arrivals.filter(item => item.el.dataset.name == "arrival_2")[0];
+arrival.el.classList.add("_invisible");
+arrival.alwaysShow = true;
+arrival.show();
 
+let departure = departures.filter(item => item.el.dataset.name == "departure_2")[0];
+departure.el.classList.add("_invisible");
 
-const arrival_2 = datepicker(document.querySelector("[name = arrivalDate_1]"), pickerOptions)
-arrival_2.el.classList.add("_invisible");
-pickerOptions.alwaysShow = false;
-
-const departure_2 = datepicker(document.querySelector("[name =  departureDate_1]"), pickerOptions)
-departure_2.el.classList.add("_invisible");
-
-arrival_2.setDate(new Date(2019, 7, 19), true)
-departure_2.setDate(new Date(2019, 7, 23), true)
+arrival.setDate(new Date(2019, 7, 19), true)
+departure.setDate(new Date(2019, 7, 23), true)

@@ -1,30 +1,29 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/search-form/search-form.scss";
-
+@import "src/assets/blocks/final-check/final-check.scss";
 
 body {
   background: #f4f4f6;
 }
 
-.search-form-entry_1 {
+.search-form-entry {
   position: absolute;
   left: 140px;
+  top: 150px;
+}
+
+.final-check-entry {
+  position: absolute;
+  left: 560px;
   top: 150px;
 }
 
 .calendar {
   position: absolute;
   left: 980px;
-  top: 101px;
+  top: 96px;
 }
 
 ._invisible {
   visibility: hidden;
 }
-
-
-
-
-
-
-

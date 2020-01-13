@@ -3,6 +3,9 @@
 @import "src/assets/blocks/buttons/buttons.scss";
 
 .search-form {
+  &__title {
+    width: 320px;
+  }
   &__dropdown {
     margin-top: 20px;
     position: relative;

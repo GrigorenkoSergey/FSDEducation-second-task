@@ -1,8 +1,22 @@
-mixin date-dropdown(arrivalTitle, departureTitle)
+- 
+    let dateDropdownDefault = {
+        arrival: {
+            title: "Прибытие",
+            name: "arrival",
+        },
+        departure: {
+            title: "Выезд",
+            name: "departure",
+        } 
+    }
+
+mixin date-dropdown(obj = dateDropdownDefault)
+    - let {title: arrivalTitle, name: arrivalName} = obj.arrival;
+    - let {title: departureTitle, name: departureName} = obj.departure;
     .date-dropdown
         .date-dropdown__item
-            h3 !{arrivalTitle ? arrivalTitle : "Прибытие"}
-            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." name= "arrival")
+            h3 !{arrivalTitle}
+            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." data-id="arrival" data-name= arrivalName name= arrivalName)
         .date-dropdown__item
-            h3 !{departureTitle ? departureTitle : "Выезд"}
-            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." name= "departure")
+            h3 !{departureTitle}
+            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." data-id="departure" data-name= departureName name= departureName)

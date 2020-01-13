@@ -18,11 +18,23 @@ let arrivalPickerOptions = {
     events: [new Date(2019, 7, 8)],
 };
 
-let departurePickerOption = Object.assign({}, arrivalPickerOptions);
-departurePickerOption.position = "br";
+let departurePickerOptions = Object.assign({}, arrivalPickerOptions);
+departurePickerOptions.position = "br";
 
-const arrival = datepicker(document.querySelector("[name = arrival"), arrivalPickerOptions);
-const departure = datepicker(document.querySelector("[name = departure]"), departurePickerOption);
+let arrivals = [];
+let departures = [];
+
+for (let item of document.querySelectorAll("[data-id='arrival']")) {
+    let arrival = datepicker(item, arrivalPickerOptions);
+    arrivals.push(arrival);
+    arrivalPickerOptions.id++;
+}
+
+for (let item of document.querySelectorAll("[data-id='departure']")) {
+    let departure = datepicker(item, departurePickerOptions);
+    departures.push(departure);
+    departurePickerOptions.id++;
+}
 
 function rerenderContainer(instanse) {
     let container = instanse.el.parentNode.querySelector(".qs-datepicker-container");
@@ -67,8 +79,8 @@ function rerenderContainer(instanse) {
 module.exports = {
     pickerOptions: {
         arrival: arrivalPickerOptions,
-        departure: departurePickerOption,
+        departure: departurePickerOptions,
     },
-    arrival: arrival,
-    departure: departure,
+    arrivals: arrivals,
+    departures: departures,
 }
