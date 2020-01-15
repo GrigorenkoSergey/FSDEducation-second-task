@@ -1,22 +1,107 @@
 .final-check {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  padding-bottom: 29px;
+
+  &__number {
+    @extend h1;
+  }
+  &__number::before {
+    content: "№ ";
+    font-size: 14px;
+  }
+  &__class {
+    margin-left: 5px;
+    font-family: $bodyFont-family;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: $purple;
+    font-weight: bold;
+  }
+  &__price {
+    font-size: 12px;
+    color: $dark_50;
+  }
+  &__price :first-child {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &__date-dropdown {
+    width: 100%;
+    margin-top: 17px;
+  }
+  &__dropdown {
+    margin-top: 21px;
+  }
+
+  &__calculation {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding-right: 30px;
-    &__number {
-        @extend h1;
+    margin-top: 7px;
+    margin-left: 1px;
+
+    .primary,
+    .service-discount,
+    .rate {
+      margin-top: 10px;
     }
-    &__number::before {
-        content: "№ ";
-        font-size: 14px;
+    .extra-service {
+      line-height: 18px;
+      margin-top: 13px;
     }
-    &__class {
-        margin-left: 5px;
-        font-family: $bodyFont-family;
-        text-transform: uppercase;
-        font-size: 12px;
-        color: $purple; 
-        font-weight: bold;
+    .service-discount,
+    .extra-service {
+      width: 214px;
+      position: relative;
     }
-    &__price {
+    .service-discount::after,
+    .extra-service::after {
+      content: "i";
+      position: absolute;
+      right: -25px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid $dark_25;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: bold;
+      text-align: center;
+      color: $dark_25;
+      box-sizing: border-box;
+      padding-top: 2px;
     }
+  }
+
+  &__total {
+    margin-top: 31px;
+    margin-left: 1px;
+    font-family: $titleFont-family;
+    font-size: 19px;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    .total {
+      flex: 0 1 auto;
+    }
+    .hr {
+      flex: 1 1 auto;
+      border-bottom: 1px dashed $dark_25;
+      height: 1px;
+      margin-top: 19px;
+    }
+    .total-price {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__button-payment {
+    margin-top: 20px;
+  }
 }
