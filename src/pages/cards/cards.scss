@@ -1,6 +1,7 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/search-form/search-form.scss";
 @import "src/assets/blocks/final-check/final-check.scss";
+@import "src/assets/blocks/log-in/log-in.scss";
 
 body {
   background: #f4f4f6;
@@ -26,4 +27,10 @@ body {
 
 ._invisible {
   visibility: hidden;
+}
+
+.registration {
+  position: absolute;
+  left: 140px;
+  top: 564px;
 }

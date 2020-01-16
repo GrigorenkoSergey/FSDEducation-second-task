@@ -8,9 +8,9 @@ mixin search-form()
             .search-form__title
                 h1 Найдём номера под ваши пожелания
             .search-form__date-dropdown
-                +date-dropdown()
+                +date-dropdown({})
             .search-form__dropdown
                 - dropdownDefault.content.title = "Гости"
                 +dropdown(dropdownDefault)
             .search-form__payment
-                +button-payment("", "Подобрать номер")
+                +button-payment("Подобрать номер", "")

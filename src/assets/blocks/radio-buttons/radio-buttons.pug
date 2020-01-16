@@ -10,7 +10,7 @@ mixin radioButton(id, name, value, checked)
         {id: "woman", name: "sex", value: "Женщина", checked: false},                         
     ];
 
-mixin radioButtonsGroup(buttonsArr)
+mixin radioButtonsGroup(buttonsArr = buttonsListDefault)
     .radio-buttons
         each item in buttonsArr
             - let {id, name, value, checked} = item;

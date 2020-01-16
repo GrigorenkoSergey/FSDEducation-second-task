@@ -4,6 +4,7 @@ extends ../../assets/blocks/template/template.pug
 block includes
     include ../../assets/blocks/search-form/search-form.pug
     include ../../assets/blocks/final-check/final-check.pug
+    include ../../assets/blocks/log-in/log-in.pug
 
 
 block variables
@@ -17,17 +18,15 @@ block content
     .final-check-entry
         +final-check()
 
-
     .calendar
         - 
             let dateDropdown = {
-                arrival: {
-                    title: "",
-                    name: "arrival_calendar",
-                },
-                departure: {
-                    title: "",
-                    name: "departure_calendar",
-                } 
+                arrivalTitle: "",
+                arrivalName: "arrival_calendar",
+                departureTitle: "",
+                departureName: "departure_calendar"
             }
         +date-dropdown(dateDropdown)
+
+    .registration
+        +log-in()

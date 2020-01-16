@@ -1,6 +1,7 @@
 extends ../../assets/blocks/template/template.pug
 
 block includes
+    include ../../assets/blocks/input/input.pug
     include ../../assets/blocks/date-dropdown/date-dropdown.pug
     include ../../assets/blocks/dropdown/dropdown.pug
     include ../../assets/blocks/checkboxes/checkboxes.pug
@@ -67,17 +68,17 @@ block content
                 .example-input__title
                     h3 text field
                     span default
-                input.input(type="text" placeholder="Email")
+                +input({placeholder: "Email"})
 
             .example-input 
                 .example-input__title
                     h3 text field
                     span hover / focus
-                input.input(type="text" class="hover" value="This is pretty awesome")
+                +input({value: "This is pretty awesome", extraClasses: "hover"})
 
             .example-dropdown-default  
                 span.example__modifier default
-                - var obj = Object.assign({}, dropdownDefault);
+                - var obj = dropdownDefault;
                 - obj.additionalClasses = {};
                 +dropdown(obj)
 
@@ -85,11 +86,10 @@ block content
                 .example-input__title
                     h3 masked text field
                     span default
-                input.input.input_type-date(type="date")
+                +input({type: "date", extraClasses: "input_type-date"})
 
-            br
             .example-date-dropdown  
-                +date-dropdown("date dropdown", "date dropdown")
+                +date-dropdown({arrivalTitle: "date dropdown", departureTitle: "date dropdown"})
 
             .example-input_filter
                 .example-input__title
@@ -100,7 +100,7 @@ block content
             .example-input_email
                 .example-input__title
                     h3 subscription text field
-                input.input_email(type="email" placeholder="Email")
+                +input({type: "email", placeholder: "Email", extraClasses: "input_email"})
 
             .example-input_dropdown
                 span.example__modifier default
@@ -132,7 +132,7 @@ block content
             .example-toggle
                 .example-toggle__title
                     h3 toggle
-                +toggler("get_special_offers", "Получать спецпредложения", "checked") 
+                +toggler("get_special_offers", "Получать спецпредложения", true) 
                 +toggler("get_special_offers_1", "Получать спецпредложения") 
 
             .example-like-buttons
@@ -167,15 +167,15 @@ block content
                 .example-button__title
                     h3 buttons
                 .example-button__container
-                    +button("button_default", "click me")
-                    +button("button_disabled", "click me")
-                    +button("button_white", "click me")
-                    +button("button_white button_disabled", "click me")
-                    +button-text("", "click me")
-                    +button-text("button-text_disabled button_moved", "click me")
+                    +button("click me", "button_default")
+                    +button("click me", "button_disabled")
+                    +button("click me", "button_white")
+                    +button("click me", "button_white button_disabled")
+                    +button-text("click me")
+                    +button-text("click me", "button-text_disabled button_moved")
 
                 .example-button-payment
-                    +button-payment("", "перейти к оплате")
+                    +button-payment("перейти к оплате")
 
             .example-pagination
                 .example-pagination__title
@@ -184,7 +184,7 @@ block content
 
             .example-dropdown-guests_new-avatar
                 - 
-                    var obj = Object.assign({}, dropdownDefault);
+                    var obj = dropdownDefault;
                     obj.content.input = "3 гостя"
                     obj.content.counters = {
                         adults_num: 2,

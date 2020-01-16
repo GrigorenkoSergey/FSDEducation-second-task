@@ -1,0 +1,49 @@
+$inputWidth: 320px;
+
+::-webkit-input-placeholder {
+  color: $dark_25;
+}
+
+::-moz-placeholder {
+  color: $dark_25;
+}
+
+/* Firefox 19+ */
+:-moz-placeholder {
+  color: $dark_25;
+}
+
+/* Firefox 18- */
+:-ms-input-placeholder {
+  color: $dark_25;
+}
+
+
+.input {
+  width: inherit;
+  height: 44px;
+  border: 1px solid $dark_25;
+  border-radius: 4px;
+  padding-left: 14px;
+  color: $dark_75;
+  // letter-spacing: -0.16px;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border-color: $dark_50;
+    outline: none;
+  }
+
+  &.hover {
+    border-color: $dark_75;
+    outline: none;
+  }
+
+  &_type-date {
+    color: $dark_25;
+    text-transform: uppercase;
+    line-height: 24px;
+  }
+}

@@ -11,10 +11,7 @@ mixin final-check()
                 span 9 990&#8381
                 span  в сутки
             .final-check__date-dropdown
-                - var dateDropdown = Object.assign({}, dateDropdownDefault);
-                - dateDropdown.arrival.name = "arrival_final-check";
-                - dateDropdown.departure.name = "departure_final-check";
-                +date-dropdown(dateDropdown)
+                +date-dropdown({arrivalName: "arrival_final-check", departureName: "departure_final-check"})
             .final-check__dropdown
                 - var dropdown = Object.assign({}, dropdownDefault);
                 - dropdown.content.title = "Гости";
@@ -33,4 +30,4 @@ mixin final-check()
                 .hr
                 span.total-price 38 081&#8381
             .final-check__button-payment
-                +button-payment("", "Забронировать")
+                +button-payment("Забронировать", "")

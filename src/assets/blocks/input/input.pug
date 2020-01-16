@@ -1,0 +1,10 @@
+mixin input(obj)
+    - 
+        let {
+           type =  "text",
+           placeholder = "",
+           value = "",
+           extraClasses = ""
+        } = obj;
+        
+    input.input(type= type, placeholder= placeholder, value= value, class= extraClasses)
