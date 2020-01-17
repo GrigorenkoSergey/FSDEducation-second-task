@@ -1,35 +1,16 @@
 include ../input/input.pug
-include ../radio-buttons/radio-buttons.pug
-include ../toggler/toggler.pug
 include ../buttons/buttons.pug
 
 mixin log-in()
-    form.form(action="")
+    form.form
         .log-in
-            .log-in__title
-                h1 Регистрация аккаунта
-            .log-in__name-field
-                +input({placeholder: "Имя"})
-            .log-in__surname-field
-                +input({placeholder: "Фамилия"})
-            .log-in__radio-buttons
-                +radioButtonsGroup()
-            .log-in__birthday
-                h3 Дата рождения
-                +input({placeholder: "ДД.ММ.ГГГГ"})
-            .log-in__authorization
-                h3 Данные для входа в сервис
-                .log-in__email
-                    +input({placeholder: "Email"})
-                .log-in__password
-                    +input({placeholder: "Пароль"})
-                .log-in__toggle
-                    +toggler("get_offers", "Получать спецпредложения")
+            h1 Войти
+            .log-in__email
+                +input({placeholder: "Email"})
+            .log-in__password
+                +input({placeholder:"Пароль"})
             .log-in__button-payment
-                +button-payment("Перейти к оплате")
-            .log-in__button-enter
-                span Уже есть аккаунт на Toxin
-                +button("Войти", "button_white")
-
-
-            
+                +button-payment("Войти")
+            .log-in__button-create
+                span Нет аккаунта на Toxin?
+                +button("Создать", "button_white")

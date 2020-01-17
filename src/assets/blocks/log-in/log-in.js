@@ -1,1 +1,2 @@
-import "../toggler/toggler.js";
+import "../input/input";
+import "../buttons/buttons";

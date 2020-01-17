@@ -2,7 +2,8 @@ import "./cards.scss";
 import "../../assets/blocks/search-form/search-form.js";
 import dateDropdowns from "../../assets/blocks/date-dropdown/date-dropdown.js";
 import "../../assets/blocks/final-check/final-check.js";
-import "../../assets/blocks/log-in/log-in.js"
+import "../../assets/blocks/registration/registration.js";
+import "../../assets/blocks/log-in/log-in.js";
 
 let arrivals = dateDropdowns.arrivals;
 let departures = dateDropdowns.departures;

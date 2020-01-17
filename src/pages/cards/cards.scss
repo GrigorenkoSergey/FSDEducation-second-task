@@ -1,36 +1,43 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/search-form/search-form.scss";
 @import "src/assets/blocks/final-check/final-check.scss";
+@import "src/assets/blocks/registration/registration.scss";
 @import "src/assets/blocks/log-in/log-in.scss";
 
 body {
   background: #f4f4f6;
 }
+.cards {
+  &__search-form {
+    position: absolute;
+    left: 140px;
+    top: 150px;
+  }
 
-.search-form-entry {
-  position: absolute;
-  left: 140px;
-  top: 150px;
-}
+  &__final-check {
+    position: absolute;
+    left: 560px;
+    top: 150px;
+  }
 
-.final-check-entry {
-  position: absolute;
-  left: 560px;
-  top: 150px;
-}
+  &__calendar {
+    position: absolute;
+    left: 980px;
+    top: 96px;
+  }
 
-.calendar {
-  position: absolute;
-  left: 980px;
-  top: 96px;
+  &__registration {
+    position: absolute;
+    left: 140px;
+    top: 564px;
+  }
+  &__log-in {
+    position: absolute;
+    left: 560px;
+    top: 701px;
+  }
 }
 
 ._invisible {
   visibility: hidden;
-}
-
-.registration {
-  position: absolute;
-  left: 140px;
-  top: 564px;
 }

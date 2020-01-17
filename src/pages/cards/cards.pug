@@ -4,6 +4,7 @@ extends ../../assets/blocks/template/template.pug
 block includes
     include ../../assets/blocks/search-form/search-form.pug
     include ../../assets/blocks/final-check/final-check.pug
+    include ../../assets/blocks/registration/registration.pug
     include ../../assets/blocks/log-in/log-in.pug
 
 
@@ -12,13 +13,13 @@ block variables
         var titleName = 'Cards'
 block content
 
-    .search-form-entry
+    .cards__search-form
         +search-form()
 
-    .final-check-entry
+    .cards__final-check
         +final-check()
 
-    .calendar
+    .cards__calendar
         - 
             let dateDropdown = {
                 arrivalTitle: "",
@@ -28,5 +29,7 @@ block content
             }
         +date-dropdown(dateDropdown)
 
-    .registration
+    .cards__registration
+        +registration()
+    .cards__log-in
         +log-in()
