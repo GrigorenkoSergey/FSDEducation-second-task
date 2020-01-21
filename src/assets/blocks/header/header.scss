@@ -1,0 +1,90 @@
+@import "../buttons/buttons.scss";
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 70px;
+  padding-right: 140px;
+
+  &__logo {
+    position: absolute;
+    left: 140px;
+    height: 40px;
+  }
+
+  &__nav {
+    width: 527px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__li {
+    list-style: none;
+  }
+
+  &__a {
+    text-decoration: none;
+    color: $dark_50;
+    font: $bodyFont;
+  }
+
+  &__span {
+    color: $dark_50;
+    font: $bodyFont;
+    position: relative;
+    margin-right: 15px;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 21px;
+      background: url("/assets/blocks/header/expand_more.png") center no-repeat;
+      top: 0;
+    }
+  }
+
+  &_current-page {
+    font-weight: bold;
+    color: $dark_75;
+  }
+
+  &__button {
+    width: 101px;
+    height: 34px;
+    line-height: 34px;
+
+    &::before {
+      height: 34px;
+    }
+  }
+
+  &__button_white {
+    width: 79px;
+    height: 34px;
+    margin-right: 20px;
+    margin-left: 30px;
+
+    &::before {
+      width: 79px;
+      height: 34px;
+    }
+    &::after {
+      width: 75px;
+      height: 30px;
+    }
+  }
+
+  &__submenu {
+    position: absolute;
+    margin-left: 20px;
+    color: $dark_50;
+    background: white;
+    padding: 10px 10px;
+  }
+
+}
