@@ -3,9 +3,11 @@
 @import "src/assets/blocks/final-check/final-check.scss";
 @import "src/assets/blocks/registration/registration.scss";
 @import "src/assets/blocks/log-in/log-in.scss";
+@import "src/assets/blocks/preview/preview.scss";
 
 body {
   background: #f4f4f6;
+  height: 1350px;
 }
 .cards {
   &__search-form {
@@ -35,6 +37,17 @@ body {
     position: absolute;
     left: 560px;
     top: 701px;
+  }
+  &__preview-1 {
+    position: absolute;
+    width: 270px;
+    left: 980px;
+    top: 559.5px;
+  }
+  &__preview-2 {
+    position: absolute;
+    left: 980px;
+    top: 856px;
   }
 }
 

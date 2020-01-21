@@ -4,6 +4,7 @@ import dateDropdowns from "../../assets/blocks/date-dropdown/date-dropdown.js";
 import "../../assets/blocks/final-check/final-check.js";
 import "../../assets/blocks/registration/registration.js";
 import "../../assets/blocks/log-in/log-in.js";
+import "../../assets/blocks/preview/preview.js";
 
 let arrivals = dateDropdowns.arrivals;
 let departures = dateDropdowns.departures;

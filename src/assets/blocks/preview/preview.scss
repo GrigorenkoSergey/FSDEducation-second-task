@@ -1,0 +1,126 @@
+@import "../rate-button/rate-button.scss";
+
+.preview {
+  width: 270px;
+  box-shadow: 0px 10px 20px $dark_5;
+  border-radius: 4px;
+  background: white;
+  padding-bottom: 18px;
+
+  &__image-container {
+    position: relative;
+    height: 151px;
+  }
+
+  &__image {
+    //почему-то контейнер никак не ограничивает радиусы изображения
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  $preview-square: 7px;
+
+  &-next,
+  &-prev {
+    position: absolute;
+    width: 42px;
+    top: 0;
+    bottom: 0;
+    border-top-left-radius: 4px; //работает совместно с transform
+    display: flex;
+    align-items: center;
+  }
+
+  &-next::before,
+  &-prev::after {
+    content: "";
+    border: 1.5px solid white;
+    border-bottom: none;
+    border-right: none;
+    width: $preview-square;
+    height: $preview-square;
+    transform: rotate(-45deg);
+    margin-left: 20px;
+  }
+
+  &-next {
+    right: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  &-prev {
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  @for $i from 1 to 5 { //рисуем кружочки
+    &-ellipse-#{$i} {
+      position: absolute;
+      bottom: 15px;
+      right: 60.25px - $i * 11.25px;
+      width: 7.5px;
+      height: 7.5px;
+      box-sizing: border-box;
+      border: 1px solid white;
+      border-radius: 50%;
+    }
+  }
+
+  &-ellipse-1 {
+    background: white;
+  }
+
+  &__information {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 18px;
+  }
+
+  &__price {
+    padding-top: 1px;
+    font-size: 12px;
+    color: $dark_50;
+
+    & :first-child {
+    font-size: 14px;
+    font-weight: bold;
+    }
+  }
+  
+  &__stars {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $dark_10;
+    margin-top: 9px;
+    padding-right:  2px;
+    padding-top: 5px;
+  }
+}
+
+.room-number {
+  font: $titleFont;
+  color: $dark_100;
+
+  &::before {
+    content: "№ ";
+    font-size: 14px;
+  }
+}
+  .room-class {
+    margin-left: 5px;
+    font-family: $bodyFont-family;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: $purple;
+    font-weight: bold;
+  }
+
+  .reviews {
+    padding-top: 2px;
+    color: $dark_50;
+  }

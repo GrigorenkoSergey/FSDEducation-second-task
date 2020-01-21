@@ -6,6 +6,7 @@ block includes
     include ../../assets/blocks/final-check/final-check.pug
     include ../../assets/blocks/registration/registration.pug
     include ../../assets/blocks/log-in/log-in.pug
+    include ../../assets/blocks/preview/preview.pug
 
 
 block variables
@@ -33,3 +34,17 @@ block content
         +registration()
     .cards__log-in
         +log-in()
+    .cards__preview-1
+        +preview(previewObj)
+    .cards__preview-2
+        - 
+            previewObj = {
+                number: 840,
+                type: "",
+                imgSrc: "/assets/blocks/preview/images/840.png",
+                cost: "9 900",
+                stars: 4,
+                reviews: 65,
+                arrowsHidden: true,
+            }
+        +preview(previewObj)

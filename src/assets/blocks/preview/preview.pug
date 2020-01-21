@@ -1,0 +1,34 @@
+include ../rate-button/rate-button.pug
+- 
+    var previewObj = {
+        number: 888,
+        type: "Люкс",
+        imgSrc: "/assets/blocks/preview/images/888.png",
+        cost: "9 990",
+        stars: 5,
+        reviews: 145,
+        arrowsHidden: false,
+    }
+
+mixin preview(previewObj)
+    - let {number, type, imgSrc, cost, stars, reviews, arrowsHidden} = previewObj;
+    .preview
+        .preview__image-container
+            img.preview__image(src= imgSrc width= "270px" height = "151px")
+            if (!arrowsHidden)
+                .preview-next
+                .preview-prev
+            .preview-ellipses
+                - for (let x = 1; x < 5; x++)
+                    div(class= `preview-ellipse-${x}`)
+        .preview__information
+            .preview__title
+                span.room-number #{number}
+                span.room-class #{type} 
+            .preview__price
+                span #{cost}&#8381
+                span  в сутки
+            .preview__stars
+                +rateButton(stars)
+                .reviews
+                    <b>#{reviews}</b> Отзывов
