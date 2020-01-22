@@ -3,11 +3,16 @@ extends ../../assets/blocks/template/template.pug
 
 block includes
     include ../../assets/blocks/header/header.pug
+    include ../../assets/blocks/footer/footer.pug
+    include ../../assets/blocks/copyright/copyright.pug
     
 block content
     .nav-bar_standard
-        +header()
+        +header(nav)
     .nav-bar_logged-in
+        +header(nav, true)
     .footer-widgets
+        +footer()
+        +copyright()
     .footer-creative
     

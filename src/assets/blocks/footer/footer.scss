@@ -1,0 +1,65 @@
+@import "../input/input.scss";
+
+.footer {
+  background: white;
+  position: relative;
+  height: 372px;
+  box-sizing: border-box;
+
+  &__logo {
+    position: absolute;
+    left: 140px;
+    top: 100px;
+    width: 260px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__description {
+    width: 100%;
+    margin-top: 17px;
+  }
+  &__navigation {
+    position: absolute;
+    left: 440px;
+    top: 104px;
+  }
+  &__about-us {
+    position: absolute;
+    left: 640px;
+    top: 104px;
+  }
+  &__support {
+    position: absolute;
+    left: 840px;
+    top: 104px;
+  }
+  &__subscribe {
+    position: absolute;
+    left: 1040px;
+    top: 104px;
+  }
+
+  &__subtitle {
+    @extend h3;
+    color: $dark_100;
+    margin-bottom: 21px;
+    line-height: 15px;
+  }
+  &__list-li {
+    margin-bottom: 20px;
+    line-height: 18px;
+  }
+  &__email {
+      margin-top: 23px;
+      width: 260px;
+  }
+}
+
+.subscribe__description {
+  max-width: 260px;
+  margin-top: -3px;
+  line-height: 24px;
+}

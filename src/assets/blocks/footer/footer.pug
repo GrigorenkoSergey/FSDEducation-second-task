@@ -1,0 +1,54 @@
+include ../input/input.pug
+
+- 
+    var footerDescription = {
+        description: `Lorem ipsum dolor sit amet consectetur adipiscing
+            elit aliquam eget nullam pellentesque aliquam
+            curabitur cociis.`,
+        navigation: {
+            title: "navigation",
+            list: [ "About us", "News", "Support", "Products" ],
+        },
+        aboutUs: {
+            title: "About Us",
+            list: ["Who we are", "Our team", "Careers", "Investors"],
+        },
+        support: {
+            title: "Support", 
+            list: ["Documentation", "Community", "Get in Touch"]
+        },
+        subscribe: {
+            title: "Subscribe to our newsletter",
+            description: `Receive our latest news and promotions in
+                your inbox!`,
+        },
+    }
+
+mixin footerRenderList(objList) 
+    .footer__subtitle #{objList.title}
+    ul.footer__list
+        each val in objList.list
+            li.footer__list-li #{val}
+
+mixin footerRenderSubscribe(objList)
+    - 
+        let {title, description} = objList.subscribe;
+    .footer__subtitle #{title}
+    .subscribe__description #{description}
+    +input({type: "email", placeholder: "Your email address", extraClasses: "input_email footer__email"})
+
+mixin footer()
+    - 
+        let {description, navigation, aboutUs, support} = footerDescription;
+    .footer
+        .footer__logo
+            img(src="/assets/images/Logo_toxin.png")
+            span.footer__description #{description}
+        .footer__navigation
+            +footerRenderList(navigation)
+        .footer__about-us
+            +footerRenderList(aboutUs)
+        .footer__support
+            +footerRenderList(support)
+        .footer__subscribe
+            +footerRenderSubscribe(footerDescription)

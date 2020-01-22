@@ -53,35 +53,6 @@ main {
   margin-top: 21px;
 }
 
-.input {
-  width: inherit;
-  height: 44px;
-  border: 1px solid $dark_25;
-  border-radius: 4px;
-  padding-left: 14px;
-  color: $dark_75;
-  // letter-spacing: -0.16px;
-  background: transparent;
-  cursor: pointer;
-
-  &:focus,
-  &:hover {
-    border-color: $dark_50;
-    outline: none;
-  }
-
-  &.hover {
-    border-color: $dark_75;
-    outline: none;
-  }
-
-  &_type-date {
-    color: $dark_25;
-    text-transform: uppercase;
-    line-height: 24px;
-  }
-}
-
 .example-input {
   position: relative;
   width: $inputWidth;
@@ -134,12 +105,6 @@ main {
   position: relative;
   width: $inputWidth;
   margin-top: 46px;
-}
-
-.input_email {
-  @extend .input;
-  width: 266px;
-  background: url("/assets/images/arrow_forward.png") right no-repeat;
 }
 
 .example-input_email {

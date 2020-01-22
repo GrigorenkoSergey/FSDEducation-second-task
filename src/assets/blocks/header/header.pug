@@ -10,13 +10,12 @@ include ../buttons/buttons.pug
         {title: "News", href: "#"},
         {title: "Documentation", href: "#"},
     ]
-mixin header(type)
+mixin header(nav, logged)
     .header
         a.header__logo(href="#")
             img(src="/assets/images/Logo_toxin.png")
         ul.header__nav
             each val in nav
-
                 li.header__li  
                     if (val.innerUl) 
                         span.header__span #{val.title}
@@ -26,6 +25,10 @@ mixin header(type)
                                     a.header__a(href="#") !{subVal}
                     else 
                         a.header__a(href=`${val.href}` class= val.currentPage ? "header_current-page" : "") #{val.title}
-        .header__buttons
-            +button("login", "button_white header__button_white")
-            +button("register", "button_default header__button")
+        if (logged) 
+            //-далее дикое название, т.к. не знаю, что это означает...
+            .header__cosmin-negoita Cosmin Negoita
+        else 
+            .header__buttons
+                +button("login", "button_white header__button_white")
+                +button("register", "button_default header__button")
