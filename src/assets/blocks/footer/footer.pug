@@ -37,7 +37,7 @@ mixin footerRenderSubscribe(objList)
     .subscribe__description #{description}
     +input({type: "email", placeholder: "Your email address", extraClasses: "input_email footer__email"})
 
-mixin footer()
+mixin footer(footerDescription)
     - 
         let {description, navigation, aboutUs, support} = footerDescription;
     .footer

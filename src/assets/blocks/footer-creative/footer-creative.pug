@@ -1,0 +1,32 @@
+include ../social-networks/social-networks.pug
+//- example of objFooter = footerDescription
+//- - 
+//-     var footerDescription = {
+//-         description: `Lorem ipsum dolor sit amet consectetur adipiscing
+//-             elit aliquam eget nullam pellentesque aliquam
+//-             curabitur cociis.`,
+//-         navigation: {
+//-             title: "navigation",
+//-             list: [ "About us", "News", "Support", "Products" ],
+//-         },
+//-         aboutUs: {
+//-             title: "About Us",
+//-             list: ["Who we are", "Our team", "Careers", "Investors"],
+//-         },
+//-         support: {
+//-             title: "Support", 
+//-             list: ["Documentation", "Community", "Get in Touch"]
+//-         },
+//-         subscribe: {
+//-             title: "Subscribe to our newsletter",
+//-             description: `Receive our latest news and promotions in
+//-                 your inbox!`,
+//-         },
+//-     }
+
+mixin footer-creative(objFooter)
+    .footer-creative
+        img.footer-creative__logo(src="/assets/images/Logo_toxin.png")
+        span.footer-creative__description #{objFooter.description}
+        .footer-creative__social-networks
+            +social-networks()

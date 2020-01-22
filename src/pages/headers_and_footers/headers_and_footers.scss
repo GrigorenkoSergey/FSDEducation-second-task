@@ -2,6 +2,7 @@
 @import "src/assets/blocks/header/header.scss";
 @import "src/assets/blocks/footer/footer.scss";
 @import "src/assets/blocks/copyright/copyright.scss";
+@import "src/assets/blocks/footer-creative/footer-creative.scss";
 
 body {
   width: 1440px;
@@ -24,4 +25,9 @@ body {
   position: absolute;
   width: inherit;
   top: 370px;
+}
+.footer-creative__wrapper {
+  position: absolute;
+  width: inherit;
+  top: 853px;
 }

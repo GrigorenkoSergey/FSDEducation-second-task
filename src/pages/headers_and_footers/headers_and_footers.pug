@@ -5,6 +5,7 @@ block includes
     include ../../assets/blocks/header/header.pug
     include ../../assets/blocks/footer/footer.pug
     include ../../assets/blocks/copyright/copyright.pug
+    include ../../assets/blocks/footer-creative/footer-creative.pug
     
 block content
     .nav-bar_standard
@@ -12,7 +13,8 @@ block content
     .nav-bar_logged-in
         +header(nav, true)
     .footer-widgets
-        +footer()
+        +footer(footerDescription)
         +copyright()
-    .footer-creative
+    .footer-creative__wrapper
+        +footer-creative(footerDescription)
     

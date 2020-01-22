@@ -12,26 +12,3 @@
     justify-content: space-between;
     align-items: center;
 }
-
-%icon {
-    width: 24px;
-    height: 24px;
-}
-.social-networks {
-    display: inline-flex;
-    width: 112px;
-    justify-content: space-between;
-
-    &__twitter {
-        @extend %icon;
-        background: url("/assets/blocks/copyright/twitter.png") center no-repeat;
-    }
-    &__facebook {
-        @extend %icon;
-        background: url("/assets/blocks/copyright/facebook.png") center no-repeat;
-    }
-    &__instagram {
-        @extend %icon;
-        background: url("/assets/blocks/copyright/instagram.png") center no-repeat;
-    }
-}

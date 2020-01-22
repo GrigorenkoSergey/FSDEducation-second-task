@@ -1,0 +1,26 @@
+@import "../social-networks/social-networks.scss";
+
+.footer-creative {
+  background: white;
+  height: 367px;
+  display: flex;
+  flex-direction: column;
+//   justify-content: center;
+  align-items: center;
+box-shadow: 0px 10px 20px $dark_5; 
+
+  &__logo {
+    height: 40px;
+    width: 106px;
+    margin-top: 100px;
+  }
+  &__description {
+      margin-top: 17px;
+    max-width: 560px;
+    text-align: center;
+  }
+  &__social-networks {
+      margin-top: 28px;
+  }
+  
+}
