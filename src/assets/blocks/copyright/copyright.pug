@@ -1,6 +1,14 @@
 include ../social-networks/social-networks.pug
 
-mixin copyright()
+//- -example
+//-     let copyrightDescription = {
+//-         "innerText": "Copyright &#169 2018 Toxin UI Kit. All rights reserved."
+//-     }
+mixin copyright(obj)
+    - 
+        let { 
+                innerText = "Copyright &#169 2018 Toxin UI Kit. All rights reserved."
+            } = obj;
     .copyright
-        span Copyright &#169 2018 Toxin UI Kit. All rights reserved.
+        span !{innerText}
         +social-networks()

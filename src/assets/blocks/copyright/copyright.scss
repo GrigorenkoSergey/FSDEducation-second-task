@@ -1,12 +1,10 @@
+@import "src/assets/blocks/social-networks/social-networks.scss";
+
 .copyright {
-    position: absolute;
-    bottom: -71px;
     height: 71px;
-    width: inherit;
     background: white;
     padding: 0 140px;
-    box-shadow: 0px 10px 20px $dark_5; 
-    border-top: 1px solid $dark_10;
+    box-shadow: 0px 10px 20px $dark_10; 
 
     display: flex;
     justify-content: space-between;

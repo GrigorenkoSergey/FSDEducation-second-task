@@ -1,0 +1,15 @@
+@import "src/assets/blocks/template/template.scss";
+@import "src/assets/blocks/header/header.scss";
+@import "src/assets/blocks/log-in/log-in.scss";
+@import "src/assets/blocks/footer/footer.scss";
+@import "src/assets/blocks/copyright/copyright.scss";
+
+body {
+    background: url("./sign-in-page.png") no-repeat;
+}
+main {
+    height: 683px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

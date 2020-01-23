@@ -21,6 +21,31 @@ include ../input/input.pug
             title: "Subscribe to our newsletter",
             description: `Receive our latest news and promotions in
                 your inbox!`,
+            placeholder: "Your email address",
+        },
+    }
+- 
+    var footerRus = {
+        description: `Бронирование номеров в лучшем отеле
+            2019 года по версии ассоциации
+            "Отельные взгляды"`,
+        navigation: {
+            title: "Навигация",
+            list: [ "О нас", "Новости", "Служба поддержки", "Услуги" ],
+        },
+        aboutUs: {
+            title: "О нас",
+            list: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
+        },
+        support: {
+            title: "Служба поддержки", 
+            list: ["Соглашения", "Сообщества", "Связь с нами"]
+        },
+        subscribe: {
+            title: "Подписка",
+            description: `Получайте специальные предложения
+                и новости сервиса`,
+            placeholder: "Email",
         },
     }
 
@@ -32,10 +57,10 @@ mixin footerRenderList(objList)
 
 mixin footerRenderSubscribe(objList)
     - 
-        let {title, description} = objList.subscribe;
+        let {title, description, placeholder} = objList.subscribe;
     .footer__subtitle #{title}
     .subscribe__description #{description}
-    +input({type: "email", placeholder: "Your email address", extraClasses: "input_email footer__email"})
+    +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})
 
 mixin footer(footerDescription)
     - 

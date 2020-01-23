@@ -1,48 +1,33 @@
 .button {
-  width: 99px;
   height: 44px;
   border-radius: 22px;
   @extend h3;
   color: white;
+  line-height: 44px;
   position: relative;
   z-index: 1;
-  background: none;
+  padding: 0 20px;
+  background: $primary-gradient;
   outline: none;
 
-  &_default::before,
-  &_disabled::before,
-  &_white::before {
-    content: "";
-    display: block;
-    width: inherit;
-    height: 44px;
-    border-radius: 22px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background: $primary-gradient;
+  &_disabled {
+    background: $primary-gradient_05;
   }
 
-  &_disabled::before {
-    opacity: 0.5;
+  &_white::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 22px;
+    z-index: -1;
   }
 
   &_white {
     color: $purple;
-  }
-
-  &_white::after {
-    content: "";
-    display: block;
-    width: 95px;
-    height: 40px;
-    background: white;
-    border-radius: 22px;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    z-index: -1;
   }
 
   &-text {
@@ -92,3 +77,4 @@
     top: 17px;
   }
 }
+
