@@ -62,10 +62,10 @@ mixin header(nav, logged)
                                 li 
                                     a.header__a(href="#") !{subVal}
                     a.header__a(href=`${val.href}` class= val.currentPage ? "header_current-page" : "") #{val.title}
-            if (logged) 
-                //-далее дикое название, т.к. не знаю, что это означает...
-                .header__cosmin-negoita Cosmin Negoita
-            else 
-                .header__buttons(class= buttonsClass)
-                    +button(nav.buttons.login.title, "button_white header__button_white")
-                    +button(nav.buttons.register.title, "button_default header__button")
+        if (logged) 
+            //-далее дикое название, т.к. не знаю, что это означает...
+            .header__cosmin-negoita Cosmin Negoita
+        else 
+            .header__buttons(class= buttonsClass)
+                +button(nav.buttons.login.title, "button_white header__button_white")
+                +button(nav.buttons.register.title, "button_default header__button_default")

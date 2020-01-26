@@ -7,13 +7,15 @@ $headerHeight: 70px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: $headerHeight; 
+  height: $headerHeight;
   padding-right: 140px;
+  padding-left: 246px;
   background: white;
   box-shadow: 0px 10px 20px $dark_5;
 
   &__logo {
     position: absolute;
+    top: 15px;
     left: 140px;
     height: 40px;
   }
@@ -27,9 +29,9 @@ $headerHeight: 70px;
   &__li {
     list-style: none;
     margin-left: 30px;
-    line-height: $headerHeight; 
+    line-height: $headerHeight;
   }
-  
+
   &__li_rus {
     margin-left: 23px;
   }
@@ -42,7 +44,7 @@ $headerHeight: 70px;
 
   &__li_submenu {
     margin-right: -10px;
-    
+
     &::after {
       position: relative;
       content: "";
@@ -63,10 +65,10 @@ $headerHeight: 70px;
   }
 
   //для миксинов буду использовать конструкцию & &__mixin
-  //иначе, если какой-нибудь последующий блок импортирует исходный файл, 
+  //иначе, если какой-нибудь последующий блок импортирует исходный файл,
   //тогда свойства сбросятся...
   //!important использовать не стоит..
-  & &__button {
+  & &__button_default {
     height: 34px;
     line-height: 34px;
   }
@@ -89,5 +91,95 @@ $headerHeight: 70px;
     margin-left: 61px;
     color: $dark_50;
     font: $bodyFont;
+  }
+}
+
+@media (max-width: 1210px) {
+  .header {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5px;
+
+    &__logo {
+      position: absolute;
+      height: auto;
+    }
+    &__nav {
+      flex-wrap: wrap;
+      width: 55%;
+    }
+    &__li {
+      line-height: 40px;
+    }
+    & &__buttons {
+      width: 55%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .header__logo {
+    position: absolute;
+    left: 50px;
+  }
+}
+
+@media (max-width: 880px) {
+  .header {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+
+    & &__buttons {
+      width: auto;
+      margin: initial;
+      margin-top: 10px;
+      align-self: flex-end;
+    }
+
+    &__logo {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+
+    &__nav {
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    & &__buttons {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    & &__button_default,
+    & &__button_white {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .header {
+    &__buttons {
+      justify-content: flex-end;
+    }
+    & &__button_default,
+    & &__button_white {
+      width: 70%;
+      margin: 0;
+      margin-right: 10px;
+      font-size: 10px;
+    }
   }
 }

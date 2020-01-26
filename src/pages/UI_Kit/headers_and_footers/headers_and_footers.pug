@@ -1,5 +1,8 @@
 extends ../../../assets/blocks/template/template.pug
 
+block variables
+    - 
+        var titleName = "headers_and_footers";
 
 block includes
     include ../../../assets/blocks/header/header.pug
@@ -14,7 +17,8 @@ block content
         +header(nav, true)
     .footer-widgets
         +footer(footerDescription)
-        +copyright()
+        +copyright({})
     .footer-creative__wrapper
         +footer-creative(footerDescription)
+
     

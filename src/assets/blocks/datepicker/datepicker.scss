@@ -198,7 +198,7 @@ $font-size: 19px;
       &::before {
         content: "";
         display: inline-block;
-        width: inherit;
+        width: 100%;
         height: inherit;
         position: absolute;
         left: 0px;

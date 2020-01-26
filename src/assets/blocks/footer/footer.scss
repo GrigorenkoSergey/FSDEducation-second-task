@@ -1,18 +1,90 @@
 @import "../input/input.scss";
 
+// .footer {
+//   background: white;
+//   position: relative;
+//   width: 100%;
+//   height: 372px;
+//   box-sizing: border-box;
+//   box-shadow: 0px 1px 0px $dark_10;
+
+//   &__logo {
+//     position: absolute;
+//     left: 140px;
+//     top: 100px;
+//     width: 260px;
+//     height: 40px;
+//     display: flex;
+//     justify-content: flex-start;
+//     flex-wrap: wrap;
+//   }
+
+//   &__description {
+//     width: 100%;
+//     margin-top: 17px;
+//   }
+//   &__navigation {
+//     position: absolute;
+//     left: 440px;
+//     top: 104px;
+//   }
+//   &__about-us {
+//     position: absolute;
+//     left: 640px;
+//     top: 104px;
+//   }
+//   &__support {
+//     position: absolute;
+//     left: 840px;
+//     top: 104px;
+//   }
+//   &__subscribe {
+//     position: absolute;
+//     left: 1040px;
+//     top: 104px;
+//   }
+
+//   &__subtitle {
+//     @extend h3;
+//     color: $dark_100;
+//     margin-bottom: 21px;
+//     line-height: 15px;
+//   }
+//   &__list-li {
+//     margin-bottom: 20px;
+//     line-height: 18px;
+//     color: $dark_50;
+//   }
+//   &__email {
+//       margin-top: 23px;
+//       width: 260px;
+//   }
+// }
+
+// .subscribe__description {
+//   max-width: 260px;
+//   margin-top: -3px;
+//   line-height: 24px;
+// }
+
 .footer {
   background: white;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 104px;
+  padding-left: 140px;
+  padding-right: 140px;
+  width: 100%;
   height: 372px;
   box-sizing: border-box;
   box-shadow: 0px 1px 0px $dark_10;
 
   &__logo {
-    position: absolute;
-    left: 140px;
-    top: 100px;
+    padding-left: 20px;
+    margin-top: -3px;
     width: 260px;
-    height: 40px;
+    // height: 40px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -21,47 +93,123 @@
   &__description {
     width: 100%;
     margin-top: 17px;
-  }
-  &__navigation {
-    position: absolute;
-    left: 440px;
-    top: 104px;
-  }
-  &__about-us {
-    position: absolute;
-    left: 640px;
-    top: 104px;
-  }
-  &__support {
-    position: absolute;
-    left: 840px;
-    top: 104px;
-  }
-  &__subscribe {
-    position: absolute;
-    left: 1040px;
-    top: 104px;
+    height: 100%;
   }
 
   &__subtitle {
+    padding-left: 20px;
     @extend h3;
     color: $dark_100;
     margin-bottom: 21px;
     line-height: 15px;
   }
   &__list-li {
+    padding-left: 20px;
     margin-bottom: 20px;
     line-height: 18px;
     color: $dark_50;
+    cursor: pointer;
+  }
+  &__list-li:hover {
+    color: $dark_100;
   }
   &__email {
-      margin-top: 23px;
-      width: 260px;
+    margin-left: 20px;
+    margin-top: 23px;
+    width: 260px;
   }
 }
 
 .subscribe__description {
+  padding-left: 20px;
   max-width: 260px;
   margin-top: -3px;
   line-height: 24px;
+}
+
+@media (max-width: 1210px) {
+  .footer {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .footer {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+// @media (max-width: 880px) {
+//   .footer {
+//     padding-left: 20px;
+//     padding-right: 20px;
+//   }
+// }
+
+// @media (max-width: 800px) {
+@media (max-width: 900px) {
+  .footer {
+    // flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    height: auto;
+    align-items: stretch;
+    justify-content: center;
+
+    &__logo {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+      margin-top: auto;
+    }
+    &__description {
+      margin-top: auto;
+    padding-left: 20px;
+
+    }
+    &__navigation {
+      // margin-top: 20px;
+      // width: 50%;
+    }
+    &__about-us {
+      // width: 50%;
+    }
+    &__support {
+      // width: 50%;
+    }
+    &__subscribe {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // width: 50%;
+      // display: flex;
+      // flex-wrap: wrap;
+      // margin-bottom: 20px;
+    }
+    // &__list {
+    //   display: flex;
+    //   margin-left: 30px;
+    // }
+    // &__list-li {
+    //   padding-left: 40px;
+    // }
+    &__subtitle {
+      margin-bottom: 8px;
+      // margin-left: 10px;
+      // width: 100%;
+    }
+    &__email {
+      margin-top: 0;
+      // margin-left: 80px;
+    }
+  }
+  .subscribe__description {
+    // padding-left: 80px;
+    max-width: 100%;
+  }
 }

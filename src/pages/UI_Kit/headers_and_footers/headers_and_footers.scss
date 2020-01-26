@@ -4,7 +4,7 @@
 @import "src/assets/blocks/copyright/copyright.scss";
 @import "src/assets/blocks/footer-creative/footer-creative.scss";
 
-body {
+.headers_and_footers {
   width: 1440px;
   height: 1350px;
   background: #f4f4f6;
@@ -36,4 +36,33 @@ body {
   position: absolute;
   bottom: -71px;
   width: inherit;
+}
+
+.footer {
+  &__logo {
+    position: absolute;
+    left: 140px;
+    top: 100px;
+  }
+
+  &__navigation {
+    position: absolute;
+    left: 440px;
+    top: 104px;
+  }
+  &__about-us {
+    position: absolute;
+    left: 640px;
+    top: 104px;
+  }
+  &__support {
+    position: absolute;
+    left: 840px;
+    top: 104px;
+  }
+  &__subscribe {
+    position: absolute;
+    left: 1040px;
+    top: 104px;
+  }
 }
