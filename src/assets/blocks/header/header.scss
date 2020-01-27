@@ -134,6 +134,8 @@ $headerHeight: 70px;
   .header {
     flex-direction: column-reverse;
     justify-content: flex-end;
+    padding-right: 10px;
+    padding-left: 10px;
 
     & &__buttons {
       width: auto;

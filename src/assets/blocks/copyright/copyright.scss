@@ -1,7 +1,7 @@
 @import "src/assets/blocks/social-networks/social-networks.scss";
 
 .copyright {
-    height: 71px;
+    min-height: 71px;
     background: white;
     padding: 0 140px;
     box-shadow: 0px 10px 20px $dark_10; 
@@ -9,4 +9,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media(max-width: 900px) {
+    .copyright {
+        flex-direction: column;
+        padding: 10px 10px;
+        text-align: center;
+    }
 }
