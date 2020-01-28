@@ -1,16 +1,10 @@
 extends ../../../assets/blocks/template/template_website.pug
 
 block includes
-    include ../../../assets/blocks/header/header.pug
     include ../../../assets/blocks/log-in/log-in.pug
-    include ../../../assets/blocks/footer/footer.pug
-    include ../../../assets/blocks/copyright/copyright.pug
 
 block variables
     - var titleName = "Sing in";
 block content
-    +header(navRus)
     main
         +log-in()
-    +footer(footerRus)
-    +copyright({innerText: "Copyright &#169 2018 Toxin отель. Все права зачищены." })

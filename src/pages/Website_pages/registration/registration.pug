@@ -1,0 +1,10 @@
+extends ../../../assets/blocks/template/template_website.pug
+
+block includes
+    include ../../../assets/blocks/registration/registration.pug
+
+block variables
+    - var titleName = "Registration";
+block content
+    main
+        +registration()

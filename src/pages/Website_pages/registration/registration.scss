@@ -1,15 +1,15 @@
 @import "src/assets/blocks/template/template.scss";
-@import "src/assets/blocks/log-in/log-in.scss";
+@import "src/assets/blocks/registration/registration.scss";
 
 body {
-    background: url("./sign-in-page.png") no-repeat;
+    background: url("./registration-page.png") no-repeat;
     overflow-x: hidden; //обрезаем фоновое изображение
     width: 100%;
     height: auto;
 }
 main {
-    height: 683px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 26px;
 }

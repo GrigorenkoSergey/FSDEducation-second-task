@@ -170,3 +170,8 @@ select {
 ._invisible {
   visibility: hidden;
 }
+
+
+@import "src/assets/blocks/header/header.scss";
+@import "src/assets/blocks/footer/footer.scss";
+@import "src/assets/blocks/copyright/copyright.scss";

@@ -1,3 +1,7 @@
+include ../../../assets/blocks/header/header.pug
+include ../../../assets/blocks/footer/footer.pug
+include ../../../assets/blocks/copyright/copyright.pug
+
 doctype html
 html(lang="en")
   head
@@ -8,5 +12,8 @@ html(lang="en")
     title= titleName
 
   body
+    +header(navRus)
     block includes
     block content
+    +footer(footerRus)
+    +copyright({innerText: "Copyright &#169 2018 Toxin отель. Все права зачищены." })
