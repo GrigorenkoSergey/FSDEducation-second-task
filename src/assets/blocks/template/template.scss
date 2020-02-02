@@ -132,7 +132,7 @@ h1 {
 }
 
 h2 {
-  font-family: Quicksand;
+  font-family: $titleFont-family;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
@@ -170,6 +170,10 @@ select {
 ._invisible {
   visibility: hidden;
 }
+._block {
+  display: block;
+}
+
 
 
 @import "src/assets/blocks/header/header.scss";

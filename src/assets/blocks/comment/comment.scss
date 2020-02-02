@@ -1,3 +1,4 @@
+@import "../like-button/like-button.scss";
 
 .comment {
     position: relative;
@@ -7,6 +8,8 @@
       margin-right: 11px;
       width: 48px;
       height: 48px;
+      box-shadow: 0 10px 20px $dark_10;
+      border-radius: 50%;
     }
 
     &__avatar {

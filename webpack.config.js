@@ -10,7 +10,7 @@ const PATHS = {
   dist: path.join(__dirname, "./dist"),
   pages: path.join(__dirname, "./src/pages")
 }
-
+console.log(PATHS.src)
 const PAGES_DIR = `${PATHS.pages}/`;
 const PAGES = fs.readdirSync(`${PATHS.pages}/`).map(item => fs.readdirSync(PAGES_DIR + item));
 let pugPages = [].concat(...PAGES).filter(fileName => fileName.endsWith('.pug'));

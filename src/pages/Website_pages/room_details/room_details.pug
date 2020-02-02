@@ -1,0 +1,50 @@
+extends ../../../assets/blocks/template/template_website.pug
+
+block includes
+    include ../../../assets/blocks/buns/buns.pug
+    include ../../../assets/blocks/comment/comment.pug
+    include ../../../assets/blocks/final-check/final-check.pug
+
+block variables
+    - 
+        var titleName = "Room details";
+        var bunsArr = [
+            {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
+            {name: "city", title: "Удобство", description: "Окно в каждой из спален"},
+            {name: "fire", title: "Уют", description: "Номер оснащен камином"},
+        ];
+
+        var reviewerMurad = Object.assign({}, reviewer);
+        var reviewerPatricia = {
+            avatarSrc: "/assets/blocks/comment/Patricia.png",
+            name: "Патрисия Стеклышкова",
+            term: "неделю назад", 
+            likeButton: {
+                counter: 2,
+                isPushed: false,
+            },
+            content: `Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер 
+                советую заказать, каждый день новое блюдо и десерт как комплимент`,
+        }
+block content
+    .photos
+        .photos__img_main-container
+            img.photos__img(src="./assets/images/Website_pages/room_details/image_1.png")
+        .photos__img_alternative-container
+            img.photos__img(src="./assets/images/Website_pages/room_details/image_2.png")
+            img.photos__img(src="./assets/images/Website_pages/room_details/image_3.png")
+    main
+        .column_1
+            .room-details__buns
+                .room-details__title
+                    h2 Сведения о номере
+                +buns(bunsArr)
+            .room-details__comments
+                .room-details__comments-title
+                    h2 Отзывы посетителей номера
+                .room-details__comments-comment
+                    +comment(reviewerMurad)
+                    +comment(reviewerPatricia)
+        .column_2
+            +final-check()
+

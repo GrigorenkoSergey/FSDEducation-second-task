@@ -7,13 +7,13 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    block includes 
     block variables
 
     title= titleName
 
   body
     +header(navRus)
-    block includes
     block content
     +footer(footerRus)
     +copyright({innerText: "Copyright &#169 2018 Toxin отель. Все права зачищены." })

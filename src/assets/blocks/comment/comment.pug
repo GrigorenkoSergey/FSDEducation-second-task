@@ -1,7 +1,7 @@
 //- Пример комментатора
 - 
     let reviewer = {
-        avatarSrc: "/assets/blocks/comment/image.png",
+        avatarSrc: "/assets/blocks/comment/Murad.png",
         name: "Мурад Сарафанов",
         term: "5 дней назад", 
         likeButton: {
@@ -13,7 +13,7 @@
 
 mixin comment(reviewer)
     .comment
-        img.comment__avatar(src= reviewer.avatarSrc)
+        img.comment__avatar(src= reviewer.avatarSrc width="44px")
         span.comment__name #{reviewer.name}
         span.comment__term #{reviewer.term}
         .comment__like-button
