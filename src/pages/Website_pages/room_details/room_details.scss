@@ -2,6 +2,8 @@
 @import "src/assets/blocks/buns/buns.scss";
 @import "src/assets/blocks/comment/comment.scss";
 @import "src/assets/blocks/final-check/final-check.scss";
+@import "src/assets/blocks/bullet-list/bullet-list.scss";
+@import "src/assets/blocks/diagram/diagram.scss";
 
 body {
   // overflow-x: hidden; //обрезаем фоновое изображение
@@ -10,49 +12,83 @@ body {
 }
 
 main {
-    padding: 70px 140px;
-    display: flex;
-    // width: 100%;
+  padding: 70px 140px;
+  display: flex;
 }
+
 .photos {
   display: flex;
   width: 100%;
 
   &__img_main-container {
-      flex-grow: 2;
+    flex-grow: 2;
   }
   &__img_alternative-container {
-      flex-grow: 1;
+    flex-grow: 1;
   }
   &__img {
     display: block;
     width: 100%;
   }
 }
-.room-details {
-  &__title {
-    margin-bottom: 20px;
-  }
-  &__buns {
-    width: 280px;
-  }
-  &__comments {
-    margin-top: 12px;
-    margin-left: -2px;
-  }
-  // &__comments-title {
-    // margin-bottom: 20px;
-  // }
-  
-}
-.comment {
-  margin-top: 21px;
-}
 
 .column_1 {
   flex-grow: 2;
   padding-right: 70px;
 }
+
 .column_2 {
   flex-grow: 1;
+}
+
+.room-details {
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__buns {
+    width: 280px;
+  }
+
+  &__comments {
+    margin-top: 12px;
+    margin-left: -2px;
+  }
+
+  &__rules,
+  &__cancel {
+    width: 50%;
+  }
+
+  &__cancel {
+    padding-left: 6px;
+    padding-right: 10px;
+  }
+
+  &__rules-title,
+  &__cancel-title {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  &__cancel-title {
+    margin-left: 0;
+  }
+
+  &__impressions {
+    margin-left: 81px;
+  }
+}
+
+.comment {
+  margin-top: 21px;
+}
+
+.rules_and_cancel {
+  display: flex;
+  margin-top: 35px;
+}
+.room-details__wrapper {
+  display: flex;
+  // margin-top: 35px;
 }

@@ -1,0 +1,64 @@
+.diagram {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $purple;
+  font-weight: bold;
+
+  &__total {
+    margin-top: 35px;
+    font-family: $titleFont-family;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  &__voices {
+    font-size: 12px;
+    line-height: 15px;
+    font-family: $bodyFont-family;
+    text-transform: uppercase;
+  }
+  &__canvas {
+    position: absolute;
+  }
+  &__description {
+    width: 200px;
+    color: $dark_75;
+    font-weight: normal;
+    position: absolute;
+    left: 150px;
+    top: 27px;
+  }
+}
+
+.magnificently::before,
+.good::before,
+.satisfactory::before,
+.disapointed::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 5px;
+}
+
+//пришлось вводить ручками...
+.magnificently::before {
+  background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+}
+
+.good::before {
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+}
+
+.satisfactory::before {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+}
+
+.disapointed::before {
+    background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+}
