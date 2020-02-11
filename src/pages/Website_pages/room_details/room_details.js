@@ -1,5 +1,6 @@
 import "./room_details.scss";
 import dateDropdowns from "../../../assets/blocks/date-dropdown/date-dropdown.js";
+import "../../../assets/blocks/comment/comment.js";
 import "../../../assets/blocks/final-check/final-check.js";
 import "../../../assets/blocks/diagram/diagram.js";
 

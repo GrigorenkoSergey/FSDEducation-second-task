@@ -7,13 +7,15 @@
 
 body {
   // overflow-x: hidden; //обрезаем фоновое изображение
-  // width: 100%;
-  // height: auto;
+  width: 100%;
+  height: auto;
 }
 
 main {
-  padding: 70px 140px;
+  padding: 70px 140px 72px 140px;
   display: flex;
+  border-bottom: 1px solid $dark_25;
+  box-sizing: border-box;
 }
 
 .photos {
@@ -51,8 +53,16 @@ main {
   }
 
   &__comments {
-    margin-top: 12px;
+    margin-top: 14px;
     margin-left: -2px;
+    position: relative;
+
+    &-counter {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: $dark_50;
+    }
   }
 
   &__rules,
@@ -81,7 +91,10 @@ main {
 }
 
 .comment {
-  margin-top: 21px;
+  margin-top: 20px;
+}
+.comment:first-child {
+  margin-bottom: 21px;
 }
 
 .rules_and_cancel {
@@ -91,4 +104,12 @@ main {
 .room-details__wrapper {
   display: flex;
   // margin-top: 35px;
+}
+
+.buns__item:last-child {
+  border-bottom: none;
+}
+
+.bullet-list__li:last-child {
+  margin-bottom: 0;
 }

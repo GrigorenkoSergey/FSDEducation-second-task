@@ -13,7 +13,7 @@
 
 mixin comment(reviewer)
     .comment
-        img.comment__avatar(src= reviewer.avatarSrc width="44px")
+        img.comment__avatar(src= reviewer.avatarSrc)
         span.comment__name #{reviewer.name}
         span.comment__term #{reviewer.term}
         .comment__like-button
