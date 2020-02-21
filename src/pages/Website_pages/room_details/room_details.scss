@@ -1,12 +1,11 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/buns/buns.scss";
 @import "src/assets/blocks/comment/comment.scss";
-@import "src/assets/blocks/final-check/final-check.scss";
+@import "src/assets/blocks/final-bill/final-bill.scss";
 @import "src/assets/blocks/bullet-list/bullet-list.scss";
 @import "src/assets/blocks/diagram/diagram.scss";
 
 body {
-  // overflow-x: hidden; //обрезаем фоновое изображение
   width: 100%;
   height: auto;
 }
@@ -33,10 +32,15 @@ main {
     width: 100%;
   }
 }
+  .room-details__buns {
+    margin-right: 20px;
+  }
 
 .column_1 {
   flex-grow: 2;
-  padding-right: 70px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .column_2 {
@@ -48,6 +52,9 @@ main {
     margin-bottom: 20px;
   }
 
+  &__diagram {
+    width: 350px;
+  }
   &__buns {
     width: 280px;
   }
@@ -56,11 +63,12 @@ main {
     margin-top: 14px;
     margin-left: -2px;
     position: relative;
+    padding-right: 70px;
 
-    &-counter {
-      position: absolute;
-      right: 0;
-      top: 0;
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       color: $dark_50;
     }
   }
@@ -99,11 +107,13 @@ main {
 
 .rules_and_cancel {
   display: flex;
+  width: 100%;
   margin-top: 35px;
+  padding-right: 70px;
 }
 .room-details__wrapper {
   display: flex;
-  // margin-top: 35px;
+  width: 100%;
 }
 
 .buns__item:last-child {
@@ -112,4 +122,70 @@ main {
 
 .bullet-list__li:last-child {
   margin-bottom: 0;
+}
+
+
+
+@media (max-width: 1210px) {
+  main {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 1080px) {
+  main {
+    flex-wrap: wrap;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .column_1,
+  .column_2 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .column_2 {
+    margin-top: 40px;
+    justify-content: center;
+  }
+  .room-details__wrapper {
+    justify-content: space-between;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  main {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+  }
+  .room-details__impressions {
+    margin-left: 0;
+  }
+
+  .room-details__title {
+    margin-top: 20px;
+  }
+  .room-details__comments {
+    padding-right: 0;
+  }
+  .rules_and_cancel {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .room-details__wrapper {
+    flex-wrap: wrap-reverse;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 400px) { 
+  .column_2 {
+    margin-left: -20px;
+  }
 }

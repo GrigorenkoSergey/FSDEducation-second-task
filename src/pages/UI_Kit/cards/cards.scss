@@ -1,6 +1,6 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/search-form/search-form.scss";
-@import "src/assets/blocks/final-check/final-check.scss";
+@import "src/assets/blocks/final-bill/final-bill.scss";
 @import "src/assets/blocks/registration/registration.scss";
 @import "src/assets/blocks/log-in/log-in.scss";
 @import "src/assets/blocks/preview/preview.scss";
@@ -16,7 +16,7 @@ body {
     top: 150px;
   }
 
-  &__final-check {
+  &__final-bill {
     position: absolute;
     left: 560px;
     top: 150px;

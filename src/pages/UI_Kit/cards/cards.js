@@ -1,7 +1,7 @@
 import "./cards.scss";
 import "../../../assets/blocks/search-form/search-form.js";
 import dateDropdowns from "../../../assets/blocks/date-dropdown/date-dropdown.js";
-import "../../../assets/blocks/final-check/final-check.js";
+import "../../../assets/blocks/final-bill/final-bill.js";
 import "../../../assets/blocks/registration/registration.js";
 import "../../../assets/blocks/log-in/log-in.js";
 import "../../../assets/blocks/preview/preview.js";
@@ -20,7 +20,7 @@ departure.el.classList.add("_invisible");
 arrival.setDate(new Date(2019, 7, 19), true)
 departure.setDate(new Date(2019, 7, 23), true)
 
-arrival = arrivals.filter(item => item.el.dataset.name == "arrival_final-check")[0];
-departure = departures.filter(item => item.el.dataset.name == "departure_final-check")[0];
+arrival = arrivals.filter(item => item.el.dataset.name == "arrival_final-bill")[0];
+departure = departures.filter(item => item.el.dataset.name == "departure_final-bill")[0];
 arrival.setDate(new Date(2019, 7, 19));
 departure.setDate(new Date(2019, 7, 23));

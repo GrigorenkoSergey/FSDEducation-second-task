@@ -3,7 +3,7 @@ extends ../../../assets/blocks/template/template_website.pug
 block includes
     include ../../../assets/blocks/buns/buns.pug
     include ../../../assets/blocks/comment/comment.pug
-    include ../../../assets/blocks/final-check/final-check.pug
+    include ../../../assets/blocks/final-bill/final-bill.pug
     include ../../../assets/blocks/bullet-list/bullet-list.pug
     include ../../../assets/blocks/diagram/diagram.pug
 
@@ -49,9 +49,10 @@ block content
                         +diagram()
 
             .room-details__comments
+                //- .room-details__comments-counter
+                //-     span 2 отзыва
                 .room-details__comments-title
                     h2 Отзывы посетителей номера
-                .room-details__comments-counter
                     span 2 отзыва
                 .room-details__comments-comment
                     +comment(reviewerMurad)
@@ -69,6 +70,6 @@ block content
                         | вы получите полный возврат за вычетом сбора за услуги.
 
         .column_2
-            +final-check()
+            +final-bill()
 
 

@@ -185,3 +185,9 @@ $headerHeight: 70px;
     }
   }
 }
+
+@media (max-width: 350px) {
+  .header__logo {
+    left: 3px;
+  }
+}
