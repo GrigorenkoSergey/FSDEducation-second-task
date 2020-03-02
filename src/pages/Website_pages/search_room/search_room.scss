@@ -1,0 +1,52 @@
+@import "src/assets/blocks/template/template.scss";
+@import "src/assets/blocks/filter-date/filter-date.scss";
+@import "src/assets/blocks/dropdown/dropdown.scss";
+@import "src/assets/blocks/range-slider/range-slider.scss";
+@import "src/assets/blocks/checkboxes/checkboxes.scss";
+
+main {
+  padding: 30px 140px;
+  display: grid;
+  grid-template-columns: 266px 1fr;
+  gap: 60px;
+}
+
+.description {
+  &__filter-date {
+    margin-top: 5px;
+  }
+  &__dropdown {
+    margin-top: 20px;
+  }
+  &__range-slider {
+    margin-top: 30px;
+
+    p {
+      margin-top: 15px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+  &__checkboxes {
+    margin-top: 29px;
+  }
+  &__rich-checkbox-buttons {
+    margin-top: 28px;
+  }
+  &__dropdown-rooms {
+    margin-top: 30px;
+  }
+  &__checkbox-buttons {
+    margin-top: 14px;
+  }
+}
+
+.rooms-list {
+  display: grid;
+  grid-template-columns: 270px 270px 270px;
+  gap: 20px 12px;
+
+  &__title {
+    grid-column: 1 / 4;
+  }
+}

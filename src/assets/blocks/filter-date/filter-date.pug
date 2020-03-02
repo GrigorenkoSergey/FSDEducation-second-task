@@ -1,0 +1,20 @@
+//- mixin call:
+//- +filter-date() | +filter-date({}) | +filter-date(obj) 
+//-                | +filter-date({title: "some_title"})
+
+- 
+    var filterDateDefault = {
+        title: "filter date dropdown",
+        range: "19 авг - 23 авг",
+    }
+mixin filter-date(obj = filterDateDefault)
+    - 
+        let {
+            title = "filter date dropdown",
+            range = "19 авг - 23 авг",
+            } = obj;
+
+    .filter-date__title
+        h3 !{title}
+    select.filter-date
+        option(selected) !{range}  

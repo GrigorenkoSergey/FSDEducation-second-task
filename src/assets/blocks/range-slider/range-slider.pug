@@ -1,6 +1,7 @@
-mixin rangeSlider
+mixin range-slider(obj = {})
+    - let {title = "range slider"} = obj;
     .range-slider
-        .range-slider__title range slider
+        .range-slider__title #{title} 
         .range-slider__range 5 000&#8381 - 10 000&#8381
         .range-slider__roller-container
             .range-slider__roller

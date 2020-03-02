@@ -1,0 +1,29 @@
+.filter-date {
+  width: 266px;
+  height: 44px;
+  border: 1px solid $dark_25;
+  border-radius: 4px;
+  padding-left: 14px;
+  color: $dark_75;
+  background: url("/assets/images/expand_more.png") no-repeat;
+  background-position: right;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border-color: $dark_50;
+    outline: none;
+  }
+
+  &.hover {
+    border-color: $dark_75;
+    outline: none;
+  }
+
+  &__title {
+    height: 15px;
+    position: relative;
+    top: -5px;
+  }
+}

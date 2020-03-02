@@ -26,6 +26,30 @@
         showReset: false, 
     }
 
+    var dropdownRooms = {
+        name: "rooms", 
+        extraClasses: {
+            dropdownClass: "dropdown_rooms", 
+        },
+
+        content: {
+            title: "dropdown",
+            input: "2 спальни, 2 кровати...",
+            items: {
+                bedrooms: "Спальни",
+                beds: "Кровати",
+                bathrooms: "Ванные комнаты"
+            },
+            counters: {
+                rooms_num: 2,
+                beds_num: 2,
+                bathrooms_num: 0
+            },   
+        },
+        //- покажем кнопки "Очистить" и "применить"?
+        showButtons: false, 
+        }
+
 mixin counter(dataItem, value)
     .dropdown__trigger
         if (value) 
@@ -45,7 +69,7 @@ mixin dropdown(obj, expanded)
             inputClass = "dropdown__input_expanded";
             containerClass = "dropdown__container_expanded";
         }
-        
+
     .dropdown(data-name= name class= dropdownClass)
         .dropdown__title #{title}
         .dropdown__input(class= inputClass)

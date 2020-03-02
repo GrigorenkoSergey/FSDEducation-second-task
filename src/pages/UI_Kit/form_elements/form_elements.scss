@@ -1,6 +1,7 @@
 @import "src/assets/blocks/template/template.scss";
 @import "src/assets/blocks/input/input.scss";
 @import "src/assets/blocks/dropdown/dropdown.scss";
+@import "src/assets/blocks/filter-date/filter-date.scss";
 @import "src/assets/blocks/date-dropdown/date-dropdown.scss";
 @import "src/assets/blocks/checkboxes/checkboxes.scss";
 @import "src/assets/blocks/buns/buns.scss";
@@ -13,7 +14,6 @@
 @import "src/assets/blocks/buttons/buttons.scss";
 @import "src/assets/blocks/pagination/pagination.scss";
 @import "src/assets/blocks/bullet-list/bullet-list.scss";
-
 
 $inputWidth: 320px;
 
@@ -91,14 +91,7 @@ main {
 
 .example-date-dropdown {
   margin-top: 40px;
-}
-
-.filter-date {
-  @extend .input;
-  width: 266px;
-  background: url("/assets/images/expand_more.png") no-repeat;
-  background-position: right;
-  appearance: none;
+  width: 320px;
 }
 
 .example-input_filter {
@@ -198,10 +191,12 @@ main {
 
 .example-dropdown-guests {
   margin-top: 196px;
+  width: 320px;
 }
 
-.example-dropdown-guests_new-avatar {
+.example-dropdown-guests_new-entry {
   margin-top: 233px;
+  width: 320px;
 }
 
 .example-rich-checkbox-buttons {

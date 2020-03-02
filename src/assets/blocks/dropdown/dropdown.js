@@ -28,7 +28,7 @@ for (let item of dropdown) {
         let dataItem = span.dataset.item;
 
         if (operation == "+") {
-            if (value < 5) { //максимальное к-во элементов
+            if (value < 10) { //максимальное к-во элементов
                 span.textContent = ++value;
             }
 
@@ -56,10 +56,10 @@ for (let item of roomsDropdownArr) {
         let bedsNum = +this.querySelector("span[data-item = 'beds_num']").textContent;
         let bathroomsNum = +this.querySelector("span[data-item = 'bathrooms_num']").textContent;
 
-        let roomsEnds = ["ен", "ьня", "ьни", "ьни", "ьни", "ен"];
-        let bedsEnds = ["ей", "ь", "и", "и", "и", "ей"];
+        let roomsSuffix = ["ен", "ьня", "ьни", "ьни", "ьни", "ен"];
+        let bedsSuffix = ["ей", "ь", "и", "и", "и", "ей"];
 
-        input.textContent = `${roomsNum} спал${roomsEnds[roomsNum]}, ${bedsNum} кроват${bedsEnds[bedsNum]}...`;
+        input.textContent = `${roomsNum} спал${roomsSuffix[roomsNum]}, ${bedsNum} кроват${bedsSuffix[bedsNum]}...`;
     }
 }
 
@@ -78,9 +78,15 @@ for (item of guestsDropdownArr) {
         let kidsNum = +this.querySelector("span[data-item = 'kids_num']").textContent;
         let babiesNum = +this.querySelector("span[data-item = 'babies_num']").textContent;
 
-        let guestsEnds = ["ей", "ь", "я", "я", "я", "ей", "ей", "ей", "ей", "ей", "ей"];
+        let guestsSuffix = ["ей", "ь", "я", "я", "я", "ей", "ей", "ей", "ей", "ей", "ей", "ей"];
+        let babiesSuffix = ["", "ец", "ца", "ца", "ца", "цев", "цев", "цев", "цев", "цев", "цев"];
 
-        input.textContent = `${adultsNum + kidsNum} гост${guestsEnds[adultsNum + kidsNum]}`;
+        let inputTextContent = `${adultsNum + kidsNum} гост${guestsSuffix[adultsNum + kidsNum]}`;
+        if (babiesNum > 0) {
+            inputTextContent += `, ${babiesNum} младен${babiesSuffix[babiesNum]}`;
+        }
+    
+        input.textContent = inputTextContent;
         resetButton.hidden = false;
     };
 

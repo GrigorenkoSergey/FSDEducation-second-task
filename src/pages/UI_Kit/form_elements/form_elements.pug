@@ -19,46 +19,10 @@ block includes
 block variables
     - 
         var titleName = 'From Elements'
-
-        var list1 = {
-            "breakfast": "Завтрак",
-            "desk": "Письменный стол",
-            "highchair": "Стул для кормления",
-            "crib": "Кроватка",
-            "tv_1": "Телевизор",
-            "shampoo_1": "Шампунь",    
-            "tv_2": "Телевизор",
-            "shampoo_2": "Шампунь",
-        }
-
-        var list2 = {
-            "smoking": "Можно курить",
-            "pets": "Можно с питомцами",
-            "guests": "Можно пригласить гостей <br />(до 10 человек)" 
-        }
-
-        var dropdownRooms = {
-            name: "rooms", 
-            extraClasses: {
-                dropdownClass: "dropdown_rooms", 
-            },
-
-            content: {
-                title: "dropdown",
-                input: "2 спальни, 2 кровати...",
-                items: {
-                    bedrooms: "Спальни",
-                    beds: "Кровати",
-                    bathrooms: "Ванные комнаты"
-                },
-                counters: {
-                    rooms_num: 2,
-                    beds_num: 2,
-                    bathrooms_num: 0
-                },   
-            },
-            //- покажем кнопки "Очистить" и "применить"?
-            showButtons: false, 
+        
+        var listGag = {
+            title: "expandable checkbox list",
+            content: {},
         }
 
 block content
@@ -111,10 +75,10 @@ block content
                 +dropdown(dropdownRooms, true)
 
             .example__expandable-checkbox-list
-                +expandable-checkbox-list({}, false)
+            +expandable-checkbox-list(listGag, false)
 
             .example__expandable-checkbox-list_expanded
-                +expandable-checkbox-list(list1, true)
+                +expandable-checkbox-list(expandableList, true)
 
             .example-buns
                 - var buns = bunsArr;
@@ -122,7 +86,7 @@ block content
 
         .second-column
             .example-checkbox-buttons
-                +checkboxButtons(list2)
+                +checkboxButtons(checkboxList)
 
             .example-radio-buttons
                 .example-radio-buttons__title
@@ -159,9 +123,9 @@ block content
 
             .example-comments
                 +comment(reviewer)
-        
+
         .third-column
-            +rangeSlider
+            +range-slider
 
             .example-button
                 .example-button__title
@@ -202,4 +166,3 @@ block content
                             "Без вечеринок и мероприятий", 
                             "Время прибытия — после 13:00,<br />а выезд до 12:00"]                     
                 +bullet-list(bulletListArr)
-

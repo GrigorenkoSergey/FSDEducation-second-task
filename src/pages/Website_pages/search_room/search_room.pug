@@ -1,0 +1,62 @@
+extends ../../../assets/blocks/template/template_website.pug
+
+block includes
+    include ../../../assets/blocks/filter-date/filter-date.pug
+    include ../../../assets/blocks/dropdown/dropdown.pug
+    include ../../../assets/blocks/range-slider/range-slider.pug
+    include ../../../assets/blocks/checkboxes/checkboxes.pug
+
+block variables
+    - 
+        var titleName = "Search room";
+        var dropdown = Object.assign({}, dropdownDefault);
+        dropdown.content.title = "Гости";
+        dropdown.content.input = "3 гостя, 1 младенец"
+        dropdown.content.counters = {
+            adults_num: 3,
+            kids_num: 0,
+            babies_num: 1
+        }
+
+        var amenities = checkboxList;
+        var amenitiesExtra = Object.assign({}, expandableList);
+        amenitiesExtra.title = "Дополнительные удобства";
+        //- var amenitiesExtra = {
+        //-     "breakfast": "Завтрак",
+        //-     "desk": "Письменный стол",
+        //-     "highchair": "Стул для кормления",
+        //-     "crib": "Кроватка",
+        //-     "tv_1": "Телевизор",
+        //-     "shampoo_1": "Шампунь",    
+        //-     "tv_2": "Телевизор",
+        //-     "shampoo_2": "Шампунь",
+        //- }
+
+
+
+block content
+    main
+        .description
+            .description__filter-date
+                +filter-date({title: "Даты пребывания в отеле"})
+            .description__dropdown
+                +dropdown(dropdownDefault)
+            .description__range-slider
+                +range-slider({title: "Диапазон цены"})
+                p Стоимость за сутки пребывания в номере
+            .description__checkboxes
+                +checkboxButtons(amenities)
+            .description__rich-checkbox-buttons
+                .rich-checkbox__title  Доступность 
+                +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
+                +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
+            .description__dropdown-rooms
+                - dropdownRooms.content.title = "Удобства номера";
+                +dropdown(dropdownRooms)
+            .description__checkbox-buttons
+                +expandable-checkbox-list(amenitiesExtra)
+
+
+        .rooms-list 
+            .rooms-list__title
+                h1 Номера, которые мы для вас подобрали
