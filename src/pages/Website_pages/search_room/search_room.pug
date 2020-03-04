@@ -5,6 +5,8 @@ block includes
     include ../../../assets/blocks/dropdown/dropdown.pug
     include ../../../assets/blocks/range-slider/range-slider.pug
     include ../../../assets/blocks/checkboxes/checkboxes.pug
+    include ../../../assets/blocks/preview/preview.pug
+    include ../../../assets/blocks/pagination/pagination.pug
 
 block variables
     - 
@@ -21,18 +23,117 @@ block variables
         var amenities = checkboxList;
         var amenitiesExtra = Object.assign({}, expandableList);
         amenitiesExtra.title = "Дополнительные удобства";
-        //- var amenitiesExtra = {
-        //-     "breakfast": "Завтрак",
-        //-     "desk": "Письменный стол",
-        //-     "highchair": "Стул для кормления",
-        //-     "crib": "Кроватка",
-        //-     "tv_1": "Телевизор",
-        //-     "shampoo_1": "Шампунь",    
-        //-     "tv_2": "Телевизор",
-        //-     "shampoo_2": "Шампунь",
-        //- }
 
-
+        var previews = [
+            {
+                number: 888,
+                type: "Люкс",
+                imgSrc: "/assets/images/Website_pages/search_room/888.png",
+                cost: "9 990",
+                stars: 5,
+                reviews: 145,
+                arrowsHidden: false,
+            },
+            {
+                number: 840,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/840.png",
+                cost: "9 900",
+                stars: 4,
+                reviews: 65,
+                arrowsHidden: true,
+            },
+            {
+                number: 980,
+                type: "Люкс",
+                imgSrc: "/assets/images/Website_pages/search_room/980.png",
+                cost: "8 500",
+                stars: 3,
+                reviews: 35,
+                arrowsHidden: true,
+            },
+            {
+                number: 856,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/856.png",
+                cost: "7 300",
+                stars: 5,
+                reviews: 19,
+                arrowsHidden: true,
+            },
+            {
+                number: 740,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/740.png",
+                cost: "6 000",
+                stars: 4,
+                reviews: 44,
+                arrowsHidden: true,
+            },
+            {
+                number: 982,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/982.png",
+                cost: "5 800",
+                stars: 3,
+                reviews: 56,
+                arrowsHidden: true,
+            },
+            {
+                number: 678,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/678.png",
+                cost: "5 500",
+                stars: 5,
+                reviews: 45,
+                arrowsHidden: true,
+            },
+            {
+                number: 450,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/450.png",
+                cost: "5 300",
+                stars: 4,
+                reviews: 39,
+                arrowsHidden: true,
+            },
+            {
+                number: 350,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/350.png",
+                cost: "5 000",
+                stars: 3,
+                reviews: 77,
+                arrowsHidden: true,
+            },
+            {
+                number: 666,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/666.png",
+                cost: "5 000",
+                stars: 5,
+                reviews: 25,
+                arrowsHidden: true,
+            },
+            {
+                number: 444,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/444.png",
+                cost: "5 000",
+                stars: 3,
+                reviews: 15,
+                arrowsHidden: true,
+            },
+            {
+                number: 352,
+                type: "",
+                imgSrc: "/assets/images/Website_pages/search_room/352.png",
+                cost: "5 000",
+                stars: 3,
+                reviews: 55,
+                arrowsHidden: true,
+            },
+        ];
 
 block content
     main
@@ -56,7 +157,10 @@ block content
             .description__checkbox-buttons
                 +expandable-checkbox-list(amenitiesExtra)
 
-
         .rooms-list 
             .rooms-list__title
                 h1 Номера, которые мы для вас подобрали
+            each val in previews
+                +preview(val)
+            .rooms-list__pagination
+                +pagination()

@@ -35,11 +35,6 @@ include ../buttons/buttons.pug
         login: {title: "Войти"},
         register: {title: "Зарегистрироваться"},
     };
-    navRus.extraClasses = {
-        "liClass": "header__li_rus",
-        "liSubmenuClass": "header__li_submenu_rus",
-        "buttonsClass": "",
-    };
 
 mixin header(nav, logged)
     - let { extraClasses = {} } = nav;
