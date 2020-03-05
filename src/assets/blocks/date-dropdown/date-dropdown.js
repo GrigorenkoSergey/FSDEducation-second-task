@@ -40,17 +40,17 @@ function rerenderContainer(instanse) {
     let container = instanse.el.parentNode.querySelector(".qs-datepicker-container");
 
     //Подвинем на 5.56 пикселей ниже и сгенерируем кнопки
-    rerenderContainer();
+    container.style.top = parseFloat(container.style.top) + 5.56 + "px";
 
-    function rerenderContainer() {
-        container.style.top = parseFloat(container.style.top) + 5.56 + "px";
+    //если у нас еще не сгенерированы кнопки "Очистить" и "Применить", то сгенерируем их
+    if (!instanse.el.parentNode.querySelector(".date-dropdown__buttons")) {
         renderButtons();
     }
 
     function renderButtons() {
         let buttonsContainer = document.createElement("div");
         let buttonReset = document.createElement("div");
-        let buttonApply = document.createElement("div");       
+        let buttonApply = document.createElement("div");
 
         buttonsContainer.classList.add('date-dropdown__buttons');
         buttonReset.classList.add("date-dropdown__button-reset");
@@ -58,7 +58,7 @@ function rerenderContainer(instanse) {
 
         buttonReset.innerHTML = "Очистить";
         buttonApply.innerHTML = "Применить";
-        
+
         buttonsContainer.append(buttonReset, buttonApply);
         container.append(buttonsContainer);
 

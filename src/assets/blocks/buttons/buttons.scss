@@ -28,6 +28,7 @@
 
   &_white {
     color: $purple;
+    // width: 99px;
   }
 
   &-text {
@@ -44,7 +45,8 @@
 
 .button-payment {
   @extend .button;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   background: $primary-gradient;
   position: relative;
 
@@ -77,4 +79,3 @@
     top: 17px;
   }
 }
-

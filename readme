@@ -2,4 +2,4 @@
 npm uninstall babel-loader @babel/core @babel/preset-env 
 npm install -D babel-loader @babel/core @babel/preset-env
 
-Изображения для страниц сайтов хранятся либо в папку самой страницы, либо в asseta/images/переустановить
+Изображения для страниц сайтов хранятся либо в папке самой страницы, либо в assets/images/

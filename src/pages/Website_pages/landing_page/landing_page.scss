@@ -1,0 +1,54 @@
+@import "src/assets/blocks/template/template.scss";
+@import "src/assets/blocks/search-form/search-form.scss";
+
+body {
+  background: url("./landing-page.png") no-repeat;
+  //   overflow-x: hidden; //обVрезаем фоновое изображение
+  width: 100%;
+  height: auto;
+}
+main {
+  padding-top: 70px;
+  padding-left: 140px;
+  height: 830px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.slogan {
+  width: 100%;
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 21px;
+  padding-right: 134px;
+  text-align: end;
+
+  &__p {
+    max-width: 297px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .slogan {
+      padding-bottom: 50px;
+      padding-right: 15px;
+  }
+}
+@media (max-width: 360px) {
+  main {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .slogan {
+      padding-bottom: 100px;
+      padding-right: 15px;
+  }
+}
