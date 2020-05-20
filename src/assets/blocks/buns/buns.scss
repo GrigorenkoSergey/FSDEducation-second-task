@@ -16,17 +16,17 @@
     height: 48px;
     float: left;
     margin-right: 10px;
-    background: url("/assets/blocks/buns/smile.png") center no-repeat;
+    background: url("assets/blocks/buns/images/smile.png") center no-repeat;//работает для dev
   }
 
   &__img_city {
     @extend .buns__img_smile;
-    background: url("/assets/blocks/buns/city.png") center no-repeat;
+    background: url("assets/blocks/buns/images/city.png") center no-repeat;
   }
 
   &__img_fire {
     @extend .buns__img_smile;
-    background: url("/assets/blocks/buns/fire.png") center no-repeat;
+    background: url("assets/blocks/buns/fire.png") center no-repeat;
   }
 
   &__title {

@@ -30,7 +30,7 @@
 
   &__input:checked + &__label::before {
     border-color: $purple;
-    background: url("/assets/blocks/checkboxes/check.png") center no-repeat;
+    background: url("assets/images/blocks/checkboxes/check.png") center no-repeat;
   }
 
 }
@@ -115,7 +115,7 @@
 
   &__input:checked + &__label::before {
     border-color: $purple;
-    background: url("/assets/blocks/checkboxes/check.png") center no-repeat;
+    background: url("assets/images/blocks/checkboxes/check.png") center no-repeat;
   }
 
   &__span {
