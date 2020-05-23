@@ -63,21 +63,20 @@ let conf = {
         {
           loader: "css-loader",
           options: {
-            // url: false, //супер строка, решила проблемы с поиском assets от корня сайта
+            url: false, //супер строка, решила проблемы с поиском assets от корня сайта
             // эксперименты с resolve-url-loader ни к чему не привели. Потерял целый день.
           },
         },
         {
           loader: 'postcss-loader',
           options: {
-            // sourceMap: true,
             config: { path: 'src/postcss.config.js' },
           }
         },
         {
           loader: "sass-loader",
           options: {
-            // sourceMap: true,
+            sourceMap: true,
           }
         }
       ],
