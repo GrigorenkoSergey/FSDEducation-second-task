@@ -5,7 +5,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 
-
 const PATHS = {
   src: path.join(__dirname, "./src"),
   dist: path.join(__dirname, "./dist"),
@@ -15,8 +14,10 @@ const PATHS = {
 
 let entries = {
   "index": `${PATHS.src}`,
-  "cards": `${PATHS.pages}/UI_Kit/cards/cards`
 };
+
+let UI_PAGES = fs.readdirSync(`${PATHS.pages}/UI_Kit/`);
+UI_PAGES.forEach(item => entries[item] = `${PATHS.pages}/UI_Kit/${item}/${item}`);
 
 let conf = {
   entry: entries,
@@ -27,9 +28,9 @@ let conf = {
   },
 
   optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
+    // splitChunks: {
+    //   chunks: "all",
+    // },
   },
 
   devServer: {
@@ -114,18 +115,18 @@ let conf = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.pug`,
       filename: './index.html',
-      chunks: ['index'], //автоматического обновления с этой строкой не происходит.
+      chunks: ['index'], //автоматического обновления с этой строкой не происходит в dev режиме.
     }),
+
+    ...UI_PAGES.map(page => new HtmlWebpackPlugin({
+      template: `${PATHS.src}/pages/UI_Kit/${page}/${page}.pug`,
+      filename: `./${page}.html`,
+      chunks: [`${page}`], //Разбить на 2 конфига для дев и прод
+    })),
 
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css",
-    }),
-
-    new HtmlWebpackPlugin({ //?
-      template: `${PATHS.src}/pages/UI_Kit/cards/cards.pug`,
-      filename: 'cards.html',
-      chunks: ['cards'],
     }),
 
     new CopyPlugin([
