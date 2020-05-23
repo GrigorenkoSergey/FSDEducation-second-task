@@ -136,7 +136,8 @@ $font-size: 19px;
       display: inline-block;
       width: 23.93px;
       height: 24px;
-      background: url("/assets/blocks/datepicker/arrow_forward.png") center no-repeat;
+      background: url("/assets/blocks/datepicker/images/arrow_forward.png") center no-repeat;
+      // background: url("./images/arrow_forward.png") center no-repeat;
     }
 
     &.qs-left:after {

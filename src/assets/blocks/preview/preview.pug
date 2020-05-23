@@ -3,7 +3,7 @@ include ../rate-button/rate-button.pug
     var previewObj = {
         number: 888,
         type: "Люкс",
-        imgSrc: "/assets/blocks/preview/images/888.png",
+        imgSrc: "assets/blocks/preview/images/888.png",
         cost: "9 990",
         stars: 5,
         reviews: 145,
@@ -14,7 +14,7 @@ mixin preview(previewObj)
     - let {number, type, imgSrc, cost, stars, reviews, arrowsHidden} = previewObj;
     .preview
         .preview__image-container
-            img.preview__image(src= imgSrc width= "270px" height = "151px")
+            img.preview__image(alt="Картинка номера" src= imgSrc width= "270px" height = "151px")
             if (!arrowsHidden)
                 .preview-next
                 .preview-prev

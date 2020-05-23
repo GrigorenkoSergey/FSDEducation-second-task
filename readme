@@ -1,7 +1,3 @@
 Поначалу выдавало ошибку. Пришлось переустановить babel-loader командами
 npm uninstall babel-loader @babel/core @babel/preset-env 
 npm install -D babel-loader @babel/core @babel/preset-env
-
-Изображения для страниц сайтов хранятся либо в папке самой страницы, либо в assets/images/
-В блоке, содержащим изображения предусмотрена отдельная папка images, которую нужно скопировать в 
-src/assets/images/blocks/<имя_блока> (естественно, надо создать ее сначала ))

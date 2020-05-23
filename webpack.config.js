@@ -13,25 +13,17 @@ const PATHS = {
   favicons: path.join(__dirname, "./favicons"),
 }
 
-const PAGES_DIR = `${PATHS.pages}/`;
-const PAGES = fs.readdirSync(`${PATHS.pages}/`).map(item => fs.readdirSync(PAGES_DIR + item));
-let pugPages = [].concat(...PAGES).filter(fileName => fileName.endsWith('.pug'));
-
-let entries = { "index": `${PATHS.src}` };
-/*
-//Добавить уже после всего
-pugPages.forEach((item, index) => {
-  let key = item.replace(/\.pug/, "");
-  entries[key] = `${PATHS.src}/pages/${key}/${key}.js`;
-});
-*/
+let entries = {
+  "index": `${PATHS.src}`,
+  // "cards": `${PATHS.pages}/UI_Kit/cards/cards`
+};
 
 let conf = {
   entry: entries,
   output: {
     path: path.resolve(__dirname, "./dist"),
-    // filename: (data) => data.chunk.name == "index" ? "index.js" : "pages/[name]/[name].js", 
-    // publicPath: "",
+    publicPath: "",
+    filename: '[name].js',
   },
 
   optimization: {
@@ -71,17 +63,23 @@ let conf = {
         {
           loader: "css-loader",
           options: {
-            url: false, //супер строка, решила проблемы с поиском assets от корня сайта
+            // url: false, //супер строка, решила проблемы с поиском assets от корня сайта
+            // эксперименты с resolve-url-loader ни к чему не привели. Потерял целый день.
           },
         },
         {
           loader: 'postcss-loader',
           options: {
-            sourceMap: true,
+            // sourceMap: true,
             config: { path: 'src/postcss.config.js' },
           }
         },
-        "sass-loader",
+        {
+          loader: "sass-loader",
+          options: {
+            // sourceMap: true,
+          }
+        }
       ],
     },
     {
@@ -89,7 +87,7 @@ let conf = {
       use: [
         {
           loader: "pug-loader",
-        },
+        }
       ],
     },
     {
@@ -97,11 +95,7 @@ let conf = {
       use: [
         {
           loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            emitFile: false,
-          }
-        }
+        },
       ],
     },
     {
@@ -109,10 +103,7 @@ let conf = {
       use: [
         {
           loader: "file-loader",
-          options: {
-            name: "[name]/[name].[ext]",
-          }
-        }
+        },
       ],
     },
     ]
@@ -124,23 +115,26 @@ let conf = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.pug`,
       filename: './index.html',
-      //chunks: ['index'], //c этой строкой не происходит автоматического обновления страницы, нужно обновлять вручную.. 
+      chunks: ['index'],
     }),
-    /*
-          //когда все страницы будут готовы, нужно раскомментировать этот блок кода.
-        ...pugPages.map(page => new HtmlWebpackPlugin({
-          template: `${PATHS.pages}/${page.replace(/\.pug/, "")}/${page}`,
-          filename: `./pages/${page.replace(/\.pug/,'/$`.html')}`,
-          chunks: [`${page.replace(/\.pug/,'')}`],
-        })),
-    */
+
     new MiniCssExtractPlugin({
-      moduleFilename: ({ name }) => name === "index" ? "[name].css" : "pages/[name]/[name].css",
+      filename: "[name].css",
       chunkFilename: "[id].css",
     }),
 
+    // new HtmlWebpackPlugin({ //?
+    //   template: `${PATHS.src}/pages/UI_Kit/cards/cards.pug`,
+    //   filename: 'pages/UI_Kit/cards/cards.html',
+    //   chunks: ['cards'],
+    // }),
+    // new HtmlWebpackPlugin({ //?
+    //   template: `${PATHS.src}/pages/UI_Kit/cards/cards.pug`,
+    //   filename: 'cards.html',
+    //   chunks: ['cards'],
+    // }),
+
     new CopyPlugin([
-      { from: `${PATHS.src}/assets/images/`, to: `${PATHS.dist}/assets/images/` },
       { from: `${PATHS.src}/assets/blocks/`, to: `${PATHS.dist}/assets/blocks/` },
       { from: `${PATHS.src}/assets/fonts/`, to: `${PATHS.dist}/assets/fonts/` },
       { from: `${PATHS.favicons}/`, to: `${PATHS.dist}/favicons/` },
