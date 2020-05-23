@@ -15,7 +15,7 @@ const PATHS = {
 
 let entries = {
   "index": `${PATHS.src}`,
-  // "cards": `${PATHS.pages}/UI_Kit/cards/cards`
+  "cards": `${PATHS.pages}/UI_Kit/cards/cards`
 };
 
 let conf = {
@@ -114,7 +114,7 @@ let conf = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.pug`,
       filename: './index.html',
-      chunks: ['index'],
+      chunks: ['index'], //автоматического обновления с этой строкой не происходит.
     }),
 
     new MiniCssExtractPlugin({
@@ -122,16 +122,11 @@ let conf = {
       chunkFilename: "[id].css",
     }),
 
-    // new HtmlWebpackPlugin({ //?
-    //   template: `${PATHS.src}/pages/UI_Kit/cards/cards.pug`,
-    //   filename: 'pages/UI_Kit/cards/cards.html',
-    //   chunks: ['cards'],
-    // }),
-    // new HtmlWebpackPlugin({ //?
-    //   template: `${PATHS.src}/pages/UI_Kit/cards/cards.pug`,
-    //   filename: 'cards.html',
-    //   chunks: ['cards'],
-    // }),
+    new HtmlWebpackPlugin({ //?
+      template: `${PATHS.src}/pages/UI_Kit/cards/cards.pug`,
+      filename: 'cards.html',
+      chunks: ['cards'],
+    }),
 
     new CopyPlugin([
       { from: `${PATHS.src}/assets/blocks/`, to: `${PATHS.dist}/assets/blocks/` },
