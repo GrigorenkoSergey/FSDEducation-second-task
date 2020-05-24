@@ -1,7 +1,0 @@
-Поначалу выдавало ошибку. Пришлось переустановить babel-loader командами
-npm uninstall babel-loader @babel/core @babel/preset-env 
-npm install -D babel-loader @babel/core @babel/preset-env
-
-Картинки, которые относятся не к блоку, а к непосредственно сайту, будем складывать в 
-папку assets/images/(UI_Kit)|(Website_pages)/some_page/image.png. Связано это с настройками 
-(точнее с их отсутствием) file-loader моего webpack.
