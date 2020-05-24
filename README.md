@@ -1,6 +1,6 @@
 ## Страницы макета
 * UI_Kit
-  * [cards]https://grigorenkosergey.github.io/Second_Task/cards.html
+  * [cards](https://grigorenkosergey.github.io/Second_Task/cards.html)
   * colors_and_type
   * form_elements
   * headers_and_footers
