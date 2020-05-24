@@ -1,4 +1,6 @@
 include ../social-networks/social-networks.pug
+
+//- DON'T REMOVE!!!!!!
 //- example of objFooter = footerDescription
 //- - 
 //-     var footerDescription = {
@@ -26,7 +28,7 @@ include ../social-networks/social-networks.pug
 
 mixin footer-creative(objFooter)
     .footer-creative
-        img.footer-creative__logo(src="/assets/images/Logo_toxin.png")
+        img.footer-creative__logo(src="assets/blocks/footer-creative/images/Logo_toxin.png")
         span.footer-creative__description #{objFooter.description}
         .footer-creative__social-networks
             +social-networks()

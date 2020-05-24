@@ -9,17 +9,14 @@
 
     &__twitter {
         @extend %icon;
-        background: url("/assets/blocks/copyright/images/twitter.png") center no-repeat;
-        // background: url("./images/twitter.png") center no-repeat;
+        background: url("assets/blocks/copyright/images/twitter.png") center no-repeat;
     }
     &__facebook {
         @extend %icon;
-        background: url("/assets/blocks/copyright/images/facebook.png") center no-repeat;
-        // background: url("./images/facebook.png") center no-repeat;
+        background: url("assets/blocks/copyright/images/facebook.png") center no-repeat;
     }
     &__instagram {
         @extend %icon;
-        background: url("/assets/blocks/copyright/images/instagram.png") center no-repeat;
-        // background: url("./images/instagram.png") center no-repeat;
+        background: url("assets/blocks/copyright/images/instagram.png") center no-repeat;
     }
 }
