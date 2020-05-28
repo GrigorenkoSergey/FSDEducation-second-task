@@ -1,5 +1,7 @@
 {
     "files.exclude": {
-        ".*": true
-    }
+        ".vscode": true,
+        ".babelrc": true,
+    },
+    "timeline.excludeSources": null
 }

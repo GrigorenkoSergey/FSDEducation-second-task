@@ -1,3 +1,4 @@
 трудозатраты.txt
 node_modules/
 dist/
+.vscode/
