@@ -1,6 +1,4 @@
 import "./form_elements.scss";
-import "../../../assets/blocks/buns/buns.js";
-import "../../../assets/blocks/input/input.js";
 import dateDropdown from "../../../assets/blocks/date-dropdown/date-dropdown.js";
 import "../../../assets/blocks/dropdown/dropdown.js";
 import "../../../assets/blocks/checkboxes/checkboxes.js";
