@@ -38,8 +38,8 @@ main {
     align-items: flex-start;
   }
   .slogan {
-      padding-bottom: 50px;
-      padding-right: 15px;
+    padding-bottom: 50px;
+    padding-right: 15px;
   }
 }
 @media (max-width: 360px) {
@@ -48,9 +48,10 @@ main {
     padding-right: 5px;
   }
   .slogan {
-      padding-bottom: 100px;
-      padding-right: 15px;
+    padding-bottom: 100px;
+    padding-right: 15px;
   }
 }
-//На width: 240 уже ломается, перенастройка слишком трудоемка. 
+//На width: 240 уже ломается, перенастройка слишком трудоемка.
+//Потребуется поменять дизанй почти полностью.
 //Вероятнее всего, что пользователь просто перевернет телефон.

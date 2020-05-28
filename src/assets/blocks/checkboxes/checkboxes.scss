@@ -2,7 +2,7 @@
   position: relative;
 
   &__label {
-    display: inline-block; 
+    display: inline-block;
     color: $dark_50;
     line-height: 18px;
     min-height: 30px;
@@ -25,21 +25,20 @@
   }
 
   &__input {
-     display: none;
+    display: none;
   }
 
   &__input:checked + &__label::before {
     border-color: $purple;
     background: url("assets/blocks/checkboxes/images/check.png") center no-repeat;
   }
-
 }
 
 .checkbox-buttons {
-    &__title {
-        @extend h3;
-        margin-bottom: 12px;
-    } 
+  &__title {
+    @extend h3;
+    margin-bottom: 12px;
+  }
 }
 
 .expandable-checkbox-list {
@@ -70,7 +69,6 @@
     transform: rotate(45deg);
     cursor: pointer;
   }
-
 
   &__title_expanded::after {
     transform: rotate(-135deg);

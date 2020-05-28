@@ -1,79 +1,79 @@
 include ../input/input.pug
 
 - 
-    var footerDescription = {
-        description: `Lorem ipsum dolor sit amet consectetur adipiscing
-            elit aliquam eget nullam pellentesque aliquam
-            curabitur cociis.`,
-        navigation: {
-            title: "navigation",
-            list: [ "About us", "News", "Support", "Products" ],
-        },
-        aboutUs: {
-            title: "About Us",
-            list: ["Who we are", "Our team", "Careers", "Investors"],
-        },
-        support: {
-            title: "Support", 
-            list: ["Documentation", "Community", "Get in Touch"]
-        },
-        subscribe: {
-            title: "Subscribe to our newsletter",
-            description: `Receive our latest news and promotions in
-                your inbox!`,
-            placeholder: "Your email address",
-        },
-    }
+  var footerDescription = {
+    description: `Lorem ipsum dolor sit amet consectetur adipiscing
+      elit aliquam eget nullam pellentesque aliquam
+      curabitur cociis.`,
+    navigation: {
+      title: "navigation",
+      list: [ "About us", "News", "Support", "Products" ],
+    },
+    aboutUs: {
+      title: "About Us",
+      list: ["Who we are", "Our team", "Careers", "Investors"],
+    },
+    support: {
+      title: "Support", 
+      list: ["Documentation", "Community", "Get in Touch"]
+    },
+    subscribe: {
+      title: "Subscribe to our newsletter",
+      description: `Receive our latest news and promotions in
+        your inbox!`,
+      placeholder: "Your email address",
+    },
+  }
 - 
-    var footerRus = {
-        description: `Бронирование номеров в лучшем отеле
-            2019 года по версии ассоциации
-            "Отельные взгляды"`,
-        navigation: {
-            title: "Навигация",
-            list: [ "О нас", "Новости", "Служба поддержки", "Услуги" ],
-        },
-        aboutUs: {
-            title: "О нас",
-            list: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
-        },
-        support: {
-            title: "Служба поддержки", 
-            list: ["Соглашения", "Сообщества", "Связь с нами"]
-        },
-        subscribe: {
-            title: "Подписка",
-            description: `Получайте специальные предложения
-                и новости сервиса`,
-            placeholder: "Email",
-        },
-    }
+  var footerRus = {
+    description: `Бронирование номеров в лучшем отеле
+      2019 года по версии ассоциации
+      "Отельные взгляды"`,
+    navigation: {
+      title: "Навигация",
+      list: [ "О нас", "Новости", "Служба поддержки", "Услуги" ],
+    },
+    aboutUs: {
+      title: "О нас",
+      list: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
+    },
+    support: {
+      title: "Служба поддержки", 
+      list: ["Соглашения", "Сообщества", "Связь с нами"]
+    },
+    subscribe: {
+      title: "Подписка",
+      description: `Получайте специальные предложения
+        и новости сервиса`,
+      placeholder: "Email",
+    },
+  }
 
 mixin footerRenderList(objList) 
-    .footer__subtitle #{objList.title}
-    ul.footer__list
-        each val in objList.list
-            li.footer__list-li #{val}
+  .footer__subtitle #{objList.title}
+  ul.footer__list
+    each val in objList.list
+      li.footer__list-li #{val}
 
 mixin footerRenderSubscribe(objList)
-    - 
-        let {title, description, placeholder} = objList.subscribe;
-    .footer__subtitle #{title}
-    .subscribe__description #{description}
-    +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})
+  - 
+    let {title, description, placeholder} = objList.subscribe;
+  .footer__subtitle #{title}
+  .subscribe__description #{description}
+  +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})
 
 mixin footer(footerDescription)
-    - 
-        let {description, navigation, aboutUs, support} = footerDescription;
-    .footer
-        .footer__logo
-            img(src="assets/blocks/footer/images/Logo_toxin.png" height= "40px")
-            span.footer__description #{description}
-        .footer__navigation
-            +footerRenderList(navigation)
-        .footer__about-us
-            +footerRenderList(aboutUs)
-        .footer__support
-            +footerRenderList(support)
-        .footer__subscribe
-            +footerRenderSubscribe(footerDescription)
+  - 
+    let {description, navigation, aboutUs, support} = footerDescription;
+  .footer
+    .footer__logo
+      img(src="assets/blocks/footer/images/Logo_toxin.png" height= "40px")
+      span.footer__description #{description}
+    .footer__navigation
+      +footerRenderList(navigation)
+    .footer__about-us
+      +footerRenderList(aboutUs)
+    .footer__support
+      +footerRenderList(support)
+    .footer__subscribe
+      +footerRenderSubscribe(footerDescription)

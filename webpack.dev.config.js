@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -11,7 +11,7 @@ const PATHS = {
 }
 
 module.exports = {
-  entry: `${PATHS.src}/index`, 
+  entry: `${PATHS.src}/index`,
   output: {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "",
@@ -97,10 +97,10 @@ module.exports = {
     }),
 
     new CopyPlugin([
-      { from: `${PATHS.src}/assets/blocks/`, to: `${PATHS.dist}/assets/blocks/` },
-      { from: `${PATHS.src}/assets/fonts/`, to: `${PATHS.dist}/assets/fonts/` },
-      { from: `${PATHS.src}/assets/images/`, to: `${PATHS.dist}/assets/images` },
-      { from: `${PATHS.favicons}/`, to: `${PATHS.dist}/favicons/` },
+      {from: `${PATHS.src}/assets/blocks/`, to: `${PATHS.dist}/assets/blocks/`},
+      {from: `${PATHS.src}/assets/fonts/`, to: `${PATHS.dist}/assets/fonts/`},
+      {from: `${PATHS.src}/assets/images/`, to: `${PATHS.dist}/assets/images`},
+      {from: `${PATHS.favicons}/`, to: `${PATHS.dist}/favicons/`},
     ]),
   ],
 };

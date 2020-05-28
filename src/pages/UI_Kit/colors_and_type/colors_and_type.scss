@@ -26,7 +26,6 @@
   width: 159px;
   height: 57px;
   margin-left: 40px;
-  
 
   font-family: Quicksand;
   font-style: normal;
@@ -42,7 +41,7 @@ $colors: (
   dark_25: $dark_25,
   dark_5: $dark_5,
   purple: $purple,
-  green: $green
+  green: $green,
 );
 
 @each $key, $val in $colors {
@@ -60,9 +59,11 @@ $example-text-width: 340px;
   width: $example-text-width;
 }
 
-.example-text  {
-   h1, h2, h3 {
-     margin-bottom: 50px;
+.example-text {
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 50px;
   }
 }
 

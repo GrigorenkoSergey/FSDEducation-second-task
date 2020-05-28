@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -59,7 +59,7 @@ module.exports = {
           loader: 'postcss-loader',
           options: {
             sourceMap: true,
-            config: { path: 'src/postcss.config.js' }
+            config: {path: 'src/postcss.config.js'}
           }
         },
       ]
@@ -78,7 +78,7 @@ module.exports = {
         {
           loader: 'postcss-loader',
           options: {
-            config: { path: 'src/postcss.config.js' },
+            config: {path: 'src/postcss.config.js'},
           }
         },
         {
@@ -140,9 +140,9 @@ module.exports = {
     }),
 
     new CopyPlugin([
-      { from: `${PATHS.src}/assets/fonts/`, to: `${PATHS.dist}/assets/fonts/` },
-      { from: `${PATHS.favicons}/`, to: `${PATHS.dist}/favicons/` },
-      { from: `${PATHS.src}/assets/images/`, to: `${PATHS.dist}/assets/images` },
+      {from: `${PATHS.src}/assets/fonts/`, to: `${PATHS.dist}/assets/fonts/`},
+      {from: `${PATHS.favicons}/`, to: `${PATHS.dist}/favicons/`},
+      {from: `${PATHS.src}/assets/images/`, to: `${PATHS.dist}/assets/images`},
 
       // { from: `${PATHS.src}/assets/blocks/`, to: `${PATHS.dist}/assets/blocks/` },
       // сэкономим 100 кб и спрячем реализацию наших блоков.

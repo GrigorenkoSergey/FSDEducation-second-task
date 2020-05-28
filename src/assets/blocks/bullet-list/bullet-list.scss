@@ -1,21 +1,21 @@
 .bullet-list {
-    &__li {
-      list-style-type: none;
-      margin-left: 21px;
-      font: $bodyFont;
-      margin-bottom: 10px;
-      position: relative;
-    }
-  
-    &__li::before {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      left: -21px;
-      top: 7px;
-      width: 10px;
-      height: 10px;
-      background: $dark_25;
-      border-radius: 50px;
-    }
+  &__li {
+    list-style-type: none;
+    margin-left: 21px;
+    font: $bodyFont;
+    margin-bottom: 10px;
+    position: relative;
   }
+
+  &__li::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -21px;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background: $dark_25;
+    border-radius: 50px;
+  }
+}

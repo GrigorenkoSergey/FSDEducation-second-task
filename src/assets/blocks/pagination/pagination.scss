@@ -1,75 +1,74 @@
 .pagination {
-    width: 241px;
+  width: 241px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__list {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+  }
+
+  &__li {
+    display: flex;
     justify-content: center;
-  
-    &__list {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  
-    &__li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-    }
-    &__li_selected {
-      border-radius: 50%;
-      background: $primary-gradient;
-    }
-  
-    &__a {
-      text-decoration: none;
-      color: $dark_50;
-      font: $bodyFont;
-      line-height: 15px;
-      font-size: 12px;
-    }
-    &__a_selected {
-      font-weight: bold;
-      color: white;
-    }
-  
-    &__next-arrow {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      position: relative;
-  
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 15px;
-        height: 2px;
-        background-color: white;
-        position: absolute;
-        left: 12px;
-        top: 19px;
-      }
-  
-      &::after {
-        content: "";
-        display: inline-block;
-        width: 9px;
-        height: 9px;
-        border: 2px solid white;
-        border-bottom: none;
-        border-left: none;
-        transform: rotate(45deg);
-        position: absolute;
-        left: 15px;
-        top: 14.5px;
-      }
-    }
-  
-    &__description {
+    align-items: center;
+    width: 40px;
+    height: 40px;
+  }
+  &__li_selected {
+    border-radius: 50%;
+    background: $primary-gradient;
+  }
+
+  &__a {
+    text-decoration: none;
+    color: $dark_50;
+    font: $bodyFont;
+    line-height: 15px;
+    font-size: 12px;
+  }
+  &__a_selected {
+    font-weight: bold;
+    color: white;
+  }
+
+  &__next-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    position: relative;
+
+    &::before {
+      content: "";
       display: inline-block;
-      padding-top: 8px;
+      width: 15px;
+      height: 2px;
+      background-color: white;
+      position: absolute;
+      left: 12px;
+      top: 19px;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border: 2px solid white;
+      border-bottom: none;
+      border-left: none;
+      transform: rotate(45deg);
+      position: absolute;
+      left: 15px;
+      top: 14.5px;
     }
   }
-  
+
+  &__description {
+    display: inline-block;
+    padding-top: 8px;
+  }
+}

@@ -1,55 +1,55 @@
 .like-button {
-    width: 40px;
+  width: 40px;
+  height: 20px;
+  border: 1px solid $dark_25;
+  border-radius: 10px;
+  position: relative;
+  background: white;
+  outline: none;
+  color: $dark_25;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
     height: 20px;
-    border: 1px solid $dark_25;
-    border-radius: 10px;
-    position: relative;
-    background: white;
-    outline: none;
-    color: $dark_25;
-  
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      top: -1px;
-      left: -1px;
-      background: url("assets/blocks/like-button/images/favorite_border.png") center no-repeat;
-    }
-  
-    &_pushed {
-      //for gradient border
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      color: $purple;
-    }
-  
-    &_pushed::after {
-      //white background inside
-      content: "";
-      display: inline-block;
-      width: 38px;
-      height: 18px;
-      border-radius: 10px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: white;
-    }
-  
-    &_pushed::before {
-      //pink heart
-      background: url("assets/blocks/like-button/images/favorite.png") center no-repeat;
-      z-index: 1;
-    }
-  
-    &__counter {
-      position: absolute;
-      left: 20px;
-      top: 3px;
-      font-size: 10px;
-      line-height: 12px;
-      z-index: 1;
-    }
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background: url("assets/blocks/like-button/images/favorite_border.png") center no-repeat;
   }
+
+  &_pushed {
+    //for gradient border
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    color: $purple;
+  }
+
+  &_pushed::after {
+    //white background inside
+    content: "";
+    display: inline-block;
+    width: 38px;
+    height: 18px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+  }
+
+  &_pushed::before {
+    //pink heart
+    background: url("assets/blocks/like-button/images/favorite.png") center no-repeat;
+    z-index: 1;
+  }
+
+  &__counter {
+    position: absolute;
+    left: 20px;
+    top: 3px;
+    font-size: 10px;
+    line-height: 12px;
+    z-index: 1;
+  }
+}

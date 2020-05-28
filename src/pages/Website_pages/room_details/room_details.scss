@@ -32,9 +32,9 @@ main {
     width: 100%;
   }
 }
-  .room-details__buns {
-    margin-right: 20px;
-  }
+.room-details__buns {
+  margin-right: 20px;
+}
 
 .column_1 {
   flex-grow: 2;
@@ -124,8 +124,6 @@ main {
   margin-bottom: 0;
 }
 
-
-
 @media (max-width: 1210px) {
   main {
     padding-left: 100px;
@@ -152,11 +150,9 @@ main {
   .room-details__wrapper {
     justify-content: space-between;
   }
-
 }
 
 @media (max-width: 700px) {
-
   main {
     padding-left: 20px;
     padding-right: 20px;
@@ -184,7 +180,7 @@ main {
   }
 }
 
-@media (max-width: 400px) { 
+@media (max-width: 400px) {
   .column_2 {
     margin-left: -20px;
   }

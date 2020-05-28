@@ -2,14 +2,14 @@
 @import "src/assets/blocks/registration/registration.scss";
 
 body {
-    background: url("assets/images/Website_pages/registration/registration-page.png") no-repeat;
-    overflow-x: hidden; //обрезаем фоновое изображение
-    width: 100%;
-    height: auto;
+  background: url("assets/images/Website_pages/registration/registration-page.png") no-repeat;
+  overflow-x: hidden; //обрезаем фоновое изображение
+  width: 100%;
+  height: auto;
 }
 main {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 26px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 26px;
 }

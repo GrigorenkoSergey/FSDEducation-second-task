@@ -5,10 +5,10 @@ include ../social-networks/social-networks.pug
 //-         "innerText": "Copyright &#169 2018 Toxin UI Kit. All rights reserved."
 //-     }
 mixin copyright(obj)
-    - 
-        let { 
-                innerText = "Copyright &#169 2018 Toxin UI Kit. All rights reserved."
-            } = obj;
-    .copyright
-        span !{innerText}
-        +social-networks()
+  - 
+    let { 
+      innerText = "Copyright &#169 2018 Toxin UI Kit. All rights reserved.",
+    } = obj;
+  .copyright
+    span !{innerText}
+    +social-networks()

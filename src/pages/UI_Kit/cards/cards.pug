@@ -1,48 +1,48 @@
 extends ../../../assets/blocks/template/template.pug
 
 block includes
-    include ../../../assets/blocks/search-form/search-form.pug
-    include ../../../assets/blocks/final-bill/final-bill.pug
-    include ../../../assets/blocks/registration/registration.pug
-    include ../../../assets/blocks/log-in/log-in.pug
-    include ../../../assets/blocks/preview/preview.pug
+  include ../../../assets/blocks/search-form/search-form.pug
+  include ../../../assets/blocks/final-bill/final-bill.pug
+  include ../../../assets/blocks/registration/registration.pug
+  include ../../../assets/blocks/log-in/log-in.pug
+  include ../../../assets/blocks/preview/preview.pug
 
 block variables
-    - 
-        var titleName = 'Cards'
+  - 
+    var titleName = 'Cards'
 block content
 
-    .cards__search-form
-        +search-form()
+  .cards__search-form
+    +search-form()
 
-    .cards__final-bill
-        +final-bill()
+  .cards__final-bill
+    +final-bill()
 
-    .cards__calendar
-        - 
-            let dateDropdown = {
-                arrivalTitle: "",
-                arrivalName: "arrival_calendar",
-                departureTitle: "",
-                departureName: "departure_calendar"
-            }
-        +date-dropdown(dateDropdown)
+  .cards__calendar
+    - 
+      let dateDropdown = {
+        arrivalTitle: "",
+        arrivalName: "arrival_calendar",
+        departureTitle: "",
+        departureName: "departure_calendar"
+      }
+    +date-dropdown(dateDropdown)
 
-    .cards__registration
-        +registration()
-    .cards__log-in
-        +log-in()
-    .cards__preview-1
-        +preview(previewObj)
-    .cards__preview-2
-        - 
-            previewObj = {
-                number: 840,
-                type: "",
-                imgSrc: "assets/blocks/preview/images/840.png",
-                cost: "9 900",
-                stars: 4,
-                reviews: 65,
-                arrowsHidden: true,
-            }
-        +preview(previewObj)
+  .cards__registration
+    +registration()
+  .cards__log-in
+    +log-in()
+  .cards__preview-1
+    +preview(previewObj)
+  .cards__preview-2
+    - 
+      previewObj = {
+        number: 840,
+        type: "",
+        imgSrc: "assets/blocks/preview/images/840.png",
+        cost: "9 900",
+        stars: 4,
+        reviews: 65,
+        arrowsHidden: true,
+      }
+    +preview(previewObj)

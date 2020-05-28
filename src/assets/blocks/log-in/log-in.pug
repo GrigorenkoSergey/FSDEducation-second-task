@@ -2,15 +2,15 @@ include ../input/input.pug
 include ../buttons/buttons.pug
 
 mixin log-in()
-    form.form
-        .log-in
-            h1 Войти
-            .log-in__email
-                +input({placeholder: "Email"})
-            .log-in__password
-                +input({placeholder:"Пароль"})
-            .log-in__button-payment
-                +button-payment("Войти")
-            .log-in__button-create
-                span Нет аккаунта на Toxin?
-                +button("Создать", "button_white")
+  form.form
+    .log-in
+      h1 Войти
+      .log-in__email
+        +input({placeholder: "Email"})
+      .log-in__password
+        +input({placeholder:"Пароль"})
+      .log-in__button-payment
+        +button-payment("Войти")
+      .log-in__button-create
+        span Нет аккаунта на Toxin?
+        +button("Создать", "button_white")

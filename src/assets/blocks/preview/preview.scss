@@ -54,7 +54,8 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
   }
 
-  @for $i from 1 to 5 { //рисуем кружочки
+  @for $i from 1 to 5 {
+    //рисуем кружочки
     &-ellipse-#{$i} {
       position: absolute;
       bottom: 15px;
@@ -86,18 +87,18 @@
     color: $dark_50;
 
     & :first-child {
-    font-size: 14px;
-    font-weight: bold;
+      font-size: 14px;
+      font-weight: bold;
     }
   }
-  
+
   &__stars {
     width: 100%;
     display: flex;
     justify-content: space-between;
     border-top: 1px solid $dark_10;
     margin-top: 9px;
-    padding-right:  2px;
+    padding-right: 2px;
     padding-top: 5px;
   }
 }
@@ -111,16 +112,16 @@
     font-size: 14px;
   }
 }
-  .room-class {
-    margin-left: 5px;
-    font-family: $bodyFont-family;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: $purple;
-    font-weight: bold;
-  }
+.room-class {
+  margin-left: 5px;
+  font-family: $bodyFont-family;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: $purple;
+  font-weight: bold;
+}
 
-  .reviews {
-    padding-top: 2px;
-    color: $dark_50;
-  }
+.reviews {
+  padding-top: 2px;
+  color: $dark_50;
+}

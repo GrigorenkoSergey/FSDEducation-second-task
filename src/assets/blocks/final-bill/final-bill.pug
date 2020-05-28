@@ -3,32 +3,32 @@ include ../dropdown/dropdown.pug
 include ../buttons/buttons.pug
 
 mixin final-bill()
-    form.form
-        .final-bill
-            .final-bill__title
-                span.final-bill__number 888
-                span.final-bill__class люкс
-            .final-bill__price 
-                span 9 990&#8381
-                span  в сутки
-            .final-bill__date-dropdown
-                +date-dropdown({arrivalName: "arrival_final-bill", departureName: "departure_final-bill"})
-            .final-bill__dropdown
-                - var dropdown = Object.assign({}, dropdownDefault);
-                - dropdown.content.title = "Гости";
-                - dropdown.content.input = "3 гостя";
-                - dropdown.content.counters.adults_num = "3";
-                +dropdown(dropdown)
-            .final-bill__calculation
-                span.primary 9 990&#8381 x 4 суток
-                span.rate 39 960&#8381
-                span.service-discount Сбор за услуги: скидка 2 179&#8381
-                span.rate 0&#8381
-                span.extra-service Сбор за дополнительные услуги
-                span.rate 300&#8381
-            .final-bill__total
-                span.total Итого
-                .hr
-                span.total-price 38 081&#8381
-            .final-bill__button-payment
-                +button-payment("Забронировать", "")
+  form.form
+    .final-bill
+      .final-bill__title
+        span.final-bill__number 888
+        span.final-bill__class люкс
+      .final-bill__price 
+        span 9 990&#8381
+        span  в сутки
+      .final-bill__date-dropdown
+        +date-dropdown({arrivalName: "arrival_final-bill", departureName: "departure_final-bill"})
+      .final-bill__dropdown
+        - var dropdown = Object.assign({}, dropdownDefault);
+        - dropdown.content.title = "Гости";
+        - dropdown.content.input = "3 гостя";
+        - dropdown.content.counters.adults_num = "3";
+        +dropdown(dropdown)
+      .final-bill__calculation
+        span.primary 9 990&#8381 x 4 суток
+        span.rate 39 960&#8381
+        span.service-discount Сбор за услуги: скидка 2 179&#8381
+        span.rate 0&#8381
+        span.extra-service Сбор за дополнительные услуги
+        span.rate 300&#8381
+      .final-bill__total
+        span.total Итого
+        .hr
+        span.total-price 38 081&#8381
+      .final-bill__button-payment
+        +button-payment("Забронировать", "")

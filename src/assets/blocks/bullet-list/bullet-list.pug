@@ -1,13 +1,13 @@
 - 
-    var bulletListArrDefault = ["Нельзя с питомцами", 
-        "Без вечеринок и мероприятий", 
-        "Время прибытия — после 13:00,<br />а выезд до 12:00"]                     
+  var bulletListArrDefault = ["Нельзя с питомцами", 
+    "Без вечеринок и мероприятий", 
+    "Время прибытия — после 13:00,<br />а выезд до 12:00"]                     
 
 mixin bullet-list(bulletListArr = bulletListArrDefault)   
 
-    - let { extraClasses = {} } = bulletListArr;
-    - let {ulClass = "", liClass = ""} = extraClasses;  
+  - let { extraClasses = {} } = bulletListArr;
+  - let {ulClass = "", liClass = ""} = extraClasses;  
 
-    ul.bullet-list
-        each val in bulletListArr
-            li.bullet-list__li !{val}
+  ul.bullet-list
+    each val in bulletListArr
+      li.bullet-list__li !{val}

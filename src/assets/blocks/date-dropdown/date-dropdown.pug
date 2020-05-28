@@ -1,17 +1,16 @@
 mixin date-dropdown(obj)
-    - 
-        let {
-                arrivalTitle = "Прибытие",
-                arrivalName = "arrival",
-                departureTitle = "Выезд",
-                departureName = "departure"
-            } = obj;
+  - 
+    let {
+      arrivalTitle = "Прибытие",
+      arrivalName = "arrival",
+      departureTitle = "Выезд",
+      departureName = "departure",
+    } = obj;
 
-    .date-dropdown
-        .date-dropdown__item
-            h3 !{arrivalTitle}
-            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." data-id="arrival" data-name= arrivalName name= arrivalName)
-        .date-dropdown__item
-            h3 !{departureTitle}
-            input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." data-id="departure" data-name= departureName name= departureName)
-    
+  .date-dropdown
+    .date-dropdown__item
+      h3 !{arrivalTitle}
+      input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." data-id="arrival" data-name= arrivalName name= arrivalName)
+    .date-dropdown__item
+      h3 !{departureTitle}
+      input.date-dropdown__input(type="text" value="ДД.ММ.ГГГГ." data-id="departure" data-name= departureName name= departureName)

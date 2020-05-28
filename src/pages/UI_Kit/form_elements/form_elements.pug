@@ -1,168 +1,168 @@
 extends ../../../assets/blocks/template/template.pug
 
 block includes
-    include ../../../assets/blocks/input/input.pug
-    include ../../../assets/blocks/date-dropdown/date-dropdown.pug
-    include ../../../assets/blocks/dropdown/dropdown.pug
-    include ../../../assets/blocks/checkboxes/checkboxes.pug
-    include ../../../assets/blocks/buns/buns.pug
-    include ../../../assets/blocks/radio-buttons/radio-buttons.pug
-    include ../../../assets/blocks/toggler/toggler.pug
-    include ../../../assets/blocks/like-button/like-button.pug 
-    include ../../../assets/blocks/rate-button/rate-button.pug   
-    include ../../../assets/blocks/comment/comment.pug  
-    include ../../../assets/blocks/range-slider/range-slider.pug 
-    include ../../../assets/blocks/buttons/buttons.pug    
-    include ../../../assets/blocks/pagination/pagination.pug
-    include ../../../assets/blocks/bullet-list/bullet-list.pug
+  include ../../../assets/blocks/input/input.pug
+  include ../../../assets/blocks/date-dropdown/date-dropdown.pug
+  include ../../../assets/blocks/dropdown/dropdown.pug
+  include ../../../assets/blocks/checkboxes/checkboxes.pug
+  include ../../../assets/blocks/buns/buns.pug
+  include ../../../assets/blocks/radio-buttons/radio-buttons.pug
+  include ../../../assets/blocks/toggler/toggler.pug
+  include ../../../assets/blocks/like-button/like-button.pug 
+  include ../../../assets/blocks/rate-button/rate-button.pug   
+  include ../../../assets/blocks/comment/comment.pug  
+  include ../../../assets/blocks/range-slider/range-slider.pug 
+  include ../../../assets/blocks/buttons/buttons.pug    
+  include ../../../assets/blocks/pagination/pagination.pug
+  include ../../../assets/blocks/bullet-list/bullet-list.pug
 
 block variables
-    - 
-        var titleName = 'From Elements'
-        
-        var listGag = {
-            title: "expandable checkbox list",
-            content: {},
-        }
+  - 
+    var titleName = 'From Elements'
+
+    var listGag = {
+      title: "expandable checkbox list",
+      content: {},
+    }
 
 block content
-    main
-        .first-column
-            .example-input
-                .example-input__title
-                    h3 text field
-                    span default
-                +input({placeholder: "Email"})
+  main
+    .first-column
+      .example-input
+        .example-input__title
+          h3 text field
+          span default
+        +input({placeholder: "Email"})
 
-            .example-input 
-                .example-input__title
-                    h3 text field
-                    span hover / focus
-                +input({value: "This is pretty awesome", extraClasses: "hover"})
+      .example-input 
+        .example-input__title
+          h3 text field
+          span hover / focus
+        +input({value: "This is pretty awesome", extraClasses: "hover"})
 
-            .example-dropdown-default  
-                span.example__modifier default
-                - var obj = dropdownDefault;
-                - obj.additionalClasses = {};
-                +dropdown(obj)
+      .example-dropdown-default  
+        span.example__modifier default
+        - var obj = dropdownDefault;
+        - obj.additionalClasses = {};
+        +dropdown(obj)
 
-            .example-masket-text-field
-                .example-input__title
-                    h3 masked text field
-                    span default
-                +input({type: "date", extraClasses: "input_type-date"})
+      .example-masket-text-field
+        .example-input__title
+          h3 masked text field
+          span default
+        +input({type: "date", extraClasses: "input_type-date"})
 
-            .example-date-dropdown  
-                +date-dropdown({arrivalTitle: "date dropdown", departureTitle: "date dropdown"})
+      .example-date-dropdown  
+        +date-dropdown({arrivalTitle: "date dropdown", departureTitle: "date dropdown"})
 
-            .example-input_filter
-                .example-input__title
-                    h3 filter date dropdown
-                select.filter-date.select
-                    option(selected) 19 авг - 23 авг  
+      .example-input_filter
+        .example-input__title
+          h3 filter date dropdown
+        select.filter-date.select
+          option(selected) 19 авг - 23 авг  
 
-            .example-input_email
-                .example-input__title
-                    h3 subscription text field
-                +input({type: "email", placeholder: "Email", extraClasses: "input_email"})
+      .example-input_email
+        .example-input__title
+          h3 subscription text field
+        +input({type: "email", placeholder: "Email", extraClasses: "input_email"})
 
-            .example-input_dropdown
-                span.example__modifier default
-                +dropdown(dropdownRooms)
+      .example-input_dropdown
+        span.example__modifier default
+        +dropdown(dropdownRooms)
 
-            .example-dropdown_expanded
-                span.example__modifier expanded
-                +dropdown(dropdownRooms, true)
+      .example-dropdown_expanded
+        span.example__modifier expanded
+        +dropdown(dropdownRooms, true)
 
-            .example__expandable-checkbox-list
-            +expandable-checkbox-list(listGag, false)
+      .example__expandable-checkbox-list
+      +expandable-checkbox-list(listGag, false)
 
-            .example__expandable-checkbox-list_expanded
-                +expandable-checkbox-list(expandableList, true)
+      .example__expandable-checkbox-list_expanded
+        +expandable-checkbox-list(expandableList, true)
 
-            .example-buns
-                - var buns = bunsArr;
-                +buns(buns)
+      .example-buns
+        - var buns = bunsArr;
+        +buns(buns)
 
-        .second-column
-            .example-checkbox-buttons
-                +checkboxButtons(checkboxList)
+    .second-column
+      .example-checkbox-buttons
+        +checkboxButtons(checkboxList)
 
-            .example-radio-buttons
-                .example-radio-buttons__title
-                    h3 radio buttons
-                +radioButtonsGroup(buttonsListDefault)
+      .example-radio-buttons
+        .example-radio-buttons__title
+          h3 radio buttons
+        +radioButtonsGroup(buttonsListDefault)
 
-            .example-toggle
-                .example-toggle__title
-                    h3 toggle
-                +toggler("get_special_offers", "Получать спецпредложения", true) 
-                +toggler("get_special_offers_1", "Получать спецпредложения") 
+      .example-toggle
+        .example-toggle__title
+          h3 toggle
+        +toggler("get_special_offers", "Получать спецпредложения", true) 
+        +toggler("get_special_offers_1", "Получать спецпредложения") 
 
-            .example-like-buttons
-                .example-like-buttons__title
-                    h3 like button
-                .example-like-buttons__container
-                    +like-button(2)
-                    +like-button(12, true)
+      .example-like-buttons
+        .example-like-buttons__title
+          h3 like button
+        .example-like-buttons__container
+          +like-button(2)
+          +like-button(12, true)
 
-            .example-rate-buttons
-                .example-rate-buttons__title
-                    h3 rate button
-                .example-rate-buttons__container
-                    +rateButton(4)
-                    +rateButton(5)
+      .example-rate-buttons
+        .example-rate-buttons__title
+          h3 rate button
+        .example-rate-buttons__container
+          +rateButton(4)
+          +rateButton(5)
 
-            .example-dropdown-guests
-                +dropdown(dropdownDefault, true)
+      .example-dropdown-guests
+        +dropdown(dropdownDefault, true)
 
-            .example-rich-checkbox-buttons
-                .rich-checkbox__title   rich checkbox buttons
-                +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
-                +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
+      .example-rich-checkbox-buttons
+        .rich-checkbox__title   rich checkbox buttons
+        +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
+        +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
 
-            .example-comments
-                +comment(reviewer)
+      .example-comments
+        +comment(reviewer)
 
-        .third-column
-            +range-slider
+    .third-column
+      +range-slider
 
-            .example-button
-                .example-button__title
-                    h3 buttons
-                .example-button__container
-                    +button("click me", "button_default")
-                    +button("click me", "button_disabled")
-                    +button("click me", "button_white")
-                    +button("click me", "button_white button_disabled")
-                    +button-text("click me")
-                    +button-text("click me", "button-text_disabled button_moved")
+      .example-button
+        .example-button__title
+          h3 buttons
+        .example-button__container
+          +button("click me", "button_default")
+          +button("click me", "button_disabled")
+          +button("click me", "button_white")
+          +button("click me", "button_white button_disabled")
+          +button-text("click me")
+          +button-text("click me", "button-text_disabled button_moved")
 
-                .example-button-payment
-                    +button-payment("перейти к оплате")
+        .example-button-payment
+          +button-payment("перейти к оплате")
 
-            .example-pagination
-                .example-pagination__title
-                    h3 pagination
-                +pagination
+      .example-pagination
+        .example-pagination__title
+          h3 pagination
+        +pagination
 
-            .example-dropdown-guests_new-entry
-                - 
-                    var obj = dropdownDefault;
-                    obj.content.input = "3 гостя"
-                    obj.content.counters = {
-                        adults_num: 2,
-                        kids_num: 1,
-                        babies_num: 0
-                    }
-                    obj.showReset = true;
-                +dropdown(obj, true)
+      .example-dropdown-guests_new-entry
+        - 
+          var obj = dropdownDefault;
+          obj.content.input = "3 гостя"
+          obj.content.counters = {
+            adults_num: 2,
+            kids_num: 1,
+            babies_num: 0
+          }
+          obj.showReset = true;
+        +dropdown(obj, true)
 
-            .example-bullet-list
-                .example-bullet-list__title
-                    h3 bullet list
-                    - 
-                        var bulletListArr = ["Нельзя с питомцами", 
-                            "Без вечеринок и мероприятий", 
-                            "Время прибытия — после 13:00,<br />а выезд до 12:00"]                     
-                +bullet-list(bulletListArr)
+      .example-bullet-list
+        .example-bullet-list__title
+          h3 bullet list
+          - 
+            var bulletListArr = ["Нельзя с питомцами", 
+              "Без вечеринок и мероприятий", 
+              "Время прибытия — после 13:00,<br />а выезд до 12:00"]                     
+        +bullet-list(bulletListArr)

@@ -4,31 +4,30 @@ include ../toggler/toggler.pug
 include ../buttons/buttons.pug
 
 mixin registration()
-    form.form(action="")
-        .registration
-            h1 Регистрация аккаунта
-            .registration__name-field
-                +input({placeholder: "Имя"})
-            .registration__surname-field
-                +input({placeholder: "Фамилия"})
-            .registration__radio-buttons
-                +radioButtonsGroup()
-            .registration__birthday
-                h3 Дата рождения
-                +input({placeholder: "ДД.ММ.ГГГГ"})
-            .registration__authorization
-                h3 Данные для входа в сервис
-                .registration__email
-                    +input({placeholder: "Email"})
-                .registration__password
-                    +input({placeholder: "Пароль"})
-                .registration__toggle
-                    +toggler("get_offers", "Получать спецпредложения")
-            .registration__button-payment
-                +button-payment("Перейти к оплате")
-            .registration__button-enter
-                span Уже есть аккаунт на Toxin
-                +button("Войти", "button_white")
+  form.form(action="")
+    .registration
+      h1 Регистрация аккаунта
+      .registration__name-field
+        +input({placeholder: "Имя"})
+      .registration__surname-field
+        +input({placeholder: "Фамилия"})
+      .registration__radio-buttons
+        +radioButtonsGroup()
+      .registration__birthday
+        h3 Дата рождения
+        +input({placeholder: "ДД.ММ.ГГГГ"})
+      .registration__authorization
+        h3 Данные для входа в сервис
+        .registration__email
+          +input({placeholder: "Email"})
+        .registration__password
+          +input({placeholder: "Пароль"})
+        .registration__toggle
+          +toggler("get_offers", "Получать спецпредложения")
+      .registration__button-payment
+        +button-payment("Перейти к оплате")
+      .registration__button-enter
+        span Уже есть аккаунт на Toxin
+        +button("Войти", "button_white")
 
 
-            

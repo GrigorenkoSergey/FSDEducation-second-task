@@ -3,14 +3,14 @@ include ../dropdown/dropdown.pug
 include ../buttons/buttons.pug
 
 mixin search-form()
-    form.form
-        .search-form
-            .search-form__title
-                h1 Найдём номера под ваши пожелания
-            .search-form__date-dropdown
-                +date-dropdown({})
-            .search-form__dropdown
-                - dropdownDefault.content.title = "Гости"
-                +dropdown(dropdownDefault)
-            .search-form__payment
-                +button-payment("Подобрать номер", "")
+  form.form
+    .search-form
+      .search-form__title
+        h1 Найдём номера под ваши пожелания
+      .search-form__date-dropdown
+        +date-dropdown({})
+      .search-form__dropdown
+        - dropdownDefault.content.title = "Гости"
+        +dropdown(dropdownDefault)
+      .search-form__payment
+        +button-payment("Подобрать номер", "")
