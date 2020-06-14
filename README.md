@@ -1,3 +1,4 @@
+# FSDEducation-second-task
 ## Страницы макета
 * UI_Kit
   * [cards](https://grigorenkosergey.github.io/Second_Task/cards.html)
@@ -11,11 +12,24 @@
   * [search_room](https://grigorenkosergey.github.io/Second_Task/search_room.html)
   * [sign_in](https://grigorenkosergey.github.io/Second_Task/sign_in.html)
 
+
 ## Установка и возможные проблемы
+Клонируй одним из возможных способов:  
+`https://github.com/GrigorenkoSergey/FSDEducation-second-task.git`  
+`git@github.com:GrigorenkoSergey/FSDEducation-second-task.git`  
+Или просто скачай ZIP архив:  
+`https://github.com/GrigorenkoSergey/FSDEducation-second-task/archive/master.zip`  
+
+Развертывание.  
 `npm install`  
-Поначалу выдавало ошибку. Пришлось переустановить ***babel-loader командами***  
+Если выдаст ошибку, попробуй переустановить ***babel-loader*** командами  
 `npm uninstall babel-loader @babel/core @babel/preset-env`  
 `npm install -D babel-loader @babel/core @babel/preset-env`
+
+Запуск webpack-dev-server  
+`npm run dev`  
+Запуск production build  
+`npm run build`
 
 ## Структура проекта
 В файле ***screens.txt*** я занес размеры экранов, которые я учитывал в проекте.
