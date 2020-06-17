@@ -33,29 +33,28 @@
 ## Структура проекта
 ```
 .
+├── dist
 ├── favicons
 ├── node_modules
-├── package.json
-├── package-lock.json
 ├── src
 |   ├── assets
 |   |   ├── blocks
 |   |   ├── fonts
 |   |   └── images
 |   |
-|   ├── pages
+|   └── pages
 |   |   ├── UI_Kit
-|   |   ├── cards
-|   |   ├── colors_and_type
-|   |   ├── form_elements
-|   |   └── headers_and_footers
-|   |
-|   └── Website_pages
-|   |   ├── landing_page
-|   |   ├── registration
-|   |   ├── room_details
-|   |   ├── search_room
-|   |   └── sign_in
+|   |   |   ├── cards
+|   |   |   |── colors_and_type
+|   |   |   ├── form_elements
+|   |   |   └── headers_and_footers
+|   |   | 
+|   |   └── Website_pages
+|   |       ├── landing_page
+|   |       ├── registration
+|   |       ├── room_details
+|   |       ├── search_room
+|   |       └── sign_in
 |   |
 |   ├── index.js
 |   ├── index.pug
@@ -63,6 +62,7 @@
 |   └── screens.txt
 |   
 ├── README.md
+├── package.json
 ├── webpack.dev.config.js
 └── webpack.prod.config.js
 ```
