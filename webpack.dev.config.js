@@ -7,7 +7,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 const PATHS = {
   src: path.join(__dirname, "./src"),
   dist: path.join(__dirname, "./dist"),
-  favicons: path.join(__dirname, "./favicons"),
+  // favicons: path.join(__dirname, "./favicons"),
+  favicons: path.join(__dirname, "./src/favicons"),
 }
 
 module.exports = {

@@ -12,7 +12,7 @@ const PATHS = {
   src: path.join(__dirname, "./src"),
   dist: path.join(__dirname, "./dist"),
   pages: path.join(__dirname, "./src/pages"),
-  favicons: path.join(__dirname, "./favicons"),
+  favicons: path.join(__dirname, "./src/favicons"),
 }
 
 let entries = {
