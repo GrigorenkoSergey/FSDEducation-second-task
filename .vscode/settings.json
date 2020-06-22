@@ -1,8 +1,0 @@
-{
-  "git.ignoreLimitWarning": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-  "editor.wrappingIndent": "deepIndent",
-  "editor.tabSize": 2,
-  "editor.detectIndentation": false,
-}
