@@ -7,7 +7,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 const PATHS = {
   src: path.join(__dirname, "./src"),
   dist: path.join(__dirname, "./dist"),
-  // favicons: path.join(__dirname, "./favicons"),
   favicons: path.join(__dirname, "./src/favicons"),
 }
 
@@ -45,9 +44,15 @@ module.exports = {
         {
           loader: "css-loader",
           options: {
-            url: false, //супер строка, решила проблемы с поиском assets от корня сайта
+            url: false, // супер строка, решила проблемы с поиском assets от корня сайта
             // эксперименты с resolve-url-loader ни к чему не привели. Потерял целый день.
           },
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            config: {path: 'src/postcss.config.js'},
+          }
         },
         {
           loader: "sass-loader",

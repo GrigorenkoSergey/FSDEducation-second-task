@@ -26,7 +26,7 @@ let Website_pages = fs.readdirSync(`${PATHS.src}/pages/Website_pages/`);
 Website_pages.forEach(item =>
   entries[item] = `${PATHS.pages}/Website_pages/${item}/${item}`);
 
-//потом буду копировать картинки, лежащие в блоках
+//  потом буду копировать картинки, лежащие в блоках
 let blocks = fs.readdirSync(`${PATHS.src}/assets/blocks`);
 
 module.exports = {
@@ -40,8 +40,8 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin(),  //по-моему, он беспололезен или уже вшит, уточнить при review
-      new OptimizeCSSAssetsPlugin({}), //то же самое.
+      new TerserPlugin(),  //  по-моему, он беспололезен или уже вшит, уточнить при review
+      new OptimizeCSSAssetsPlugin({}), //  то же самое.
     ],
   },
 
@@ -71,7 +71,7 @@ module.exports = {
         {
           loader: "css-loader",
           options: {
-            url: false, //супер строка, решила проблемы с поиском assets от корня сайта
+            url: false, //  супер строка, решила проблемы с поиском assets от корня сайта
             // эксперименты с resolve-url-loader ни к чему не привели. Потерял целый день.
           },
         },

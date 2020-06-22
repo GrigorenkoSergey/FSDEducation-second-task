@@ -34,13 +34,14 @@
 ```
 .
 ├── dist
-├── favicons
 ├── node_modules
 ├── src
 |   ├── assets
 |   |   ├── blocks
 |   |   ├── fonts
 |   |   └── images
+|   |
+|   ├── favicons
 |   |
 |   └── pages
 |   |   ├── UI_Kit
