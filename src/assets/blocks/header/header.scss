@@ -54,7 +54,7 @@ $headerHeight: 70px;
       display: inline-block;
       width: 24px;
       height: 21px;
-      background: url("assets/blocks/header/images/expand_more.png") center no-repeat;
+      background: url("assets/blocks/header/images/expand-more.png") center no-repeat;
       top: 7px;
     }
   }
@@ -64,10 +64,10 @@ $headerHeight: 70px;
     color: $dark_75;
   }
 
-  //для миксинов буду использовать конструкцию & &__mixin
-  //иначе, если какой-нибудь последующий блок импортирует исходный файл,
-  //тогда свойства сбросятся...
-  //!important использовать не стоит..
+  // для миксинов буду использовать конструкцию & &__mixin
+  // иначе, если какой-нибудь последующий блок импортирует исходный файл,
+  // тогда свойства сбросятся...
+  // !important использовать не стоит..
   & &__button_default {
     height: 34px;
     line-height: 34px;

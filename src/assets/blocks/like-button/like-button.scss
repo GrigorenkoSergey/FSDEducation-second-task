@@ -16,17 +16,17 @@
     position: absolute;
     top: -1px;
     left: -1px;
-    background: url("assets/blocks/like-button/images/favorite_border.png") center no-repeat;
+    background: url("assets/blocks/like-button/images/favorite-border.png") center no-repeat;
   }
 
   &_pushed {
-    //for gradient border
+    // for gradient border
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     color: $purple;
   }
 
   &_pushed::after {
-    //white background inside
+    // white background inside
     content: "";
     display: inline-block;
     width: 38px;
@@ -39,7 +39,7 @@
   }
 
   &_pushed::before {
-    //pink heart
+    // pink heart
     background: url("assets/blocks/like-button/images/favorite.png") center no-repeat;
     z-index: 1;
   }

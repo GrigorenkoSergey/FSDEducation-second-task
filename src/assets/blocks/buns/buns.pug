@@ -4,11 +4,7 @@
     {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
     {name: "city", title: "Удобство", description: "Окно в каждой из спален"},
   ]
-  //- bunsArr.extraClasses = {
-  //-     nameClass: "green_background",
-  //-     titleClass: "red",
-  //-     descriptionClass: "red"
-  //- }
+
 mixin buns(bunsArr)
   - let { extraClasses = {} } = bunsArr;
   - let {nameClass = "", titleClass = "", descriptionClass = ""} = extraClasses;

@@ -1,4 +1,4 @@
-//Передедал исходную таблицу стилей
+// Передедал исходную таблицу стилей
 $width: 320px;
 $transition: 0.3s;
 $font-size: 19px;
@@ -136,7 +136,7 @@ $font-size: 19px;
       display: inline-block;
       width: 23.93px;
       height: 24px;
-      background: url("assets/blocks/datepicker/images/arrow_forward.png") center no-repeat;
+      background: url("assets/blocks/datepicker/images/arrow-forward.png") center no-repeat;
     }
 
     &.qs-left:after {
@@ -295,7 +295,7 @@ $font-size: 19px;
     color: white;
     font-weight: bold;
 
-    //Пришлось переделать исключительно для того, чтобы выделить дату как в макете
+    // Пришлось переделать исключительно для того, чтобы выделить дату как в макете
     &:after {
       content: "";
       position: absolute;

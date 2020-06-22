@@ -41,7 +41,7 @@ for (let item of rollersArr) {
   }
 
   function rightRollerHandler(e) {
-    //отсчет начинаем с правого края
+    // отсчет начинаем с правого края
     let elem = e.target;
     let startX = item.offsetParent.getBoundingClientRect().left + item.offsetParent.clientLeft +
       item.offsetParent.clientWidth;
@@ -73,12 +73,12 @@ for (let item of rollersArr) {
   }
 
   function countRange() {
-    //коэффициенты 5 / 74 и 10 / 175 взяты, чтобы соответствовать масштабу макета.
-    //В общем, я так и не понял, как разбить шкалу...
+    // коэффициенты 5 / 74 и 10 / 175 взяты, чтобы соответствовать масштабу макета.
+    // В общем, я так и не понял, как разбить шкалу...
     let lowRange = Math.floor(5 / 74 * item.offsetLeft) * 1000;
     let topRange = Math.floor(10 / 175 * (item.offsetLeft + item.offsetWidth)) * 1000;
 
-    //topRange = Math.max(lowRange, topRange); 
+    // topRange = Math.max(lowRange, topRange); 
 
     lowRange = lowRange.toLocaleString('ru-RU');
     topRange = topRange.toLocaleString('ru-RU');

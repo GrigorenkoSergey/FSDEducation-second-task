@@ -1,4 +1,4 @@
-//dromdown обработчики
+// dropdown обработчики
 let dropdown = document.getElementsByClassName("dropdown");
 for (let item of dropdown) {
   let input = item.getElementsByClassName("dropdown__input")[0];

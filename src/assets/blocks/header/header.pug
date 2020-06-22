@@ -46,7 +46,7 @@ mixin header(nav, logged)
       } = extraClasses;
   .header
     a.header__logo(href="#")
-      img(src="assets/blocks/header/images/Logo_toxin.png")
+      img(src="assets/blocks/header/images/logo-toxin.png")
     ul.header__nav
       each val in nav
         li.header__li(class = liClass 
@@ -58,7 +58,7 @@ mixin header(nav, logged)
                   a.header__a(href="#") !{subVal}
           a.header__a(href=`${val.href}` class= val.currentPage ? "header_current-page" : "") #{val.title}
     if (logged) 
-      //-далее дикое название, т.к. не знаю, что это означает...
+      //- далее дикое название, т.к. не знаю, что это означает...
       .header__cosmin-negoita Cosmin Negoita
     else 
       .header__buttons(class= buttonsClass)

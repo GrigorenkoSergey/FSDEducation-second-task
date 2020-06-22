@@ -9,7 +9,7 @@ let votes = [
   {rate: "good", votes: 65, colorStart: "#6FCF97", colorEnd: "#66D2EA"},
   {rate: "magnificently", votes: 130, colorStart: "#FFBA9C", colorEnd: "#FFE39C"},
 ]
-//Теперь начертим наши окружности
+// Теперь начертим наши окружности
 let step = PI / 36;
 let r = 58;
 
@@ -29,7 +29,7 @@ votes.forEach(item => {
 });
 
 c.save();
-//теперь отдельно нарисуем белые линии на границах результатов голосования
+// теперь отдельно нарисуем белые линии на границах результатов голосования
 c.translate(canvas.width / 2, canvas.height / 2);
 startAngle = -PI / 2;
 c.rotate(startAngle);
@@ -49,7 +49,7 @@ c.restore();
 function arcGradient(xc, yc, r, startAngle, endAngle, colorStart, colorEnd, step = PI / 36) {
   c.lineWidth = 4;
 
-  //рисуем по часовой стрелке
+  // рисуем по часовой стрелке
   let xPrev = r * Math.cos(startAngle) + xc;
   let yPrev = r * Math.sin(startAngle) + yc;
 
@@ -59,7 +59,7 @@ function arcGradient(xc, yc, r, startAngle, endAngle, colorStart, colorEnd, step
     let yCurr = r * Math.sin(angle) + yc;
 
     let d = ((xCurr - xPrev) ** 2 + (yCurr - yPrev) ** 2) ** 0.5;
-    //угол A - угол пересечения секущей с ось X
+    // угол A - угол пересечения секущей с ось X
     let sinA = (xCurr - xPrev) / d;
     let cosA = (yCurr - yPrev) / d;
 
@@ -79,6 +79,7 @@ function arcGradient(xc, yc, r, startAngle, endAngle, colorStart, colorEnd, step
     xPrev = xCurr;
     yPrev = yCurr;
 
-    c.lineCap = "square"; //без этой строчки появляются белые полоски на градиенте
+    c.lineCap = "square"; 
+    // без этой строчки появляются белые полоски на градиенте
   }
 }
