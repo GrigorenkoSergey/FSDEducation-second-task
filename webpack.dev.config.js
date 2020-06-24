@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
@@ -8,10 +9,22 @@ const PATHS = {
   src: path.join(__dirname, "./src"),
   dist: path.join(__dirname, "./dist"),
   favicons: path.join(__dirname, "./src/favicons"),
+  pages: path.join(__dirname, "./src/pages"), //?
 }
 
+let entries = {
+  "index": `${PATHS.src}`,
+};
+
+let UI_PAGES = fs.readdirSync(`${PATHS.pages}/UI_Kit/`);
+UI_PAGES.forEach(item => entries[item] = `${PATHS.pages}/UI_Kit/${item}/${item}`);
+
+let Website_pages = fs.readdirSync(`${PATHS.src}/pages/Website_pages/`);
+Website_pages.forEach(item =>
+  entries[item] = `${PATHS.pages}/Website_pages/${item}/${item}`);
+
 module.exports = {
-  entry: `${PATHS.src}/index`,
+  entry: entries,
   output: {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "",
@@ -95,7 +108,20 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.pug`,
       filename: './index.html',
+      chunks: ['index'],
     }),
+//?
+    ...UI_PAGES.map(page => new HtmlWebpackPlugin({
+      template: `${PATHS.src}/pages/UI_Kit/${page}/${page}.pug`,
+      filename: `./${page}.html`,
+      chunks: [`${page}`],
+    })),
+
+    ...Website_pages.map(page => new HtmlWebpackPlugin({
+      template: `${PATHS.src}/pages/Website_pages/${page}/${page}.pug`,
+      filename: `./${page}.html`,
+      chunks: [`${page}`],
+    })),
 
     new MiniCssExtractPlugin({
       filename: "[name].css",

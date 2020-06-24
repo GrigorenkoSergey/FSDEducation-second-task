@@ -144,6 +144,7 @@ module.exports = {
       {from: `${PATHS.favicons}/`, to: `${PATHS.dist}/favicons/`},
       {from: `${PATHS.src}/assets/images/`, to: `${PATHS.dist}/assets/images`},
 
+      // вместо этого
       // { from: `${PATHS.src}/assets/blocks/`, to: `${PATHS.dist}/assets/blocks/` },
       // сэкономим 100 кб и спрячем реализацию наших блоков.
       ...blocks.map(block => {
