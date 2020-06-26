@@ -13,10 +13,10 @@ $primary-gradient_05: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(
 $secondary-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
 
 /*стили текста */
-$bodyFont-family: Montserrat;
-$bodyFont: normal 14px/24px Montserrat;
+$bodyFont-family: montserrat;
+$bodyFont: normal 14px/24px montserrat;
 
-$titleFont-family: "Quicksand", "OpenSans", Arial, sans-serif;
+$titleFont-family: "quicksand", "open-sans", Arial, sans-serif;
 $titleFont: bold 19px/24px $titleFont-family;
 
 /* сброс стилей браузера */
@@ -148,50 +148,50 @@ q:after {
 /* конец кода сброса стилей браузера */
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/fonts/Montserrat-Regular/Montserrat-Regular.eot");
-  src: url("assets/fonts/Montserrat-Regular/Montserrat-Regular.woff") format("woff"),
-    url("assets/fonts/Montserrat-Regular/Montserrat-Regular.ttf") format("truetype"),
-    url("assets/fonts/Montserrat-Regular/Montserrat-Regular.svg") format("svg");
+  font-family: "montserrat";
+  src: url("assets/fonts/montserrat-regular/montserrat-regular.eot");
+  src: url("assets/fonts/montserrat-regular/montserrat-regular.woff") format("woff"),
+    url("assets/fonts/montserrat-regular/montserrat-regular.ttf") format("truetype"),
+    url("assets/fonts/montserrat-regular/montserrat-regular.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("assets/fonts/Montserrat-Bold/Montserrat-Bold.eot");
-  src: url("assets/fonts/Montserrat-Bold/Montserrat-Bold.woff") format("woff"),
-    url("assets/fonts/Montserrat-Bold/Montserrat-Bold.ttf") format("truetype"),
-    url("assets/fonts/Montserrat-Bold/Montserrat-Bold.svg") format("svg");
+  font-family: "montserrat";
+  src: url("assets/fonts/montserrat-bold/montserrat-bold.eot");
+  src: url("assets/fonts/montserrat-bold/montserrat-bold.woff") format("woff"),
+    url("assets/fonts/montserrat-bold/montserrat-bold.ttf") format("truetype"),
+    url("assets/fonts/montserrat-bold/montserrat-bold.svg") format("svg");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Quicksand";
-  src: url("assets/fonts/Quicksand-Bold/Quicksand-Bold.eot");
-  src: url("assets/fonts/Quicksand-Bold/Quicksand-Bold.woff") format("woff"),
-    url("assets/fonts/Quicksand-Bold/Quicksand-Bold.ttf") format("truetype"),
-    url("assets/fonts/Quicksand-Bold/Quicksand-Bold.svg") format("svg");
+  font-family: "quicksand";
+  src: url("assets/fonts/quicksand-bold/quicksand-bold.eot");
+  src: url("assets/fonts/quicksand-bold/quicksand-bold.woff") format("woff"),
+    url("assets/fonts/quicksand-bold/quicksand-bold.ttf") format("truetype"),
+    url("assets/fonts/quicksand-bold/quicksand-bold.svg") format("svg");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Quicksand";
-  src: url("assets/fonts/Quicksand-Regular/Quicksand-Regular.eot");
-  src: url("assets/fonts/Quicksand-Regular/Quicksand-Regular.woff") format("woff"),
-    url("assets/fonts/Quicksand-Regular/Quicksand-Regular.ttf") format("truetype"),
-    url("assets/fonts/Quicksand-Regular/Quicksand-Regular.svg") format("svg");
+  font-family: "quicksand";
+  src: url("assets/fonts/quicksand-regular/quicksand-regular.eot");
+  src: url("assets/fonts/quicksand-regular/quicksand-regular.woff") format("woff"),
+    url("assets/fonts/quicksand-regular/quicksand-regular.ttf") format("truetype"),
+    url("assets/fonts/quicksand-regular/quicksand-regular.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: url("assets/fonts/OpenSansBold/OpenSansBold.eot");
-  src: url("assets/fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
-    url("assets/fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+  font-family: "open-sans";
+  src: url("assets/fonts/open-sans-bold/open-sans-bold.eot");
+  src: url("assets/fonts/open-sans-bold/open-sans-bold.woff") format("woff"),
+    url("assets/fonts/open-sans-bold/open-sans-bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -233,7 +233,7 @@ h2 {
 }
 
 h3 {
-  font-family: Montserrat;
+  font-family: montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
