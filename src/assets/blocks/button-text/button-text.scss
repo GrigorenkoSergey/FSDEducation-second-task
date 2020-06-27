@@ -1,0 +1,10 @@
+.button-text {
+  @extend h3;
+  color: $purple;
+  border: none;
+  background: none;
+  outline: none;
+}
+.button-text_disabled {
+  color: $dark_50;
+}

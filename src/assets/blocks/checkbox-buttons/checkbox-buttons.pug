@@ -1,0 +1,18 @@
+include ../ul-checkbox-container/ul-checkbox-container.pug
+
+//- list example
+- 
+  var checkboxList = {
+    title: "checkbox buttons",
+    content: {
+      "smoking": "Можно курить",
+      "pets": "Можно с питомцами",
+      "guests": "Можно пригласить гостей (до 10 человек)" 
+    },
+    checked: ["pets", "guests"],
+  }
+
+mixin checkbox-buttons(list)
+  .checkbox-buttons
+    .checkbox-buttons__title #{list.title} 
+    +ul-checkbox-container(list, true)

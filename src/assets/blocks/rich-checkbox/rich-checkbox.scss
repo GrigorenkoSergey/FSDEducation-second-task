@@ -1,0 +1,50 @@
+.rich-checkbox {
+  position: relative;
+
+  &__title {
+    margin-bottom: 14px;
+    @extend h3;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 6px;
+    line-height: 18px;
+    font-weight: bold;
+    color: $dark_75;
+  }
+
+  &__label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: inline-block;
+    border: 1px solid $dark_25;
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  &__input {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__input:checked + &__label::before {
+    border-color: $purple;
+    background: url("assets/blocks/rich-checkbox/images/check.png") center no-repeat;
+  }
+
+  &__span {
+    color: $dark_50;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    margin-left: 30px;
+    margin-bottom: 7px;
+  }
+}

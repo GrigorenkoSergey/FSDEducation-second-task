@@ -1,0 +1,8 @@
+@import "../ul-checkbox-container/ul-checkbox-container.scss";
+
+.checkbox-buttons {
+  &__title {
+    @extend h3;
+    margin-bottom: 12px;
+  }
+}

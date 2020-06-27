@@ -1,0 +1,9 @@
+include ../checkbox/checkbox.pug
+
+mixin ul-checkbox-container(list, expanded)
+  - let isHidden = expanded !== true;
+  ul.checkbox-list(hidden= isHidden)
+    each val, key in list.content
+      li.checkbox-list__li
+        - let checked = list.checked.includes(key) ? "checked" : "";
+        +checkbox(key, val, checked)

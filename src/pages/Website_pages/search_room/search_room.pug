@@ -4,7 +4,9 @@ block includes
   include ../../../assets/blocks/filter-date/filter-date.pug
   include ../../../assets/blocks/dropdown/dropdown.pug
   include ../../../assets/blocks/range-slider/range-slider.pug
-  include ../../../assets/blocks/checkboxes/checkboxes.pug
+  include ../../../assets/blocks/rich-checkbox/rich-checkbox.pug
+  include ../../../assets/blocks/expandable-checkbox-list/expandable-checkbox-list.pug
+  include ../../../assets/blocks/checkbox-buttons/checkbox-buttons.pug
   include ../../../assets/blocks/preview/preview.pug
   include ../../../assets/blocks/pagination/pagination.pug
 
@@ -146,7 +148,7 @@ block content
         +range-slider({title: "Диапазон цены"})
         p Стоимость за сутки пребывания в номере
       .description__checkboxes
-        +checkboxButtons(amenities)
+        +checkbox-buttons(amenities)
       .description__rich-checkbox-buttons
         .rich-checkbox__title  Доступность 
         +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")

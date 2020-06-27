@@ -3,3 +3,4 @@ node_modules/
 dist/
 .vscode/
 .sass-cache/
+linux-cribs.txt

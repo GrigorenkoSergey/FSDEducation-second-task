@@ -1,0 +1,24 @@
+include ../ul-checkbox-container/ul-checkbox-container.pug
+
+//- list example
+- 
+  var expandableList = {
+    title: "expandable checkbox list",
+    content: {
+      "breakfast": "Завтрак",
+      "desk": "Письменный стол",
+      "highchair": "Стул для кормления",
+      "crib": "Кроватка",
+      "tv_1": "Телевизор",
+      "shampoo_1": "Шампунь",    
+      "tv_2": "Телевизор",
+      "shampoo_2": "Шампунь",
+    },
+    checked: ["desk", "highchair", "crib"],
+  }
+
+mixin expandable-checkbox-list(list, expanded)
+  - let className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
+  .expandable-checkbox-list
+    .expandable-checkbox-list__title(class= `${className}`) #{list.title} 
+    +ul-checkbox-container(list, expanded)

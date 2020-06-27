@@ -1,0 +1,37 @@
+@import "../ul-checkbox-container/ul-checkbox-container.scss";
+
+.expandable-checkbox-list {
+  width: 266px;
+  position: relative;
+
+  &__title {
+    @extend h3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -1px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  &__title::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    right: 17px;
+    width: 7px;
+    height: 7px;
+    border: 2px solid $dark_50;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  &__title_expanded::after {
+    transform: rotate(-135deg);
+    top: 21px;
+    right: 18px;
+  }
+}
