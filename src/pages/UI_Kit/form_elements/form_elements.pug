@@ -8,7 +8,7 @@ block includes
   include ../../../assets/blocks/rich-checkbox/rich-checkbox.pug
   include ../../../assets/blocks/checkbox-buttons/checkbox-buttons.pug
   include ../../../assets/blocks/buns/buns.pug
-  include ../../../assets/blocks/radio-buttons/radio-buttons.pug
+  include ../../../assets/blocks/radio-buttons-group/radio-buttons-group.pug
   include ../../../assets/blocks/toggler/toggler.pug
   include ../../../assets/blocks/like-button/like-button.pug 
   include ../../../assets/blocks/rate-button/rate-button.pug   
@@ -95,7 +95,7 @@ block content
       .example-radio-buttons
         .example-radio-buttons__title
           h3 radio buttons
-        +radioButtonsGroup(buttonsListDefault)
+        +radio-buttons-group(buttonsListDefault)
 
       .example-toggle
         .example-toggle__title
@@ -114,8 +114,8 @@ block content
         .example-rate-buttons__title
           h3 rate button
         .example-rate-buttons__container
-          +rateButton(4)
-          +rateButton(5)
+          +rate-button(4)
+          +rate-button(5)
 
       .example-dropdown-guests
         +dropdown(dropdownDefault, true)

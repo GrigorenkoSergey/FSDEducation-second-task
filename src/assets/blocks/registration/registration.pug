@@ -1,5 +1,5 @@
 include ../input/input.pug
-include ../radio-buttons/radio-buttons.pug
+include ../radio-buttons-group/radio-buttons-group.pug
 include ../toggler/toggler.pug
 include ../button/button.pug
 include ../button-payment/button-payment.pug
@@ -13,7 +13,7 @@ mixin registration()
       .registration__surname-field
         +input({placeholder: "Фамилия"})
       .registration__radio-buttons
-        +radioButtonsGroup()
+        +radio-buttons-group()
       .registration__birthday
         h3 Дата рождения
         +input({placeholder: "ДД.ММ.ГГГГ"})
