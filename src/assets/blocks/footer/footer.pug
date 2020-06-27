@@ -49,13 +49,15 @@ include ../input/input.pug
     },
   }
 
-mixin footerRenderList(objList) 
+//- вспомогательный миксин
+mixin footer-render-list(objList) 
   .footer__subtitle #{objList.title}
   ul.footer__list
     each val in objList.list
       li.footer__list-li #{val}
 
-mixin footerRenderSubscribe(objList)
+//- вспомогательный миксин
+mixin footer-render-subscribe(objList)
   - 
     let {title, description, placeholder} = objList.subscribe;
   .footer__subtitle #{title}
@@ -70,10 +72,10 @@ mixin footer(footerDescription)
       img(src="assets/blocks/footer/images/logo-toxin.png" height= "40px")
       span.footer__description #{description}
     .footer__navigation
-      +footerRenderList(navigation)
+      +footer-render-list(navigation)
     .footer__about-us
-      +footerRenderList(aboutUs)
+      +footer-render-list(aboutUs)
     .footer__support
-      +footerRenderList(support)
+      +footer-render-list(support)
     .footer__subscribe
-      +footerRenderSubscribe(footerDescription)
+      +footer-render-subscribe(footerDescription)

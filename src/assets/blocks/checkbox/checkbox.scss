@@ -2,21 +2,25 @@
   position: relative;
 
   &__label {
-    display: inline-block;
     color: $dark_50;
-    line-height: 18px;
-    min-height: 30px;
-    text-indent: -29px;
-    margin-left: 10px;
     max-width: 210px;
   }
 
-  &__label::before {
+  &__input {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+  }
+
+  &__span {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+  }
+
+  &__span::before {
     content: "";
-    position: relative;
-    left: 0;
-    top: 6px;
-    margin-right: 9px;
+    margin-right: 10px;
     display: inline-block;
     border: 1px solid $dark_25;
     height: 20px;
@@ -25,12 +29,7 @@
     border-radius: 4px;
   }
 
-  &__input {
-    opacity: 0;
-    z-index: -1;
-  }
-
-  &__input:checked + &__label::before {
+  &__input:checked + &__span::before {
     border-color: $purple;
     background: url("assets/blocks/checkbox/images/check.png") center no-repeat;
   }
