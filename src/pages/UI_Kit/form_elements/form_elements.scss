@@ -141,23 +141,24 @@ main {
 }
 
 .example-buns {
-  margin-top: 32px;
+  margin-top: 29px;
   margin-left: -1px;
 }
 
 .example-radio-buttons {
-  margin-top: 50px;
+  margin-top: 48px;
 
   &__title {
+    line-height: 15px;
     margin-bottom: 13px;
   }
 }
 
 .example-toggle {
-  margin-top: 40px;
+  margin-top: 38px;
 
   &__title {
-    margin-bottom: 13px;
+    margin-bottom: 14px;
   }
 
   & .toggler {

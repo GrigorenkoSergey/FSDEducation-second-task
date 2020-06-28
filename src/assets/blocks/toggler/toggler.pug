@@ -1,4 +1,5 @@
 mixin toggler(name, value, checked)
   div.toggler
-    input.toggler__input(type="checkbox" id= name name= name checked= checked) 
-    label.toggler__label(for= name) !{value}  
+    label.toggler__label
+      input.toggler__input(type="checkbox" name= name checked= checked) 
+      span.toggler__span !{value}
