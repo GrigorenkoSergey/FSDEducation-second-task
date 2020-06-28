@@ -1,8 +1,6 @@
 mixin checkbox(name, value, checked)
   - let isChecked = checked === "checked";
   div.checkbox
-    //- input.checkbox__input(type="checkbox" id= name name= name checked= isChecked) 
-    //- label.checkbox__label(for= name) !{value}  
     label.checkbox__label
       input.checkbox__input(type="checkbox" name= name checked= isChecked) 
       span.checkbox__span !{value}

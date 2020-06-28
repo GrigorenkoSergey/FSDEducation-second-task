@@ -9,8 +9,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 44px;
+    height: 43px;
     cursor: pointer;
+    margin-bottom: 2px;
   }
 
   &__title::after {
