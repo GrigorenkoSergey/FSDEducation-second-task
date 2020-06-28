@@ -1,0 +1,5 @@
+mixin footer-render-list(objList) 
+  .footer__subtitle #{objList.title}
+  ul.footer__list
+    each val in objList.list
+      li.footer__list-li #{val}
