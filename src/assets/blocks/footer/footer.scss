@@ -1,4 +1,6 @@
 @import "src/assets/blocks/input/input.scss";
+@import "src/assets/blocks/footer/components/footer-render-list/footer-render-list.scss";
+@import "src/assets/blocks/footer/components/footer-render-subscribe/footer-render-subscribe.scss";
 
 .footer {
   background: white;
@@ -27,35 +29,11 @@
     height: 100%;
   }
 
-  &__subtitle {
-    padding-left: 20px;
-    @extend h3;
-    color: $dark_100;
-    margin-bottom: 21px;
-    line-height: 15px;
-  }
-  &__list-li {
-    padding-left: 20px;
-    margin-bottom: 20px;
-    line-height: 18px;
-    color: $dark_50;
-    cursor: pointer;
-  }
-  &__list-li:hover {
-    color: $dark_100;
-  }
   &__email {
     margin-left: 20px;
     margin-top: 23px;
     width: 260px;
   }
-}
-
-.subscribe__description {
-  padding-left: 20px;
-  max-width: 260px;
-  margin-top: -3px;
-  line-height: 24px;
 }
 
 @media (max-width: 1366px) {

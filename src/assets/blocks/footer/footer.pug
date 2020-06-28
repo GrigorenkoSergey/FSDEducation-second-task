@@ -1,4 +1,6 @@
 include ../input/input.pug
+include ../footer/components/footer-render-list/footer-render-list.pug
+include ../footer/components/footer-render-subscribe/footer-render-subscribe.pug
 
 - 
   var footerDescription = {
@@ -48,21 +50,6 @@ include ../input/input.pug
       placeholder: "Email",
     },
   }
-
-//- вспомогательный миксин
-mixin footer-render-list(objList) 
-  .footer__subtitle #{objList.title}
-  ul.footer__list
-    each val in objList.list
-      li.footer__list-li #{val}
-
-//- вспомогательный миксин
-mixin footer-render-subscribe(objList)
-  - 
-    let {title, description, placeholder} = objList.subscribe;
-  .footer__subtitle #{title}
-  .subscribe__description #{description}
-  +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})
 
 mixin footer(footerDescription)
   - 
