@@ -50,15 +50,6 @@
     showButtons: false, 
     }
 
-mixin counter(dataItem, value)
-  .dropdown__trigger
-    if (value) 
-      .dropdown__circle(data-direction = "-") -
-    else 
-      .dropdown__circle(data-direction = "-").dropdown__circle_disabled                                                                                                                                                            -
-    span(data-item= dataItem)= value
-    .dropdown__circle(data-direction = "+") +
-
 mixin dropdown(obj, expanded)
   -  
     let {name, extraClasses = {} } = obj;
@@ -75,12 +66,15 @@ mixin dropdown(obj, expanded)
     .dropdown__input(class= inputClass)
       span #{input}
     .dropdown__container(class= containerClass)
-      .dropdown__items
-        each val, key in items
-          span(data-item= key) #{val}
-      .dropdown__counters
-        each val, key in counters
-          +counter(key, val)
+      - let itemsVals = Object.values(items);
+      - let itemsNums = Object.values(counters);
+      - for (let i = 0; i < itemsVals.length; i++)
+        .dropdown__item
+          span.dropdown__item-name #{itemsVals[i]}
+          .dropdown__trigger
+            .dropdown__circle(data-direction = "-") -
+            span.dropdown__counter  !{itemsNums[i]} 
+            .dropdown__circle(data-direction = "+") +
       if (obj.showButtons)
         .dropdown__buttons
           .dropdown__button-reset(hidden= !obj.showReset) Очистить                    

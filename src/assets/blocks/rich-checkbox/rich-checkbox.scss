@@ -6,8 +6,7 @@
     @extend h3;
   }
 
-  &__label {
-    display: inline-block;
+  &__span {
     margin-left: 10px;
     margin-bottom: 6px;
     line-height: 18px;
@@ -15,12 +14,11 @@
     color: $dark_75;
   }
 
-  &__label::before {
+  &__span::before {
     content: "";
     position: absolute;
     top: 2px;
     left: 0;
-    display: inline-block;
     border: 1px solid $dark_25;
     height: 20px;
     width: 20px;
@@ -33,12 +31,12 @@
     z-index: -1;
   }
 
-  &__input:checked + &__label::before {
+  &__input:checked + &__span::before {
     border-color: $purple;
     background: url("assets/blocks/rich-checkbox/images/check.png") center no-repeat;
   }
 
-  &__span {
+  &__description {
     color: $dark_50;
     font-weight: normal;
     font-size: 12px;
@@ -46,5 +44,6 @@
     display: block;
     margin-left: 30px;
     margin-bottom: 7px;
+    margin-top: -3px;
   }
 }
