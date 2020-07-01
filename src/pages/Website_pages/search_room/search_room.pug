@@ -13,7 +13,7 @@ block includes
 block variables
   - 
     var titleName = "Search room";
-    var dropdown = Object.assign({}, dropdownDefault);
+    var dropdown = Object.assign({}, dropdownGuests);
     dropdown.content.title = "Гости";
     dropdown.content.input = "3 гостя, 1 младенец"
     dropdown.content.counters = {
@@ -143,7 +143,7 @@ block content
       .description__filter-date
         +filter-date({title: "Даты пребывания в отеле"})
       .description__dropdown
-        +dropdown(dropdownDefault)
+        +dropdown(dropdownGuests)
       .description__range-slider
         +range-slider({title: "Диапазон цены"})
         p Стоимость за сутки пребывания в номере

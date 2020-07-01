@@ -59,11 +59,11 @@
     border-color: $dark_10;
   }
 
-  &__container {
+  &__items-container {
     display: none;
     box-shadow: 0px 10px 20px $dark_5;
   }
-  &__container_expanded {
+  &__items-container_expanded {
     position: absolute;
     z-index: 2;
     width: 100%;

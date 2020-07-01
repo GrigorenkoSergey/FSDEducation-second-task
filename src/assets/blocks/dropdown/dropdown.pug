@@ -1,6 +1,11 @@
+- var MAX_ITEMS_VALUE = 10;
+- var MIN_ITEMS_VALUE = 0;
+//- почему-то const выдает ошибку (has already been declared),
+//- как если бы была общая область видимости с js-файлом.
+
 //- example of description object
 - 
-  var dropdownDefault = {
+  var dropdownGuests = {
     name: "guests", 
     extraClasses: {
       dropdownClass: "dropdown_guests", 
@@ -58,23 +63,24 @@ mixin dropdown(obj, expanded)
 
     if (expanded === true) {
       inputClass = "dropdown__input_expanded";
-      containerClass = "dropdown__container_expanded";
+      containerClass = "dropdown__items-container_expanded";
     }
 
   .dropdown(data-name= name class= dropdownClass)
     .dropdown__title #{title}
-    .dropdown__input(class= inputClass)
-      span #{input}
-    .dropdown__container(class= containerClass)
+    .dropdown__input(class= inputClass) #{input}
+    .dropdown__items-container(class= containerClass)
       - let itemsVals = Object.values(items);
       - let itemsNums = Object.values(counters);
       - for (let i = 0; i < itemsVals.length; i++)
         .dropdown__item
           span.dropdown__item-name #{itemsVals[i]}
           .dropdown__trigger
-            .dropdown__circle(data-direction = "-") -
+            - let disableMinus = itemsNums[i] === MIN_ITEMS_VALUE ? "dropdown__circle_disabled" : "";
+            .dropdown__circle(class= disableMinus data-direction = "-") -
             span.dropdown__counter  !{itemsNums[i]} 
-            .dropdown__circle(data-direction = "+") +
+            - let disablePlus = itemsNums[i] === MAX_ITEMS_VALUE ? "dropdown__circle_disabled" : "";
+            .dropdown__circle(class= disablePlus data-direction = "+") +
       if (obj.showButtons)
         .dropdown__buttons
           .dropdown__button-reset(hidden= !obj.showReset) Очистить                    

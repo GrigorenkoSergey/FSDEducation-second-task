@@ -10,7 +10,7 @@ mixin search-form()
       .search-form__date-dropdown
         +date-dropdown({})
       .search-form__dropdown
-        - dropdownDefault.content.title = "Гости"
-        +dropdown(dropdownDefault)
+        - dropdownGuests.content.title = "Гости"
+        +dropdown(dropdownGuests)
       .search-form__payment
         +button-payment("Подобрать номер", "")

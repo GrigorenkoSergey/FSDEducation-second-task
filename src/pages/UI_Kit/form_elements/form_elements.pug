@@ -46,7 +46,7 @@ block content
 
       .example-dropdown-default  
         span.example__modifier default
-        - var obj = dropdownDefault;
+        - var obj = dropdownGuests;
         - obj.additionalClasses = {};
         +dropdown(obj)
 
@@ -118,7 +118,7 @@ block content
           +rate-button(5)
 
       .example-dropdown-guests
-        +dropdown(dropdownDefault, true)
+        +dropdown(dropdownGuests, true)
 
       .example-rich-checkbox-buttons
         .rich-checkbox__title   rich checkbox buttons
@@ -152,7 +152,7 @@ block content
 
       .example-dropdown-guests_new-entry
         - 
-          var obj = dropdownDefault;
+          var obj = dropdownGuests;
           obj.content.input = "3 гостя"
           obj.content.counters = {
             adults_num: 2,

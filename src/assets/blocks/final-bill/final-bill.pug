@@ -14,7 +14,7 @@ mixin final-bill()
       .final-bill__date-dropdown
         +date-dropdown({arrivalName: "arrival_final-bill", departureName: "departure_final-bill"})
       .final-bill__dropdown
-        - var dropdown = Object.assign({}, dropdownDefault);
+        - var dropdown = Object.assign({}, dropdownGuests);
         - dropdown.content.title = "Гости";
         - dropdown.content.input = "3 гостя";
         - dropdown.content.counters.adults_num = "3";
