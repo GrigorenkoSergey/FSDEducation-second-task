@@ -1,21 +1,22 @@
-let expandableLists = document.querySelectorAll(".expandable-checkbox-list");
-for (let item of expandableLists) {
-  item.addEventListener("click", toggle);
-  item.addEventListener("mousedown", (e) => e.preventDefault()); //уберем выделение по умолчанию
+class ExpandableCheckbox {
+  constructor(item) {
+    this.el = item;
+    this.blockName = "expandable-checkbox-list";
 
-  function toggle(e) {
-    let elem = e.target;
+    this.ul = item.querySelector(".checkbox-list");
+    this.title = item.querySelector(`.${this.blockName}__title`);
 
-    if (elem.classList.contains("expandable-checkbox-list__title")) {
-      elem.classList.toggle("expandable-checkbox-list__title_expanded");
-      let ul = elem.parentNode.querySelector(".checkbox-list");
-      ul.hidden = !ul.hidden;
-    }
+    this.title.addEventListener("click", this.onTitleClick.bind(this));
+    this.el.addEventListener("mousedown", (e) => e.preventDefault());
+  }
+
+  onTitleClick(e) {
+    this.title.classList.toggle(this.blockName + "__title_expanded");
+    this.ul.hidden = !this.ul.hidden;
   }
 }
 
-let checkboxes = document.querySelectorAll(".checkbox");
-
-for (let item of checkboxes) {
-  item.addEventListener("mousedown", (e) => e.preventDefault());
+let expandableLists = document.querySelectorAll(".expandable-checkbox-list");
+for (let item of expandableLists) {
+  new ExpandableCheckbox(item);
 }
