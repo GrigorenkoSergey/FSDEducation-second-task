@@ -1,17 +1,5 @@
 # FSDEducation-second-task
-## Страницы макета
-* UI_Kit
-  * [cards](https://grigorenkosergey.github.io/Second_Task/cards.html)
-  * [colors_and_type](https://grigorenkosergey.github.io/Second_Task/colors_and_type.html)
-  * [form_elements](https://grigorenkosergey.github.io/Second_Task/form_elements.html)
-  * [headers_and_footers](https://grigorenkosergey.github.io/Second_Task/headers_and_footers.html)
-* Website_pages
-  * [landing_page](https://grigorenkosergey.github.io/Second_Task/landing_page.html)
-  * [registrations](https://grigorenkosergey.github.io/Second_Task/registration.html)
-  * [room_details](https://grigorenkosergey.github.io/Second_Task/room_details.html)
-  * [search_room](https://grigorenkosergey.github.io/Second_Task/search_room.html)
-  * [sign_in](https://grigorenkosergey.github.io/Second_Task/sign_in.html)
-
+## [Результат](https://grigorenkosergey.github.io/Second_Task/index.html)
 
 ## Установка и возможные проблемы
 Клонируй одним из возможных способов:  
