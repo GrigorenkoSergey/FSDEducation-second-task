@@ -8,7 +8,6 @@ class Diagram {
 
   draw() {
     const {canvas, votes} = this;
-    // const c = canvas.getContext('2d');
     const c = this.context;
     const {PI} = Math;
 
