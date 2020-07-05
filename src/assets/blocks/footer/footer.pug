@@ -1,6 +1,5 @@
-include ../input/input.pug
-include ../footer/components/footer-render-list/footer-render-list.pug
-include ../footer/components/footer-render-subscribe/footer-render-subscribe.pug
+include ../footer/components/footer-list.pug
+include ../footer/components/footer-subscribe.pug
 
 - 
   var footerDescription = {
@@ -57,12 +56,11 @@ mixin footer(footerDescription)
   .footer
     .footer__logo
       img(src="assets/blocks/footer/images/logo-toxin.png" height= "40px")
-      span.footer__description #{description}
+      span.footer__logo-description #{description}
     .footer__navigation
-      +footer-render-list(navigation)
+      +footer-list(navigation)
     .footer__about-us
-      +footer-render-list(aboutUs)
+      +footer-list(aboutUs)
     .footer__support
-      +footer-render-list(support)
-    .footer__subscribe
-      +footer-render-subscribe(footerDescription)
+      +footer-list(support)
+    +footer-subscribe(footerDescription)

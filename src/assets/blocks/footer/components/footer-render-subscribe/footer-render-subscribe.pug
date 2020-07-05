@@ -1,6 +1,0 @@
-mixin footer-render-subscribe(objList)
-  - 
-    let {title, description, placeholder} = objList.subscribe;
-  .footer__subtitle #{title}
-  .subscribe__description #{description}
-  +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})

@@ -1,29 +1,28 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es6': true,
+  env: {
+    browser: true,
+    es6: true,
   },
-  'extends': [
+  extends: [
     'google',
+    'airbnb-base',
     'plugin:fsd/all',
   ],
-  'globals': {
-    'Atomics': 'readonly',
-    'SharedArrayBuffer': 'readonly',
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
   },
-  'parser': '@typescript-eslint/parser',
-  'parserOptions': {
-    'ecmaVersion': 11,
-    'sourceType': 'module',
+
+  parserOptions: {
+    ecmaVersion: 11,
+    sourceType: 'module',
   },
-  'plugins': [
-    '@typescript-eslint',
+  plugins: [
     'fsd',
   ],
-  'rules': {
-    'indent': [2, 2],
-    'no-unused-vars': 'off', // проблема при импорте типов
-    '@typescript-eslint/no-unused-vars': 'error', // для импорта типов
+  rules: {
+    indent: [2, 2],
+    'no-unused-vars': 'off',
     'require-jsdoc': 0,
     'fsd/hof-name-prefix': 'error',
     'fsd/no-heavy-constructor': 'error',
