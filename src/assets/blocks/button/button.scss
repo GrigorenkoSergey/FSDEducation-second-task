@@ -1,5 +1,6 @@
 .button {
   height: 44px;
+  min-width: 100px;
   border-radius: 22px;
   @extend h3;
   color: white;

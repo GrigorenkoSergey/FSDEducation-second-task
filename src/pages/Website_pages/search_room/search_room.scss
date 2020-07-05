@@ -64,7 +64,6 @@ main {
     display: flex;
     justify-content: center;
     margin-top: 19px;
-    margin-left: -14px;
   }
 }
 
@@ -92,6 +91,7 @@ main {
 @media (max-width: 768px) {
   main {
     grid-template-columns: auto;
+    gap: 20px;
   }
 
   .description {
@@ -112,7 +112,6 @@ main {
   }
   .rooms-list {
     justify-content: center;
-    margin-top: -40px;
 
     &__title {
       text-align: center;

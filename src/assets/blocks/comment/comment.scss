@@ -7,7 +7,6 @@
     position: absolute;
     margin-right: 11px;
     top: 1px;
-    left: 1px;
     box-shadow: 0 10px 20px $dark_10;
     border-radius: 50%;
   }
@@ -17,7 +16,7 @@
 
   &__like-button {
     margin-left: 5px;
-    margin-top: 12px;
+    margin-top: 2px;
   }
 
   &__name {
@@ -27,7 +26,12 @@
   }
 
   &__content {
-    margin-left: 59px;
-    margin-top: -27px;
+    margin-left: 14px;
+  }
+  
+  &__grouper {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
   }
 }

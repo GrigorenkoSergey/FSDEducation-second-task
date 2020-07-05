@@ -16,10 +16,11 @@ mixin comment(reviewer)
     img.comment__avatar(src= reviewer.avatarSrc)
     span.comment__name #{reviewer.name}
     span.comment__term #{reviewer.term}
-    .comment__like-button
-      button.like-button(
-        class= reviewer.likeButton.isPushed ? "like-button_pushed" : ""
-      )
-        span.like-button__counter #{reviewer.likeButton.counter}
-    p.comment__content #{reviewer.content}
+    .comment__grouper
+      .comment__like-button
+        button.like-button(
+          class= reviewer.likeButton.isPushed ? "like-button_pushed" : ""
+        )
+          span.like-button__counter #{reviewer.likeButton.counter}
+      p.comment__content #{reviewer.content}
 

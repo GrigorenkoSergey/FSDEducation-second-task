@@ -39,9 +39,6 @@
     border-bottom-right-radius: 0;
   }
 
-  &__item-name{
-    margin-top: -2px;
-  }
   &__circle {
     display: flex;
     align-items: center;
@@ -123,7 +120,6 @@
     color: $dark_50;
     text-align: left;
     margin-top: 4px;
-    margin-left: -1px;
   }
 
   &__button-apply {

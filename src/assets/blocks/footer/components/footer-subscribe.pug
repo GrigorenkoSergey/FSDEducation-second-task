@@ -4,6 +4,6 @@ mixin footer-subscribe(objList)
   .footer__subscribe
     - 
       let {title, description, placeholder} = objList.subscribe;
-    .footer__subtitle #{title}
+    .footer__subscribe-title #{title}
     .footer__subscribe-description #{description}
     +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})

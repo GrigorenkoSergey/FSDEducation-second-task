@@ -61,14 +61,17 @@ $example-text-width: 340px;
 
 .example-text {
   h1,
-  h2,
-  h3 {
+  h2 {
     margin-bottom: 50px;
+  }
+
+  h3 {
+    margin-bottom: 47px;
   }
 }
 
+
 .example-text p {
-  margin-top: -3px;
   max-width: 310px;
 }
 
