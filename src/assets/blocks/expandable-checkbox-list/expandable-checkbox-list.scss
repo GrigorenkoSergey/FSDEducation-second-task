@@ -3,6 +3,7 @@
 .expandable-checkbox-list {
   width: 266px;
   position: relative;
+  user-select: none;
 
   &__title {
     @extend h3;

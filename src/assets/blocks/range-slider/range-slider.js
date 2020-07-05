@@ -1,89 +1,96 @@
-let rollersArr = document.getElementsByClassName("range-slider__roller");
-for (let item of rollersArr) {
+export default class RangeSlider {
+  constructor(item) {
+    this.el = item;
+    this.init();
+  }
 
-  let leftRoller = item.querySelector(".range-slider__roller-left");
-  let rightRoller = item.querySelector(".range-slider__roller-right");
-  let rangeSlider = item.closest(".range-slider")
+  init() {
+    this.leftRoller = this.el.querySelector('.range-slider__roller-left');
+    this.rightRoller = this.el.querySelector('.range-slider__roller-right');
+    this.rangeSlider = this.el.closest('.range-slider');
 
-  leftRoller.addEventListener("mousedown", leftRollerHandler);
-  rightRoller.addEventListener("mousedown", rightRollerHandler);
+    this.leftRoller.addEventListener('mousedown', this.leftRollerHandler.bind(this));
+    this.rightRoller.addEventListener('mousedown', this.rightRollerHandler.bind(this));
 
+    this.range = this.rangeSlider.querySelector('.range-slider__range');
+  }
 
-  function leftRollerHandler(e) {
-    let elem = e.target;
-    let startX = item.offsetParent.getBoundingClientRect().left + item.offsetParent.clientLeft;
-    let shiftX = e.clientX - elem.getBoundingClientRect().left;
+  leftRollerHandler(e) {
+    const elem = e.target;
+    const startX = this.el.offsetParent.getBoundingClientRect().left
+    + this.el.offsetParent.clientLeft;
+    const shiftX = e.clientX - elem.getBoundingClientRect().left;
 
-    let boundaries = {
+    const boundaries = {
       left: 0,
-      right: rightRoller.getBoundingClientRect().left - rightRoller.offsetWidth - startX
-    }
+      right: this.rightRoller.getBoundingClientRect().left
+      - this.rightRoller.offsetWidth - startX,
+    };
 
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
+    const onMouseMove = (event) => {
+      event.preventDefault();
 
-    function onMouseMove(e) {
-      e.preventDefault();
-
-      let newLeft = e.clientX - shiftX - startX;
+      let newLeft = event.clientX - shiftX - startX;
       newLeft = Math.max(boundaries.left, newLeft);
       newLeft = Math.min(newLeft, boundaries.right);
-      item.style.left = newLeft + 'px';
+      this.el.style.left = `${newLeft}px`;
 
-      countRange();
-    }
+      this.countRange();
+    };
 
-    function onMouseUp(e) {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseup", onMouseUp);
-    }
+    const onMouseUp = (event) => {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
 
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
   }
 
-  function rightRollerHandler(e) {
+  rightRollerHandler(e) {
     // отсчет начинаем с правого края
-    let elem = e.target;
-    let startX = item.offsetParent.getBoundingClientRect().left + item.offsetParent.clientLeft +
-      item.offsetParent.clientWidth;
-    let shiftX = elem.getBoundingClientRect().right - e.clientX;
+    const elem = e.target;
+    const startX = this.el.offsetParent.getBoundingClientRect().left
+    + this.el.offsetParent.clientLeft + this.el.offsetParent.clientWidth;
+    const shiftX = elem.getBoundingClientRect().right - e.clientX;
 
-    let boundaries = {
-      left: startX - leftRoller.getBoundingClientRect().right - rightRoller.offsetWidth,
-      right: 0
-    }
+    const boundaries = {
+      left: startX - this.leftRoller.getBoundingClientRect().right
+      - this.rightRoller.offsetWidth,
+      right: 0,
+    };
 
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
+    const onMouseMove = (event) => {
+      event.preventDefault();
 
-    function onMouseMove(e) {
-      e.preventDefault();
-
-      let newRight = startX - e.clientX - shiftX;
+      let newRight = startX - event.clientX - shiftX;
       newRight = Math.max(boundaries.right, newRight);
       newRight = Math.min(newRight, boundaries.left);
-      item.style.right = newRight + 'px';
+      this.el.style.right = `${newRight}px`;
 
-      countRange();
-    }
+      this.countRange();
+    };
+    const onMouseUp = (event) => {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
 
-    function onMouseUp(e) {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseup", onMouseUp);
-    }
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
   }
 
-  function countRange() {
+  countRange() {
     // коэффициенты 5 / 74 и 10 / 175 взяты, чтобы соответствовать масштабу макета.
     // В общем, я так и не понял, как разбить шкалу...
-    let lowRange = Math.floor(5 / 74 * item.offsetLeft) * 1000;
-    let topRange = Math.floor(10 / 175 * (item.offsetLeft + item.offsetWidth)) * 1000;
-
-    // topRange = Math.max(lowRange, topRange); 
+    let lowRange = Math.floor((5 / 74) * this.el.offsetLeft) * 1000;
+    let topRange = Math.floor((10 / 175) * (this.el.offsetLeft + this.el.offsetWidth)) * 1000;
 
     lowRange = lowRange.toLocaleString('ru-RU');
     topRange = topRange.toLocaleString('ru-RU');
 
-    rangeSlider.getElementsByClassName("range-slider__range")[0]
-      .textContent = `${lowRange}\u20BD - ${topRange}\u20BD`;
+    this.range.textContent = `${lowRange}\u20BD - ${topRange}\u20BD`;
   }
 }
+
+[...document.getElementsByClassName('range-slider__roller')]
+  .forEach((item) => new RangeSlider(item));

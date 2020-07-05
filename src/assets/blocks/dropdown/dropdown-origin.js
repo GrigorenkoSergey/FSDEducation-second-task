@@ -1,91 +1,47 @@
-import {EventObserver} from "../event-observer/event-observer.js";
-const MAX_ITEMS_VALUE = 10;
-const MIN_ITEMS_VALUE = 0;
+import DropdownItem from './dropdown-item';
 
-export class DropdownOrigin {
+export default class DropdownOrigin {
   constructor(item) {
     this.el = item;
     this.items = [];
+    this.init();
+  }
 
-    this.input = item.getElementsByClassName("dropdown__input")[0];
+  init() {
+    this.input = this.el.querySelector('.dropdown__input');
 
-    this.el.addEventListener("mousedown", (e) => e.preventDefault());
-    this.input.addEventListener("click", (e) => this.onInputClick(e));
+    this.input.addEventListener('click', this.onInputClick.bind(this));
 
-    this.itemsContainer = item.getElementsByClassName("dropdown__items-container")[0];
-    const itemsDom = item.getElementsByClassName("dropdown__item");
+    this.itemsContainer = this.el.querySelector('.dropdown__items-container');
+    const itemsDom = this.el.getElementsByClassName('dropdown__item');
 
-    for (let itemDom of itemsDom) {
-      const value = +itemDom.querySelector(".dropdown__counter").textContent;
-      let item = new DropdownItem(itemDom, value, this.inputHandler);
+    [...itemsDom].forEach(((itemDom) => {
+      const value = +itemDom.querySelector('.dropdown__counter').textContent;
+      const item = new DropdownItem(itemDom, value, this.inputHandler);
       this.items.push(item);
-      item.addSubscriber("changeItemValue", this);
-    }
+      item.addSubscriber('changeItemValue', this);
+    }));
   }
 
   onInputClick(e) {
-    this.itemsContainer.classList.toggle("dropdown__items-container_expanded");
-    this.input.classList.toggle("dropdown__input_expanded");
+    this.itemsContainer.classList.toggle('dropdown__items-container_expanded');
+    this.input.classList.toggle('dropdown__input_expanded');
 
-    const {el, itemsContainer, input} = this;
-    document.addEventListener("click", handleClickOutsideBlock);
+    const { el, itemsContainer, input } = this;
 
-    function handleClickOutsideBlock(e) {
-      if (el.contains(e.target)) return;
+    function handleClickOutsideBlock(event) {
+      if (el.contains(event.target)) return;
 
-      document.removeEventListener("click", handleClickOutsideBlock);
-      input.classList.remove("dropdown__input_expanded");
-      itemsContainer.classList.remove("dropdown__items-container_expanded");
+      document.removeEventListener('click', handleClickOutsideBlock);
+      input.classList.remove('dropdown__input_expanded');
+      itemsContainer.classList.remove('dropdown__items-container_expanded');
     }
+
+    document.addEventListener('click', handleClickOutsideBlock);
   }
 
   update() {
-    console.log(this.items);
-    let inputContent = this.items.map(item => item.value);
+    const inputContent = this.items.map((item) => item.value);
     this.input.textContent = inputContent;
-  }
-}
-
-class DropdownItem extends EventObserver {
-  constructor(item, value, input) {
-    super();
-    this.el = item;
-    this.value = value;
-    this.counter = this.el.querySelector(".dropdown__counter");
-    this.minus = this.el.querySelector(".dropdown__circle[data-direction='-']");
-    this.plus = this.el.querySelector(".dropdown__circle[data-direction='+']");
-
-    this.minus.addEventListener("click", (e) => this.onMinusClick(e))
-    this.plus.addEventListener("click", (e) => this.onPlusClick(e))
-  }
-
-  onMinusClick(e) {
-    if (this.minus.classList.contains("dropdown__circle_disabled")) return;
-
-    if (this.value === MAX_ITEMS_VALUE) {
-      this.plus.classList.remove("dropdown__circle_disabled");
-    }
-
-    this.counter.textContent = --this.value;
-    this.broadcast("changeItemValue", this);
-
-    if (this.value === MIN_ITEMS_VALUE) {
-      this.minus.classList.add("dropdown__circle_disabled");
-    }
-  }
-
-  onPlusClick(e) {
-    if (this.plus.classList.contains("dropdown__circle_disabled")) return;
-
-    if (this.value === MIN_ITEMS_VALUE) {
-      this.minus.classList.remove("dropdown__circle_disabled");
-    }
-
-    this.counter.textContent = ++this.value;
-    this.broadcast("changeItemValue", this);
-
-    if (this.value === MAX_ITEMS_VALUE) {
-      this.plus.classList.add("dropdown__circle_disabled");
-    }
   }
 }

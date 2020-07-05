@@ -1,29 +1,28 @@
 class Diagram {
   constructor(itemCanvas, votes) {
     this.canvas = itemCanvas;
-    this.context = canvas.getContext('2d');
+    this.context = this.canvas.getContext('2d');
     this.votes = votes;
     this.draw();
   }
 
   draw() {
-    const {canvas, votes} = this;
+    const { canvas, votes } = this;
     const c = this.context;
-    const {PI} = Math;
+    const { PI } = Math;
 
-    let r = 58;
-    let total = votes.reduce((sum, item) => sum + item.votes, 0);
+    const r = 58;
+    const total = votes.reduce((sum, item) => sum + item.votes, 0);
     document.getElementsByClassName('diagram__total')[0].textContent = total;
     let startAngle = -PI / 2;
     let endAngle;
 
-    votes.forEach(item => {
-      endAngle = startAngle + item.votes / total * 2 * PI;
-      this._arcGradient(canvas.width / 2, canvas.height / 2, r,
+    votes.forEach((item) => {
+      endAngle = startAngle + (item.votes / total) * 2 * PI;
+      this.arcGradient(canvas.width / 2, canvas.height / 2, r,
         startAngle, endAngle,
         item.colorStart, item.colorEnd,
-        PI / 36,
-      );
+        PI / 36);
       startAngle = endAngle;
     });
 
@@ -33,10 +32,10 @@ class Diagram {
     startAngle = -PI / 2;
     c.rotate(startAngle);
 
-    votes.forEach(item => {
-      let angle = item.votes / total * 2 * PI;
+    votes.forEach((item) => {
+      const angle = (item.votes / total) * 2 * PI;
       c.rotate(angle);
-      c.fillStyle = "white";
+      c.fillStyle = 'white';
 
       c.lineWidth = 4;
       c.rect(r - 2, 0, 4, 2);
@@ -45,7 +44,7 @@ class Diagram {
     c.restore();
   }
 
-  _arcGradient(xc, yc, r, startAngle, endAngle, colorStart, colorEnd, step = PI / 36) {
+  arcGradient(xc, yc, r, startAngle, endAngle, colorStart, colorEnd, step = Math.PI / 36) {
     const c = this.context;
 
     c.lineWidth = 4;
@@ -56,21 +55,21 @@ class Diagram {
 
     c.lineCap = 'butt';
     for (let angle = step + startAngle; angle <= endAngle; angle += step) {
-      let xCurr = r * Math.cos(angle) + xc;
-      let yCurr = r * Math.sin(angle) + yc;
+      const xCurr = r * Math.cos(angle) + xc;
+      const yCurr = r * Math.sin(angle) + yc;
 
-      let d = ((xCurr - xPrev) ** 2 + (yCurr - yPrev) ** 2) ** 0.5;
+      const d = ((xCurr - xPrev) ** 2 + (yCurr - yPrev) ** 2) ** 0.5;
       // угол A - угол пересечения секущей с ось X
-      let sinA = (xCurr - xPrev) / d;
-      let cosA = (yCurr - yPrev) / d;
+      const sinA = (xCurr - xPrev) / d;
+      const cosA = (yCurr - yPrev) / d;
 
-      let xStart = xPrev - r * (angle - startAngle) * sinA;
-      let yStart = yPrev - r * (angle - startAngle) * cosA;
+      const xStart = xPrev - r * (angle - startAngle) * sinA;
+      const yStart = yPrev - r * (angle - startAngle) * cosA;
 
-      let xEnd = xCurr + r * (endAngle - angle) * sinA;
-      let yEnd = yCurr + r * (endAngle - angle) * cosA;
+      const xEnd = xCurr + r * (endAngle - angle) * sinA;
+      const yEnd = yCurr + r * (endAngle - angle) * cosA;
 
-      let gradient = c.createLinearGradient(xStart, yStart, xEnd, yEnd);
+      const gradient = c.createLinearGradient(xStart, yStart, xEnd, yEnd);
       gradient.addColorStop(0, colorStart);
       gradient.addColorStop(1, colorEnd);
       c.strokeStyle = gradient;
@@ -86,12 +85,20 @@ class Diagram {
   }
 }
 
-let votes = [
-  {rate: "disapointed", votes: 0, colorStart: "#919191", colorEnd: "#3D4975"},
-  {rate: "satisfactory", votes: 65, colorStart: "#BC9CFF", colorEnd: "#8BA4F9"},
-  {rate: "good", votes: 65, colorStart: "#6FCF97", colorEnd: "#66D2EA"},
-  {rate: "magnificently", votes: 130, colorStart: "#FFBA9C", colorEnd: "#FFE39C"},
-]
+const votes = [
+  {
+    rate: 'disapointed', votes: 0, colorStart: '#919191', colorEnd: '#3D4975',
+  },
+  {
+    rate: 'satisfactory', votes: 65, colorStart: '#BC9CFF', colorEnd: '#8BA4F9',
+  },
+  {
+    rate: 'good', votes: 65, colorStart: '#6FCF97', colorEnd: '#66D2EA',
+  },
+  {
+    rate: 'magnificently', votes: 130, colorStart: '#FFBA9C', colorEnd: '#FFE39C',
+  },
+];
 
-let canvas = document.getElementsByClassName('diagram__canvas')[0];
-new Diagram(canvas, votes);
+const canvas = document.querySelector('.diagram__canvas');
+const diargam = new Diagram(canvas, votes);

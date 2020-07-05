@@ -1,7 +1,7 @@
-export class EventObserver {
+export default class EventObserver {
   // every subscriber should have method "update(eventType, data)"
   constructor() {
-    this.observers = {}
+    this.observers = {};
   }
 
   addSubscriber(eventType, obj) {
@@ -18,7 +18,10 @@ export class EventObserver {
   broadcast(eventType, data) {
     if (!this.observers[eventType]) return;
     this.observers[eventType]
-      .forEach((subscriber) => subscriber &&
-        subscriber.update(eventType, data));
+      .forEach((subscriber) => {
+        if (subscriber) {
+          subscriber.update(eventType, data);
+        }
+      });
   }
 }

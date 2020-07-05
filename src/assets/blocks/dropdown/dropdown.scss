@@ -1,5 +1,7 @@
 .dropdown {
   position: relative;
+  user-select: none;
+  
   &__title {
     @extend h3;
     margin-bottom: 5px;
