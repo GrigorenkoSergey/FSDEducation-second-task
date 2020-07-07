@@ -21,6 +21,10 @@ module.exports = {
     'fsd',
   ],
   rules: {
+    'import/extensions': ['error', 'ignorePackages', {
+      ts: 'always',
+      js: 'always',
+    }],
     indent: [2, 2],
     'no-unused-vars': 'off',
     'require-jsdoc': 0,
