@@ -1,1 +1,1 @@
-import '../rate-button/rate-button';
+import '../rate-button/rate-button.js';

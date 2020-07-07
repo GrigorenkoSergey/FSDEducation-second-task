@@ -1,24 +1,24 @@
-import "./cards.scss";
-import "../../../assets/blocks/search-form/search-form.js";
-import "../../../assets/blocks/final-bill/final-bill.js";
-import dateDropdowns from "../../../assets/blocks/date-dropdown/date-dropdown.js";
-import "../../../assets/blocks/preview/preview.js";
+import './cards.scss';
+import '../../../assets/blocks/search-form/search-form.js';
+import '../../../assets/blocks/final-bill/final-bill.js';
+import dateDropdowns from '../../../assets/blocks/date-dropdown/date-dropdown.js';
+import '../../../assets/blocks/preview/preview.js';
 
-let arrivals = dateDropdowns.arrivals;
-let departures = dateDropdowns.departures;
+const { arrivals } = dateDropdowns;
+const { departures } = dateDropdowns;
 
-let arrival = arrivals.filter(item => item.el.dataset.name == "arrival_calendar")[0];
-arrival.el.classList.add("_invisible");
+let [arrival] = arrivals.filter((item) => item.el.dataset.name === 'arrival_calendar');
+arrival.el.classList.add('_invisible');
 arrival.alwaysShow = true;
 arrival.show();
 
-let departure = departures.filter(item => item.el.dataset.name == "departure_calendar")[0];
-departure.el.classList.add("_invisible");
+let [departure] = departures.filter((item) => item.el.dataset.name === 'departure_calendar');
+departure.el.classList.add('_invisible');
 
-arrival.setDate(new Date(2019, 7, 19), true)
-departure.setDate(new Date(2019, 7, 23), true)
+arrival.setDate(new Date(2019, 7, 19), true);
+departure.setDate(new Date(2019, 7, 23), true);
 
-arrival = arrivals.filter(item => item.el.dataset.name == "arrival_final-bill")[0];
-departure = departures.filter(item => item.el.dataset.name == "departure_final-bill")[0];
+[arrival] = arrivals.filter((item) => item.el.dataset.name === 'arrival_final-bill');
+[departure] = departures.filter((item) => item.el.dataset.name === 'departure_final-bill');
 arrival.setDate(new Date(2019, 7, 19));
 departure.setDate(new Date(2019, 7, 23));

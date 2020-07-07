@@ -1,8 +1,8 @@
 // вставлять этот файл, если нужна автоматическая
 // инициализация dropdowns
 
-import DropdownGuests from './dropdown-guests';
-import DropdownRooms from './dropdown-rooms';
+import DropdownGuests from './dropdown-guests.js';
+import DropdownRooms from './dropdown-rooms.js';
 
 [...document.querySelectorAll('[data-name=guests]')]
   .forEach((item) => new DropdownGuests(item));

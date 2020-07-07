@@ -1,4 +1,4 @@
-import DropdownItem from './dropdown-item';
+import DropdownItem from './dropdown-item.js';
 
 export default class DropdownOrigin {
   constructor(item) {

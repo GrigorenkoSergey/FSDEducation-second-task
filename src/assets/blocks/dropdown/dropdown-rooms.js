@@ -1,4 +1,4 @@
-import DropdownOrigin from './dropdown-origin';
+import DropdownOrigin from './dropdown-origin.js';
 
 export default class DropdownRooms extends DropdownOrigin {
   update(eventType, data) {
