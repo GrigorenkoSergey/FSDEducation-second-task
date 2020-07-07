@@ -1,0 +1,19 @@
+//- example of objList
+  var objList = {
+    title: 'someTitle',
+    list: [item1, item2, item3],
+    extraClasses: {
+      titleClass: '',
+      ulClass: '', 
+      liClass: '', 
+    },
+  }
+
+mixin list(objList) 
+  - let { extraClasses = {} } = objList
+  - let { titleClass = "", ulClass = "", liClass = "" } = extraClasses;
+
+  .list__title(class= titleClass) #{objList.title}
+  ul.list__ul(class= ulClass)
+    each val in objList.list
+      li.list__li(class= liClass) #{val}

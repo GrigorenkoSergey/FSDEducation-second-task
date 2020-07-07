@@ -15,19 +15,19 @@
     background: $primary-gradient_05;
   }
 
-  &_white::before {
-    content: "";
-    position: absolute;
-    left: 2px;
-    right: 2px;
-    top: 2px;
-    bottom: 2px;
-    background: white;
-    border-radius: 22px;
-    z-index: -1;
-  }
-
   &_white {
     color: $purple;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      top: 2px;
+      bottom: 2px;
+      background: white;
+      border-radius: 22px;
+      z-index: -1;
+    }
   }
 }

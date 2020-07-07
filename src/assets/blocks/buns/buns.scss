@@ -5,10 +5,10 @@
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid $dark_10;
-  }
 
-  &__item:last-child {
-    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__img_smile {

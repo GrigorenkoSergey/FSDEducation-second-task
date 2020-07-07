@@ -13,21 +13,21 @@
     height: 43px;
     cursor: pointer;
     margin-bottom: 5px;
-  }
 
-  &__title::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 16px;
-    right: 17px;
-    width: 7px;
-    height: 7px;
-    border: 2px solid $dark_50;
-    border-left: none;
-    border-top: none;
-    transform: rotate(45deg);
-    cursor: pointer;
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 16px;
+      right: 17px;
+      width: 7px;
+      height: 7px;
+      border: 2px solid $dark_50;
+      border-left: none;
+      border-top: none;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
   }
 
   &__title_expanded::after {

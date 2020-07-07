@@ -1,5 +1,5 @@
-include ../footer/components/footer-list.pug
-include ../footer/components/footer-subscribe.pug
+include ../input/input.pug
+include ../list/list.pug
 
 - 
   var footerDescription = {
@@ -52,15 +52,32 @@ include ../footer/components/footer-subscribe.pug
 
 mixin footer(footerDescription)
   - 
-    let {description, navigation, aboutUs, support} = footerDescription;
+    var {description, navigation, aboutUs, support} = footerDescription;
+
+    var extraClasses = {
+      titleClass: 'footer__subtitle',
+      ulClass: 'footer__list',
+      liClass: 'footer__list-li'
+      }
+
+    navigation.extraClasses = extraClasses;
+    aboutUs.extraClasses = extraClasses;
+    support.extraClasses = extraClasses;
+
   .footer
     .footer__logo
       img(src="assets/blocks/footer/images/logo-toxin.png" height= "40px")
       span.footer__logo-description #{description}
     .footer__navigation
-      +footer-list(navigation)
+      - navigation.extraClasses = extraClasses;
+      +list(navigation)
     .footer__about-us
-      +footer-list(aboutUs)
+      +list(aboutUs)
     .footer__support
-      +footer-list(support)
-    +footer-subscribe(footerDescription)
+      +list(support)
+    .footer__subscribe
+      - 
+        var {title, description, placeholder} = footerDescription.subscribe;
+      .footer__subscribe-title #{title}
+      .footer__subscribe-description #{description}
+      +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})

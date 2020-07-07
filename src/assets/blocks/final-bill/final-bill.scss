@@ -10,11 +10,13 @@
 
   &__number {
     @extend h1;
+
+    &::before {
+      content: "№ ";
+      font-size: 14px;
+    }
   }
-  &__number::before {
-    content: "№ ";
-    font-size: 14px;
-  }
+
   &__class {
     margin-left: 5px;
     font-family: $bodyFont-family;
@@ -27,14 +29,17 @@
     font-size: 12px;
     color: $dark_50;
   }
+
   &__price :first-child {
     font-size: 14px;
     font-weight: bold;
   }
+
   &__date-dropdown {
     width: 100%;
     margin-top: 17px;
   }
+
   &__dropdown {
     margin-top: 20px;
     width: 100%;
@@ -52,15 +57,18 @@
     .rate {
       margin-top: 10px;
     }
+
     .extra-service {
       line-height: 18px;
       margin-top: 13px;
     }
+
     .service-discount,
     .extra-service {
       width: 214px;
       position: relative;
     }
+
     .service-discount::after,
     .extra-service::after {
       content: "i";
@@ -91,15 +99,18 @@
     display: flex;
     flex-wrap: nowrap;
     color: black;
+
     .total {
       flex: 0 1 auto;
     }
+
     .hr {
       flex: 1 1 auto;
       border-bottom: 1px dashed $dark_25;
       height: 1px;
       margin-top: 19px;
     }
+
     .total-price {
       flex: 0 1 auto;
     }

@@ -1,4 +1,5 @@
 @import "src/assets/blocks/input/input.scss";
+@import "src/assets/blocks/list/list.scss";
 
 .footer {
   background: white;
@@ -15,7 +16,8 @@
 
   &__navigation,
   &__about-us,
-  &__support {
+  &__support, 
+  &__subscribe {
     margin-top: 4px;
   }
 
@@ -40,27 +42,20 @@
 
   &__subtitle {
     padding-left: 20px;
-    @extend h3;
-    color: $dark_100;
     margin-bottom: 21px;
-    line-height: 15px;
   }
 
   &__list-li {
     padding-left: 20px;
     margin-bottom: 20px;
-    line-height: 18px;
-    color: $dark_50;
-    cursor: pointer;
-
-    &:hover {
-      color: $dark_100;
-    }
   }
 
   &__subscribe-title {
-    @extend .footer__subtitle;
-    margin-bottom: 18px;
+    @extend h3;
+    padding-left: 20px;
+    color: $dark_100;
+    line-height: 15px;
+    margin-bottom: 21px;
   }
 
   &__subscribe-description {

@@ -1,0 +1,17 @@
+.list {
+  &__title {
+    @extend h3;
+    color: $dark_100;
+    line-height: 15px;
+  }
+
+  &__li {
+    line-height: 18px;
+    color: $dark_50;
+    cursor: pointer;
+
+    &:hover {
+      color: $dark_100;
+    }
+  }
+}

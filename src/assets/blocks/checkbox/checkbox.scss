@@ -15,18 +15,19 @@
     margin-left: 30px;
     line-height: 18px;
     color: $dark_50;
-  }
+    cursor: pointer;
 
-  &__span::before {
-    content: "";
-    border: 1px solid $dark_25;
-    height: 20px;
-    width: 20px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    &::before {
+      content: "";
+      border: 1px solid $dark_25;
+      height: 20px;
+      width: 20px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
   }
 
   &__input:checked + &__span::before {
