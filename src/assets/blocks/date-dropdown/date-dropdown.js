@@ -20,18 +20,18 @@ function rerenderContainer(instanse) {
     buttonsContainer.append(buttonReset, buttonApply);
     container.append(buttonsContainer);
 
-    function buttonResetClickHandler(e) {
+    function handleButtonResetClick(e) {
       instanse.setDate();
       instanse.el.value = 'ДД.ММ.ГГГГ.';
     }
 
-    function buttonApplyClickHandler(e) {
+    function handleButtonApplyClick(e) {
       // eslint-disable-next-line no-console
       console.log('sending data to server');
     }
 
-    buttonReset.addEventListener('click', buttonResetClickHandler);
-    buttonApply.addEventListener('click', buttonApplyClickHandler);
+    buttonReset.addEventListener('click', handleButtonResetClick);
+    buttonApply.addEventListener('click', handleButtonApplyClick);
   }
 
   // Подвинем на 5.56 пикселей ниже и сгенерируем кнопки
