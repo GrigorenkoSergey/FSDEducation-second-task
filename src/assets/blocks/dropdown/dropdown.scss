@@ -39,7 +39,8 @@
     border-bottom-right-radius: 0;
   }
 
-  &__circle {
+  &__minus,
+  &__plus {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +55,8 @@
     cursor: pointer;
   }
 
-  &__circle_disabled {
+  &__minus_disabled,
+  &__plus_disabled {
     border-color: $dark_10;
   }
 

@@ -5,11 +5,11 @@ class RateButton {
   }
 
   init() {
-    this.el.addEventListener('click', this.onClick.bind(this));
+    this.el.addEventListener('click', this.handleClick.bind(this));
   }
 
-  onClick(e) {
-    const stars = +e.target.dataset.star;
+  handleClick(e) {
+    const stars = Number(e.target.dataset.star);
 
     for (let i = 0; i < 5; i += 1) {
       if (i < stars) {

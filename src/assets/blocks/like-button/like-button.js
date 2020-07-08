@@ -6,17 +6,17 @@ export default class LikeButton {
 
   init() {
     this.counter = this.el.querySelector('.like-button__counter');
-    this.el.addEventListener('click', this.onClick.bind(this));
+    this.el.addEventListener('click', this.handleLikeButtonClick.bind(this));
   }
 
-  onClick(e) {
+  handleLikeButtonClick(e) {
     const { el, counter } = this;
 
     el.classList.toggle('like-button_pushed');
     if (el.classList.contains('like-button_pushed')) {
-      counter.textContent = +(counter.textContent) + 1;
+      counter.textContent = Number(counter.textContent) + 1;
     } else {
-      counter.textContent = +(counter.textContent) - 1;
+      counter.textContent = Number(counter.textContent) - 1;
     }
   }
 }

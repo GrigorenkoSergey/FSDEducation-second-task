@@ -4,12 +4,11 @@ export default class DropdownOrigin {
   constructor(item) {
     this.el = item;
     this.items = [];
+    this.bindHandlers();
     this.init();
   }
 
   init() {
-    this.bindMethods();
-
     this.input = this.el.querySelector('.dropdown__input');
     this.input.addEventListener('click', this.handleInputClick);
 
@@ -17,14 +16,14 @@ export default class DropdownOrigin {
     const itemsDom = this.el.getElementsByClassName('dropdown__item');
 
     [...itemsDom].forEach(((itemDom) => {
-      const value = +itemDom.querySelector('.dropdown__counter').textContent;
+      const value = Number(itemDom.querySelector('.dropdown__counter').textContent);
       const item = new DropdownItem(itemDom, value, this.inputHandler);
       this.items.push(item);
       item.addSubscriber('changeItemValue', this);
     }));
   }
 
-  bindMethods() {
+  bindHandlers() {
     this.handleInputClick = this.handleInputClick.bind(this);
     this.handleDocumentClick = this.handleDocumentClick.bind(this);
   }

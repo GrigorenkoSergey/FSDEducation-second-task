@@ -8,16 +8,24 @@ const MIN_ITEMS_VALUE = 0;
 export default class DropdownGuests extends DropdownOrigin {
   constructor(item) {
     super(item);
+    super.bindHandlers();
     super.init();
+    this.bindHandlers();
     this.init();
   }
 
   init() {
+    this.bindHandlers();
     this.applyButton = this.el.querySelector('.dropdown__button-apply');
     this.resetButton = this.el.querySelector('.dropdown__button-reset');
 
-    this.applyButton.addEventListener('click', this.sendDataToServer);
-    this.resetButton.addEventListener('click', this.cleanInput.bind(this));
+    this.applyButton.addEventListener('click', this.handleApplyButtonClick);
+    this.resetButton.addEventListener('click', this.handleResetButtonClick);
+  }
+
+  bindHandlers() {
+    this.handleResetButtonClick = this.handleResetButtonClick.bind(this);
+    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
   }
 
   update(eventType, item) {
@@ -52,26 +60,26 @@ export default class DropdownGuests extends DropdownOrigin {
 
   disableAddition() {
     const pluses = this.items.map((item) => item.plus);
-    pluses.forEach((plus) => plus.classList.add('dropdown__circle_disabled'));
+    pluses.forEach((plus) => plus.classList.add('dropdown__plus_disabled'));
   }
 
   enableAddition() {
     this.items.filter((item) => item.value < MAX_ITEMS_VALUE)
-      .forEach((item) => item.plus.classList.remove('dropdown__circle_disabled'));
+      .forEach((item) => item.plus.classList.remove('dropdown__plus_disabled'));
   }
 
   disableDistraction() {
     this.items.filter((item) => item.value === MIN_ITEMS_VALUE)
-      .forEach((item) => item.minus.classList.add('dropdown__circle_disabled'));
+      .forEach((item) => item.minus.classList.add('dropdown__minus_disabled'));
   }
 
   // eslint-disable-next-line class-methods-use-this
-  sendDataToServer() {
+  handleApplyButtonClick() {
     // eslint-disable-next-line no-console
     console.log('sending data to server');
   }
 
-  cleanInput(e) {
+  handleResetButtonClick(e) {
     this.resetButton.hidden = true;
     this.input.textContent = 'Сколько гостей';
 

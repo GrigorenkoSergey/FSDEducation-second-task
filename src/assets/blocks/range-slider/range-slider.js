@@ -1,7 +1,13 @@
 export default class RangeSlider {
   constructor(item) {
     this.el = item;
+    this.bindHandlers();
     this.init();
+  }
+
+  bindHandlers() {
+    this.hanleRollerLeftMouseDown = this.hanleRollerLeftMouseDown.bind(this);
+    this.handleRollerRightMouseDown = this.handleRollerRightMouseDown.bind(this);
   }
 
   init() {
@@ -9,13 +15,13 @@ export default class RangeSlider {
     this.rightRoller = this.el.querySelector('.range-slider__roller-right');
     this.rangeSlider = this.el.closest('.range-slider');
 
-    this.leftRoller.addEventListener('mousedown', this.leftRollerHandler.bind(this));
-    this.rightRoller.addEventListener('mousedown', this.rightRollerHandler.bind(this));
+    this.leftRoller.addEventListener('mousedown', this.hanleRollerLeftMouseDown);
+    this.rightRoller.addEventListener('mousedown', this.handleRollerRightMouseDown);
 
     this.range = this.rangeSlider.querySelector('.range-slider__range');
   }
 
-  leftRollerHandler(e) {
+  hanleRollerLeftMouseDown(e) {
     const elem = e.target;
     const startX = this.el.offsetParent.getBoundingClientRect().left
     + this.el.offsetParent.clientLeft;
@@ -47,7 +53,7 @@ export default class RangeSlider {
     document.addEventListener('mouseup', onMouseUp);
   }
 
-  rightRollerHandler(e) {
+  handleRollerRightMouseDown(e) {
     // отсчет начинаем с правого края
     const elem = e.target;
     const startX = this.el.offsetParent.getBoundingClientRect().left

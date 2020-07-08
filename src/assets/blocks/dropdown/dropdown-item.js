@@ -8,23 +8,29 @@ export default class DropdownItem extends EventObserver {
     super();
     this.el = item;
     this.value = value;
+    this.bindHandlers();
     this.init();
   }
 
   init() {
     this.counter = this.el.querySelector('.dropdown__counter');
-    this.minus = this.el.querySelector(".dropdown__circle[data-direction='-']");
-    this.plus = this.el.querySelector(".dropdown__circle[data-direction='+']");
+    this.minus = this.el.querySelector('.dropdown__minus');
+    this.plus = this.el.querySelector('.dropdown__plus');
 
-    this.minus.addEventListener('click', this.onMinusClick.bind(this));
-    this.plus.addEventListener('click', this.onPlusClick.bind(this));
+    this.minus.addEventListener('click', this.handleMinusClick);
+    this.plus.addEventListener('click', this.handlePlusClick);
   }
 
-  onMinusClick(e) {
-    if (this.minus.classList.contains('dropdown__circle_disabled')) return;
+  bindHandlers() {
+    this.handleMinusClick = this.handleMinusClick.bind(this);
+    this.handlePlusClick = this.handlePlusClick.bind(this);
+  }
+
+  handleMinusClick(e) {
+    if (this.minus.classList.contains('dropdown__minus_disabled')) return;
 
     if (this.value === MAX_ITEMS_VALUE) {
-      this.plus.classList.remove('dropdown__circle_disabled');
+      this.plus.classList.remove('dropdown__plus_disabled');
     }
 
     this.value -= 1;
@@ -32,15 +38,15 @@ export default class DropdownItem extends EventObserver {
     this.broadcast('changeItemValue', this);
 
     if (this.value === MIN_ITEMS_VALUE) {
-      this.minus.classList.add('dropdown__circle_disabled');
+      this.minus.classList.add('dropdown__minus_disabled');
     }
   }
 
-  onPlusClick(e) {
-    if (this.plus.classList.contains('dropdown__circle_disabled')) return;
+  handlePlusClick(e) {
+    if (this.plus.classList.contains('dropdown__plus_disabled')) return;
 
     if (this.value === MIN_ITEMS_VALUE) {
-      this.minus.classList.remove('dropdown__circle_disabled');
+      this.minus.classList.remove('dropdown__minus_disabled');
     }
 
     this.value += 1;
@@ -48,7 +54,7 @@ export default class DropdownItem extends EventObserver {
     this.broadcast('changeItemValue', this);
 
     if (this.value === MAX_ITEMS_VALUE) {
-      this.plus.classList.add('dropdown__circle_disabled');
+      this.plus.classList.add('dropdown__plus_disabled');
     }
   }
 }

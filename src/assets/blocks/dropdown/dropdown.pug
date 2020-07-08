@@ -76,11 +76,11 @@ mixin dropdown(obj, expanded)
         .dropdown__item
           span.dropdown__item-name #{itemsVals[i]}
           .dropdown__trigger
-            - let disableMinus = itemsNums[i] === MIN_ITEMS_VALUE ? "dropdown__circle_disabled" : "";
-            .dropdown__circle(class= disableMinus data-direction = "-") -
+            - let disableMinus = itemsNums[i] === MIN_ITEMS_VALUE ? "dropdown__minus_disabled" : "";
+            .dropdown__minus(class= disableMinus) -
             span.dropdown__counter  !{itemsNums[i]} 
-            - let disablePlus = itemsNums[i] === MAX_ITEMS_VALUE ? "dropdown__circle_disabled" : "";
-            .dropdown__circle(class= disablePlus data-direction = "+") +
+            - let disablePlus = itemsNums[i] === MAX_ITEMS_VALUE ? "dropdown__plus_disabled" : "";
+            .dropdown__plus(class= disablePlus) +
       if (obj.showButtons)
         .dropdown__buttons
           .dropdown__button-reset(hidden= !obj.showReset) Очистить                    
