@@ -11,13 +11,13 @@ class RateButton {
   handleClick(e) {
     const stars = Number(e.target.dataset.star);
 
-    for (let i = 0; i < 5; i += 1) {
-      if (i < stars) {
-        this.el.children[i].className = 'rate-button__star_checked';
+    [...this.el.children].forEach((item, index) => {
+      if (index < stars) {
+        item.classList.add('rate-button__star_checked');
       } else {
-        this.el.children[i].className = 'rate-button__star';
+        item.classList.remove('rate-button__star_checked');
       }
-    }
+    });
   }
 }
 

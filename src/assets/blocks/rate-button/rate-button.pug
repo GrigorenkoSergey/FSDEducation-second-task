@@ -2,7 +2,7 @@ mixin rate-button(starsNumDefault)
   - var n = 0;
   .rate-button(data-stars_num= starsNumDefault)
     while (++n < 6)
-      if (n <= starsNumDefault)
-        .rate-button__star_checked(data-star= n)
-      else
-        .rate-button__star(data-star= n)
+      - 
+        var checked = "";
+        if (n <= starsNumDefault) checked = "rate-button__star_checked";
+      .rate-button__star(class = checked data-star= n)
