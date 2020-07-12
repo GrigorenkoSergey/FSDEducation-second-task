@@ -1,5 +1,4 @@
 .button {
-  height: 44px;
   min-width: 100px;
   border-radius: 22px;
   @extend h3;
@@ -7,7 +6,6 @@
   line-height: 44px;
   position: relative;
   z-index: 1;
-  padding: 0 20px;
   background: $primary-gradient;
   outline: none;
 
@@ -17,6 +15,7 @@
 
   &_color_white {
     color: $purple;
+    max-width: 100px;
 
     &::before {
       content: "";

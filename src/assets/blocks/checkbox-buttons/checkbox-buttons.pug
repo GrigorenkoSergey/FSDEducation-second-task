@@ -1,4 +1,4 @@
-include ../ul-checkbox-container/ul-checkbox-container.pug
+include ../checkbox-list/checkbox-list.pug
 
 //- list example
 - 
@@ -15,4 +15,4 @@ include ../ul-checkbox-container/ul-checkbox-container.pug
 mixin checkbox-buttons(list)
   .checkbox-buttons
     .checkbox-buttons__title #{list.title} 
-    +ul-checkbox-container(list, true)
+    +checkbox-list(list, true)

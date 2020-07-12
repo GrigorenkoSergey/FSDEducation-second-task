@@ -1,4 +1,4 @@
-@import "../ul-checkbox-container/ul-checkbox-container.scss";
+@import "../checkbox-list/checkbox-list.scss";
 
 .expandable-checkbox-list {
   width: 266px;
@@ -10,9 +10,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 43px;
-    cursor: pointer;
+    line-height: 43px;
     margin-bottom: 5px;
+    cursor: pointer;
 
     &::after {
       content: "";

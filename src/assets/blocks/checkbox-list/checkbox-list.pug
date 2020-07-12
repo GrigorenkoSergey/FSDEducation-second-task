@@ -1,6 +1,6 @@
 include ../checkbox/checkbox.pug
 
-mixin ul-checkbox-container(list, expanded)
+mixin checkbox-list(list, expanded)
   - let isHidden = expanded !== true;
   ul.checkbox-list(hidden= isHidden)
     each val, key in list.content

@@ -10,4 +10,5 @@ mixin bullet-list(bulletListArr = bulletListArrDefault)
 
   ul.bullet-list
     each val in bulletListArr
-      li.bullet-list__li !{val}
+      li.bullet-list__li 
+        span.bullet-list__span !{val}

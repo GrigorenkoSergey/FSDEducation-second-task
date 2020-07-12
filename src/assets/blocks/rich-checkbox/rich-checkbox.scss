@@ -1,7 +1,5 @@
 .rich-checkbox {
   position: relative;
-  height: 27px;
-  max-width: 240px;
   user-select: none;
 
   &__title {
@@ -9,9 +7,13 @@
     @extend h3;
   }
 
+  &__label {
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+
   &__span {
-    margin-left: 10px;
-    margin-bottom: 6px;
+    margin-left: 17px;
     line-height: 18px;
     font-weight: bold;
     color: $dark_75;

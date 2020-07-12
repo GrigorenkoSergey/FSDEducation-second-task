@@ -1,4 +1,4 @@
-include ../ul-checkbox-container/ul-checkbox-container.pug
+include ../checkbox-list/checkbox-list.pug
 
 //- list example
 - 
@@ -21,4 +21,4 @@ mixin expandable-checkbox-list(list, expanded)
   - let className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
   .expandable-checkbox-list
     .expandable-checkbox-list__title(class= `${className}`) #{list.title} 
-    +ul-checkbox-container(list, expanded)
+    +checkbox-list(list, expanded)
