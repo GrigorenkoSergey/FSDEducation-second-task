@@ -1,4 +1,4 @@
-import DateDropdown from './data-dropdownClass.js';
+import DateDropdown from './date-dropdown-class.js';
 
 export const arrivals = [];
 export const departures = [];

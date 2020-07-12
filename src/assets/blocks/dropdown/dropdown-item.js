@@ -8,7 +8,6 @@ export default class DropdownItem extends EventObserver {
     super();
     this.el = item;
     this.value = value;
-    this.bindHandlers();
     this.init();
   }
 
@@ -17,13 +16,8 @@ export default class DropdownItem extends EventObserver {
     this.minus = this.el.querySelector('.dropdown__minus');
     this.plus = this.el.querySelector('.dropdown__plus');
 
-    this.minus.addEventListener('click', this.handleMinusClick);
-    this.plus.addEventListener('click', this.handlePlusClick);
-  }
-
-  bindHandlers() {
-    this.handleMinusClick = this.handleMinusClick.bind(this);
-    this.handlePlusClick = this.handlePlusClick.bind(this);
+    this.minus.addEventListener('click', this.handleMinusClick.bind(this));
+    this.plus.addEventListener('click', this.handlePlusClick.bind(this));
   }
 
   handleMinusClick(e) {

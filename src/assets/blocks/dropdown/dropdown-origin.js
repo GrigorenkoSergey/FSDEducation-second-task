@@ -4,13 +4,20 @@ export default class DropdownOrigin {
   constructor(item) {
     this.el = item;
     this.items = [];
-    this.bindHandlers();
+    this.handlers = {};
     this.init();
   }
 
+  bindHandlers() {
+    this.handlers.handleInputClick = this.handleInputClick.bind(this);
+    this.handlers.handleDocumentClick = this.handleDocumentClick.bind(this);
+  }
+
   init() {
+    this.bindHandlers();
+
     this.input = this.el.querySelector('.dropdown__input');
-    this.input.addEventListener('click', this.handleInputClick);
+    this.input.addEventListener('click', this.handlers.handleInputClick);
 
     this.itemsContainer = this.el.querySelector('.dropdown__items-container');
     const itemsDom = this.el.getElementsByClassName('dropdown__item');
@@ -23,22 +30,17 @@ export default class DropdownOrigin {
     }));
   }
 
-  bindHandlers() {
-    this.handleInputClick = this.handleInputClick.bind(this);
-    this.handleDocumentClick = this.handleDocumentClick.bind(this);
-  }
-
   handleInputClick(e) {
     this.itemsContainer.classList.toggle('dropdown__items-container_expanded');
     this.input.classList.toggle('dropdown__input_expanded');
 
-    document.addEventListener('click', this.handleDocumentClick);
+    document.addEventListener('click', this.handlers.handleDocumentClick);
   }
 
   handleDocumentClick(e) {
     if (this.el.contains(e.target)) return;
 
-    document.removeEventListener('click', this.handleDocumentClick);
+    document.removeEventListener('click', this.handlers.handleDocumentClick);
     this.input.classList.remove('dropdown__input_expanded');
     this.itemsContainer.classList.remove('dropdown__items-container_expanded');
   }

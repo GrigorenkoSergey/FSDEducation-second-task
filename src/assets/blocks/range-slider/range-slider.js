@@ -1,13 +1,14 @@
 export default class RangeSlider {
   constructor(item) {
     this.el = item;
+    this.handlers = {};
     this.bindHandlers();
     this.init();
   }
 
   bindHandlers() {
-    this.hanleRollerLeftMouseDown = this.hanleRollerLeftMouseDown.bind(this);
-    this.handleRollerRightMouseDown = this.handleRollerRightMouseDown.bind(this);
+    this.handlers.hanleRollerLeftMouseDown = this.hanleRollerLeftMouseDown.bind(this);
+    this.handlers.handleRollerRightMouseDown = this.handleRollerRightMouseDown.bind(this);
   }
 
   init() {
@@ -15,8 +16,8 @@ export default class RangeSlider {
     this.rightRoller = this.el.querySelector('.range-slider__roller-right');
     this.rangeSlider = this.el.closest('.range-slider');
 
-    this.leftRoller.addEventListener('mousedown', this.hanleRollerLeftMouseDown);
-    this.rightRoller.addEventListener('mousedown', this.handleRollerRightMouseDown);
+    this.leftRoller.addEventListener('mousedown', this.handlers.hanleRollerLeftMouseDown);
+    this.rightRoller.addEventListener('mousedown', this.handlers.handleRollerRightMouseDown);
 
     this.range = this.rangeSlider.querySelector('.range-slider__range');
   }
@@ -33,7 +34,7 @@ export default class RangeSlider {
       - this.rightRoller.offsetWidth - startX,
     };
 
-    const onMouseMove = (event) => {
+    const handleDocumentMouseMove = (event) => {
       event.preventDefault();
 
       let newLeft = event.clientX - shiftX - startX;
@@ -44,13 +45,13 @@ export default class RangeSlider {
       this.countRange();
     };
 
-    const onMouseUp = (event) => {
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
+    const handleDocumentMouseUp = (event) => {
+      document.removeEventListener('mousemove', handleDocumentMouseMove);
+      document.removeEventListener('mouseup', handleDocumentMouseUp);
     };
 
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('mousemove', handleDocumentMouseMove);
+    document.addEventListener('mouseup', handleDocumentMouseUp);
   }
 
   handleRollerRightMouseDown(e) {
@@ -66,7 +67,7 @@ export default class RangeSlider {
       right: 0,
     };
 
-    const onMouseMove = (event) => {
+    const handleDocumentMouseMove = (event) => {
       event.preventDefault();
 
       let newRight = startX - event.clientX - shiftX;
@@ -76,13 +77,13 @@ export default class RangeSlider {
 
       this.countRange();
     };
-    const onMouseUp = (event) => {
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
+    const handleDocumentMouseUp = (event) => {
+      document.removeEventListener('mousemove', handleDocumentMouseMove);
+      document.removeEventListener('mouseup', handleDocumentMouseUp);
     };
 
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+    document.addEventListener('mousemove', handleDocumentMouseMove);
+    document.addEventListener('mouseup', handleDocumentMouseUp);
   }
 
   countRange() {

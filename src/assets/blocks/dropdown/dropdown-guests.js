@@ -6,26 +6,19 @@ const MAX_GUESTS_VALUE = 10;
 const MIN_ITEMS_VALUE = 0;
 
 export default class DropdownGuests extends DropdownOrigin {
-  constructor(item) {
-    super(item);
+  bindHandlers() {
     super.bindHandlers();
-    super.init();
-    this.bindHandlers();
-    this.init();
+    this.handlers.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
+    this.handlers.handleResetButtonClick = this.handleResetButtonClick.bind(this);
   }
 
   init() {
-    this.bindHandlers();
+    super.init();
     this.applyButton = this.el.querySelector('.dropdown__button-apply');
     this.resetButton = this.el.querySelector('.dropdown__button-reset');
 
-    this.applyButton.addEventListener('click', this.handleApplyButtonClick);
-    this.resetButton.addEventListener('click', this.handleResetButtonClick);
-  }
-
-  bindHandlers() {
-    this.handleResetButtonClick = this.handleResetButtonClick.bind(this);
-    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
+    this.applyButton.addEventListener('click', this.handlers.handleApplyButtonClick);
+    this.resetButton.addEventListener('click', this.handlers.handleResetButtonClick);
   }
 
   update(eventType, item) {
