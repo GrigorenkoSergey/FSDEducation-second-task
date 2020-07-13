@@ -121,7 +121,6 @@ main {
 }
 
 .example__modifier {
-  height: 15px;
   @extend h3;
   font-weight: normal;
   color: $dark_50;
@@ -209,13 +208,11 @@ main {
   top: 1573px;
   left: 586px;
   width: 711px;
-  height: 133px;
 }
 
 .example-button {
   margin-top: 42px;
   width: 218px;
-  height: 195px;
 
   &__title {
     margin-bottom: 16px;
@@ -241,7 +238,7 @@ main {
 }
 
 .example-pagination {
-  margin-top: 115px;
+  margin-top: 41px;
 
   &__title {
     margin-bottom: 16px;

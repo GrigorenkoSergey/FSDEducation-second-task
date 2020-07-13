@@ -7,7 +7,6 @@ $headerHeight: 70px;
   display: grid;
   grid-template-columns: auto auto min-content;
   grid-template-areas: "logo nav buttons";
-  height: $headerHeight;
   padding-right: 140px;
   padding-left: 140px;
   background: white;
@@ -69,12 +68,10 @@ $headerHeight: 70px;
   // тогда свойства сбросятся...
   // !important использовать не стоит..
   & &__button_default {
-    height: 34px;
     line-height: 34px;
   }
 
   & &__button_color_white {
-    height: 34px;
     line-height: 34px;
     margin-right: 19px;
   }
@@ -107,7 +104,6 @@ $headerHeight: 70px;
     grid-template-areas:
       "logo nav"
       "logo buttons";
-    height: auto;
 
     &__li:last-child {
       margin-right: 0;

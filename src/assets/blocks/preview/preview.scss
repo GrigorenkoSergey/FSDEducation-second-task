@@ -9,13 +9,12 @@
 
   &__image-container {
     position: relative;
-    height: 151px;
   }
 
   &__image {
-    // почему-то контейнер никак не ограничивает радиусы изображения
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    display: block; // уберем лишнее место, зарезервированное под хвосты букв
   }
 
   $preview-square: 7px;
@@ -26,7 +25,7 @@
     width: 42px;
     top: 0;
     bottom: 0;
-    border-top-left-radius: 4px; //работает совместно с transform
+    border-top-left-radius: 4px; // работает совместно с transform
     display: flex;
     align-items: center;
   }
