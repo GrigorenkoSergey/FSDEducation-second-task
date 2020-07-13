@@ -17,7 +17,7 @@
     line-height: 18px;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       border: 1px solid $dark_25;
@@ -31,6 +31,6 @@
 
   &__input:checked + &__span::before {
     border-color: $purple;
-    background: url("assets/blocks/checkbox/images/check.png") center no-repeat;
+    background: url('assets/blocks/checkbox/images/check.png') center no-repeat;
   }
 }

@@ -6,7 +6,7 @@
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     display: inline-block;
     width: 15px;
     height: 2px;
@@ -17,7 +17,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     display: inline-block;
     width: 9px;
     height: 9px;

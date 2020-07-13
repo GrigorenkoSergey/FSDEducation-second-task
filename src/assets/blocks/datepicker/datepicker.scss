@@ -130,13 +130,13 @@ $font-size: 19px;
     cursor: pointer;
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       top: -12px;
       display: inline-block;
       width: 23.93px;
       height: 24px;
-      background: url("assets/blocks/datepicker/images/arrow-forward.png") center no-repeat;
+      background: url('assets/blocks/datepicker/images/arrow-forward.png') center no-repeat;
     }
 
     &.qs-left:after {
@@ -196,7 +196,7 @@ $font-size: 19px;
 
     &.qs-active {
       &::before {
-        content: "";
+        content: '';
         display: inline-block;
         width: 100%;
         height: inherit;
@@ -217,7 +217,7 @@ $font-size: 19px;
 
     &.qs-range-date-start {
       span::after {
-        content: "";
+        content: '';
         display: inline-block;
         width: 39.88px;
         height: 40px;
@@ -234,7 +234,7 @@ $font-size: 19px;
     &.qs-range-date-middle {
       position: relative;
       span::before {
-        content: "";
+        content: '';
         display: inline-block;
         width: 39.88px;
         height: 40px;
@@ -251,7 +251,7 @@ $font-size: 19px;
 
     &.qs-range-date-end {
       span::after {
-        content: "";
+        content: '';
         display: inline-block;
         width: 39.88px;
         height: 40px;
@@ -297,7 +297,7 @@ $font-size: 19px;
 
     // Пришлось переделать исключительно для того, чтобы выделить дату как в макете
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       width: 39.88px;
       height: 40px;

@@ -1,6 +1,6 @@
-@import "src/assets/blocks/dropdown/dropdown.scss";
-@import "src/assets/blocks/date-dropdown/date-dropdown.scss";
-@import "src/assets/blocks/button-payment/button-payment.scss";
+@import 'src/assets/blocks/dropdown/dropdown.scss';
+@import 'src/assets/blocks/date-dropdown/date-dropdown.scss';
+@import 'src/assets/blocks/button-payment/button-payment.scss';
 
 .final-bill {
   display: flex;
@@ -12,7 +12,7 @@
     @extend h1;
 
     &::before {
-      content: "№ ";
+      content: '№ ';
       font-size: 14px;
     }
   }
@@ -72,7 +72,7 @@
 
     .service-discount::after,
     .extra-service::after {
-      content: "i";
+      content: 'i';
       position: absolute;
       right: -25px;
       top: 0;

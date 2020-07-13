@@ -1,4 +1,4 @@
-@import "../rate-button/rate-button.scss";
+@import '../rate-button/rate-button.scss';
 
 .preview {
   width: 270px;
@@ -32,7 +32,7 @@
 
   &-next::before,
   &-prev::after {
-    content: "";
+    content: '';
     border: 1.5px solid white;
     border-bottom: none;
     border-right: none;
@@ -107,7 +107,7 @@
   color: $dark_100;
 
   &::before {
-    content: "№ ";
+    content: '№ ';
     font-size: 14px;
   }
 }

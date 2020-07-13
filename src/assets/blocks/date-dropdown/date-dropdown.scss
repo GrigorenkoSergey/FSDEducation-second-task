@@ -1,4 +1,4 @@
-@import "src/assets/blocks/datepicker/datepicker.scss";
+@import 'src/assets/blocks/datepicker/datepicker.scss';
 
 .date-dropdown {
   width: 320px;
@@ -27,7 +27,7 @@
     border-radius: 4px;
     line-height: 18px;
     color: $dark_75;
-    background: url("assets/blocks/date-dropdown/images/expand-more.png") right no-repeat;
+    background: url('assets/blocks/date-dropdown/images/expand-more.png') right no-repeat;
     cursor: pointer;
     outline: none;
   }

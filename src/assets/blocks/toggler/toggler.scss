@@ -16,7 +16,7 @@
     cursor: pointer;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       top: 50%;
@@ -29,7 +29,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 4px;
       top: 50%;

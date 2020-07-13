@@ -17,7 +17,7 @@
     user-select: none;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       border: 1px solid $dark_25;
       height: 20px;
@@ -39,7 +39,7 @@
   }
 
   &__input:checked + &__span::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

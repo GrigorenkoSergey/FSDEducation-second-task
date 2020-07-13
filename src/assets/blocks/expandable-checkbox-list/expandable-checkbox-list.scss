@@ -1,4 +1,4 @@
-@import "../checkbox-list/checkbox-list.scss";
+@import '../checkbox-list/checkbox-list.scss';
 
 .expandable-checkbox-list {
   width: 266px;
@@ -15,7 +15,7 @@
     cursor: pointer;
 
     &::after {
-      content: "";
+      content: '';
       display: inline-block;
       position: absolute;
       top: 16px;

@@ -1,4 +1,4 @@
-@import "../button/button.scss";
+@import '../button/button.scss';
 
 $headerHeight: 70px;
 
@@ -6,7 +6,7 @@ $headerHeight: 70px;
   position: relative;
   display: grid;
   grid-template-columns: auto auto min-content;
-  grid-template-areas: "logo nav buttons";
+  grid-template-areas: 'logo nav buttons';
   padding-right: 140px;
   padding-left: 140px;
   background: white;
@@ -49,11 +49,11 @@ $headerHeight: 70px;
   &__li_submenu {
     &::after {
       position: relative;
-      content: "";
+      content: '';
       display: inline-block;
       width: 24px;
       height: 21px;
-      background: url("assets/blocks/header/images/expand-more.png") center no-repeat;
+      background: url('assets/blocks/header/images/expand-more.png') center no-repeat;
       top: 7px;
     }
   }
@@ -102,8 +102,8 @@ $headerHeight: 70px;
     grid-template-columns: auto auto;
     grid-template-rows: 30px 50px;
     grid-template-areas:
-      "logo nav"
-      "logo buttons";
+      'logo nav'
+      'logo buttons';
 
     &__li:last-child {
       margin-right: 0;
@@ -122,8 +122,8 @@ $headerHeight: 70px;
   .header {
     grid-template-rows: 50px 60px;
     grid-template-areas:
-      "logo buttons"
-      "nav nav";
+      'logo buttons'
+      'nav nav';
     &__nav {
       margin-left: 20px;
       display: flex;
