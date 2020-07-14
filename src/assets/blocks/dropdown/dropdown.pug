@@ -7,10 +7,6 @@
 - 
   var dropdownGuests = {
     name: "guests", 
-    extraClasses: {
-      dropdownClass: "dropdown_guests", 
-    },
-
     content: {
       title: "dropdown",
       input: "Сколько гостей",
@@ -33,10 +29,6 @@
 
   var dropdownRooms = {
     name: "rooms", 
-    extraClasses: {
-      dropdownClass: "dropdown_rooms", 
-    },
-
     content: {
       title: "dropdown",
       input: "2 спальни, 2 кровати...",
@@ -57,16 +49,17 @@
 
 mixin dropdown(obj, expanded)
   -  
-    let {name, extraClasses = {} } = obj;
+    let {name} = obj;
     let {title, input, items, counters, } = obj.content;
-    let {inputClass = "", containerClass = "", dropdownClass = ""} = extraClasses;
+    let inputClass = "";
+    let containerClass = "";
 
     if (expanded === true) {
       inputClass = "dropdown__input_expanded";
       containerClass = "dropdown__items-container_expanded";
     }
 
-  .dropdown(data-name= name class= dropdownClass)
+  .dropdown(data-name= name)
     .dropdown__title #{title}
     .dropdown__input(class= inputClass) #{input}
     .dropdown__items-container(class= containerClass)

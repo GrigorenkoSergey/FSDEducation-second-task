@@ -39,6 +39,13 @@ $headerHeight: 70px;
     line-height: $headerHeight;
     margin-right: 21px;
   }
+  &__li:last-child {
+    margin-right: 0;
+  }
+
+  &__li_current-page {
+    color: $dark_75;
+  }
 
   &__a {
     text-decoration: none;
@@ -82,11 +89,21 @@ $headerHeight: 70px;
     background: white;
     padding: 10px 10px;
   }
-  // да, да, дичь полная...
-  &__cosmin-negoita {
-    margin-left: 61px;
+
+  &__user-name {
     color: $dark_50;
     font: $bodyFont;
+    line-height: 70px;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 30px;
+      margin-right: 20px;
+      background-color: $dark_10;
+      vertical-align: middle;
+    }
   }
 }
 

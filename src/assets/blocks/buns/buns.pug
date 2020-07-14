@@ -6,8 +6,6 @@
   ]
 
 mixin buns(bunsArr)
-  - let { extraClasses = {} } = bunsArr;
-  - let {nameClass = "", titleClass = "", descriptionClass = ""} = extraClasses;
   .buns
     each item in bunsArr
       .buns__item

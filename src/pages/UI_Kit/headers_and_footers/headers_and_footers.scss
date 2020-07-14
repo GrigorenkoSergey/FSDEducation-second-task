@@ -1,68 +1,24 @@
-@import 'src/assets/blocks/template/template.scss';
-@import 'src/assets/blocks/header/header.scss';
-@import 'src/assets/blocks/footer/footer.scss';
-@import 'src/assets/blocks/copyright/copyright.scss';
-@import 'src/assets/blocks/footer-creative/footer-creative.scss';
+@import "src/assets/blocks/template/template.scss";
+@import "src/assets/blocks/header/header.scss";
+@import "src/assets/blocks/footer/footer.scss";
+@import "src/assets/blocks/copyright/copyright.scss";
+@import "src/assets/blocks/footer-creative/footer-creative.scss";
 
 body {
   width: 1440px;
   height: 1350px;
   background: #f4f4f6;
-}
-.nav-bar_standard {
-  position: absolute;
-  width: inherit;
-  top: 150px;
+  padding-top: 140px;
 }
 
 .nav-bar_logged-in {
-  position: absolute;
-  width: inherit;
-  top: 260px;
+  margin-top: 40px;
 }
 
 .footer-widgets {
-  position: absolute;
-  width: inherit;
-  top: 370px;
+  margin-top: 40px;
 }
+
 .footer-creative__wrapper {
-  position: absolute;
-  width: inherit;
-  top: 853px;
-}
-
-.footer-copyright {
-  position: absolute;
-  bottom: -71px;
-  width: inherit;
-}
-
-.footer {
-  &__logo {
-    position: absolute;
-    left: 140px;
-    top: 100px;
-  }
-
-  &__navigation {
-    position: absolute;
-    left: 440px;
-    top: 104px;
-  }
-  &__about-us {
-    position: absolute;
-    left: 640px;
-    top: 104px;
-  }
-  &__support {
-    position: absolute;
-    left: 840px;
-    top: 104px;
-  }
-  &__subscribe {
-    position: absolute;
-    left: 1040px;
-    top: 104px;
-  }
+  margin-top: 40px;
 }

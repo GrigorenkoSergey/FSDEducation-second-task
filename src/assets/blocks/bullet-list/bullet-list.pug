@@ -4,10 +4,6 @@
     "Время прибытия — после 13:00, а выезд до 12:00"]                     
 
 mixin bullet-list(bulletListArr = bulletListArrDefault)   
-
-  - let { extraClasses = {} } = bulletListArr;
-  - let {ulClass = "", liClass = ""} = extraClasses;  
-
   ul.bullet-list
     each val in bulletListArr
       li.bullet-list__li 

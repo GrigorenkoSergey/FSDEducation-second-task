@@ -3,33 +3,9 @@ include ../list/list.pug
 
 - 
   var footerDescription = {
-    description: `Lorem ipsum dolor sit amet consectetur adipiscing
-      elit aliquam eget nullam pellentesque aliquam
-      curabitur cociis.`,
-    navigation: {
-      title: "navigation",
-      list: [ "About us", "News", "Support", "Products" ],
-    },
-    aboutUs: {
-      title: "About Us",
-      list: ["Who we are", "Our team", "Careers", "Investors"],
-    },
-    support: {
-      title: "Support", 
-      list: ["Documentation", "Community", "Get in Touch"]
-    },
-    subscribe: {
-      title: "Subscribe to our newsletter",
-      description: `Receive our latest news and promotions in
-        your inbox!`,
-      placeholder: "Your email address",
-    },
-  }
-- 
-  var footerRus = {
     description: `Бронирование номеров в лучшем отеле
       2019 года по версии ассоциации
-      "Отельные взгляды"`,
+      «Отельные взгляды»`,
     navigation: {
       title: "Навигация",
       list: [ "О нас", "Новости", "Служба поддержки", "Услуги" ],
@@ -54,22 +30,11 @@ mixin footer(footerDescription)
   - 
     var {description, navigation, aboutUs, support} = footerDescription;
 
-    var extraClasses = {
-      titleClass: 'footer__subtitle',
-      ulClass: 'footer__list',
-      liClass: 'footer__list-li'
-      }
-
-    navigation.extraClasses = extraClasses;
-    aboutUs.extraClasses = extraClasses;
-    support.extraClasses = extraClasses;
-
   .footer
     .footer__logo
-      img(src="assets/blocks/footer/images/logo-toxin.png" height= "40px")
-      span.footer__logo-description #{description}
+      img.footer__logo-img(src="assets/blocks/footer/images/logo-toxin.png" height= "40px")
+      .footer__logo-description #{description}
     .footer__navigation
-      - navigation.extraClasses = extraClasses;
       +list(navigation)
     .footer__about-us
       +list(aboutUs)

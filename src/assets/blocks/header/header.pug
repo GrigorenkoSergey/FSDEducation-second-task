@@ -1,29 +1,7 @@
 include ../button/button.pug
 - 
   var nav = [
-    {title: "Home", href: "#", currentPage: true},
-    {title: "About Us", href: "#"},
-    {title: "Services", href: "#", innerUl: [
-      "service_1", "service_2", "service_3"
-    ]},
-    {title: "Careers", href: "#"},
-    {title: "News", href: "#"},
-    {title: "Documentation", href: "#"},
-  ];
-  nav.buttons = {
-    login: {title: "login"},
-    register: {title: "register"},
-  };
-
-  nav.extraClasses = {
-    "liClass": "",
-    "liSubmenuClass": "",
-    "buttonsClass": "",
-  };
-
-- 
-  var navRus = [
-    {title: "О нас", href: "#"},
+    {title: "О нас", href: "#", currentPage: true},
     {title: "Услуги", href: "#", innerUl: [
       "service_1", "service_2", "service_3"
     ]},
@@ -31,36 +9,29 @@ include ../button/button.pug
     {title: "Новости", href: "#"},
     {title: "Соглашения", href: "#", innerUl: []},
   ];
-  navRus.buttons = {
+  nav.buttons = {
     login: {title: "Войти"},
     register: {title: "Зарегистрироваться"},
   };
 
 mixin header(nav, logged)
   - let { extraClasses = {} } = nav;
-  - 
-    let {
-      liClass = "", 
-      buttonsClass = "", 
-      liSubmenuClass = "",
-      } = extraClasses;
   .header
     a.header__logo(href="#")
       img(src="assets/blocks/header/images/logo-toxin.png")
     ul.header__nav
       each val in nav
-        li.header__li(class = liClass 
-          class = val.innerUl ? "header__li_submenu " + liSubmenuClass : "")  
+        li.header__li(class = val.innerUl ? "header__li_submenu " : ""
+        class = val.currentPage ? "header__li_current-page" : "")  
           if (val.innerUl) 
             ul.header__submenu(class="_invisible")
               each subVal in val.innerUl
                 li 
                   a.header__a(href="#") !{subVal}
           a.header__a(href=`${val.href}` class= val.currentPage ? "header_current-page" : "") #{val.title}
-    if (logged) 
-      //- далее дикое название, т.к. не знаю, что это означает...
-      .header__cosmin-negoita Cosmin Negoita
-    else 
-      .header__buttons(class= buttonsClass)
-        +button(nav.buttons.login.title, "button_color_white header__button_color_white")
-        +button(nav.buttons.register.title, "button_default header__button_default")
+      if (logged) 
+        li.header__li.header__user-name Юлий Цезарь
+      else 
+        li.header__li.header__buttons
+          +button(nav.buttons.login.title, "button_color_white header__button_color_white")
+          +button(nav.buttons.register.title, "button_default header__button_default")
