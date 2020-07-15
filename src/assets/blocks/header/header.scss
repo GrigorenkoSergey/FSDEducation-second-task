@@ -1,7 +1,5 @@
 @import '../button/button.scss';
 
-$headerHeight: 70px;
-
 .header {
   position: relative;
   display: grid;
@@ -11,6 +9,7 @@ $headerHeight: 70px;
   padding-left: 140px;
   background: white;
   box-shadow: 0px 10px 20px $dark_5;
+  line-height: 70px;
 
   &__logo {
     display: flex;
@@ -22,7 +21,6 @@ $headerHeight: 70px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    max-height: 70px;
     grid-area: nav;
     justify-self: end;
   }
@@ -36,11 +34,7 @@ $headerHeight: 70px;
 
   &__li {
     list-style: none;
-    line-height: $headerHeight;
     margin-right: 21px;
-  }
-  &__li:last-child {
-    margin-right: 0;
   }
 
   &__li_current-page {
@@ -54,14 +48,16 @@ $headerHeight: 70px;
   }
 
   &__li_submenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     &::after {
-      position: relative;
       content: '';
-      display: inline-block;
       width: 24px;
-      height: 21px;
+      height: 18px;
+      margin-top: 1px;
       background: url('assets/blocks/header/images/expand-more.png') center no-repeat;
-      top: 7px;
     }
   }
 
@@ -88,11 +84,13 @@ $headerHeight: 70px;
     color: $dark_50;
     background: white;
     padding: 10px 10px;
+    line-height: 18px; //?
   }
 
   &__user-name {
     color: $dark_50;
     font: $bodyFont;
+    white-space: nowrap;
     line-height: 70px;
 
     &::before {
@@ -121,9 +119,16 @@ $headerHeight: 70px;
     grid-template-areas:
       'logo nav'
       'logo buttons';
+    line-height: normal;
 
     &__li:last-child {
       margin-right: 0;
+    }
+
+    &__user-name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

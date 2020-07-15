@@ -29,9 +29,9 @@ mixin header(nav, logged)
                 li 
                   a.header__a(href="#") !{subVal}
           a.header__a(href=`${val.href}` class= val.currentPage ? "header_current-page" : "") #{val.title}
-      if (logged) 
-        li.header__li.header__user-name Юлий Цезарь
-      else 
-        li.header__li.header__buttons
-          +button(nav.buttons.login.title, "button_color_white header__button_color_white")
-          +button(nav.buttons.register.title, "button_default header__button_default")
+    if (logged) 
+      .header__user-name Юлий Цезарь
+    else 
+      .header__buttons
+        +button(nav.buttons.login.title, "button_color_white header__button_color_white")
+        +button(nav.buttons.register.title, "button_default header__button_default")
