@@ -7,12 +7,12 @@ include ../checkbox-list/checkbox-list.pug
     content: {
       "smoking": "Можно курить",
       "pets": "Можно с питомцами",
-      "guests": "Можно пригласить гостей (до 10 человек)" 
+      "guests": "Можно пригласить гостей (до 10 человек)", 
     },
     checked: ["pets", "guests"],
   }
 
-mixin checkbox-buttons(list)
+mixin checkbox-buttons(list = checkboxList)
   .checkbox-buttons
     .checkbox-buttons__title #{list.title} 
     +checkbox-list(list, true)
