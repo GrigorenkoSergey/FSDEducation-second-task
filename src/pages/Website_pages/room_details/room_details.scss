@@ -24,9 +24,11 @@ main {
   &__img_main-container {
     flex-grow: 2;
   }
+
   &__img_alternative-container {
     flex-grow: 1;
   }
+  
   &__img {
     display: block;
     width: 100%;
@@ -106,6 +108,7 @@ main {
 .comment {
   margin-top: 20px;
 }
+
 .comment:first-child {
   margin-bottom: 21px;
 }
@@ -116,6 +119,7 @@ main {
   margin-top: 35px;
   padding-right: 70px;
 }
+
 .room-details__wrapper {
   display: flex;
   width: 100%;
@@ -142,18 +146,25 @@ main {
     padding-left: 60px;
     padding-right: 60px;
   }
+
   .column_1,
   .column_2 {
     flex-grow: 1;
     display: flex;
     justify-content: flex-start;
   }
+
   .column_2 {
     margin-top: 40px;
     justify-content: center;
   }
+
   .room-details__wrapper {
     justify-content: space-between;
+  }
+
+  .room-details__impressions {
+    margin-left: 0;
   }
 }
 
@@ -163,25 +174,25 @@ main {
     padding-right: 20px;
     padding-top: 0;
   }
-  .room-details__impressions {
-    margin-left: 0;
-  }
 
   .room-details__title {
     margin-top: 20px;
   }
-  .room-details__comments {
-    padding-right: 0;
-  }
-  .rules_and_cancel {
-    padding-right: 0;
-  }
 }
 
 @media (max-width: 600px) {
+  main {
+    padding-bottom: 30px;
+  }
+
   .room-details__wrapper {
     flex-wrap: wrap-reverse;
     justify-content: flex-start;
+  }
+
+  .rules_and_cancel, 
+  .room-details__comments {
+    padding-right: 0px;
   }
 }
 

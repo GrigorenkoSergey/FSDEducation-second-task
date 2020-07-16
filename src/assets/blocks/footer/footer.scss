@@ -1,13 +1,13 @@
-@import 'src/assets/blocks/input/input.scss';
-@import 'src/assets/blocks/list/list.scss';
+@import "src/assets/blocks/input/input.scss";
+@import "src/assets/blocks/list/list.scss";
 
 .footer {
   background: white;
-  position: relative;
   display: flex;
   padding: 100px 140px 101px;
   box-sizing: border-box;
   box-shadow: 0px 1px 0px $dark_10;
+  border-bottom: 1px solid $dark_25;
 
   &__navigation,
   &__about-us,
@@ -60,6 +60,14 @@
   .footer {
     padding-left: 60px;
     padding-right: 60px;
+
+    &__logo,
+    &__navigation,
+    &__about-us,
+    &__subscribe,
+    &__support {
+      flex-shrink: 1;
+    }
   }
 }
 
@@ -67,43 +75,46 @@
   .footer {
     flex-wrap: wrap;
     padding-top: 20px;
-    padding-bottom: 20px;
-    height: auto;
-    align-items: stretch;
+    padding-bottom: 35px;
     justify-content: center;
 
     &__logo {
       width: 100%;
       display: flex;
       flex-wrap: nowrap;
-      margin-bottom: 20px;
-      margin-top: auto;
-    }
-
-    &__description {
-      margin-top: auto;
-      padding-left: 20px;
-    }
-
-    &__subscribe {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
+      flex-basis: auto;
+      justify-content: space-between;
       align-items: center;
+      padding-bottom: 20px;
     }
 
-    &__subtitle {
-      margin-bottom: 8px;
-    }
-
-    &__email {
+    &__logo-description {
+      padding-left: 30px;
       margin-top: 0;
     }
 
-    &__subscribe__description {
-      max-width: 100%;
+    &__navigation,
+    &__about-us,
+    &__support {
+      width: 33%;
+      flex-basis: auto;
       text-align: center;
     }
+
+    &__subscribe {
+      width: 25%;
+      flex-basis: auto;
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__subscribe-title {
+      width: 100%;
+      text-align: center;
+    }
+
   }
 }
 
