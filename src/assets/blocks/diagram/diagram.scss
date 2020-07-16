@@ -31,34 +31,34 @@
     left: 150px;
     top: 27px;
   }
-}
 
-.magnificently::before,
-.good::before,
-.satisfactory::before,
-.disapointed::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: black;
-  margin-right: 5px;
-}
+  &__magnificently::before,
+  &__good::before,
+  &__satisfactory::before,
+  &__disapointed::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    margin-right: 5px;
+  }
 
-// пришлось вводить ручками...
-.magnificently::before {
-  background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
-}
+  // пришлось вводить ручками...
+  &__magnificently::before {
+    background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+  }
 
-.good::before {
-  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-}
+  &__good::before {
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  }
 
-.satisfactory::before {
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-}
+  &__satisfactory::before {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  }
 
-.disapointed::before {
-  background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+  &__disapointed::before {
+    background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+  }
 }
