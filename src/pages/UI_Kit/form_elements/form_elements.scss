@@ -19,8 +19,6 @@
 @import 'src/assets/blocks/pagination/pagination.scss';
 @import 'src/assets/blocks/bullet-list/bullet-list.scss';
 
-$inputWidth: 320px;
-
 ::-webkit-input-placeholder {
   color: $dark_25;
 }
@@ -59,7 +57,6 @@ main {
 
 .example-input {
   position: relative;
-  width: $inputWidth;
   margin-top: 25px;
 
   &__title {
@@ -100,11 +97,12 @@ main {
 
 .example-input_filter {
   position: relative;
-  width: $inputWidth;
+  width: 266px;
   margin-top: 46px;
 }
 
 .example-input_email {
+  width: 266px;
   margin-top: 46px;
 }
 

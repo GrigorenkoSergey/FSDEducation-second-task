@@ -45,4 +45,5 @@ mixin footer(footerDescription)
         var {title, description, placeholder} = footerDescription.subscribe;
       .footer__subscribe-title #{title}
       .footer__subscribe-description #{description}
-      +input({type: "email", placeholder: placeholder, extraClasses: "input_email footer__email"})
+      .footer__subscribe-email
+        +input({type: "email", placeholder: placeholder, modifiers: "input_email"})
