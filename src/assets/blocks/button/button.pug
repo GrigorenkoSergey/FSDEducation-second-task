@@ -1,18 +1,15 @@
 //- usage
 //- +button({text: "click me!",
-             mod: {theme: "blue", color: "red"}, // we place our modificators
-             attr: {type: "button"} // we place here out attributes
-            })
+  mod: {theme: "blue", color: "red"}, // we place our modificators
+  attr: {type: "button"} // we place here out attributes
 
-    or simply 
-    +button()
-
-mixin button(innerText, modifiers)
-  button.button(class= modifiers) #{innerText}
-
-mixin button2(description = {})
+mixin button(description = {})
   -
-    var {text = "click me", mod = {}, attr = {}} = description;
+    var {
+      text = "click me",
+      mod = {}, 
+      attr = {}
+      } = description;
 
     var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` button_${key}_${entry}`; 

@@ -135,14 +135,10 @@ block content
         .example-button__title
           h3 buttons
         .example-button__container
-          //- +button("click me")
-          //- +button("click me", "button_theme_disabled")
-          //- +button("click me", "button_color_white")
-          //- +button("click me", "button_color_white button_theme_disabled")
-          +button2()
-          +button2({mod: {theme: "disabled"} })
-          +button2({mod: {color: "white"} })
-          +button2({mod: {color: "white", theme: "disabled"}, attr: {disabled: true} })
+          +button()
+          +button({mod: {theme: "disabled"} })
+          +button({mod: {color: "white"} })
+          +button({mod: {color: "white", theme: "disabled"}, attr: {disabled: true} })
           +button-text("click me")
           +button-text("click me", "button-text_disabled button_moved")
 
