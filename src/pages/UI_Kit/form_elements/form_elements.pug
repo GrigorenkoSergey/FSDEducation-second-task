@@ -135,10 +135,11 @@ block content
         .example-button__title
           h3 buttons
         .example-button__container
-          +button("click me", "button_default")
-          +button("click me", "button_disabled")
+          //- +button2({text: "click me!!!", mod: {theme: "disabled"}, attr: {type: "reset", disabled: true}})
+          +button("click me")
+          +button("click me", "button_theme_disabled")
           +button("click me", "button_color_white")
-          +button("click me", "button_color_white button_disabled")
+          +button("click me", "button_color_white button_theme_disabled")
           +button-text("click me")
           +button-text("click me", "button-text_disabled button_moved")
 
