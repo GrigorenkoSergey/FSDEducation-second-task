@@ -139,11 +139,12 @@ block content
           +button({mod: {theme: "disabled"} })
           +button({mod: {color: "white"} })
           +button({mod: {color: "white", theme: "disabled"}, attr: {disabled: true} })
-          +button-text("click me")
-          +button-text("click me", "button-text_disabled button_moved")
+          +button-text()
+          .example-button__button_moved
+            +button-text({mod: {theme: "disabled"}})
 
         .example-button-payment
-          +button-payment("перейти к оплате")
+          +button-payment({text: "перейти к оплате"})
 
       .example-pagination
         .example-pagination__title

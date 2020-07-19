@@ -1,3 +1,14 @@
-mixin button-payment(innerText, modifiers)
-  button.button-payment(class= modifiers) 
-    span.button-payment__span #{innerText}
+mixin button-payment(description = {})
+  - 
+    var {
+      text = "Оплатить",
+      mod = {},
+      attr = {type: "submit"},
+    } = description;
+
+    var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
+      return str += ` button-payment_${key}_${entry}`; 
+    }, "button-payment");
+
+  button(class= summaryClasses)&attributes(attr)
+    span.button-payment__span #{text}

@@ -33,6 +33,6 @@ mixin header(nav, logged)
     else 
       .header__buttons
         .header__button-enter
-          +button({text: nav.buttons.login.title, mod: {color: "white", theme: "slim"})
+          +button({text: nav.buttons.login.title, mod: {color: "white", theme: "slim"}})
         .header__button-register
-          +button(nav.buttons.register.title, "button_theme_slim")
+          +button({text: nav.buttons.register.title, mod: {theme: "slim"}})

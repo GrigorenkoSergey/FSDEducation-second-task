@@ -1,2 +1,13 @@
-mixin button-text(innerText, modifiers)
-  button.button-text(class= modifiers) #{innerText}
+mixin button-text(description = {})
+  - 
+    var {
+      text = "click me",
+      mod = {},
+      attr = {type: "submit"},
+    } = description;
+
+    var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
+      return str += ` button-text_${key}_${entry}`; 
+    }, "button-text");
+
+  button(class= summaryClasses)&attributes(attr) #{text}

@@ -224,7 +224,7 @@ main {
     align-content: space-between;
   }
 
-  .button_moved {
+  &__button_moved {
     position: relative;
     left: -75px;
   }

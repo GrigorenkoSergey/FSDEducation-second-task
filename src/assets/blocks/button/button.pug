@@ -8,7 +8,7 @@ mixin button(description = {})
     var {
       text = "click me",
       mod = {}, 
-      attr = {}
+      attr = {type: "button"}
       } = description;
 
     var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
