@@ -13,6 +13,7 @@ mixin button(innerText, modifiers)
 mixin button2(description = {})
   -
     var {text = "click me", mod = {}, attr = {}} = description;
+
     var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` button_${key}_${entry}`; 
     }, "button");

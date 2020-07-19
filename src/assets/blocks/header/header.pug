@@ -32,5 +32,9 @@ mixin header(nav, logged)
       .header__user-name Юлий Цезарь
     else 
       .header__buttons
-        +button(nav.buttons.login.title, "button_color_white header__button_color_white")
-        +button(nav.buttons.register.title, "button_default header__button_default")
+        //- +button(nav.buttons.login.title, "button_color_white header__button_color_white")
+        //- +button(nav.buttons.register.title, "button_default header__button_default")
+        .header__button-enter
+          +button(nav.buttons.login.title, "button_color_white button_theme_slim")
+        .header__button-register
+          +button(nav.buttons.register.title, "button_theme_slim")

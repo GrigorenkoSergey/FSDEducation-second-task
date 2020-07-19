@@ -1,10 +1,10 @@
-@import '../button/button.scss';
+@import "../button/button.scss";
 
 .header {
   position: relative;
   display: grid;
   grid-template-columns: auto auto min-content;
-  grid-template-areas: 'logo nav buttons';
+  grid-template-areas: "logo nav buttons";
   padding-right: 140px;
   padding-left: 140px;
   background: white;
@@ -32,6 +32,10 @@
     align-items: center;
   }
 
+  &__button-enter {
+    margin-right: 19px;
+  }
+
   &__li {
     list-style: none;
     margin-right: 21px;
@@ -53,30 +57,17 @@
     justify-content: space-between;
 
     &::after {
-      content: '';
+      content: "";
       width: 24px;
       height: 18px;
       margin-top: 1px;
-      background: url('assets/blocks/header/images/expand-more.png') center no-repeat;
+      background: url("assets/blocks/header/images/expand-more.png") center no-repeat;
     }
   }
 
   &_current-page {
     font-weight: bold;
     color: $dark_75;
-  }
-
-  // для миксинов буду использовать конструкцию & &__mixin
-  // иначе, если какой-нибудь последующий блок импортирует исходный файл,
-  // тогда свойства сбросятся...
-  // !important использовать не стоит..
-  & &__button_default {
-    line-height: 34px;
-  }
-
-  & &__button_color_white {
-    line-height: 34px;
-    margin-right: 19px;
   }
 
   &__submenu {
@@ -94,7 +85,7 @@
     line-height: 70px;
 
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 1px;
       height: 30px;
@@ -117,8 +108,8 @@
     grid-template-columns: auto auto;
     grid-template-rows: 30px 50px;
     grid-template-areas:
-      'logo nav'
-      'logo buttons';
+      "logo nav"
+      "logo buttons";
     line-height: normal;
 
     &__li:last-child {
@@ -144,8 +135,8 @@
   .header {
     grid-template-rows: 50px 60px;
     grid-template-areas:
-      'logo buttons'
-      'nav nav';
+      "logo buttons"
+      "nav nav";
     &__nav {
       margin-left: 20px;
       display: flex;
