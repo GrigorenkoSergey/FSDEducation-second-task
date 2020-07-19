@@ -7,9 +7,9 @@ mixin log-in()
     .log-in
       h1 Войти
       .log-in__email
-        +input({placeholder: "Email"})
+        +input({attr: {placeholder: "Email"}})
       .log-in__password
-        +input({placeholder:"Пароль"})
+        +input({attr: {placeholder:"Пароль"}})
       .log-in__button-payment
         +button-payment({text: "Войти"})
       .log-in__account-create

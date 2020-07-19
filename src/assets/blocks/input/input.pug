@@ -1,10 +1,12 @@
 mixin input(obj)
-  - 
-    let {
-      type =  "text",
-      placeholder = "",
-      value = "",
-      modifiers = "",
-    } = obj;
+  -
+    var {
+      mod = {}, 
+      attr = {type: "text"}
+      } = obj;
 
-  input.input(type= type, placeholder= placeholder, value= value, class= modifiers)
+    var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
+      return str += ` input_${key}_${entry}`; 
+    }, "input");
+
+  input(class= summaryClasses)&attributes(attr)

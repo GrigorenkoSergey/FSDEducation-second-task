@@ -5,5 +5,5 @@ mixin checkbox-list(list, expanded)
   ul.checkbox-list(hidden= isHidden)
     each val, key in list.content
       li.checkbox-list__li
-        - let checked = list.checked.includes(key) ? "checked" : "";
-        +checkbox(key, val, checked)
+        - let checked = list.checked.includes(key);
+        +checkbox({text: val, attr: {checked, name: key}})

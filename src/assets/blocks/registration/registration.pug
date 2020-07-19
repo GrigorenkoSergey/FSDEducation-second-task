@@ -9,25 +9,25 @@ mixin registration()
     .registration
       h1 Регистрация аккаунта
       .registration__name-field
-        +input({placeholder: "Имя"})
+        +input({attr: {placeholder: "Имя"}})
 
       .registration__surname-field
-        +input({placeholder: "Фамилия"})
+        +input({attr: {placeholder: "Фамилия"}})
 
       .registration__radio-buttons
         +radio-buttons-group()
 
       .registration__birthday
         h3 Дата рождения
-        +input({placeholder: "ДД.ММ.ГГГГ"})
+        +input({attr: {placeholder: "ДД.ММ.ГГГГ"}})
 
       .registration__authorization
         h3 Данные для входа в сервис
         .registration__email
-          +input({placeholder: "Email"})
+          +input({attr: {placeholder: "Email"}})
 
         .registration__password
-          +input({placeholder: "Пароль"})
+          +input({attr: {placeholder: "Пароль"}})
 
         .registration__toggle
           +toggler("get_offers", "Получать спецпредложения")

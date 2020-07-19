@@ -46,4 +46,4 @@ mixin footer(footerDescription)
       .footer__subscribe-title #{title}
       .footer__subscribe-description #{description}
       .footer__subscribe-email
-        +input({type: "email", placeholder: placeholder, modifiers: "input_email"})
+        +input({attr: {type: "email", placeholder}, mod: {theme: "email"}})

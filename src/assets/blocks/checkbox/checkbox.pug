@@ -1,6 +1,11 @@
-mixin checkbox(name, value, checked)
-  - let isChecked = checked === "checked";
+mixin checkbox(description = {})
+  - 
+    var {
+      text = "check it!",
+      attr = {},
+    } = description;
+
   div.checkbox
     label.checkbox__label
-      input.checkbox__input(type="checkbox" name= name checked= isChecked) 
-      span.checkbox__span !{value}
+      input.checkbox__input(type="checkbox")&attributes(attr)
+      span.checkbox__span !{text}

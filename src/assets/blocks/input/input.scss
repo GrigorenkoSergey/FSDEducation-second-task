@@ -33,18 +33,18 @@ $inputWidth: 320px;
     outline: none;
   }
 
-  &.hover {
+  &_action_hover {
     border-color: $dark_75;
     outline: none;
   }
 
-  &_type-date {
+  &_type_date {
     color: $dark_25;
     text-transform: uppercase;
     line-height: 24px;
   }
 
-  &_email {
+  &_theme_email {
     background: url('assets/blocks/input/images/arrow-forward.png') right no-repeat;
   }
 }

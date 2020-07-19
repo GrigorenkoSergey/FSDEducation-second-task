@@ -3,8 +3,8 @@ include ../social-networks/social-networks.pug
 mixin copyright(obj)
   - 
     let { 
-      innerText = "Copyright &#169 2018 Toxin отель. Все права зачищены.",
+      text = "Copyright &#169 2018 Toxin отель. Все права зачищены.",
     } = obj;
   .copyright
-    span !{innerText}
+    span !{text}
     +social-networks()

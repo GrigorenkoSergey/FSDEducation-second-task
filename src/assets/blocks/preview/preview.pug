@@ -7,13 +7,27 @@ include ../rate-button/rate-button.pug
     type: "Люкс",
     imgSrc: "assets/blocks/preview/images/888.png",
     cost: "9 990",
+    currency: "₽",
+    priceTerm: "сутки",
     stars: 5,
     reviews: 145,
     arrowsHidden: false,
   }
 
 mixin preview(previewObj)
-  - let {number, type, imgSrc, cost, stars, reviews, arrowsHidden} = previewObj;
+  - 
+    var {
+      number,
+      type, 
+      imgSrc, 
+      cost, 
+      stars, 
+      reviews, 
+      arrowsHidden,
+      currency = "₽",
+      priceTerm = "сутки",
+      } = previewObj;
+
   .preview
     .preview__image-container
       img.preview__image(alt="Картинка номера" src= imgSrc width= "270px" height = "151px")
@@ -28,8 +42,8 @@ mixin preview(previewObj)
         span.room-number #{number}
         span.room-class #{type} 
       .preview__price
-        span #{cost}&#8381
-        span  в сутки
+        span #{cost}#{currency}
+        span  в #{priceTerm}
       .preview__stars
         +rate-button(stars)
         .reviews

@@ -36,13 +36,13 @@ block content
         .example-input__title
           h3 text field
           span default
-        +input({placeholder: "Email"})
+        +input({attr: {placeholder: "Email"}})
 
       .example-input 
         .example-input__title
           h3 text field
           span hover / focus
-        +input({value: "This is pretty awesome", modifiers: "hover"})
+        +input({attr: {value: "This is pretty awesome"}, mod: {action: "hover"}})
 
       .example-dropdown-default  
         span.example__modifier default
@@ -54,7 +54,7 @@ block content
         .example-input__title
           h3 masked text field
           span default
-        +input({type: "date", modifiers: "input_type-date"})
+        +input({attr: {type: "date"}, mod: {type: "date"}})
 
       .example-date-dropdown  
         +date-dropdown({arrivalTitle: "date dropdown", departureTitle: "date dropdown"})
@@ -68,7 +68,7 @@ block content
       .example-input_email
         .example-input__title
           h3 subscription text field
-        +input({type: "email", placeholder: "Email", modifiers: "input_email"})
+        +input({attr: {type: "email", placeholder: "Email"}, mod: {theme: "email"}})
 
       .example-input_dropdown
         span.example__modifier default

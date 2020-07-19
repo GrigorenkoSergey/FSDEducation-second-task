@@ -1,34 +1,8 @@
 include ../social-networks/social-networks.pug
 
-//- DON'T REMOVE!!!!!!
-//- example of objFooter = footerDescription
-//- - 
-//-     var footerDescription = {
-//-         description: `Lorem ipsum dolor sit amet consectetur adipiscing
-//-             elit aliquam eget nullam pellentesque aliquam
-//-             curabitur cociis.`,
-//-         navigation: {
-//-             title: "navigation",
-//-             list: [ "About us", "News", "Support", "Products" ],
-//-         },
-//-         aboutUs: {
-//-             title: "About Us",
-//-             list: ["Who we are", "Our team", "Careers", "Investors"],
-//-         },
-//-         support: {
-//-             title: "Support", 
-//-             list: ["Documentation", "Community", "Get in Touch"]
-//-         },
-//-         subscribe: {
-//-             title: "Subscribe to our newsletter",
-//-             description: `Receive our latest news and promotions in
-//-                 your inbox!`,
-//-         },
-//-     }
-
-mixin footer-creative(objFooter)
+mixin footer-creative(copyrightText = "Copyright &#169 2018 Toxin отель. Все права зачищены.")
   .footer-creative
     img.footer-creative__logo(width="106px" height="40px" src="assets/blocks/footer-creative/images/logo-toxin.png")
-    span.footer-creative__span "Copyright &#169 2018 Toxin отель. Все права зачищены."
+    span.footer-creative__span #{copyrightText}
     +social-networks()
 

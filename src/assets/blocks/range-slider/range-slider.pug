@@ -1,8 +1,14 @@
 mixin range-slider(obj = {})
-  - let {title = "range slider"} = obj;
+  - 
+    let {
+      title = "range slider",
+      leftRange = "5 000",
+      rightRange = "10 000",
+      currency = "₽",
+      } = obj;
   .range-slider
     .range-slider__title #{title} 
-    .range-slider__range 5 000&#8381 - 10 000&#8381
+    .range-slider__range #{leftRange}#{currency} - #{rightRange}#{currency}
     .range-slider__roller-container
       .range-slider__roller
         .range-slider__roller-left

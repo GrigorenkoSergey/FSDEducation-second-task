@@ -2,33 +2,58 @@ include ../date-dropdown/date-dropdown.pug
 include ../dropdown/dropdown.pug
 include ../button-payment/button-payment.pug
 
-mixin final-bill()
+mixin final-bill(description = {})
+  - 
+    var {
+      roomNumber = 888,
+      roomClass = "Люкс",
+      priceValue = "9 990",
+      priceTerm = ["сутки", "суток"],
+      dropdownTitle = "Гости",
+      dropdownInput = "3 гостя",
+      dropdownContentAdult = "3",
+      term = "4",
+      currency = "₽",
+      fullRate = "39 960",
+      discountRate = "0",
+      serviceDiscount = "Сбор за услуги: скидка 2 179",
+      extraService = "Сбор за дополнительные услуги",
+      extraServicePrice = "300",
+      totalSpanContent = "Итого",
+      totalPrice = "38 081",
+    } = description
+
   form.form
     .final-bill
       .final-bill__title
-        span.final-bill__number 888
-        span.final-bill__class люкс
+        span.final-bill__number #{roomNumber}
+        span.final-bill__class #{roomClass}
+
       .final-bill__price 
-        span 9 990&#8381
-        span  в сутки
+        span #{priceValue}#{currency}
+        span  в #{priceTerm[0]}
+
       .final-bill__date-dropdown
         +date-dropdown({arrivalName: "arrival_final-bill", departureName: "departure_final-bill"})
+
       .final-bill__dropdown
         - var dropdown = Object.assign({}, dropdownGuests);
-        - dropdown.content.title = "Гости";
-        - dropdown.content.input = "3 гостя";
-        - dropdown.content.counters.adults_num = "3";
+        - dropdown.content.title = dropdownTitle;
+        - dropdown.content.input = dropdownInput
+        - dropdown.content.counters.adults_num = dropdownContentAdult;
         +dropdown(dropdown)
+
       .final-bill__calculation
-        span.primary 9 990&#8381 x 4 суток
-        span.rate 39 960&#8381
-        span.service-discount Сбор за услуги: скидка 2 179&#8381
-        span.rate 0&#8381
-        span.extra-service Сбор за дополнительные услуги
-        span.rate 300&#8381
+        span.final-bill__primary #{priceValue}#{currency} x #{term} !{term === 1 ? priceTerm[0] : priceTerm[1]}
+        span.final-bill__full-rate #{fullRate}#{currency}
+        span.final-bill__discount #{serviceDiscount}#{currency}
+        span.final-bill__discount-rate #{discountRate}#{currency}
+        span.final-bill__extra-service #{extraService}
+        span.final-bill__extra-service-price #{extraServicePrice}#{currency}
+
       .final-bill__total
-        span.total Итого
+        span.final-bill__total-span #{totalSpanContent}
         .hr
-        span.total-price 38 081&#8381
+        span.final-bill__total-price #{totalPrice}#{currency}
       .final-bill__button-payment
         +button-payment({text: "Забронировать"})
