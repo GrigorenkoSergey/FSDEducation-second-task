@@ -1,34 +1,31 @@
 include ../input/input.pug
 include ../list/list.pug
 
-- 
-  var footerDescription = {
-    description: `Бронирование номеров в лучшем отеле
-      2019 года по версии ассоциации
-      «Отельные взгляды»`,
-    navigation: {
-      title: "Навигация",
-      list: [ "О нас", "Новости", "Служба поддержки", "Услуги" ],
-    },
-    aboutUs: {
-      title: "О нас",
-      list: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
-    },
-    support: {
-      title: "Служба поддержки", 
-      list: ["Соглашения", "Сообщества", "Связь с нами"]
-    },
-    subscribe: {
-      title: "Подписка",
-      description: `Получайте специальные предложения
-        и новости сервиса`,
-      placeholder: "Email",
-    },
-  }
-
-mixin footer(footerDescription)
+mixin footer(options = {})
   - 
-    var {description, navigation, aboutUs, support} = footerDescription;
+    var {
+      description = `Бронирование номеров в лучшем отеле
+        2019 года по версии ассоциации
+        «Отельные взгляды»`,
+      navigation = {
+        title: "Навигация",
+        list: [ "О нас", "Новости", "Служба поддержки", "Услуги" ],
+      },
+      aboutUs = {
+        title: "О нас",
+        list: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"],
+      },
+      support = {
+        title: "Служба поддержки", 
+        list: ["Соглашения", "Сообщества", "Связь с нами"]
+      },
+      subscribe = {
+        title: "Подписка",
+        description: `Получайте специальные предложения
+          и новости сервиса`,
+        placeholder: "Email",
+      },
+    } = options;
 
   .footer
     .footer__logo
@@ -40,9 +37,9 @@ mixin footer(footerDescription)
       +list(aboutUs)
     .footer__support
       +list(support)
+
     .footer__subscribe
-      - 
-        var {title, description, placeholder} = footerDescription.subscribe;
+      - var {title, description, placeholder} = subscribe;
       .footer__subscribe-title #{title}
       .footer__subscribe-description #{description}
       .footer__subscribe-email

@@ -1,11 +1,11 @@
-mixin date-dropdown(obj)
+mixin date-dropdown(options = {})
   - 
     let {
       arrivalTitle = "Прибытие",
       arrivalName = "arrival",
       departureTitle = "Выезд",
       departureName = "departure",
-    } = obj;
+    } = options;
 
   .date-dropdown
     .date-dropdown__item

@@ -12,11 +12,11 @@ block includes
 
 block content
   .nav-bar_standard
-    +header(nav)
+    +header()
   .nav-bar_logged-in
-    +header(nav, true)
+    +header({logged: true})
   .footer-widgets
-    +footer(footerDescription)
+    +footer()
     +copyright({})
   .footer-creative__wrapper
     +footer-creative()

@@ -1,6 +1,11 @@
-import DropdownOrigin from './dropdown-origin.js';
+import DropdownOrigin from '../dropdown/dropdown-origin.js';
 
 export default class DropdownRooms extends DropdownOrigin {
+  init() {
+    super.init();
+    this.update();
+  }
+
   update(eventType, data) {
     const roomsSuffix = ['ен', 'ьня', 'ьни', 'ьни', 'ьни',
       'ен', 'ен', 'ен', 'ен', 'ен', 'ен'];
@@ -11,8 +16,8 @@ export default class DropdownRooms extends DropdownOrigin {
     const roomsNum = itemsNums[0];
     const bedsNum = itemsNums[1];
 
-    let textContent = `${roomsNum} спал${roomsSuffix[roomsNum]},`;
-    textContent += ` ${bedsNum} кроват${bedsSuffix[bedsNum]}...`;
+    let textContent = `${roomsNum === 0 ? 'Нет': roomsNum} спал${roomsSuffix[roomsNum]},`;
+    textContent += ` ${bedsNum === 0 ? 'нет' : bedsNum} кроват${bedsSuffix[bedsNum]}...`;
     this.input.textContent = textContent;
   }
 }

@@ -1,11 +1,12 @@
-mixin range-slider(obj = {})
+mixin range-slider(options = {})
   - 
-    let {
+    var {
       title = "range slider",
       leftRange = "5 000",
       rightRange = "10 000",
       currency = "₽",
-      } = obj;
+    } = options;
+
   .range-slider
     .range-slider__title #{title} 
     .range-slider__range #{leftRange}#{currency} - #{rightRange}#{currency}

@@ -1,0 +1,33 @@
+include ../dropdown/dropdown.pug
+
+mixin dropdown-guests(options = {})
+  - 
+    var {
+      name =  "guests", 
+      title = "Гости",
+      input = "Сколько гостей",
+      items = [
+        {
+          name: "adults",
+          text: "Взрослые",
+          counter: 0,
+        },
+        {
+          name: "kids",
+          text: "Дети",
+          counter: 0,
+        },
+        {
+          name: "babies",
+          text: "Младенцы",
+          counter: 0,
+        },
+      ],
+      //-  counters либо задать, либо вычислится само в dropdown
+      counters, 
+
+      expanded = false,
+    } = options;
+
+  +dropdown({name, title, input, items, counters, expanded})
+

@@ -1,9 +1,21 @@
 include ../checkbox/checkbox.pug
 
-mixin checkbox-list(list, expanded)
-  - let isHidden = expanded !== true;
+mixin checkbox-list(options = {})
+  - 
+    var {
+      items = [
+        {
+          name: "no name",
+          labelText: "no text",
+          checked: false,
+        },
+      ],
+
+      expanded = false,
+    } = options;
+
+  - var isHidden = expanded !== true;
   ul.checkbox-list(hidden= isHidden)
-    each val, key in list.content
+    each elem in items
       li.checkbox-list__li
-        - let checked = list.checked.includes(key);
-        +checkbox({text: val, attr: {checked, name: key}})
+        +checkbox({text: elem.labelText, attr: {checked: elem.checked, name: elem.name}})

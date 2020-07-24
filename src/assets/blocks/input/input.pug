@@ -1,9 +1,9 @@
-mixin input(obj)
+mixin input(options = {})
   -
     var {
       mod = {}, 
       attr = {type: "text"}
-      } = obj;
+    } = options;
 
     var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` input_${key}_${entry}`; 

@@ -1,13 +1,14 @@
 include ../radio-button/radio-button.pug
-//- Пример массива кнопок buttonsArr
-- 
-  let buttonsListDefault = [
-    {id: "man", name: "sex", value: "Мужчина", checked: true}, 
-    {id: "woman", name: "sex", value: "Женщина", checked: false},                         
-  ];
 
-mixin radio-buttons-group(buttonsArr = buttonsListDefault)
+mixin radio-buttons-group(options = {})
+  - 
+    var {
+      items = [
+        {id: "man", name: "sex", value: "Мужчина", checked: true}, 
+        {id: "woman", name: "sex", value: "Женщина", checked: false},                         
+      ],
+    } = options;
   .radio-buttons-group
-    each item in buttonsArr
-      - let {id, name, value, checked} = item;
+    each elem in items
+      - let {id, name, value, checked} = elem;
       +radio-button(id, name, value, checked)

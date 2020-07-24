@@ -1,10 +1,10 @@
-mixin button-payment(description = {})
+mixin button-payment(options = {})
   - 
     var {
       text = "Оплатить",
       mod = {},
       attr = {type: "submit"},
-    } = description;
+    } = options;
 
     var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` button-payment_${key}_${entry}`; 

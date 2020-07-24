@@ -10,13 +10,25 @@ block includes
 block variables
   - 
     var titleName = "Room details";
-    var bunsArr = [
-      {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
-      {name: "city", title: "Удобство", description: "Окно в каждой из спален"},
-      {name: "fire", title: "Уют", description: "Номер оснащен камином"},
-    ];
+    var bunsOptions = {
+      items: [
+        {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
+        {name: "city", title: "Удобство", description: "Окно в каждой из спален"},
+        {name: "fire", title: "Уют", description: "Номер оснащен камином"},
+      ]
+    };
 
-    var reviewerMurad = Object.assign({}, reviewer);
+    var reviewerMurad = {
+      avatarSrc: "assets/blocks/comment/images/comment-murad.png",
+      name: "Мурад Сарафанов",
+      term: "5 дней назад", 
+      likeButton: {
+        counter: 12,
+        isPushed: true,
+      },
+      content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+    };
+
     var reviewerPatricia = {
       avatarSrc: "assets/blocks/comment/images/comment-patricia.png",
       name: "Патрисия Стеклышкова",
@@ -27,7 +39,7 @@ block variables
       },
       content: `Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер 
         советую заказать, каждый день новое блюдо и десерт как комплимент`,
-    }
+    };
 block content
   .photos
     .photos__img_main-container
@@ -41,7 +53,7 @@ block content
         .room-details__buns
           .room-details__title
             h2 Сведения о номере
-          +buns(bunsArr)
+          +buns(bunsOptions)
         .room-details__impressions
           .room-details__title
             h2 Впечатления от номера

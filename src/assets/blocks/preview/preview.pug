@@ -1,32 +1,20 @@
 include ../rate-button/rate-button.pug
 
-//- пример объекта описания
-- 
-  var previewObj = {
-    number: 888,
-    type: "Люкс",
-    imgSrc: "assets/blocks/preview/images/888.png",
-    cost: "9 990",
-    currency: "₽",
-    priceTerm: "сутки",
-    stars: 5,
-    reviews: 145,
-    arrowsHidden: false,
-  }
-
-mixin preview(previewObj)
+mixin preview(options = {})
   - 
     var {
-      number,
-      type, 
-      imgSrc, 
-      cost, 
-      stars, 
-      reviews, 
-      arrowsHidden,
+      number = 888,
+      type = "Люкс",
+      imgSrc = "assets/blocks/preview/images/888.png",
+      cost = "9 990",
       currency = "₽",
       priceTerm = "сутки",
-      } = previewObj;
+      stars = 5,
+      reviews = 145,
+      arrowsHidden = false,
+      currency = "₽",
+      priceTerm = "сутки",
+    } = options;
 
   .preview
     .preview__image-container

@@ -1,5 +1,5 @@
 include ../date-dropdown/date-dropdown.pug
-include ../dropdown/dropdown.pug
+include ../dropdown-guests/dropdown-guests.pug
 include ../button-payment/button-payment.pug
 
 mixin final-bill(description = {})
@@ -37,11 +37,7 @@ mixin final-bill(description = {})
         +date-dropdown({arrivalName: "arrival_final-bill", departureName: "departure_final-bill"})
 
       .final-bill__dropdown
-        - var dropdown = Object.assign({}, dropdownGuests);
-        - dropdown.content.title = dropdownTitle;
-        - dropdown.content.input = dropdownInput
-        - dropdown.content.counters.adults_num = dropdownContentAdult;
-        +dropdown(dropdown)
+        +dropdown-guests({counters: [2, 1, 0]})
 
       .final-bill__calculation
         span.final-bill__primary #{priceValue}#{currency} x #{term} !{term === 1 ? priceTerm[0] : priceTerm[1]}

@@ -1,18 +1,29 @@
 include ../checkbox-list/checkbox-list.pug
 
-//- list example
-- 
-  var checkboxList = {
-    title: "checkbox buttons",
-    content: {
-      "smoking": "Можно курить",
-      "pets": "Можно с питомцами",
-      "guests": "Можно пригласить гостей (до 10 человек)", 
-    },
-    checked: ["pets", "guests"],
-  }
-
-mixin checkbox-buttons(list = checkboxList)
+mixin checkbox-buttons(options = {})
+  - 
+    var {
+      title = "checkbox buttons",
+      expanded = true,
+      items = [
+        {
+          name: "smoking",
+          labelText: "Можно курить",
+          checked: false,
+        },
+        {
+          name: "pets",
+          labelText: "Можно с питомцами",
+          checked: true,
+        },
+        {
+          name: "guests",
+          labelText: "Можно пригласить гостей (до 10 человек)",
+          checked: true,
+        },
+      ],
+    } = options;
+    
   .checkbox-buttons
-    .checkbox-buttons__title #{list.title} 
-    +checkbox-list(list, true)
+    .checkbox-buttons__title #{title} 
+    +checkbox-list({items, expanded})

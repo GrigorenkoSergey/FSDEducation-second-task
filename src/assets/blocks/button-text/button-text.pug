@@ -1,10 +1,10 @@
-mixin button-text(description = {})
+mixin button-text(options = {})
   - 
     var {
       text = "click me",
       mod = {},
       attr = {type: "submit"},
-    } = description;
+    } = options;
 
     var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` button-text_${key}_${entry}`; 

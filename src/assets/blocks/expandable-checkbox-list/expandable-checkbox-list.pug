@@ -1,24 +1,61 @@
 include ../checkbox-list/checkbox-list.pug
 
-//- list example
-- 
-  var expandableList = {
-    title: "expandable checkbox list",
-    content: {
-      "breakfast": "Завтрак",
-      "desk": "Письменный стол",
-      "highchair": "Стул для кормления",
-      "crib": "Кроватка",
-      "tv_1": "Телевизор",
-      "shampoo_1": "Шампунь",    
-      "tv_2": "Телевизор",
-      "shampoo_2": "Шампунь",
-    },
-    checked: ["desk", "highchair", "crib"],
-  }
+mixin expandable-checkbox-list(options = {})
+  - 
+    var {
+      title = "expandable checkbox list",
+      expanded = false,
 
-mixin expandable-checkbox-list(list, expanded)
-  - let className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
+      items = [
+        {
+          name: "breakfast",
+          labelText: "Завтрак",
+          checked: false,
+        },
+        {
+          name: "dest",
+          labelText: "Письменный стол",
+          checked: false,
+        },
+        {
+          name: "highchair",
+          labelText: "Стул для кормления",
+          checked: false,
+        },
+        {
+          name: "crib",
+          labelText: "Кроватка",
+          checked: false,
+        },
+        {
+          name: "tv_1",
+          labelText: "Телевизор",
+          checked: false,
+        },
+        {
+          name: "shampoo_1",
+          labelText: "Шампунь",
+          checked: false,
+        },
+        {
+          name: "tv_2",
+          labelText: "Телевизор",
+          checked: false,
+        },
+        {
+          name: "shampoo_2",
+          labelText: "Шампунь",
+          checked: false,
+        },
+      ],
+      checked = [1, 2, 3],
+    } = options;
+
+    if (items.length) {
+      checked.forEach(itemsIndex => items[itemsIndex].checked = true);
+    }
+
+  - var className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
   .expandable-checkbox-list
-    .expandable-checkbox-list__title(class= `${className}`) #{list.title} 
-    +checkbox-list(list, expanded)
+    .expandable-checkbox-list__title(class= `${className}`) #{title} 
+    +checkbox-list({items, expanded})

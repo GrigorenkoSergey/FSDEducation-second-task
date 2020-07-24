@@ -1,5 +1,5 @@
 include ../date-dropdown/date-dropdown.pug
-include ../dropdown/dropdown.pug
+include ../dropdown-guests/dropdown-guests.pug
 include ../button-payment/button-payment.pug
 
 mixin search-form()
@@ -10,7 +10,6 @@ mixin search-form()
       .search-form__date-dropdown
         +date-dropdown({})
       .search-form__dropdown
-        - dropdownGuests.content.title = "Гости"
-        +dropdown(dropdownGuests)
+        +dropdown-guests({title: "Гости"})
       .search-form__payment
         +button-payment({text: "Подобрать номер"})

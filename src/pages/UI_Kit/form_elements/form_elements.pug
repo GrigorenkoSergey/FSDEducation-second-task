@@ -4,6 +4,8 @@ block includes
   include ../../../assets/blocks/input/input.pug
   include ../../../assets/blocks/date-dropdown/date-dropdown.pug
   include ../../../assets/blocks/dropdown/dropdown.pug
+  include ../../../assets/blocks/dropdown-guests/dropdown-guests.pug
+  include ../../../assets/blocks/dropdown-rooms/dropdown-rooms.pug
   include ../../../assets/blocks/expandable-checkbox-list/expandable-checkbox-list.pug
   include ../../../assets/blocks/rich-checkbox/rich-checkbox.pug
   include ../../../assets/blocks/checkbox-buttons/checkbox-buttons.pug
@@ -22,12 +24,23 @@ block includes
 
 block variables
   - 
-    var titleName = 'From Elements'
+    var titleName = 'From Elements';
 
     var listGag = {
       title: "expandable checkbox list",
       content: {},
-    }
+    };
+
+    var reviewerMurad = {
+      avatarSrc: "assets/blocks/comment/images/comment-murad.png",
+      name: "Мурад Сарафанов",
+      term: "5 дней назад", 
+      likeButton: {
+        counter: 12,
+        isPushed: true,
+      },
+      content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+    };
 
 block content
   main
@@ -46,9 +59,7 @@ block content
 
       .example-dropdown-default  
         span.example__modifier default
-        - var obj = dropdownGuests;
-        - obj.additionalClasses = {};
-        +dropdown(obj)
+        +dropdown({input: "Сколько гостей"})
 
       .example-masket-text-field
         .example-input__title
@@ -72,30 +83,29 @@ block content
 
       .example-input_dropdown
         span.example__modifier default
-        +dropdown(dropdownRooms)
+        +dropdown-rooms()
 
       .example-dropdown_expanded
         span.example__modifier expanded
-        +dropdown(dropdownRooms, true)
+        +dropdown-rooms({expanded: true})
 
       .example__expandable-checkbox-list
-      +expandable-checkbox-list(listGag, false)
+        +expandable-checkbox-list({items: [], expanded: false})
 
       .example__expandable-checkbox-list_expanded
-        +expandable-checkbox-list(expandableList, true)
+        +expandable-checkbox-list({expanded: true})
 
       .example-buns
-        - var buns = bunsArr;
-        +buns(buns)
+        +buns()
 
     .second-column
       .example-checkbox-buttons
-        +checkbox-buttons(checkboxList)
+        +checkbox-buttons()
 
       .example-radio-buttons
         .example-radio-buttons__title
           h3 radio buttons
-        +radio-buttons-group(buttonsListDefault)
+        +radio-buttons-group()
 
       .example-toggle
         .example-toggle__title
@@ -107,8 +117,8 @@ block content
         .example-like-buttons__title
           h3 like button
         .example-like-buttons__container
-          +like-button(2)
-          +like-button(12, true)
+          +like-button({counter: 2})
+          +like-button({counter: 12, isPushed: true})
 
       .example-rate-buttons
         .example-rate-buttons__title
@@ -118,7 +128,7 @@ block content
           +rate-button(5)
 
       .example-dropdown-guests
-        +dropdown(dropdownGuests, true)
+        +dropdown-guests({title: "dropdown", expanded: true})
 
       .example-rich-checkbox-buttons
         .rich-checkbox__title   rich checkbox buttons
@@ -126,7 +136,7 @@ block content
         +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
 
       .example-comments
-        +comment(reviewer)
+        +comment(reviewerMurad)
 
     .third-column
       +range-slider
@@ -152,16 +162,8 @@ block content
         +pagination
 
       .example-dropdown-guests_new-entry
-        - 
-          var obj = dropdownGuests;
-          obj.content.input = "3 гостя"
-          obj.content.counters = {
-            adults_num: 2,
-            kids_num: 1,
-            babies_num: 0
-          }
-          obj.showReset = true;
-        +dropdown(obj, true)
+        - var counters = [2, 1, 0];
+        +dropdown-guests({title: "dropdown", expanded: true, counters})
 
       .example-bullet-list
         .example-bullet-list__title
@@ -170,4 +172,4 @@ block content
             var bulletListArr = ["Нельзя с питомцами", 
               "Без вечеринок и мероприятий", 
               "Время прибытия — после 13:00, а выезд до 12:00"]                     
-        +bullet-list(bulletListArr)
+        +bullet-list()

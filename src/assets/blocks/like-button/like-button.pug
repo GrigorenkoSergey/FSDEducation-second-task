@@ -1,6 +1,10 @@
-mixin like-button(counter, pushed) 
-  - let additionalClass = "";
-  - if (pushed === true) additionalClass = "like-button_pushed";
+mixin like-button(options = {})
+  - 
+    var {
+      counter = 0,
+      isPushed = false,
+    } = options;
+
+  - if (isPushed === true) additionalClass = "like-button_pushed";
   button.like-button(class= additionalClass)
     span.like-button__counter !{counter}
-

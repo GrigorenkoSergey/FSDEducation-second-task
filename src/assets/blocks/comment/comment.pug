@@ -1,26 +1,24 @@
-//- Пример комментатора
-- 
-  let reviewer = {
-    avatarSrc: "assets/blocks/comment/images/comment-murad.png",
-    name: "Мурад Сарафанов",
-    term: "5 дней назад", 
-    likeButton: {
-      counter: 12,
-      isPushed: true,
-    },
-    content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-  }
+include ../like-button/like-button.pug
 
-mixin comment(reviewer)
+mixin comment(options = {})
+  - 
+    var {
+      avatarSrc = "assets/blocks/comment/images/comment-murad.png",
+      name = "Ирина Иванов",
+      term = "600 лет назад", 
+      likeButton = {
+        counter: 9999,
+        isPushed: true,
+      },
+      content = "Где я? Кто я? Куда я? Я отрезаю от себя части-всё это бьётся в бессилии об пол...",
+    } = options;
+
   .comment
-    img.comment__avatar(src= reviewer.avatarSrc)
-    span.comment__name #{reviewer.name}
-    span.comment__term #{reviewer.term}
+    img.comment__avatar(src= avatarSrc)
+    span.comment__name #{name}
+    span.comment__term #{term}
     .comment__grouper
       .comment__like-button
-        button.like-button(
-          class= reviewer.likeButton.isPushed ? "like-button_pushed" : ""
-        )
-          span.like-button__counter #{reviewer.likeButton.counter}
-      p.comment__content #{reviewer.content}
+        +like-button(likeButton)
+      p.comment__content #{content}
 

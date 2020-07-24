@@ -1,5 +1,4 @@
-/* eslint-disable no-param-reassign */
-import DropdownOrigin from './dropdown-origin.js';
+import DropdownOrigin from '../dropdown/dropdown-origin.js';
 
 const MAX_ITEMS_VALUE = 10;
 const MAX_GUESTS_VALUE = 10;
@@ -19,6 +18,7 @@ export default class DropdownGuests extends DropdownOrigin {
 
     this.applyButton.addEventListener('click', this.handlers.handleApplyButtonClick);
     this.resetButton.addEventListener('click', this.handlers.handleResetButtonClick);
+    this.update();
   }
 
   update(eventType, item) {
@@ -43,11 +43,20 @@ export default class DropdownGuests extends DropdownOrigin {
       this.enableAddition();
     }
 
-    let inputTextContent = `${adultsNum + kidsNum} гост${guestsSuffix[adultsNum + kidsNum]}`;
+    let guestsNum = adultsNum + kidsNum;
+    let inputTextContent = '';
+
+    inputTextContent = `${guestsNum === 0 ? 'Нет' : guestsNum} гост${guestsSuffix[adultsNum + kidsNum]}`;
 
     if (babiesNum > 0) {
       inputTextContent += `, ${babiesNum} младен${babiesSuffix[babiesNum]}`;
     }
+
+    if (guestsNum + babiesNum === 0) {
+      inputTextContent = "Сколько гостей";
+      this.resetButton.hidden = true;
+    }
+
     this.input.textContent = inputTextContent;
   }
 
@@ -66,21 +75,18 @@ export default class DropdownGuests extends DropdownOrigin {
       .forEach((item) => item.minus.classList.add('dropdown__minus_disabled'));
   }
 
-  // eslint-disable-next-line class-methods-use-this
   handleApplyButtonClick() {
-    // eslint-disable-next-line no-console
-    console.log('sending data to server');
+    this.input.classList.remove("dropdown__input_expanded");
+    this.itemsContainer.classList.remove("dropdown__items-container_expanded");
   }
 
   handleResetButtonClick(e) {
-    this.resetButton.hidden = true;
-    this.input.textContent = 'Сколько гостей';
-
     this.items.forEach((item) => {
       item.value = 0;
       item.counter.textContent = 0;
     });
 
+    this.update();
     this.disableDistraction();
     this.enableAddition();
   }

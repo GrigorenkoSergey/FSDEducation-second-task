@@ -1,10 +1,11 @@
 include ../social-networks/social-networks.pug
 
-mixin copyright(obj)
+mixin copyright(options = {})
   - 
     let { 
       text = "Copyright &#169 2018 Toxin отель. Все права зачищены.",
-    } = obj;
+    } = options;
+
   .copyright
     span !{text}
     +social-networks()

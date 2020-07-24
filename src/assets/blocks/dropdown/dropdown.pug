@@ -3,56 +3,37 @@
 //- почему-то const выдает ошибку (has already been declared),
 //- как если бы была общая область видимости с js-файлом.
 
-//- example of description object
-- 
-  var dropdownGuests = {
-    name: "guests", 
-    content: {
-      title: "dropdown",
-      input: "Сколько гостей",
-      items: {
-        adults: "Взрослые",
-        kids: "Дети",
-        babies: "Младенцы"
-      },
-      counters: {
-        adults_num: 0,
-        kids_num: 0,
-        babies_num: 0
-      },   
-    },
-    //- покажем кнопки "Очистить" и "применить"?
-    showButtons: true,
-    //-showReset действует, только если shohwButtons: true
-    showReset: false, 
-  }
-
-  var dropdownRooms = {
-    name: "rooms", 
-    content: {
-      title: "dropdown",
-      input: "2 спальни, 2 кровати...",
-      items: {
-        bedrooms: "Спальни",
-        beds: "Кровати",
-        bathrooms: "Ванные комнаты"
-      },
-      counters: {
-        rooms_num: 2,
-        beds_num: 2,
-        bathrooms_num: 0
-      },   
-    },
-    //- покажем кнопки "Очистить" и "применить"?
-    showButtons: false, 
-    }
-
-mixin dropdown(obj, expanded)
+mixin dropdown(options = {})
   -  
-    let {name} = obj;
-    let {title, input, items, counters, } = obj.content;
-    let inputClass = "";
-    let containerClass = "";
+    var {
+      name = "Имярек",
+      title = "dropdown", 
+      input = "Щелкни на плюсе или на минусе...",
+      items = [
+        {
+          name: "item1",
+          text: "item1 text",
+          counter: 1,
+        },
+        {
+          name: "item2",
+          text: "item2 text",
+          counter: 2,
+        },
+      ],
+
+      //- Добавим возможность непосредственно задавать к-во элементов, напр. counters = [1, 12]
+      counters = items.map((elem) => elem.counter),
+
+      showButtons = true,
+      showReset = true,
+      expanded = false,
+    } = options;
+
+    items.map((elem, i) => elem.counter = counters[i]);
+
+    var inputClass = "";
+    var containerClass = "";
 
     if (expanded === true) {
       inputClass = "dropdown__input_expanded";
@@ -63,18 +44,17 @@ mixin dropdown(obj, expanded)
     .dropdown__title #{title}
     .dropdown__input(class= inputClass) #{input}
     .dropdown__items-container(class= containerClass)
-      - let itemsVals = Object.values(items);
-      - let itemsNums = Object.values(counters);
-      - for (let i = 0; i < itemsVals.length; i++)
+      each elem in items
+        - var {text, counter} = elem;
         .dropdown__item
-          span.dropdown__item-name #{itemsVals[i]}
+          span.dropdown__item-name #{text}
           .dropdown__trigger
-            - let disableMinus = itemsNums[i] === MIN_ITEMS_VALUE ? "dropdown__minus_disabled" : "";
+            - var disableMinus = counter === MIN_ITEMS_VALUE ? "dropdown__minus_disabled" : "";
             .dropdown__minus(class= disableMinus) -
-            span.dropdown__counter  !{itemsNums[i]} 
-            - let disablePlus = itemsNums[i] === MAX_ITEMS_VALUE ? "dropdown__plus_disabled" : "";
+            span.dropdown__counter  #{counter} 
+            - var disablePlus = counter === MAX_ITEMS_VALUE ? "dropdown__plus_disabled" : "";
             .dropdown__plus(class= disablePlus) +
-      if (obj.showButtons)
+      if (showButtons)
         .dropdown__buttons
-          .dropdown__button-reset(hidden= !obj.showReset) Очистить                    
+          .dropdown__button-reset(hidden= !showReset) Очистить                    
           .dropdown__button-apply Применить

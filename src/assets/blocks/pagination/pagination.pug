@@ -1,9 +1,10 @@
-mixin pagination(obj = {})   
+mixin pagination(options = {})   
   - 
     var {
       description = "1 - 12 из 100+ вариантов аренды",
       pages = [1, 2, 3, "...", 15],
-      } = obj;
+    } = options;
+      
   .pagination
     ul.pagination__list
       li.pagination__li.pagination__li_selected

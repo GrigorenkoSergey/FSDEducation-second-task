@@ -2,7 +2,8 @@ extends ../../../assets/blocks/template/template_website.pug
 
 block includes
   include ../../../assets/blocks/filter-date/filter-date.pug
-  include ../../../assets/blocks/dropdown/dropdown.pug
+  include ../../../assets/blocks/dropdown-guests/dropdown-guests.pug
+  include ../../../assets/blocks/dropdown-rooms/dropdown-rooms.pug
   include ../../../assets/blocks/range-slider/range-slider.pug
   include ../../../assets/blocks/rich-checkbox/rich-checkbox.pug
   include ../../../assets/blocks/expandable-checkbox-list/expandable-checkbox-list.pug
@@ -13,18 +14,6 @@ block includes
 block variables
   - 
     var titleName = "Search room";
-    var dropdown = Object.assign({}, dropdownGuests);
-    dropdown.content.title = "Гости";
-    dropdown.content.input = "3 гостя, 1 младенец"
-    dropdown.content.counters = {
-      adults_num: 3,
-      kids_num: 0,
-      babies_num: 1
-    }
-
-    var amenities = checkboxList;
-    var amenitiesExtra = Object.assign({}, expandableList);
-    amenitiesExtra.title = "Дополнительные удобства";
 
     var previews = [
       {
@@ -143,21 +132,20 @@ block content
       .description__filter-date
         +filter-date({title: "Даты пребывания в отеле"})
       .description__dropdown
-        +dropdown(dropdownGuests)
+        +dropdown-guests({counters: [3, 0, 1]})
       .description__range-slider
         +range-slider({title: "Диапазон цены"})
         p Стоимость за сутки пребывания в номере
       .description__checkboxes
-        +checkbox-buttons(amenities)
+        +checkbox-buttons()
       .description__rich-checkbox-buttons
         .rich-checkbox__title  Доступность 
         +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
         +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
       .description__dropdown-rooms
-        - dropdownRooms.content.title = "Удобства номера";
-        +dropdown(dropdownRooms)
+        +dropdown-rooms({title: "Удобства номера"})
       .description__checkbox-buttons
-        +expandable-checkbox-list(amenitiesExtra)
+        +expandable-checkbox-list({title: "Дополнительные удобства"})
 
     .rooms-list 
       .rooms-list__title

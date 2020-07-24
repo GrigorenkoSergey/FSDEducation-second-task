@@ -1,0 +1,33 @@
+include ../dropdown/dropdown.pug
+
+mixin dropdown-rooms(options = {})
+  - 
+    var {
+      name =  "rooms", 
+      title = "dropdown",
+      items = [
+        {
+          name: "bedrooms",
+          text: "Спальни",
+          counter: 2,
+        },
+        {
+          name: "beds",
+          text: "Кровати",
+          counter: 2,
+        },
+        {
+          name: "bathrooms",
+          text: "Ванные комнаты",
+          counter: 0,
+        },
+      ],
+      //-  counters либо задать, либо вычислится само в dropdown
+      counters,
+
+      //- покажем кнопки "Очистить" и "применить"?
+      showButtons =  false,
+      expanded = false,
+    } = options;
+
+  +dropdown({name, title, input, items, counters, showButtons, showReset, expanded})

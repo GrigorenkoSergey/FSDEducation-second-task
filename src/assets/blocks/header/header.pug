@@ -1,20 +1,26 @@
 include ../button/button.pug
-- 
-  var nav = [
-    {title: "О нас", href: "#", currentPage: true},
-    {title: "Услуги", href: "#", innerUl: [
-      "service_1", "service_2", "service_3"
-    ]},
-    {title: "Вакансии", href: "#"},
-    {title: "Новости", href: "#"},
-    {title: "Соглашения", href: "#", innerUl: []},
-  ];
-  nav.buttons = {
-    login: {title: "Войти"},
-    register: {title: "Зарегистрироваться"},
-  };
 
-mixin header(nav, logged)
+mixin header(options = {})
+  - 
+    var {
+      nav = [
+        {title: "О нас", href: "#", currentPage: true},
+        {title: "Услуги", href: "#", innerUl: [
+          "service_1", "service_2", "service_3"
+        ]},
+        {title: "Вакансии", href: "#"},
+        {title: "Новости", href: "#"},
+        {title: "Соглашения", href: "#", innerUl: []},
+      ],
+
+      buttons = {
+        login: {title: "Войти"},
+        register: {title: "Зарегистрироваться"},
+      },
+
+      logged = false,
+    } = options;
+
   .header
     a.header__logo(href="#")
       img(src="assets/blocks/header/images/logo-toxin.png")
@@ -33,6 +39,6 @@ mixin header(nav, logged)
     else 
       .header__buttons
         .header__button-enter
-          +button({text: nav.buttons.login.title, mod: {color: "white", theme: "slim"}})
+          +button({text: buttons.login.title, mod: {color: "white", theme: "slim"}})
         .header__button-register
-          +button({text: nav.buttons.register.title, mod: {theme: "slim"}})
+          +button({text: buttons.register.title, mod: {theme: "slim"}})
