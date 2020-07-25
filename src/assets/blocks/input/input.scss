@@ -1,23 +1,3 @@
-$inputWidth: 320px;
-
-::-webkit-input-placeholder {
-  color: $dark_25;
-}
-
-::-moz-placeholder {
-  color: $dark_25;
-}
-
-/* Firefox 19+ */
-:-moz-placeholder {
-  color: $dark_25;
-}
-
-/* Firefox 18- */
-:-ms-input-placeholder {
-  color: $dark_25;
-}
-
 .input {
   width: 100%;
   padding: 9px 14px;
