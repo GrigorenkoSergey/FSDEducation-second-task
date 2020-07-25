@@ -32,18 +32,18 @@
 |   ├── favicons
 |   |
 |   └── pages
-|   |   ├── UI_Kit
+|   |   ├── UI-Kit
 |   |   |   ├── cards
-|   |   |   |── colors_and_type
-|   |   |   ├── form_elements
-|   |   |   └── headers_and_footers
+|   |   |   |── colors-and-type
+|   |   |   ├── form-elements
+|   |   |   └── headers-and-footers
 |   |   | 
-|   |   └── Website_pages
-|   |       ├── landing_page
+|   |   └── Website-pages
+|   |       ├── landing-page
 |   |       ├── registration
-|   |       ├── room_details
-|   |       ├── search_room
-|   |       └── sign_in
+|   |       ├── room-details
+|   |       ├── search-room
+|   |       └── sign-in
 |   |
 |   ├── index.js
 |   ├── index.pug
@@ -61,10 +61,10 @@
 каждого блока.  
 Картинки, которые относятся не к блоку, а к непосредственно сайту, будем складывать в 
 папку  
-***src/assets/images/(UI_Kit)|(Website_pages)/some_page/image.png***.  
+***src/assets/images/(UI-Kit)|(Website-pages)/some_page/image.png***.  
 Связано это с настройками (точнее с их отсутствием) ***file-loader*** моего webpack.
 Все пути к файлам картинок, шрифтов, т.е. те, что содержат ***url()*** мы подключаем одним из двух 
 возможных способов:  
 `url("assets/blocks/[block_name]/images/[image_name].[ext]` для картинок блоков,  
-`url("assets/images/[UI_Kit | Website_pages]/[page_name]/[image_name].[ext]`).  
+`url("assets/images/[UI-Kit | Website-pages]/[page_name]/[image_name].[ext]`).  
 Некоторые принципы, которых я придерживался в проекте при создании блоков, я записал в раздел *src/assets/blocks/readme*.

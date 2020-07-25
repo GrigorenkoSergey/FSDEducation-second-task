@@ -1,4 +1,4 @@
-import './search_room.scss';
+import './search-room.scss';
 import '../../../assets/blocks/dropdown/dropdown.js';
 import '../../../assets/blocks/range-slider/range-slider.js';
 import '../../../assets/blocks/preview/preview.js';

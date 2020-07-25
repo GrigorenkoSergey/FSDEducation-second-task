@@ -11,18 +11,18 @@ const PATHS = {
   src: path.join(__dirname, './src'),
   dist: path.join(__dirname, './dist'),
   favicons: path.join(__dirname, './src/favicons'),
-  pages: path.join(__dirname, './src/pages'), // ?
+  pages: path.join(__dirname, './src/pages'),
 };
 
 const entries = {
   index: `${PATHS.src}`,
 };
 
-const UI_PAGES = fs.readdirSync(`${PATHS.pages}/UI_Kit/`);
-UI_PAGES.forEach((item) => entries[item] = `${PATHS.pages}/UI_Kit/${item}/${item}`);
+const UI_PAGES = fs.readdirSync(`${PATHS.pages}/UI-Kit/`);
+UI_PAGES.forEach((item) => entries[item] = `${PATHS.pages}/UI-Kit/${item}/${item}`);
 
-const websitePages = fs.readdirSync(`${PATHS.src}/pages/Website_pages/`);
-websitePages.forEach((item) => entries[item] = `${PATHS.pages}/Website_pages/${item}/${item}`);
+const websitePages = fs.readdirSync(`${PATHS.src}/pages/Website-pages/`);
+websitePages.forEach((item) => entries[item] = `${PATHS.pages}/Website-pages/${item}/${item}`);
 
 module.exports = {
   entry: entries,
@@ -111,15 +111,15 @@ module.exports = {
       filename: './index.html',
       chunks: ['index'],
     }),
-    // ?
+
     ...UI_PAGES.map((page) => new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/UI_Kit/${page}/${page}.pug`,
+      template: `${PATHS.src}/pages/UI-Kit/${page}/${page}.pug`,
       filename: `./${page}.html`,
       chunks: [`${page}`],
     })),
 
     ...websitePages.map((page) => new HtmlWebpackPlugin({
-      template: `${PATHS.src}/pages/Website_pages/${page}/${page}.pug`,
+      template: `${PATHS.src}/pages/Website-pages/${page}/${page}.pug`,
       filename: `./${page}.html`,
       chunks: [`${page}`],
     })),

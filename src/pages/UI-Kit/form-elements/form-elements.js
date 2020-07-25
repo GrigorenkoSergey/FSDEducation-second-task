@@ -1,4 +1,4 @@
-import './form_elements.scss';
+import './form-elements.scss';
 // import dateDropdown from '../../../assets/blocks/date-dropdown/date-dropdown.js';
 import { departures } from '../../../assets/blocks/date-dropdown/date-dropdown.js';
 import '../../../assets/blocks/dropdown/dropdown.js';

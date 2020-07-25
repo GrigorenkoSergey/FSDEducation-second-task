@@ -1,4 +1,4 @@
-import './room_details.scss';
+import './room-details.scss';
 // import dateDropdowns from '../../../assets/blocks/date-dropdown/date-dropdown.js';
 import { arrivals, departures } from '../../../assets/blocks/date-dropdown/date-dropdown.js';
 import '../../../assets/blocks/dropdown/dropdown.js';
