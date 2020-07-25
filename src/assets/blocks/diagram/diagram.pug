@@ -1,11 +1,20 @@
 //- Объект votes предположительно получим с сервера, описан в diagram.js
-mixin diagram()
+mixin diagram(options = {})
+  -
+    const {
+      voices = "голосов",
+      magnificently = "Великолепно",
+      good = "Хорошо",
+      satisfactory = "Удовлетворительно",
+      disapointed = "Разочарован",
+    } = options;
+
   .diagram
     canvas.diagram__canvas(width="120px" height="120px")
-    span.diagram__total 200
-    span.diagram__voices голосов
+    span.diagram__total
+    span.diagram__voices #{voices}
     ul.diagram__description
-      li.diagram__magnificently Великолепно  
-      li.diagram__good Хорошо
-      li.diagram__satisfactory Удовлетворительно
-      li.diagram__disapointed Разочарован
+      li.diagram__estimate.diagram__estimate_magnificently #{magnificently}  
+      li.diagram__estimate.diagram__estimate_good #{good} 
+      li.diagram__estimate.diagram__estimate_satisfactory #{satisfactory} 
+      li.diagram__estimate.diagram__estimate_disapointed #{disapointed} 
