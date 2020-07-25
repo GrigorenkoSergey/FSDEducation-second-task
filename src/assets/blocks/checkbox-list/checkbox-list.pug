@@ -2,7 +2,7 @@ include ../checkbox/checkbox.pug
 
 mixin checkbox-list(options = {})
   - 
-    var {
+    const {
       items = [
         {
           name: "no name",
@@ -14,7 +14,7 @@ mixin checkbox-list(options = {})
       expanded = false,
     } = options;
 
-  - var isHidden = expanded !== true;
+  - const isHidden = expanded !== true;
   ul.checkbox-list(hidden= isHidden)
     each elem in items
       li.checkbox-list__li

@@ -1,12 +1,12 @@
 mixin button(options = {})
   -
-    var {
+    const {
       text = "click me",
       mod = {}, 
       attr = {type: "button"}
       } = options;
 
-    var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
+    const summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` button_${key}_${entry}`; 
     }, "button");
 

@@ -1,11 +1,11 @@
 mixin input(options = {})
   -
-    var {
+    const {
       mod = {}, 
       attr = {type: "text"}
     } = options;
 
-    var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
+    const summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` input_${key}_${entry}`; 
     }, "input");
 

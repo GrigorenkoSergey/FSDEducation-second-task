@@ -2,13 +2,11 @@ include ../rate-button/rate-button.pug
 
 mixin preview(options = {})
   - 
-    var {
+    const {
       number = 888,
       type = "Люкс",
       imgSrc = "assets/blocks/preview/images/888.png",
       cost = "9 990",
-      currency = "₽",
-      priceTerm = "сутки",
       stars = 5,
       reviews = 145,
       arrowsHidden = false,

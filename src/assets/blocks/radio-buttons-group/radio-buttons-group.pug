@@ -2,7 +2,7 @@ include ../radio-button/radio-button.pug
 
 mixin radio-buttons-group(options = {})
   - 
-    var {
+    const {
       items = [
         {id: "man", name: "sex", value: "Мужчина", checked: true}, 
         {id: "woman", name: "sex", value: "Женщина", checked: false},                         
@@ -10,5 +10,5 @@ mixin radio-buttons-group(options = {})
     } = options;
   .radio-buttons-group
     each elem in items
-      - let {id, name, value, checked} = elem;
+      - const {id, name, value, checked} = elem;
       +radio-button(id, name, value, checked)

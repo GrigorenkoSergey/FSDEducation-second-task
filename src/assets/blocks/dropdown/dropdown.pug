@@ -1,11 +1,6 @@
-- var MAX_ITEMS_VALUE = 10;
-- var MIN_ITEMS_VALUE = 0;
-//- почему-то const выдает ошибку (has already been declared),
-//- как если бы была общая область видимости с js-файлом.
-
 mixin dropdown(options = {})
   -  
-    var {
+    const {
       name = "Имярек",
       title = "dropdown", 
       input = "Щелкни на плюсе или на минусе...",
@@ -32,8 +27,8 @@ mixin dropdown(options = {})
 
     items.map((elem, i) => elem.counter = counters[i]);
 
-    var inputClass = "";
-    var containerClass = "";
+    let inputClass = "";
+    let containerClass = "";
 
     if (expanded === true) {
       inputClass = "dropdown__input_expanded";
@@ -45,15 +40,13 @@ mixin dropdown(options = {})
     .dropdown__input(class= inputClass) #{input}
     .dropdown__items-container(class= containerClass)
       each elem in items
-        - var {text, counter} = elem;
+        - const {text, counter} = elem;
         .dropdown__item
           span.dropdown__item-name #{text}
           .dropdown__trigger
-            - var disableMinus = counter === MIN_ITEMS_VALUE ? "dropdown__minus_disabled" : "";
-            .dropdown__minus(class= disableMinus) -
+            .dropdown__minus -
             span.dropdown__counter  #{counter} 
-            - var disablePlus = counter === MAX_ITEMS_VALUE ? "dropdown__plus_disabled" : "";
-            .dropdown__plus(class= disablePlus) +
+            .dropdown__plus +
       if (showButtons)
         .dropdown__buttons
           .dropdown__button-reset(hidden= !showReset) Очистить                    

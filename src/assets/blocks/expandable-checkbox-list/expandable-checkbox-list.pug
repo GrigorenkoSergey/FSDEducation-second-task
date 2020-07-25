@@ -2,7 +2,7 @@ include ../checkbox-list/checkbox-list.pug
 
 mixin expandable-checkbox-list(options = {})
   - 
-    var {
+    const {
       title = "expandable checkbox list",
       expanded = false,
 
@@ -55,7 +55,7 @@ mixin expandable-checkbox-list(options = {})
       checked.forEach(itemsIndex => items[itemsIndex].checked = true);
     }
 
-  - var className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
+  - const className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
   .expandable-checkbox-list
     .expandable-checkbox-list__title(class= `${className}`) #{title} 
     +checkbox-list({items, expanded})

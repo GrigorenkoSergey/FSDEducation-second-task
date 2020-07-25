@@ -1,5 +1,5 @@
 mixin rich-checkbox(name, value, description, checked)
-  - let isChecked = checked === "checked";
+  - const isChecked = checked === "checked";
   div.rich-checkbox
     label.rich-checkbox__label 
       input.rich-checkbox__input(type="checkbox" name= name checked= isChecked) 

@@ -1,12 +1,12 @@
 mixin button-payment(options = {})
   - 
-    var {
+    const {
       text = "Оплатить",
       mod = {},
       attr = {type: "submit"},
     } = options;
 
-    var summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
+    const summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
       return str += ` button-payment_${key}_${entry}`; 
     }, "button-payment");
 

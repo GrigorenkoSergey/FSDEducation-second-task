@@ -24,14 +24,14 @@ block includes
 
 block variables
   - 
-    var titleName = 'From Elements';
+    const titleName = 'From Elements';
 
-    var listGag = {
+    const listGag = {
       title: "expandable checkbox list",
       content: {},
     };
 
-    var reviewerMurad = {
+    const reviewerMurad = {
       avatarSrc: "assets/blocks/comment/images/comment-murad.png",
       name: "Мурад Сарафанов",
       term: "5 дней назад", 
@@ -162,14 +162,10 @@ block content
         +pagination
 
       .example-dropdown-guests_new-entry
-        - var counters = [2, 1, 0];
+        - const counters = [2, 1, 0];
         +dropdown-guests({title: "dropdown", expanded: true, counters})
 
       .example-bullet-list
         .example-bullet-list__title
           h3 bullet list
-          - 
-            var bulletListArr = ["Нельзя с питомцами", 
-              "Без вечеринок и мероприятий", 
-              "Время прибытия — после 13:00, а выезд до 12:00"]                     
         +bullet-list()
