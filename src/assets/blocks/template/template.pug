@@ -17,7 +17,7 @@ html(lang="en")
 
 -let imgSrc = "assets/blocks/template/images/"
 
-  body
+  body(class= `${blockName}__body`)
     div.logo 
       img(src=`${imgSrc}Logo.png`)
     block includes

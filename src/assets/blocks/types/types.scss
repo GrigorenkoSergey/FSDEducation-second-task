@@ -1,0 +1,25 @@
+$types-width: 340px;
+
+.types {
+  width: $types-width;
+  position: relative;
+
+  &__title {
+    position: absolute;
+    right: $types-width + 30px;
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: normal;
+    color: $dark_25;
+  }
+
+  &__h2, 
+  &__h3 {
+    margin-top: 50px;
+  }
+
+  &__p {
+    margin-top: 47px;
+    max-width: 310px;
+  }
+}

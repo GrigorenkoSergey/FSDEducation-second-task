@@ -1,0 +1,9 @@
+mixin shades(colors = [{title: "someTitle", class: "someClass", hexCode: "#000000"}])
+    ul.shades
+      each val in colors
+        li.shades__li
+          .shades__rect(class= val.class)
+          .shades__title
+            b #{val.title} 
+            br 
+            span #{val.hexCode}

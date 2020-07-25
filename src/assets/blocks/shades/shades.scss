@@ -1,0 +1,46 @@
+.shades {
+  list-style-type: none;
+  color: $dark_100;
+
+  &__li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__rect {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    background: red;
+  }
+
+  &__title {
+    position: relative;
+    width: 159px;
+    height: 57px;
+    margin-left: 40px;
+
+    font-family: quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 29px;
+  }
+}
+
+$colors: (
+  dark_100: $dark_100,
+  dark_75: $dark_75,
+  dark_50: $dark_50,
+  dark_25: $dark_25,
+  dark_5: $dark_5,
+  purple: $purple,
+  green: $green,
+);
+
+@each $key, $val in $colors {
+  .shades_color_#{$key} {
+    background: $val;
+  }
+}

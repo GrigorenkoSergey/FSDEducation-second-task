@@ -1,15 +1,16 @@
-@import 'src/assets/blocks/template/template.scss';
-@import 'src/assets/blocks/search-form/search-form.scss';
-@import 'src/assets/blocks/final-bill/final-bill.scss';
-@import 'src/assets/blocks/registration/registration.scss';
-@import 'src/assets/blocks/log-in/log-in.scss';
-@import 'src/assets/blocks/preview/preview.scss';
+@import "src/assets/blocks/template/template.scss";
+@import "src/assets/blocks/search-form/search-form.scss";
+@import "src/assets/blocks/final-bill/final-bill.scss";
+@import "src/assets/blocks/registration/registration.scss";
+@import "src/assets/blocks/log-in/log-in.scss";
+@import "src/assets/blocks/preview/preview.scss";
 
-body {
-  background: #f4f4f6;
-  height: 1350px;
-}
 .cards {
+  &__body {
+    background: #f4f4f6;
+    height: 1350px;
+  }
+
   &__search-form {
     position: absolute;
     left: 140px;
