@@ -1,55 +1,13 @@
 extends ../../../assets/blocks/template/template.pug
 
 block includes
-  include ../../../assets/blocks/shades/shades.pug
-  include ../../../assets/blocks/types/types.pug
+  include ../../../assets/blocks/colors-and-type/colors-and-type.pug
 
 block variables
   - 
-    const titleName = 'Colors and types';
-    const blockName = 'colors-and-types';
+    const titleName = 'Colors and type';
+    const blockName = 'colors-and-type';
 
-    const colors = [
-      {
-        title: "Dark Shade 100%",
-        class: "shades_color_dark_100",
-        hexCode: "#1F2041"
-      },
-      {
-        title: "Dark Shade 75%",
-        class: "shades_color_dark_75",
-        hexCode: "#1F2041"
-      },
-      {
-        title: "Dark Shade 50%",
-        class: "shades_color_dark_50",
-        hexCode: "#1F2041"
-      },
-      {
-        title: "Dark Shade 25%",
-        class: "shades_color_dark_25",
-        hexCode: "#1F2041"
-      },
-      {
-        title: "Dark Shade 5%",
-        class: "shades_color_dark_5",
-        hexCode: "#1F2041"
-      },
-      {
-        title: "Purple",
-        class: "shades_color_purple",
-        hexCode: "#BC9CFF"
-      },
-      {
-        title: "Green",
-        class: "shades_color_green",
-        hexCode: "#6FCF97"
-      },
-    ];
 
 block content
-  main
-    .colors-and-type__shades
-      +shades(colors)
-    .colors-and-type__types
-      +types()
+  +colors-and-type()

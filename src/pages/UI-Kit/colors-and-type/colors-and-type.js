@@ -1,1 +1,1 @@
-import './colors-and-type.scss';
+import '../../../assets/blocks/colors-and-type/colors-and-type.js';
