@@ -1,0 +1,16 @@
+include ../../../assets/blocks/header/header.pug
+include ../../../assets/blocks/footer/footer.pug
+include ../../../assets/blocks/copyright/copyright.pug
+include ../../../assets/blocks/footer-creative/footer-creative.pug
+
+
+mixin headers-and-footers(options = {})
+  .nav-bar_standard
+    +header()
+  .nav-bar_logged-in
+    +header({logged: true})
+  .footer-widgets
+    +footer()
+    +copyright({})
+  .footer-creative__wrapper
+    +footer-creative()

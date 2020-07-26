@@ -5,19 +5,9 @@ block variables
     const titleName = "headers-and-footers";
 
 block includes
-  include ../../../assets/blocks/header/header.pug
-  include ../../../assets/blocks/footer/footer.pug
-  include ../../../assets/blocks/copyright/copyright.pug
-  include ../../../assets/blocks/footer-creative/footer-creative.pug
+  include ../../../assets/blocks/headers-and-footers/headers-and-footers.pug
 
 block content
-  .nav-bar_standard
-    +header()
-  .nav-bar_logged-in
-    +header({logged: true})
-  .footer-widgets
-    +footer()
-    +copyright({})
-  .footer-creative__wrapper
-    +footer-creative()
+  main
+    +headers-and-footers()
 

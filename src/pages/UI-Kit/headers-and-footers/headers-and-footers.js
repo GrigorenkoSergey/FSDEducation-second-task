@@ -1,1 +1,1 @@
-import './headers-and-footers.scss';
+import '../../../assets/blocks/headers-and-footers/headers-and-footers.js';
