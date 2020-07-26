@@ -1,9 +1,9 @@
-@import "src/assets/blocks/template/template.scss";
-@import "src/assets/blocks/search-form/search-form.scss";
-@import "src/assets/blocks/final-bill/final-bill.scss";
-@import "src/assets/blocks/registration/registration.scss";
-@import "src/assets/blocks/log-in/log-in.scss";
-@import "src/assets/blocks/preview/preview.scss";
+@import '../template/template.scss';
+@import '../search-form/search-form.scss';
+@import '../final-bill/final-bill.scss';
+@import '../registration/registration.scss';
+@import '../log-in/log-in.scss';
+@import '../preview/preview.scss';
 
 .cards {
   &__body {

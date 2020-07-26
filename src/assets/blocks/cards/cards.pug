@@ -1,0 +1,51 @@
+include ../search-form/search-form.pug
+include ../final-bill/final-bill.pug
+include ../registration/registration.pug
+include ../log-in/log-in.pug
+include ../preview/preview.pug
+
+mixin cards(options = {})
+  -
+    const {
+      finalBillOptions, // возьмем по умолчанию
+
+      dateDropdownOptions = {
+        arrivalTitle: "",
+        arrivalName: "arrival_calendar", 
+        departureTitle: "",
+        departureName: "departure_calendar",
+      },
+
+      preview1,
+
+      preview2 = {
+        number: 840,
+        type: "",
+        imgSrc: "assets/blocks/preview/images/840.png",
+        cost: "9 900",
+        stars: 4,
+        reviews: 65,
+        arrowsHidden: true,
+      }
+
+    } = options;
+
+  .cards__search-form
+    +search-form()
+
+  .cards__final-bill
+    +final-bill(finalBillOptions)
+
+  .cards__calendar
+    +date-dropdown(dateDropdownOptions)
+
+  .cards__registration
+    +registration()
+
+  .cards__log-in
+    +log-in()
+
+  .cards__preview-1
+    +preview(preview1)
+  .cards__preview-2
+    +preview(preview2)

@@ -8,7 +8,8 @@ mixin preview(options = {})
       imgSrc = "assets/blocks/preview/images/888.png",
       cost = "9 990",
       stars = 5,
-      reviews = 145,
+      reviewsNum = 145,
+      reviewWord = "Отзывов",
       arrowsHidden = false,
       currency = "₽",
       priceTerm = "сутки",
@@ -33,4 +34,5 @@ mixin preview(options = {})
       .preview__stars
         +rate-button(stars)
         .reviews
-          <b>#{reviews}</b> Отзывов
+          b #{reviewsNum}
+          span #{` ${reviewWord}`} 
