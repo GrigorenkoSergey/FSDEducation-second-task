@@ -41,13 +41,14 @@ mixin room-details(options = {})
       },
     } = options;
 
-  .photos
-    .photos__img_main-container
-      img.photos__img(src="./assets/images/Website-pages/room-details/image-1.png")
-    .photos__img_alternative-container
-      img.photos__img(src="./assets/images/Website-pages/room-details/image-2.png")
-      img.photos__img(src="./assets/images/Website-pages/room-details/image-3.png")
-  main
+  .room-details__photos
+    .room-details__photos-box
+      img.room-details__photos-img(src="./assets/images/Website-pages/room-details/image-1.png" alt="Изображение комнаты")
+    .room-details__photos-box
+      img.room-details__photos-img(src="./assets/images/Website-pages/room-details/image-2.png" alt="Изображение комнаты")
+      img.room-details__photos-img(src="./assets/images/Website-pages/room-details/image-3.png" alt="Изображение комнаты")
+
+  main.room-details__main
     .column_1
       .room-details__wrapper
         .room-details__buns

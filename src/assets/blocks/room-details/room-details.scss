@@ -1,37 +1,30 @@
-@import '../template/template.scss';
-@import '../buns/buns.scss';
-@import '../comment/comment.scss';
-@import '../final-bill/final-bill.scss';
-@import '../bullet-list/bullet-list.scss';
-@import '../diagram/diagram.scss';
+@import "../template/template.scss";
+@import "../buns/buns.scss";
+@import "../comment/comment.scss";
+@import "../final-bill/final-bill.scss";
+@import "../bullet-list/bullet-list.scss";
+@import "../diagram/diagram.scss";
 
-body {
-  width: 100%;
-  height: auto;
-}
-
-main {
-  padding: 70px 140px 72px 138px;
-  display: flex;
-  border-bottom: 1px solid $dark_25;
-  box-sizing: border-box;
-}
-
-.photos {
-  display: flex;
-  width: 100%;
-
-  &__img_main-container {
-    flex-grow: 2;
-  }
-
-  &__img_alternative-container {
-    flex-grow: 1;
-  }
-  
-  &__img {
-    display: block;
+.room-details {
+  &__body {
     width: 100%;
+    height: auto;
+  }
+
+  &__main {
+    padding: 70px 140px 72px 138px;
+    display: flex;
+    border-bottom: 1px solid $dark_25;
+    box-sizing: border-box;
+  }
+
+  &__photos {
+    display: flex;
+
+    &-img {
+      display: block;
+      width: 100%;
+    }
   }
 }
 
@@ -190,14 +183,14 @@ main {
     justify-content: flex-start;
   }
 
-  .rules_and_cancel, 
+  .rules_and_cancel,
   .room-details__comments {
     padding-right: 0px;
   }
 }
 
 @media (max-width: 400px) {
-  main  {
+  main {
     padding-left: 10px;
     padding-right: 10px;
   }
