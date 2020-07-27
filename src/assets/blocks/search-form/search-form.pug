@@ -2,14 +2,25 @@ include ../date-dropdown/date-dropdown.pug
 include ../dropdown-guests/dropdown-guests.pug
 include ../button-payment/button-payment.pug
 
-mixin search-form()
-  form.form
-    .search-form
-      .search-form__title
-        h1 Найдём номера под ваши пожелания
-      .search-form__date-dropdown
-        +date-dropdown({})
-      .search-form__dropdown
-        +dropdown-guests({title: "Гости"})
-      .search-form__payment
-        +button-payment({text: "Подобрать номер"})
+mixin search-form(options = {})
+  -
+    const {
+      title = "Найдем номера под ваши пожелания",
+      dateDropdownOptions,
+      dropdownGuestsOptions = {
+        title: "Гости",
+      },
+      buttonPaymentOptions = {
+        text: "Подобрать номер",
+      },
+    } = options;
+
+  form.search-form
+    .search-form__title
+      h1 #{title}
+    .search-form__date-dropdown
+      +date-dropdown(dateDropdownOptions)
+    .search-form__dropdown
+      +dropdown-guests(dropdownGuestsOptions)
+    .search-form__payment
+      +button-payment(buttonPaymentOptions)

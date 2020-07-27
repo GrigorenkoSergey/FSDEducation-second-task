@@ -49,8 +49,8 @@ mixin room-details(options = {})
       img.room-details__photos-img(src="./assets/images/Website-pages/room-details/image-3.png" alt="Изображение комнаты")
 
   main.room-details__main
-    .column_1
-      .room-details__wrapper
+    .room-details__column_1
+      .room-details__buns-and-impressions
         .room-details__buns
           .room-details__title
             h2 Сведения о номере
@@ -68,7 +68,7 @@ mixin room-details(options = {})
         .room-details__comments-comment
           +comment(reviewerMurad)
           +comment(reviewerPatricia)
-      .rules_and_cancel
+      .room-details__rules_and_cancel
         .room-details__rules
           .room-details__rules-title
             h2 Правила
@@ -80,5 +80,5 @@ mixin room-details(options = {})
             | при отмене не позднее чем за 5 дн. до прибытия
             | вы получите полный возврат за вычетом сбора за услуги.
 
-    .column_2
+    .room-details__column_2
       +final-bill()

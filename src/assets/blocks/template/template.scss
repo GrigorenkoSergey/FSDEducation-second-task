@@ -261,7 +261,7 @@ select {
   font: inherit;
 }
 
-.form {
+form {
   width: 380px;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -279,7 +279,7 @@ select {
 }
 
 @media (max-width: 360px) {
-  .form {
+  form {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
