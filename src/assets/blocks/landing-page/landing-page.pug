@@ -1,0 +1,12 @@
+include ../search-form/search-form.pug
+
+mixin landing-page(options = {})
+  -
+    const {
+      sloganText = "Лучшие номера для вашей работы, отдыха и просто вдохновения",
+    } = options;
+
+  +search-form()
+  .slogan 
+    .slogan__p 
+      p #{sloganText}

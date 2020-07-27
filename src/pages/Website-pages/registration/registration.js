@@ -1,1 +1,1 @@
-import './registration.scss';
+import '../../../assets/blocks/registration/registration.js';

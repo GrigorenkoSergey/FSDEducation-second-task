@@ -1,8 +1,23 @@
+@import '../template/template.scss';
 @import '../input/input.scss';
 @import '../radio-buttons-group/radio-buttons-group.scss';
 @import '../toggler/toggler.scss';
 @import '../button/button.scss';
 @import '../button-payment/button-payment.scss';
+
+body {
+  background: url('assets/images/Website-pages/registration/registration-page.png') no-repeat;
+  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 26px;
+}
 
 .registration {
   &__name-field {

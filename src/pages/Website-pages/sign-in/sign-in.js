@@ -1,1 +1,1 @@
-import './sign-in.scss';
+import '../../../assets/blocks/sign-in/sign-in.js';

@@ -1,2 +1,1 @@
-import './landing-page.scss';
-import '../../../assets/blocks/search-form/search-form.js';
+import '../../../assets/blocks/landing-page/landing-page.js';

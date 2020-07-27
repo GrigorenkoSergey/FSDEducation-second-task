@@ -1,10 +1,10 @@
 extends ../../../assets/blocks/template/template_website.pug
 
 block includes
-  include ../../../assets/blocks/log-in/log-in.pug
+  include ../../../assets/blocks/sign-in/sign-in.pug
 
 block variables
   - const titleName = "Sing in";
+  
 block content
-  main
-    +log-in()
+  +sign-in()
