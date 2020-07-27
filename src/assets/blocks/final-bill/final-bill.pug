@@ -9,9 +9,14 @@ mixin final-bill(description = {})
       roomClass = "Люкс",
       priceValue = "9 990",
       priceTerm = ["сутки", "суток"],
-      dropdownTitle = "Гости",
-      dropdownInput = "3 гостя",
-      dropdownContentAdult = "3",
+      dateDropdownOptions = {
+        arrivalName: "arrival_final-bill", 
+        departureName: "departure_final-bill",
+      }, 
+      dropdownGuestsOptions = {counters: [2, 1, 0]},
+      buttonPaymentOptions = {
+        text: "Забронировать",
+      },
       term = "4",
       currency = "₽",
       fullRate = "39 960",
@@ -23,33 +28,32 @@ mixin final-bill(description = {})
       totalPrice = "38 081",
     } = description
 
-  form.form
-    .final-bill
-      .final-bill__title
-        span.final-bill__number #{roomNumber}
-        span.final-bill__class #{roomClass}
+  form.final-bill
+    .final-bill__title
+      span.final-bill__number #{roomNumber}
+      span.final-bill__class #{roomClass}
 
-      .final-bill__price 
-        span #{priceValue}#{currency}
-        span  в #{priceTerm[0]}
+    .final-bill__price 
+      span #{priceValue}#{currency}
+      span  в #{priceTerm[0]}
 
-      .final-bill__date-dropdown
-        +date-dropdown({arrivalName: "arrival_final-bill", departureName: "departure_final-bill"})
+    .final-bill__date-dropdown
+      +date-dropdown(dateDropdownOptions)
 
-      .final-bill__dropdown
-        +dropdown-guests({counters: [2, 1, 0]})
+    .final-bill__dropdown
+      +dropdown-guests(dropdownGuestsOptions)
 
-      .final-bill__calculation
-        span.final-bill__primary #{priceValue}#{currency} x #{term} !{term === 1 ? priceTerm[0] : priceTerm[1]}
-        span.final-bill__full-rate #{fullRate}#{currency}
-        span.final-bill__discount #{serviceDiscount}#{currency}
-        span.final-bill__discount-rate #{discountRate}#{currency}
-        span.final-bill__extra-service #{extraService}
-        span.final-bill__extra-service-price #{extraServicePrice}#{currency}
+    .final-bill__calculation
+      span.final-bill__primary #{priceValue}#{currency} x #{term} !{term === 1 ? priceTerm[0] : priceTerm[1]}
+      span.final-bill__full-rate #{fullRate}#{currency}
+      span.final-bill__discount #{serviceDiscount}#{currency}
+      span.final-bill__discount-rate #{discountRate}#{currency}
+      span.final-bill__extra-service #{extraService}
+      span.final-bill__extra-service-price #{extraServicePrice}#{currency}
 
-      .final-bill__total
-        span.final-bill__total-span #{totalSpanContent}
-        .hr
-        span.final-bill__total-price #{totalPrice}#{currency}
-      .final-bill__button-payment
-        +button-payment({text: "Забронировать"})
+    .final-bill__total
+      span.final-bill__total-span #{totalSpanContent}
+      .hr
+      span.final-bill__total-price #{totalPrice}#{currency}
+    .final-bill__button-payment
+      +button-payment(buttonPaymentOptions)

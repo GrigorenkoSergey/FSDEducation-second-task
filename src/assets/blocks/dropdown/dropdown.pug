@@ -23,6 +23,8 @@ mixin dropdown(options = {})
       showButtons = true,
       showReset = true,
       expanded = false,
+      buttonResetText = "Очистить",
+      buttonApplyText = "Применить",
     } = options;
 
     items.map((elem, i) => elem.counter = counters[i]);
@@ -49,5 +51,5 @@ mixin dropdown(options = {})
             .dropdown__plus +
       if (showButtons)
         .dropdown__buttons
-          .dropdown__button-reset(hidden= !showReset) Очистить                    
-          .dropdown__button-apply Применить
+          .dropdown__button-reset(hidden= !showReset) #{buttonResetText}                   
+          .dropdown__button-apply #{buttonApplyText}

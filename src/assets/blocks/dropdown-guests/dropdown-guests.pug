@@ -25,9 +25,10 @@ mixin dropdown-guests(options = {})
       ],
       //-  counters либо задать, либо вычислится само в dropdown
       counters, 
-
       expanded = false,
+      buttonResetText, 
+      buttonApplyText,
     } = options;
 
-  +dropdown({name, title, input, items, counters, expanded})
+  +dropdown({name, title, input, items, counters, expanded, buttonResetText, buttonApplyText})
 

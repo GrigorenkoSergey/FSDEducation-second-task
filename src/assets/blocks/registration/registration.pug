@@ -4,39 +4,72 @@ include ../toggler/toggler.pug
 include ../button/button.pug
 include ../button-payment/button-payment.pug
 
-mixin registration()
-  form.form(action="")
-    .registration
-      h1 Регистрация аккаунта
-      .registration__name-field
-        +input({attr: {placeholder: "Имя"}})
+mixin registration(options = {})
+  -
+    const {
+      title = "Регистрация аккаунта",
+      inputName = {
+        attr: {placeholder: "Имя"},
+      },
+      inputSurname = {
+        attr: {placeholder: "Фамилия"},
+      },
+      titleBirthday = "Дата рождения",
 
-      .registration__surname-field
-        +input({attr: {placeholder: "Фамилия"}})
+      inputBirthday = {
+        attr: {placeholder: "ДД.ММ.ГГГГ"},
+      },
 
-      .registration__radio-buttons
-        +radio-buttons-group()
+      titleAuthorisation = "Данные для входа в сервис",
+      inputEmail = {
+        attr: {placeholder: "Email"},
+      },
+      inputPassword = {
+        attr: {placeholder: "Пароль"},
+      },
+      toggler = {
+        name: "get_offers",
+        text: "Получать спецпредложения",
+      },
+      buttonPayment = {
+        text: "Перейти к оплате",
+      },
+      accountEnterText = "Уже есть аккаунт на Toxin",
+      buttonAccountEnter = {
+        text: "Войти", 
+        mod: {color: "white", width: "100px"},
+      },
+    } = options;
+  form.registration
+    h1 #{title}
+    .registration__name-field
+      +input(inputName)
 
-      .registration__birthday
-        h3 Дата рождения
-        +input({attr: {placeholder: "ДД.ММ.ГГГГ"}})
+    .registration__surname-field
+      +input(inputSurname)
 
-      .registration__authorization
-        h3 Данные для входа в сервис
-        .registration__email
-          +input({attr: {placeholder: "Email"}})
+    .registration__radio-buttons
+      +radio-buttons-group()
 
-        .registration__password
-          +input({attr: {placeholder: "Пароль"}})
+    .registration__birthday
+      h3 #{titleBirthday}
+      +input(inputBirthday)
 
-        .registration__toggle
-          +toggler("get_offers", "Получать спецпредложения")
+    .registration__authorization
+      h3 #{titleAuthorisation}
+      .registration__email
+        +input(inputEmail)
 
-      .registration__button-payment
-        +button-payment({text: "Перейти к оплате"})
+      .registration__password
+        +input(inputPassword)
 
-      .registration__account-enter
-        span Уже есть аккаунт на Toxin
-        +button({text: "Войти", mod: {color: "white", width: "100px"}})
+      .registration__toggle
+        +toggler(toggler.name, toggler.text)
 
+    .registration__button-payment
+      +button-payment(buttonPayment)
 
+    .registration__account-enter
+      span #{accountEnterText}
+      +button(buttonAccountEnter)
+      

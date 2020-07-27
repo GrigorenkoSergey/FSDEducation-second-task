@@ -2,16 +2,34 @@ include ../input/input.pug
 include ../button/button.pug
 include ../button-payment/button-payment.pug
 
-mixin log-in()
-  form.form
-    .log-in
-      h1 Войти
-      .log-in__email
-        +input({attr: {placeholder: "Email"}})
-      .log-in__password
-        +input({attr: {placeholder:"Пароль"}})
-      .log-in__button-payment
-        +button-payment({text: "Войти"})
-      .log-in__account-create
-        span Нет аккаунта на Toxin?
-        +button({text: "Создать", mod: {color: "white", width: "100px"}})
+mixin log-in(options = {})
+  -
+    const {
+      title = "Войти",
+      inputEmail = {
+        attr: {placeholder: "Email"},
+      },
+      inputPassword = {
+        attr: {placeholder: "Пароль"},
+      },
+      buttonPayment = {
+        text: "Войти",
+      },
+      mainQuestion = "Нет аккаунта на Toxin?",
+      buttonCreateAccount = {
+        text: "Создать",
+        mod: {color: "white", width: "100px"}
+      },
+    } = options;
+
+  form.log-in
+    h1 #{title}
+    .log-in__email
+      +input(inputEmail)
+    .log-in__password
+      +input(inputPassword)
+    .log-in__button-payment
+      +button-payment(buttonPayment)
+    .log-in__account-create
+      span #{mainQuestion}
+      +button(buttonCreateAccount)
