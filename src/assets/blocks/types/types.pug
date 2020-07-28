@@ -1,17 +1,14 @@
-mixin types()
+mixin types(typesList = [{tag: "h1", text: "someText"}])
   .types
-    .types__h1
-      h1.types__title H1
-      h1 This one is the sub-section or widget title
+    each val in typesList
+      -
+        let {tag, text, tagDescr = ""} = val;
 
-    .types__h2
-      h2.types__title H2
-      h2 Next one is the item title inside widgets
+        if (tag === "Body") {
+          tagDescr = tag;
+          tag = "p";
+        } else {
+          tagDescr = tag.toUpperCase();
+        }
 
-    .types__h3
-      h3.types__title H3
-      h3 This is a label or cta text
-
-    .types__p
-      span.types__title Body
-      p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+      div(class= `types__${tag}`)  !{`<${tag} class = "types__title">`}#{`${tagDescr}`} !{`<${tag}>`}#{text}

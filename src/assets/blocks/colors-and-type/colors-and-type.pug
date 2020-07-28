@@ -41,9 +41,27 @@ mixin colors-and-type(options = {})
           hexCode: "#6FCF97"
         },
       ],
+      typesList = [
+        {
+          tag: "h1",
+          text: "This one is the sub-section or widget title",
+        },
+        {
+          tag: "h2",
+          text: "Next one is the item title inside widgets",
+        },
+        {
+          tag: "h3",
+          text: "This is a label or cta text",
+        },
+        {
+          tag: "Body",
+          text: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+        },
+      ],
     } = options;
 
   .colors-and-type__shades
     +shades(colors)
   .colors-and-type__types
-    +types()
+    +types(typesList)
