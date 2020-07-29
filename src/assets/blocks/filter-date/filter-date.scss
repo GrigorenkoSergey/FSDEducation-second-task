@@ -1,13 +1,15 @@
 .filter-date {
-  width: 100%;
-  border: 1px solid $dark_25;
-  border-radius: 4px;
-  padding: 9px 0 9px 14px;
-  color: $dark_75;
-  background: url('assets/blocks/filter-date/images/expand-more.png') no-repeat;
-  background-position: right;
-  appearance: none;
-  cursor: pointer;
+  &__select {
+    width: 100%;
+    border: 1px solid $dark_25;
+    border-radius: 4px;
+    padding: 9px 0 9px 14px;
+    color: $dark_75;
+    background: url("assets/blocks/filter-date/images/expand-more.png") no-repeat;
+    background-position: right;
+    appearance: none;
+    cursor: pointer;
+  }
 
   &:focus,
   &:hover {

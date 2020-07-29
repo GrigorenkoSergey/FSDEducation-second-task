@@ -1,6 +1,7 @@
 include ../../../assets/blocks/input/input.pug
 include ../../../assets/blocks/date-dropdown/date-dropdown.pug
 include ../../../assets/blocks/dropdown/dropdown.pug
+include ../../../assets/blocks/filter-date/filter-date.pug
 include ../../../assets/blocks/dropdown-guests/dropdown-guests.pug
 include ../../../assets/blocks/dropdown-rooms/dropdown-rooms.pug
 include ../../../assets/blocks/expandable-checkbox-list/expandable-checkbox-list.pug
@@ -21,139 +22,274 @@ include ../../../assets/blocks/bullet-list/bullet-list.pug
 
 mixin form-elements(options = {})
   -
-    const reviewerMurad = {
-      avatarSrc: "assets/blocks/comment/images/comment-murad.png",
-      name: "Мурад Сарафанов",
-      term: "5 дней назад", 
-      likeButton: {
-        counter: 12,
-        isPushed: true,
+    const {
+      inputEmail = {
+        h3Text: "text field",
+        spanText: "default",
+        inputOptions: {
+          attr: {placeholder: "Email"},
+        },
       },
-      content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-    };
+      inputHover = {
+        h3Text: "text field",
+        spanText: "hover / focus",
+        inputOptions: {
+          attr: {value: "This is pretty awesome"},
+          mod: {action: "hover"}
+        },
+      },
+      dropdown = {
+        h3Text: "dropdown",
+        spanText: "default",
+        inputOptions: {
+          title: "", 
+          input: "Сколько гостей"
+        }
+      },
+      maskedTextField = {
+        h3Text: "masked text field",
+        spanText: "default",
+        inputOptions: {
+          attr: {type: "date"},
+          mod: {type: "date"},
+        },
+      },
+      dateDropdown = {
+        arrivalTitle: "date dropdown", 
+        departureTitle: "date dropdown"
+      },
+      filterDate,
+      inputSubscribe = {
+        h3Text: "subscription text field",
+        inputOptions: {
+          attr: {
+            type: "email",
+            placeholder: "Email",
+          },
+          mod: {theme: "email"}
+        }
+      },
+      dropdownRooms1 = {
+        h3Text: "Dropdown",
+        spanText: "default",
+        dropdownOptions: {
+          title: "",
+        },
+      },
+      dropdownRooms2 = {
+        h3Text: "Dropdown",
+        spanText: "expanded",
+        dropdownOptions: {
+          title: "",
+          expanded: true,
+        },
+      },
+      expandableCheckboxList1 = {
+        items: [],
+        expanded: false,
+      },
+      expandableCheckboxList2 = {
+        expanded: true,
+      },
+      checkboxButtons,
+      radioButtons = {
+        h3Text: "radio buttons",
+        radioButtonsOptions,
+      },
+      togglers = {
+        h3Text: "toggle",
+        items: [
+          ["get_special_offers_1", "Получать спецпредложения", true],
+          ["get_special_offers_2", "Получать спецпредложения"],
+        ],
+      },
+      likeButtons = {
+        h3Text: "like button",
+        items: [
+          {counter: 2},
+          {counter: 12, isPushed: true}
+        ],
+      },
+      rateButtons = {
+        h3Text: "rate button",
+        stars: [4, 5],
+      },
+      dropdownGuest1 = {
+        title: "dropdown",
+        expanded: true,
+      },
+      richCheckboxButtons = {
+        h3Text: "rich checkbox buttons",
+        items: [
+          ["wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см"],
+          ["disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера"],
+        ],
+      },
+      comments = [
+        {
+          avatarSrc: "assets/blocks/comment/images/comment-murad.png",
+          name: "Мурад Сарафанов",
+          term: "5 дней назад", 
+          likeButton: {
+            counter: 12,
+            isPushed: true,
+          },
+          content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+        },
+      ],
+      buttons = {
+        h3Text: "buttons",
+        items: [
+          {},
+          { mod: {theme: "disabled"} },
+          { mod: {color: "white"} },
+          { mod: {color: "white", theme: "disabled"}, attr: {disabled: true} },
+        ],
+      },   
+      buttonsText = [
+        {}, 
+        { mod: {theme: "disabled"} },
+      ],
+      buttonsPayment = [
+        { text: "перейти к оплате" },
+      ],
+      pagination = {
+        h3Text: "pagination",
+      },
+      dropdownGuest2 = {
+        title: "dropdown",
+        counters: [2, 1, 0],
+        expanded: true,
+      },
+    } = options;
 
-  .first-column
-    .example-input
-      .example-input__title
-        h3 text field
-        span default
-      +input({attr: {placeholder: "Email"}})
+  main.form-elements__main
+    .form-elements__column-1
+      .form-elements__input
+        .form-elements__input-title
+          h3 #{inputEmail.h3Text}
+          span #{inputEmail.spanText}
+        +input(inputEmail.inputOptions)
 
-    .example-input 
-      .example-input__title
-        h3 text field
-        span hover / focus
-      +input({attr: {value: "This is pretty awesome"}, mod: {action: "hover"}})
+      .form-elements__input 
+        .form-elements__input-title
+          h3 #{inputHover.h3Text}
+          span #{inputHover.spanText}
+        +input(inputHover.inputOptions)
 
-    .example-dropdown-default  
-      span.example__modifier default
-      +dropdown({input: "Сколько гостей"})
+      .form-elements__dropdown
+        .form-elements__input-title
+          h3 #{dropdown.h3Text}
+          span #{dropdown.spanText}
+        +dropdown(dropdown.inputOptions)
 
-    .example-masket-text-field
-      .example-input__title
-        h3 masked text field
-        span default
-      +input({attr: {type: "date"}, mod: {type: "date"}})
+      .form-elements__masked-text-field
+        .form-elements__input-title
+          h3 #{maskedTextField.h3Text}
+          span #{maskedTextField.spanText}
+        +input(maskedTextField.inputOptions)
 
-    .example-date-dropdown  
-      +date-dropdown({arrivalTitle: "date dropdown", departureTitle: "date dropdown"})
+      .form-elements__date-dropdown  
+        +date-dropdown(dateDropdown)
 
-    .example-input_filter
-      .example-input__title
-        h3 filter date dropdown
-      select.filter-date.select
-        option(selected) 19 авг - 23 авг  
+      .form-elements__filter
+        +filter-date(filterDate)
 
-    .example-input_email
-      .example-input__title
-        h3 subscription text field
-      +input({attr: {type: "email", placeholder: "Email"}, mod: {theme: "email"}})
+      .form-elements__input-subscribe
+        .form-elements__input-title
+          h3 #{inputSubscribe.h3Text}
+        .form-elements__input-subscribe-input
+        +input(inputSubscribe.inputOptions)
 
-    .example-input_dropdown
-      span.example__modifier default
-      +dropdown-rooms()
+      .form-elements__dropdown-rooms-1
+        .form-elements__input-title
+          h3 #{dropdownRooms1.h3Text}
+          span #{dropdownRooms1.spanText}
+        +dropdown-rooms(dropdownRooms1.dropdownOptions)
 
-    .example-dropdown_expanded
-      span.example__modifier expanded
-      +dropdown-rooms({expanded: true})
+      .form-elements__dropdown-rooms-2
+        .form-elements__input-title
+          h3 #{dropdownRooms2.h3Text}
+          span #{dropdownRooms2.spanText}
+        +dropdown-rooms(dropdownRooms2.dropdownOptions)
 
-    .example__expandable-checkbox-list
-      +expandable-checkbox-list({items: [], expanded: false})
+      .form-elements__expandable-checkbox-list-1
+        +expandable-checkbox-list(expandableCheckboxList1)
 
-    .example__expandable-checkbox-list_expanded
-      +expandable-checkbox-list({expanded: true})
+      .form-elements__expandable-checkbox-list-2
+        +expandable-checkbox-list(expandableCheckboxList2)
 
-    .example-buns
-      +buns()
+      .form-elements__buns
+        +buns()
 
-  .second-column
-    .example-checkbox-buttons
-      +checkbox-buttons()
+    .form-elements__column-2
+      .form-elements__checkbox-buttons
+        +checkbox-buttons(checkboxButtons)
 
-    .example-radio-buttons
-      .example-radio-buttons__title
-        h3 radio buttons
-      +radio-buttons-group()
+      .form-elements__radio-buttons
+        .form-elements__title
+          h3 #{radioButtons.h3Text}
+        +radio-buttons-group(radioButtons.radioButtonsOptions)
 
-    .example-toggle
-      .example-toggle__title
-        h3 toggle
-      +toggler("get_special_offers", "Получать спецпредложения", true) 
-      +toggler("get_special_offers_1", "Получать спецпредложения") 
+      .form-elements__togglers
+        .form-elements__title
+          h3 #{togglers.h3Text}
+        each argsArr in togglers.items
+          .form-elements__toggle
+            +toggler(...argsArr)
 
-    .example-like-buttons
-      .example-like-buttons__title
-        h3 like button
-      .example-like-buttons__container
-        +like-button({counter: 2})
-        +like-button({counter: 12, isPushed: true})
+      .form-elements__like-buttons
+        .form-elements__title
+          h3 #{likeButtons.h3Text}
+        .form-elements__flex-container
+          each val in likeButtons.items
+            +like-button(val)
 
-    .example-rate-buttons
-      .example-rate-buttons__title
-        h3 rate button
-      .example-rate-buttons__container
-        +rate-button(4)
-        +rate-button(5)
+      .form-elements__rate-buttons
+        .form-elements__title
+          h3 #{rateButtons.h3Text}
+        .form-elements__flex-container
+          each val in rateButtons.stars
+            +rate-button(val)
 
-    .example-dropdown-guests
-      +dropdown-guests({title: "dropdown", expanded: true})
+      .form-elements__dropdown-guests
+        +dropdown-guests(dropdownGuest1)
 
-    .example-rich-checkbox-buttons
-      .rich-checkbox__title   rich checkbox buttons
-      +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
-      +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
+      .form-elements__rich-checkbox-buttons
+        .form-elements__title 
+          h3 #{richCheckboxButtons.h3Text}
+        each argsArr in  richCheckboxButtons.items
+          +rich-checkbox(...argsArr)
 
-    .example-comments
-      +comment(reviewerMurad)
+    .form-elements__column-3
+      +range-slider
 
-  .third-column
-    +range-slider
+      .form-elements__buttons-container
+        .form-elements__title 
+          h3 #{buttons.h3Text}
+        .form-elements__buttons
+          each val in buttons.items
+            +button(val)
+        .form-elements__buttons-text
+          each val in buttonsText
+            +button-text(val)
+        .form-elements__button-payment
+          each val in buttonsPayment
+            +button-payment(val)
 
-    .example-button
-      .example-button__title
-        h3 buttons
-      .example-button__container
-        +button()
-        +button({mod: {theme: "disabled"} })
-        +button({mod: {color: "white"} })
-        +button({mod: {color: "white", theme: "disabled"}, attr: {disabled: true} })
-        +button-text()
-        .example-button__button_moved
-          +button-text({mod: {theme: "disabled"}})
+      .form-elements__pagination
+        .form-elements__title 
+          h3 #{pagination.h3Text}
+        +pagination
 
-      .example-button-payment
-        +button-payment({text: "перейти к оплате"})
+      .form-elements__dropdown-guests-2
+        +dropdown-guests(dropdownGuest2)
 
-    .example-pagination
-      .example-pagination__title
-        h3 pagination
-      +pagination
+      .form-elements__bullet-list
+        .form-elements__title
+          h3 bullet list
+        +bullet-list()
 
-    .example-dropdown-guests_new-entry
-      - const counters = [2, 1, 0];
-      +dropdown-guests({title: "dropdown", expanded: true, counters})
-
-    .example-bullet-list
-      .example-bullet-list__title
-        h3 bullet list
-      +bullet-list()
+    .form-elements__comments
+      each val in comments
+        +comment(val)

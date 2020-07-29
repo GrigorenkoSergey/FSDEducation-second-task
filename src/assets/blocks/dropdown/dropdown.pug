@@ -38,7 +38,8 @@ mixin dropdown(options = {})
     }
 
   .dropdown(data-name= name)
-    .dropdown__title #{title}
+    if (title.length !== 0)
+      .dropdown__title #{title}
     .dropdown__input(class= inputClass) #{input}
     .dropdown__items-container(class= containerClass)
       each elem in items

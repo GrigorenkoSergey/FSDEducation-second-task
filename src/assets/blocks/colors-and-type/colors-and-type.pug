@@ -61,7 +61,8 @@ mixin colors-and-type(options = {})
       ],
     } = options;
 
-  .colors-and-type__shades
-    +shades(colors)
-  .colors-and-type__types
-    +types(typesList)
+  main
+    .colors-and-type__shades
+      +shades(colors)
+    .colors-and-type__types
+      +types(typesList)

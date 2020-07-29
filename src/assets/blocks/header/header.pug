@@ -19,6 +19,7 @@ mixin header(options = {})
       },
 
       logged = false,
+      userName = "Юлий Цезарь",
     } = options;
 
   .header
@@ -35,7 +36,7 @@ mixin header(options = {})
                   a.header__a(href="#") !{subVal}
           a.header__a(href=`${val.href}` class= val.currentPage ? "header_current-page" : "") #{val.title}
     if (logged) 
-      .header__user-name Юлий Цезарь
+      .header__user-name #{userName}
     else 
       .header__buttons
         .header__button-enter

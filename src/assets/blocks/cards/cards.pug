@@ -7,17 +7,18 @@ include ../preview/preview.pug
 mixin cards(options = {})
   -
     const {
-      finalBillOptions,
-
+      searchForm,
+      finalBill,
       dateDropdownOptions = {
         arrivalTitle: "",
         arrivalName: "arrival_calendar", 
         departureTitle: "",
         departureName: "departure_calendar",
       },
+      registration,
+      logIn,
 
       preview1,
-
       preview2 = {
         number: 840,
         type: "",
@@ -29,22 +30,23 @@ mixin cards(options = {})
       }
     } = options;
 
-  .cards__search-form
-    +search-form()
+  main
+    .cards__search-form
+      +search-form(searchForm)
 
-  .cards__final-bill
-    +final-bill(finalBillOptions)
+    .cards__final-bill
+      +final-bill(finalBill)
 
-  .cards__calendar
-    +date-dropdown(dateDropdownOptions)
+    .cards__calendar
+      +date-dropdown(dateDropdownOptions)
 
-  .cards__registration
-    +registration()
+    .cards__registration
+      +registration(registration)
 
-  .cards__log-in
-    +log-in()
+    .cards__log-in
+      +log-in(logIn)
 
-  .cards__preview-1
-    +preview(preview1)
-  .cards__preview-2
-    +preview(preview2)
+    .cards__preview-1
+      +preview(preview1)
+    .cards__preview-2
+      +preview(preview2)
