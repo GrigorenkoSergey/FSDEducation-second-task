@@ -9,7 +9,10 @@
   background: $primary-gradient;
   outline: none;
 
-  &_theme_disabled {
+  &_theme_hovered {
+    background: $primary-gradient_05;
+  }
+  &:hover {
     background: $primary-gradient_05;
   }
 

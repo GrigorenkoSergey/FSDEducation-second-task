@@ -91,6 +91,7 @@ mixin form-elements(options = {})
       expandableCheckboxList2 = {
         expanded: true,
       },
+      buns,
       checkboxButtons,
       radioButtons = {
         h3Text: "radio buttons",
@@ -125,6 +126,7 @@ mixin form-elements(options = {})
           ["disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера"],
         ],
       },
+      rangeSlider,
       comments = [
         {
           avatarSrc: "assets/blocks/comment/images/comment-murad.png",
@@ -141,25 +143,30 @@ mixin form-elements(options = {})
         h3Text: "buttons",
         items: [
           {},
-          { mod: {theme: "disabled"} },
+          { mod: {theme: "hovered"} },
           { mod: {color: "white"} },
-          { mod: {color: "white", theme: "disabled"}, attr: {disabled: true} },
+          { mod: {color: "white", theme: "hovered"}, attr: {disabled: true} },
         ],
       },   
       buttonsText = [
         {}, 
-        { mod: {theme: "disabled"} },
+        { mod: {theme: "hovered"} },
       ],
       buttonsPayment = [
         { text: "перейти к оплате" },
       ],
       pagination = {
         h3Text: "pagination",
+        options: {},
       },
       dropdownGuest2 = {
         title: "dropdown",
         counters: [2, 1, 0],
         expanded: true,
+      },
+      bulletList = {
+        h3Text: "bullet list",
+        options: {},
       },
     } = options;
 
@@ -220,7 +227,7 @@ mixin form-elements(options = {})
         +expandable-checkbox-list(expandableCheckboxList2)
 
       .form-elements__buns
-        +buns()
+        +buns(buns)
 
     .form-elements__column-2
       .form-elements__checkbox-buttons
@@ -262,7 +269,7 @@ mixin form-elements(options = {})
           +rich-checkbox(...argsArr)
 
     .form-elements__column-3
-      +range-slider
+      +range-slider(rangeSlider)
 
       .form-elements__buttons-container
         .form-elements__title 
@@ -280,15 +287,15 @@ mixin form-elements(options = {})
       .form-elements__pagination
         .form-elements__title 
           h3 #{pagination.h3Text}
-        +pagination
+        +pagination(pagination.options)
 
       .form-elements__dropdown-guests-2
         +dropdown-guests(dropdownGuest2)
 
       .form-elements__bullet-list
         .form-elements__title
-          h3 bullet list
-        +bullet-list()
+          h3 #{bulletList.h3Text}
+        +bullet-list(bulletList.options)
 
     .form-elements__comments
       each val in comments

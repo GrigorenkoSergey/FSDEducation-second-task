@@ -5,7 +5,11 @@
   background: none;
   outline: none;
 
-  &_theme_disabled {
+  &_theme_hovered {
+    color: $dark_50;
+  }
+
+  &:hover {
     color: $dark_50;
   }
 }
