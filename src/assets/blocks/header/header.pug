@@ -12,10 +12,13 @@ mixin header(options = {})
         {title: "Новости", href: "#"},
         {title: "Соглашения", href: "#", innerUl: []},
       ],
-
-      buttons = {
-        login: {title: "Войти"},
-        register: {title: "Зарегистрироваться"},
+      buttonLogin = {
+        text: "Войти",
+        mod: {color: "white", theme: "slim"}
+      },
+      buttonRegister = {
+        text: "Зарегистрироваться",
+        mod: {theme: "slim"}
       },
 
       logged = false,
@@ -40,6 +43,6 @@ mixin header(options = {})
     else 
       .header__buttons
         .header__button-enter
-          +button({text: buttons.login.title, mod: {color: "white", theme: "slim"}})
+          +button(buttonLogin)
         .header__button-register
-          +button({text: buttons.register.title, mod: {theme: "slim"}})
+          +button(buttonRegister)

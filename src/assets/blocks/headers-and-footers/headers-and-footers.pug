@@ -5,12 +5,22 @@ include ../../../assets/blocks/footer-creative/footer-creative.pug
 
 
 mixin headers-and-footers(options = {})
-  .nav-bar_standard
-    +header()
-  .nav-bar_logged-in
-    +header({logged: true})
-  .footer-widgets
-    +footer()
-    +copyright({})
-  .footer-creative__wrapper
-    +footer-creative()
+  -
+    const {
+      headerStandard,
+      headerLoggedIn = {
+        logged: true,
+      },
+      footer,
+      copyright,
+      footerCreative,
+    } = options;
+  main.headers-and-footers__main
+    +header(headerStandard)
+    .headers-and-footers__component
+      +header(headerLoggedIn)
+    .headers-and-footers__component
+      +footer(footer)
+      +copyright(copyright)
+    .headers-and-footers__component
+      +footer-creative(footerCreative)

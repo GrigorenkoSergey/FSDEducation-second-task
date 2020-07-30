@@ -1,8 +1,17 @@
 include ../social-networks/social-networks.pug
 
-mixin footer-creative(copyrightText = "Copyright &#169 2018 Toxin отель. Все права зачищены.")
+mixin footer-creative(options = {})
+  -
+    const {
+      copyrightText = "Copyright &#169 2018 Toxin отель. Все права зачищены.",
+      img = {
+        src: "assets/blocks/footer-creative/images/logo-toxin.png",
+        width: "106px",
+        height: "40px",
+      },
+    } = options;
   .footer-creative
-    img.footer-creative__logo(width="106px" height="40px" src="assets/blocks/footer-creative/images/logo-toxin.png")
+    img.footer-creative__logo(width= img.width height= img.height src= img.src)
     span.footer-creative__span #{copyrightText}
     +social-networks()
 

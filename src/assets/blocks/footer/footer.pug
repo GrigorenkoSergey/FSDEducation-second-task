@@ -4,6 +4,11 @@ include ../list/list.pug
 mixin footer(options = {})
   - 
     const {
+      img = {
+        height: "40px",
+        alt: "Логотип",
+        src: "assets/blocks/footer/images/logo-toxin.png",
+      },
       description = `Бронирование номеров в лучшем отеле
         2019 года по версии ассоциации
         «Отельные взгляды»`,
@@ -23,13 +28,21 @@ mixin footer(options = {})
         title: "Подписка",
         text: `Получайте специальные предложения
           и новости сервиса`,
-        placeholder: "Email",
+        inputOptions: {
+          attr: {
+            type: "Email",
+            placeholder: "Email",
+          },
+          mod: {
+            theme: "email",
+          },
+        },
       },
     } = options;
 
   .footer
     .footer__logo
-      img.footer__logo-img(src="assets/blocks/footer/images/logo-toxin.png" height= "40px")
+      img.footer__logo-img(alt = img.alt src= img.src height= img.height)
       .footer__logo-description #{description}
     .footer__navigation
       +list(navigation)
@@ -39,8 +52,8 @@ mixin footer(options = {})
       +list(support)
 
     .footer__subscribe
-      - const {title, text, placeholder} = subscribe;
+      - const {title, text, inputOptions} = subscribe;
       .footer__subscribe-title #{title}
       .footer__subscribe-description #{text}
       .footer__subscribe-email
-        +input({attr: {type: "email", placeholder}, mod: {theme: "email"}})
+        +input(inputOptions)
