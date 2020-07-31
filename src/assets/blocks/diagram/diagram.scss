@@ -1,42 +1,48 @@
 .diagram {
-  width: 120px;
   height: 120px;
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+
   color: $purple;
   font-weight: bold;
 
+  &__figure {
+    display: flex;
+    width: 120px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+  &__canvas { // не переименовывать, связан с селекторм js
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   &__total {
-    margin-top: 35px;
     font-family: $titleFont-family;
     font-size: 24px;
     line-height: 30px;
   }
 
-  &__voices {
+  &__voices { // не переименовывать, связан с селектором js
     font-size: 12px;
-    line-height: 15px;
+    line-height: 18px;
     font-family: $bodyFont-family;
     text-transform: uppercase;
   }
 
-  &__canvas {
-    position: absolute;
-  }
-
   &__description {
-    width: 200px;
+    margin-top: 27px;
     color: $dark_75;
     font-weight: normal;
-    position: absolute;
-    left: 150px;
-    top: 27px;
+    flex-shrink: 0;
   }
 
   &__estimate {
-
     &::before {
       content: "";
       display: inline-block;

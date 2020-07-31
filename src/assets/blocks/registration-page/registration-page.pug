@@ -1,4 +1,9 @@
 include ../registration/registration.pug
 
 mixin registration-page(options = {})
-  +registration()
+  -
+    const {
+      registration,
+    } = options;
+  main
+    +registration(registration)

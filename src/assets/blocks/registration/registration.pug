@@ -14,6 +14,7 @@ mixin registration(options = {})
       inputSurname = {
         attr: {placeholder: "Фамилия"},
       },
+      radioButtonsGroup,
       titleBirthday = "Дата рождения",
 
       inputBirthday = {
@@ -49,7 +50,7 @@ mixin registration(options = {})
       +input(inputSurname)
 
     .registration__radio-buttons
-      +radio-buttons-group()
+      +radio-buttons-group(radioButtonsGroup)
 
     .registration__birthday
       h3 #{titleBirthday}

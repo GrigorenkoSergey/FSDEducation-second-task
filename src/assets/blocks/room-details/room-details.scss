@@ -6,11 +6,6 @@
 @import "../diagram/diagram.scss";
 
 .room-details {
-  &__body {
-    width: 100%;
-    height: auto;
-  }
-
   &__main {
     padding: 70px 140px 72px 138px;
     display: flex;
@@ -27,18 +22,20 @@
     }
   }
 
-  &__column_1 {
+  &__column-1 {
     flex-grow: 2;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  &__column_2 {
+  &__column-2 {
     flex-grow: 1;
   }
 
   &__buns-and-impressions {
+    display: flex;
+    width: 100%;
     margin-left: 2px;
   }
 
@@ -47,7 +44,7 @@
   }
 
   &__diagram {
-    width: 350px;
+    max-width: 350px;
   }
 
   &__buns {
@@ -64,11 +61,14 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      color: $dark_50;
+    }
+
+    &-comment {
+      margin-top: 20px;
     }
   }
 
-  &__rules_and_cancel {
+  &__rules-and-cancel {
     display: flex;
     width: 100%;
     margin-top: 35px;
@@ -100,99 +100,149 @@
   }
 
   &__impressions {
-    margin-left: 81px;
-  }
-
-}
-
-.comment {
-  margin-top: 20px;
-}
-
-.comment:first-child {
-  margin-bottom: 21px;
-}
-
-.room-details__buns-and-impressions {
-  display: flex;
-  width: 100%;
-}
-
-.buns__item:last-child {
-  border-bottom: none;
-}
-
-.bullet-list__li:last-child {
-  margin-bottom: 0;
-}
-/*
-@media (max-width: 1210px) {
-  main {
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 312px;
+    margin-left: 60px;
+    margin-right: 60px;
   }
 }
 
-@media (max-width: 1080px) {
-  main {
-    flex-wrap: wrap;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
+@media (max-width: 1280px) {
+  .room-details {
+    &__main {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
 
-  .column_1,
-  .column_2 {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .column_2 {
-    margin-top: 40px;
-    justify-content: center;
-  }
-
-  .room-details__buns-and-impressions {
-    justify-content: space-between;
-  }
-
-  .room-details__impressions {
-    margin-left: 0;
+    &__impressions {
+      margin-left: auto;
+    }
   }
 }
 
-@media (max-width: 700px) {
-  main {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0;
-  }
+@media (max-width: 1024px) {
+  .room-details {
+    &__main {
+      flex-wrap: wrap;
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-top: 30px;
+    }
 
-  .room-details__title {
-    margin-top: 20px;
+    &__column-1,
+    &__column-2 {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    &__column-2 {
+      margin-top: 40px;
+      justify-content: center;
+    }
+
+    &__rules-and-cancel {
+      padding-right: 0;
+    }
+
+    &__buns-and-impressions {
+      justify-content: space-between;
+    }
+
+    &__impressions {
+      margin-left: 0;
+    }
   }
 }
 
-@media (max-width: 600px) {
-  main {
-    padding-bottom: 30px;
-  }
-
-  .room-details__buns-and-impressions {
-    flex-wrap: wrap-reverse;
-    justify-content: flex-start;
-  }
-
-  .rules_and_cancel,
-  .room-details__comments {
-    padding-right: 0px;
+@media (max-width: 768px) {
+  .room-details {
+    &__impressions {
+      margin-right: 0;
+    }
   }
 }
 
-@media (max-width: 400px) {
-  main {
-    padding-left: 10px;
-    padding-right: 10px;
+@media (max-width: 640px) {
+  .room-details {
+    &__main {
+      padding-bottom: 30px;
+    }
+
+    &__buns-and-impressions {
+      flex-wrap: wrap-reverse;
+      justify-content: flex-start;
+    }
+
+    &__rules_and_cancel,
+    &__comments {
+      padding-right: 0px;
+    }
+
+    &__rules {
+      padding-right: 10px;
+    }
+
+    &__buns {
+      margin-top: 30px;
+    }
   }
 }
-*/
+
+@media (max-width: 480px) {
+  .room-details {
+    &__comments-title {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .room-details {
+    &__main {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &__buns-and-impressions {
+      margin-left: 0;
+    }
+    &__column-1,
+    &__column-2 {
+      justify-content: center;
+    }
+
+    &__rules-and-cancel {
+      flex-direction: column;
+    }
+
+    &__rules,
+    &__cancel {
+      width: 100%;
+
+      &-title {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .room-details {
+    &__main {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &__column-1 {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    &__column-2 {
+      width: 100%;
+    }
+
+    &__impression {
+      width: 100%;
+    }
+  }
+}

@@ -2,6 +2,8 @@
 mixin diagram(options = {})
   -
     const {
+      width = "120px",
+      height = "120px",
       voices = "голосов",
       magnificently = "Великолепно",
       good = "Хорошо",
@@ -10,9 +12,10 @@ mixin diagram(options = {})
     } = options;
 
   .diagram
-    canvas.diagram__canvas(width="120px" height="120px")
-    span.diagram__total
-    span.diagram__voices #{voices}
+    .diagram__figure
+      canvas.diagram__canvas(width= width height= height)
+      span.diagram__total
+      span.diagram__voices #{voices}
     ul.diagram__description
       li.diagram__estimate.diagram__estimate_magnificently #{magnificently}  
       li.diagram__estimate.diagram__estimate_good #{good} 

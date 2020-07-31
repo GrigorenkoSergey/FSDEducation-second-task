@@ -1,5 +1,10 @@
 include ../../../assets/blocks/log-in/log-in.pug
 
 mixin sign-in(options = {})
+  -
+    const {
+      logIn,
+    } = options;
+
   main
-    +log-in()
+    +log-in(logIn)
