@@ -2,11 +2,6 @@
   position: relative;
   user-select: none;
 
-  &__title {
-    margin-bottom: 14px;
-    @extend h3;
-  }
-
   &__label {
     display: inline-block;
     margin-bottom: 3px;

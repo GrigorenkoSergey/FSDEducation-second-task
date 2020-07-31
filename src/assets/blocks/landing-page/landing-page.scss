@@ -1,8 +1,8 @@
-@import '../template/template.scss';
-@import '../search-form/search-form.scss';
+@import "../template/template.scss";
+@import "../search-form/search-form.scss";
 
 body {
-  background: url('assets/images/Website-pages/landing-page/landing-page.png') no-repeat;
+  background: url("assets/images/Website-pages/landing-page/landing-page.png") no-repeat;
   width: 100%;
   height: auto;
 }
@@ -15,17 +15,19 @@ main {
   align-items: flex-start;
 }
 
-.slogan {
-  width: 100%;
-  align-self: flex-end;
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 21px;
-  padding-right: 134px;
-  text-align: end;
+.landing-page {
+  &__slogan {
+    width: 100%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 21px;
+    padding-right: 134px;
+    text-align: end;
 
-  &__p {
-    max-width: 297px;
+    &-p {
+      max-width: 297px;
+    }
   }
 }
 

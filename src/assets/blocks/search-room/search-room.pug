@@ -11,142 +11,171 @@ include ../../../assets/blocks/pagination/pagination.pug
 mixin search-room(options = {})
   -
     const {
-      previews = [
-        {
-          number: 888,
-          type: "Люкс",
-          imgSrc: "assets/images/Website-pages/search-room/888.png",
-          cost: "9 990",
-          stars: 5,
-          reviews: 145,
-          arrowsHidden: false,
+      filterDate = {
+        title: "Даты пребывания в отеле",
+      },
+      dropdownGuests = {
+        counters: [3, 0, 1],
+      },
+      rangeSlider = {
+        rangeSliderOptions: {
+          title: "Диапазон цены",
         },
-        {
-          number: 840,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/840.png",
-          cost: "9 900",
-          stars: 4,
-          reviews: 65,
-          arrowsHidden: true,
-        },
-        {
-          number: 980,
-          type: "Люкс",
-          imgSrc: "assets/images/Website-pages/search-room/980.png",
-          cost: "8 500",
-          stars: 3,
-          reviews: 35,
-          arrowsHidden: true,
-        },
-        {
-          number: 856,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/856.png",
-          cost: "7 300",
-          stars: 5,
-          reviews: 19,
-          arrowsHidden: true,
-        },
-        {
-          number: 740,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/740.png",
-          cost: "6 000",
-          stars: 4,
-          reviews: 44,
-          arrowsHidden: true,
-        },
-        {
-          number: 982,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/982.png",
-          cost: "5 800",
-          stars: 3,
-          reviews: 56,
-          arrowsHidden: true,
-        },
-        {
-          number: 678,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/678.png",
-          cost: "5 500",
-          stars: 5,
-          reviews: 45,
-          arrowsHidden: true,
-        },
-        {
-          number: 450,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/450.png",
-          cost: "5 300",
-          stars: 4,
-          reviews: 39,
-          arrowsHidden: true,
-        },
-        {
-          number: 350,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/350.png",
-          cost: "5 000",
-          stars: 3,
-          reviews: 77,
-          arrowsHidden: true,
-        },
-        {
-          number: 666,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/666.png",
-          cost: "5 000",
-          stars: 5,
-          reviews: 25,
-          arrowsHidden: true,
-        },
-        {
-          number: 444,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/444.png",
-          cost: "5 000",
-          stars: 3,
-          reviews: 15,
-          arrowsHidden: true,
-        },
-        {
-          number: 352,
-          type: "",
-          imgSrc: "assets/images/Website-pages/search-room/352.png",
-          cost: "5 000",
-          stars: 3,
-          reviews: 55,
-          arrowsHidden: true,
-        },
-      ]
+        pText: "Стоимость за сутки пребывания в номере",
+      },
+      checkboxButtons,
+      richCheckboxButtons = {
+        title: "Доступность",
+        items: [
+          ["wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см"],
+          ["disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера"],
+        ],
+      },
+      dropdownRooms = {
+        title: "Удобства номера",
+      },
+      expandableCheckboxList = {
+        title: "Дополнительные удобства",
+      },
+      roomsList = {
+        title: "Номера, которые мы для вас подобрали",
+        previews: [
+          {
+            number: 888,
+            type: "Люкс",
+            imgSrc: "assets/images/Website-pages/search-room/888.png",
+            cost: "9 990",
+            stars: 5,
+            reviews: 145,
+            arrowsHidden: false,
+          },
+          {
+            number: 840,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/840.png",
+            cost: "9 900",
+            stars: 4,
+            reviews: 65,
+            arrowsHidden: true,
+          },
+          {
+            number: 980,
+            type: "Люкс",
+            imgSrc: "assets/images/Website-pages/search-room/980.png",
+            cost: "8 500",
+            stars: 3,
+            reviews: 35,
+            arrowsHidden: true,
+          },
+          {
+            number: 856,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/856.png",
+            cost: "7 300",
+            stars: 5,
+            reviews: 19,
+            arrowsHidden: true,
+          },
+          {
+            number: 740,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/740.png",
+            cost: "6 000",
+            stars: 4,
+            reviews: 44,
+            arrowsHidden: true,
+          },
+          {
+            number: 982,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/982.png",
+            cost: "5 800",
+            stars: 3,
+            reviews: 56,
+            arrowsHidden: true,
+          },
+          {
+            number: 678,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/678.png",
+            cost: "5 500",
+            stars: 5,
+            reviews: 45,
+            arrowsHidden: true,
+          },
+          {
+            number: 450,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/450.png",
+            cost: "5 300",
+            stars: 4,
+            reviews: 39,
+            arrowsHidden: true,
+          },
+          {
+            number: 350,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/350.png",
+            cost: "5 000",
+            stars: 3,
+            reviews: 77,
+            arrowsHidden: true,
+          },
+          {
+            number: 666,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/666.png",
+            cost: "5 000",
+            stars: 5,
+            reviews: 25,
+            arrowsHidden: true,
+          },
+          {
+            number: 444,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/444.png",
+            cost: "5 000",
+            stars: 3,
+            reviews: 15,
+            arrowsHidden: true,
+          },
+          {
+            number: 352,
+            type: "",
+            imgSrc: "assets/images/Website-pages/search-room/352.png",
+            cost: "5 000",
+            stars: 3,
+            reviews: 55,
+            arrowsHidden: true,
+          },
+        ],
+      },
+      pagination,
     } = options;
 
-  main
-    .description
-      .description__filter-date
-        +filter-date({title: "Даты пребывания в отеле"})
-      .description__dropdown
-        +dropdown-guests({counters: [3, 0, 1]})
-      .description__range-slider
-        +range-slider({title: "Диапазон цены"})
-        p Стоимость за сутки пребывания в номере
-      .description__checkboxes
-        +checkbox-buttons()
-      .description__rich-checkbox-buttons
-        .rich-checkbox__title  Доступность 
-        +rich-checkbox("wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см")
-        +rich-checkbox("disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера")
-      .description__dropdown-rooms
-        +dropdown-rooms({title: "Удобства номера"})
-      .description__checkbox-buttons
-        +expandable-checkbox-list({title: "Дополнительные удобства"})
+  main.search-room
+    .search-room__description
+      +filter-date(filterDate)
+      .search-room__dropdown
+        +dropdown-guests(dropdownGuests)
+      .search-room__range-slider
+        +range-slider(rangeSlider.rangeSliderOptions)
+        p.search-room__range-slider-p #{rangeSlider.pText}
+      .search-room__checkboxes
+        +checkbox-buttons(checkboxButtons)
+      .search-room__rich-checkbox-buttons
+        h3.search-room__title  #{richCheckboxButtons.title} 
+        each argsArr in richCheckboxButtons.items
+          +rich-checkbox(...argsArr)
+      .search-room__dropdown-room
+        +dropdown-rooms(dropdownRooms)
+      .search-room__checkbox-buttons
+        +expandable-checkbox-list(expandableCheckboxList)
 
-    .rooms-list 
-      .rooms-list__title
-        h1 Номера, которые мы для вас подобрали
-      each val in previews
+    .search-room__rooms-list 
+      .search-room__rooms-list-title
+        h1 #{roomsList.title}
+      each val in roomsList.previews
         +preview(val)
-      .rooms-list__pagination
-        +pagination()
+      .search-room__pagination
+        +pagination(pagination)
