@@ -1,23 +1,26 @@
 .like-button {
-  width: 40px;
+  min-width: 40px;
   height: 20px;
   border: 1px solid $dark_25;
   border-radius: 10px;
-  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  padding-right: 9px;
+
   background: white;
   outline: none;
   color: $dark_25;
   cursor: pointer;
+  position: relative;
 
   &::before {
-    content: '';
-    display: inline-block;
+    content: "";
     width: 20px;
     height: 20px;
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    background: url('assets/blocks/like-button/images/favorite-border.png') center no-repeat;
+    background: url("assets/blocks/like-button/images/favorite-border.png") center center no-repeat;
   }
 
   &_pushed {
@@ -27,9 +30,8 @@
 
     &::after {
       // white background inside
-      content: '';
-      display: inline-block;
-      width: 38px;
+      content: "";
+      width: 100%;
       height: 18px;
       border-radius: 10px;
       position: absolute;
@@ -40,15 +42,12 @@
 
     &::before {
       // pink heart
-      background: url('assets/blocks/like-button/images/favorite.png') center no-repeat;
+      background: url("assets/blocks/like-button/images/favorite.png") center center no-repeat;
       z-index: 1;
     }
   }
 
   &__counter {
-    position: absolute;
-    left: 20px;
-    top: 3px;
     font-size: 10px;
     line-height: 12px;
     z-index: 1;

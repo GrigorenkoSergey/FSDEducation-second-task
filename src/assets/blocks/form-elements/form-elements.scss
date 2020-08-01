@@ -26,9 +26,9 @@
 .form-elements {
   &__main {
     display: grid;
-    height: 1853px - 148px; // оставил, т.к. это просто шаблон для проверки
     padding-top: 123px;
     padding-left: 141px;
+    padding-bottom: 132px;
     z-index: 0;
     grid-template-areas:
       "column-1 column-2 column-3"
@@ -118,6 +118,7 @@
 
   &__buns {
     margin-top: 41px;
+    border-bottom: 1px solid $dark_10;
   }
 
   &__title {
