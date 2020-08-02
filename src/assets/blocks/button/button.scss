@@ -8,6 +8,7 @@
   z-index: 1;
   background: $primary-gradient;
   outline: none;
+  cursor: pointer;
 
   &_theme_hovered {
     background: $primary-gradient_05;

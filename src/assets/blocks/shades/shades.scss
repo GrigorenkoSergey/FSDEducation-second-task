@@ -40,7 +40,7 @@ $colors: (
 );
 
 @each $key, $val in $colors {
-  .shades_color_#{$key} {
+  .shades__rect_color_#{$key} {
     background: $val;
   }
 }
