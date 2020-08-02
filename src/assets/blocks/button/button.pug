@@ -1,6 +1,7 @@
 mixin button(options = {})
   -
     const {
+      link,
       text = "click me",
       mod = {}, 
       attr = {type: "button"},
@@ -10,4 +11,8 @@ mixin button(options = {})
       return str += ` button_${key}_${entry}`; 
     }, "button");
 
-  button(class= summaryClasses)&attributes(attr) #{text}
+  if (link)
+    a(href= link)
+      button(class= summaryClasses)&attributes(attr) #{text}
+  else
+    button(class= summaryClasses)&attributes(attr) #{text}
