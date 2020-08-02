@@ -39,6 +39,7 @@
   &__li {
     list-style: none;
     margin-right: 21px;
+    position: relative;
   }
 
   &__li_current-page {
@@ -71,11 +72,22 @@
   }
 
   &__submenu {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
     position: absolute;
+    z-index: 9999;
+    top: 24px;
+    right: 0;
     color: $dark_50;
     background: white;
     padding: 10px 10px;
-    line-height: 18px; //?
+    line-height: 18px;
+  }
+
+  &__li_submenu:hover > &__submenu {
+    visibility: visible;
+    opacity: 1;
   }
 
   &__user-name {

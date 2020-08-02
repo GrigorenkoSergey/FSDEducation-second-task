@@ -4,13 +4,25 @@ mixin header(options = {})
   - 
     const {
       nav = [
-        {title: "О нас", href: "#", currentPage: true},
-        {title: "Услуги", href: "#", innerUl: [
-          "service_1", "service_2", "service_3"
-        ]},
-        {title: "Вакансии", href: "#"},
-        {title: "Новости", href: "#"},
-        {title: "Соглашения", href: "#", innerUl: ["item-1", "item-2", "item-3"]},
+        {text: "О нас", link: "#", currentPage: true},
+        {text: "Услуги", link: "#",
+          innerUl:
+            [
+              { text: "service_1", link: "#" },
+              { text: "service_2", link: "#" }, 
+              { text: "service_3", link: "#" },
+            ],
+        },
+        { text: "Вакансии", link: "#"},
+        { text: "Новости", link: "#"},
+        {
+          text: "Соглашения", link: "#",
+          innerUl: [
+            { text: "item-1", link: "#" },
+            { text: "item-2", link: "#" },
+            { text: "item-3", link: "#" },
+            ],
+        },
       ],
       buttonLogin = {
         text: "Войти",
@@ -35,11 +47,11 @@ mixin header(options = {})
         li.header__li(class = val.innerUl ? "header__li_submenu " : ""
         class = val.currentPage ? "header__li_current-page" : "")  
           if (val.innerUl) 
-            ul.header__submenu(class="_invisible")
+            ul.header__submenu
               each subVal in val.innerUl
                 li 
-                  a.header__a(href="#") !{subVal}
-          a.header__a(href=`${val.href}` class= val.currentPage ? "header_current-page" : "") #{val.title}
+                  a.header__a(href= subVal.link) !{subVal.text}
+          a.header__a(href=`${val.link}` class= val.currentPage ? "header_current-page" : "") #{val.text}
     if (logged) 
       .header__user-name #{userName}
     else 
