@@ -43,6 +43,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "bxslider": "^4.2.14",
+    "jquery": "^3.5.1",
     "js-datepicker": "^5.12.0"
   }
 }

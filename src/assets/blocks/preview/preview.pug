@@ -12,26 +12,29 @@ mixin preview(options = {})
       reviewWord = "Отзывов",
       arrowsHidden = false,
       currency = "₽",
-      priceTerm = "сутки",
+      priceTerm = " в сутки",
       imgAltText = "Картинка номера",
     } = options;
 
   .preview
-    .preview__image-container
-      img.preview__image(alt= imgAltText src= imgSrc width= "270px" height = "151px")
-      if (!arrowsHidden)
-        .preview-next
-        .preview-prev
-      .preview-ellipses
-        - for (let x = 1; x < 5; x++)
-          div(class= `preview-ellipse-${x}`)
+    //- .preview__image-container
+      //- img.preview__image(alt= imgAltText src= imgSrc width= "270px" height = "151px")
+      //- if (!arrowsHidden)
+      //-   .preview-next
+      //-   .preview-prev
+      //- .preview-ellipses
+      //-   - for (let x = 1; x < 5; x++)
+      //-     div(class= `preview-ellipse-${x}`)
+    ul.bxslider
+      img(alt= imgAltText src= imgSrc width= "270px" height = "151px")
+      img(alt= imgAltText src= imgSrc width= "270px" height = "151px")
     .preview__information
       .preview__title
         span.room-number #{number}
         span.room-class #{type} 
       .preview__price
         span #{cost}#{currency}
-        span  в #{priceTerm}
+        span #{priceTerm}
       .preview__stars
         +rate-button(stars)
         .reviews
