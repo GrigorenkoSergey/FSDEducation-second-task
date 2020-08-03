@@ -55,6 +55,14 @@
 ├── webpack.dev.config.js
 └── webpack.prod.config.js
 ```
+
+## Сторонние библиотеки
+  [bxslider 4.2.14](https://github.com/stevenwanderski/bxslider-4)
+
+  [jquery 3.5.1](https://jquery.com/)
+
+  [js-datepicker 5.12.0](https://www.npmjs.com/package/js-datepicker)
+
 **Примечания:**  
 В файле ***screens.txt*** я занес размеры экранов, которые я учитывал в проекте.
 Картинки, которые относятся к блокам должны будут содержаться непосредственно в папке images

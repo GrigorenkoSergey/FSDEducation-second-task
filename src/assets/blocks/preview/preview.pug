@@ -5,7 +5,14 @@ mixin preview(options = {})
     const {
       number = 888,
       type = "Люкс",
-      imgSrc = "assets/blocks/preview/images/888.png",
+      imagesSrc = [
+        "assets/blocks/preview/images/888.png",
+        "assets/blocks/preview/images/888.png",
+        "assets/blocks/preview/images/888.png",
+        "assets/blocks/preview/images/888.png",
+      ],
+      imgWidth = "270px",
+      imgHeight = "151px",
       cost = "9 990",
       stars = 5,
       reviewsNum = 145,
@@ -17,26 +24,18 @@ mixin preview(options = {})
     } = options;
 
   .preview
-    //- .preview__image-container
-      //- img.preview__image(alt= imgAltText src= imgSrc width= "270px" height = "151px")
-      //- if (!arrowsHidden)
-      //-   .preview-next
-      //-   .preview-prev
-      //- .preview-ellipses
-      //-   - for (let x = 1; x < 5; x++)
-      //-     div(class= `preview-ellipse-${x}`)
     ul.bxslider
-      img(alt= imgAltText src= imgSrc width= "270px" height = "151px")
-      img(alt= imgAltText src= imgSrc width= "270px" height = "151px")
+      each imgSrc in imagesSrc
+        img(alt= imgAltText src= imgSrc width= imgWidth height = imgHeight)
     .preview__information
       .preview__title
-        span.room-number #{number}
-        span.room-class #{type} 
+        span.preview__room-number #{number}
+        span.preview__room-class #{type} 
       .preview__price
         span #{cost}#{currency}
         span #{priceTerm}
       .preview__stars
         +rate-button(stars)
-        .reviews
+        .preview__reviews
           b #{reviewsNum}
           span #{` ${reviewWord}`} 
