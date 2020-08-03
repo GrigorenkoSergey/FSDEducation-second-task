@@ -5,13 +5,10 @@
 .sign-in {
   &__body {
     background: url("assets/images/Website-pages/sign-in/sign-in-page.png") no-repeat;
-    overflow-x: hidden;
-    width: 100%;
-    height: auto;
   }
 
   &__main {
-    height: 683px;
+    padding: 162px 0;
     display: flex;
     justify-content: center;
     align-items: center;

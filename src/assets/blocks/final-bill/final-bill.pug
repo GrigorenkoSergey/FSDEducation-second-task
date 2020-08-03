@@ -53,7 +53,7 @@ mixin final-bill(description = {})
 
     .final-bill__total
       span.final-bill__total-span #{totalSpanContent}
-      .hr
+      .final-bill__total-hr
       span.final-bill__total-price #{totalPrice}#{currency}
     .final-bill__button-payment
       +button-payment(buttonPaymentOptions)

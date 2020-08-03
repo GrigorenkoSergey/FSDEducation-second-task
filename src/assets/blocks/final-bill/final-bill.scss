@@ -91,6 +91,7 @@
     padding-top: 2px;
   }
 
+
   &__total {
     margin-top: 30px;
     margin-left: 1px;
@@ -102,18 +103,18 @@
     flex-wrap: nowrap;
     color: black;
 
-    &__total-span {
+    &-span {
       flex: 0 1 auto;
     }
 
-    .hr {
+    &-hr {
       flex: 1 1 auto;
       border-bottom: 1px dashed $dark_25;
       height: 1px;
       margin-top: 19px;
     }
 
-    &__total-price {
+    &-price {
       flex: 0 1 auto;
     }
   }

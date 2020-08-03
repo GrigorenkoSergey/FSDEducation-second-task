@@ -53,7 +53,8 @@ mixin registration(options = {})
       +radio-buttons-group(radioButtonsGroup)
 
     .registration__birthday
-      h3 #{titleBirthday}
+      .registration__birthday-title
+        h3 #{titleBirthday}
       +input(inputBirthday)
 
     .registration__authorization
