@@ -85,7 +85,7 @@ class Diagram {
   }
 }
 
-//пример объекта, полученного с сервера
+// пример объекта, полученного с сервера
 const votes = [
   {
     rate: 'disapointed', votes: 0, colorStart: '#919191', colorEnd: '#3D4975',

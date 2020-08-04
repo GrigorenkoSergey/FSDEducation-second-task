@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import DropdownOrigin from '../dropdown/dropdown-origin.js';
 
 const MAX_ITEMS_VALUE = 10;
@@ -43,7 +44,7 @@ export default class DropdownGuests extends DropdownOrigin {
       this.enableAddition();
     }
 
-    let guestsNum = adultsNum + kidsNum;
+    const guestsNum = adultsNum + kidsNum;
     let inputTextContent = '';
 
     inputTextContent = `${guestsNum === 0 ? 'Нет' : guestsNum} гост${guestsSuffix[adultsNum + kidsNum]}`;
@@ -53,7 +54,7 @@ export default class DropdownGuests extends DropdownOrigin {
     }
 
     if (guestsNum + babiesNum === 0) {
-      inputTextContent = "Сколько гостей";
+      inputTextContent = 'Сколько гостей';
       this.resetButton.hidden = true;
     }
 
@@ -76,8 +77,8 @@ export default class DropdownGuests extends DropdownOrigin {
   }
 
   handleApplyButtonClick() {
-    this.input.classList.remove("dropdown__input_expanded");
-    this.itemsContainer.classList.remove("dropdown__items-container_expanded");
+    this.input.classList.remove('dropdown__input_expanded');
+    this.itemsContainer.classList.remove('dropdown__items-container_expanded');
   }
 
   handleResetButtonClick(e) {
