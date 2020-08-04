@@ -16,7 +16,7 @@ export default class DropdownRooms extends DropdownOrigin {
     const roomsNum = itemsNums[0];
     const bedsNum = itemsNums[1];
 
-    let textContent = `${roomsNum === 0 ? 'Нет': roomsNum} спал${roomsSuffix[roomsNum]},`;
+    let textContent = `${roomsNum === 0 ? 'Нет' : roomsNum} спал${roomsSuffix[roomsNum]},`;
     textContent += ` ${bedsNum === 0 ? 'нет' : bedsNum} кроват${bedsSuffix[bedsNum]}...`;
     this.input.textContent = textContent;
   }
