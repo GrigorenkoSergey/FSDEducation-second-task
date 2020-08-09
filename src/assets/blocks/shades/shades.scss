@@ -30,17 +30,17 @@
 }
 
 $colors: (
-  dark_100: $dark_100,
-  dark_75: $dark_75,
-  dark_50: $dark_50,
-  dark_25: $dark_25,
-  dark_5: $dark_5,
+  dark-100: $dark_100,
+  dark-75: $dark_75,
+  dark-50: $dark_50,
+  dark-25: $dark_25,
+  dark-5: $dark_5,
   purple: $purple,
   green: $green,
 );
 
 @each $key, $val in $colors {
-  .shades__rect_color_#{$key} {
+  .shades__rect_bg-color_#{$key} {
     background: $val;
   }
 }

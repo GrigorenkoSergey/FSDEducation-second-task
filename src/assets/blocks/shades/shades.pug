@@ -2,7 +2,7 @@ mixin shades(colors = [{title: "someTitle", class: "someClass", hexCode: "#00000
     ul.shades
       each val in colors
         li.shades__li
-          .shades__rect(class= val.class)
+          .shades__rect(class= val.modifier)
           .shades__title
             b #{val.title} 
             br 
