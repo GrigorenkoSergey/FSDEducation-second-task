@@ -1,1 +1,0 @@
-find -not -path "./node*" -name linux-cribs.txt - найти но только не в путях ./node*
