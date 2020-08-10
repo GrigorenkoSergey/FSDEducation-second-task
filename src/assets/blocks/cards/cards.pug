@@ -35,23 +35,23 @@ mixin cards(options = {})
       }
     } = options;
 
-  main
-    .cards__search-form
-      +search-form(searchForm)
+  main.cards__main
+    .cards__column-1
+      .cards__search-form
+        +search-form(searchForm)
+      .cards__registration
+        +registration(registration)
 
-    .cards__final-bill
-      +final-bill(finalBill)
+    .cards__column-2
+      .cards__final-bill
+        +final-bill(finalBill)
+      .cards__log-in
+        +log-in(logIn)
 
-    .cards__calendar
-      +date-dropdown(dateDropdownOptions)
-
-    .cards__registration
-      +registration(registration)
-
-    .cards__log-in
-      +log-in(logIn)
-
-    .cards__preview-1
-      +preview(preview1)
-    .cards__preview-2
-      +preview(preview2)
+    .cards__column-3
+      .cards__calendar
+        +date-dropdown(dateDropdownOptions)
+      .cards__preview-1
+        +preview(preview1)
+      .cards__preview-2
+        +preview(preview2)

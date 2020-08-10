@@ -3,23 +3,21 @@
     list-style-type: none;
     font: $bodyFont;
     margin-bottom: 10px;
-    position: relative;
+    display: flex;
+    justify-content: flex-start;
 
     &::before {
       content: '';
-      display: inline-block;
-      position: absolute;
-      top: 7px;
-      margin-right: 21px;
+      margin-top: 7px;
       width: 10px;
       height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
       background: $dark_25;
-      border-radius: 50px;
     }
   }
 
   &__span {
-    margin-left: 21px;
-    display: inline-block;
+    margin-left: 11px;
   }
 }

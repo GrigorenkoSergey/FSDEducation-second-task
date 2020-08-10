@@ -3,17 +3,12 @@
 @import "../types/types.scss";
 
 .colors-and-type {
-  position: relative;
-
-  &__shades {
-    position: absolute;
-    top: 145px;
-    left: 150px;
-  }
-
-  &__types {
-    position: absolute;
-    left: 913px;
-    top: 145px;
+  &__main {
+    display: flex;
+    padding-top: 145px;
+    padding-left: 150px;
+    padding-bottom: 145px;
+    justify-content: space-between;
+    width: 1253px;
   }
 }

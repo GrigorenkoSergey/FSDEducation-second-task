@@ -6,6 +6,10 @@
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__rect {

@@ -1,56 +1,44 @@
-@import '../template/template.scss';
-@import '../search-form/search-form.scss';
-@import '../final-bill/final-bill.scss';
-@import '../registration/registration.scss';
-@import '../log-in/log-in.scss';
-@import '../preview/preview.scss';
+@import "../template/template.scss";
+@import "../search-form/search-form.scss";
+@import "../final-bill/final-bill.scss";
+@import "../registration/registration.scss";
+@import "../log-in/log-in.scss";
+@import "../preview/preview.scss";
 
 .cards {
-  &__body {
+  &__main {
+    padding-left: 140px;
+    padding-bottom: 140px;
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 1350px;
     background: #f4f4f6;
-    height: 1350px;
   }
 
-  &__search-form {
-    position: absolute;
-    left: 140px;
-    top: 150px;
+  &__column-1,
+  &__column-2,
+  &__column-3 {
+    margin-top: 150px;
+    margin-right: 40px;
   }
 
-  &__final-bill {
-    position: absolute;
-    left: 560px;
-    top: 150px;
-  }
-
-  &__calendar {
-    position: absolute;
-    left: 980px;
-    top: 96px;
+  &__column-3 {
+    margin-top: 96px;
   }
 
   &__registration {
-    position: absolute;
-    left: 140px;
-    top: 564px;
+    margin-top: 39px;
   }
 
   &__log-in {
-    position: absolute;
-    left: 560px;
-    top: 701px;
+    margin-top: 39px;
   }
 
   &__preview-1 {
-    position: absolute;
-    width: 270px;
-    left: 980px;
-    top: 559.5px;
+    margin-top: 415px;
   }
 
   &__preview-2 {
-    position: absolute;
-    left: 980px;
-    top: 856px;
+    margin-top: 39px;
   }
 }
