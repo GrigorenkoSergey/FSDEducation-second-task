@@ -17,6 +17,7 @@ export default class DropdownOrigin {
     this.bindHandlers();
 
     this.input = this.el.querySelector('.dropdown__input');
+    this.inputText = this.el.querySelector('.dropdown__input-text');
     this.input.addEventListener('click', this.handlers.handleInputClick);
 
     this.itemsContainer = this.el.querySelector('.dropdown__items-container');
@@ -47,6 +48,6 @@ export default class DropdownOrigin {
 
   update() {
     const inputContent = this.items.map((item) => item.value);
-    this.input.textContent = inputContent;
+    this.inputText.textContent = inputContent;
   }
 }

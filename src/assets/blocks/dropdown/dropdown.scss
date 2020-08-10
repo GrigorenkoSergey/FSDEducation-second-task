@@ -11,23 +11,11 @@
     width: 100%;
     border: 1px solid $dark_25;
     border-radius: 4px;
-    padding: 8px 0 10px 14px;
+    padding: 8px 10px 10px 14px;
     color: $dark_75;
     cursor: pointer;
-    position: relative;
-  }
-
-  &__input::after {
-    content: '';
-    position: absolute;
-    top: 14px;
-    right: 17px;
-    width: 7px;
-    height: 7px;
-    border: 2px solid $dark_50;
-    border-left: none;
-    border-top: none;
-    transform: rotate(45deg);
+    display: flex;
+    justify-content: space-between;
   }
 
   &__input_expanded {

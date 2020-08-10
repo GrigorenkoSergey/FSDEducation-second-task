@@ -17,8 +17,7 @@ mixin comment(options = {})
     img.comment__avatar(src= avatarSrc)
     span.comment__name #{name}
     span.comment__term #{term}
-    .comment__grouper
-      .comment__like-button
-        +like-button(likeButton)
-      p.comment__content #{content}
+    .comment__like-button
+      +like-button(likeButton)
+    p.comment__content #{content}
 

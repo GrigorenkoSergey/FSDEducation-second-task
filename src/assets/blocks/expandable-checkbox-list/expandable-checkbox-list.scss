@@ -1,8 +1,8 @@
-@import '../checkbox-list/checkbox-list.scss';
+@import "../checkbox-list/checkbox-list.scss";
 
 .expandable-checkbox-list {
   width: 266px;
-  position: relative;
+  padding-right: 10px;
   user-select: none;
 
   &__title {
@@ -10,28 +10,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    line-height: 43px;
-    margin-bottom: 5px;
     cursor: pointer;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 16px;
-      right: 17px;
-      width: 7px;
-      height: 7px;
-      border: 2px solid $dark_50;
-      border-left: none;
-      border-top: none;
-      transform: rotate(45deg);
-      cursor: pointer;
-    }
   }
 
-  &__title_expanded::after {
-    transform: rotate(-135deg);
-    top: 21px;
-    right: 18px;
+  &__toggler {
+    display: flex;
+    color: $dark_50;
+  }
+
+  &__list {
+    margin-top: 15px;
+    width: 100%;
   }
 }

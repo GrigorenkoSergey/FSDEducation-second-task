@@ -40,7 +40,9 @@ mixin dropdown(options = {})
   .dropdown(data-name= name)
     if (title.length !== 0)
       .dropdown__title #{title}
-    .dropdown__input(class= inputClass) #{input}
+    .dropdown__input(class= inputClass)
+      span.dropdown__input-text #{input}
+      i.material-icons expand_more
     .dropdown__items-container(class= containerClass)
       each elem in items
         - const {text, counter} = elem;

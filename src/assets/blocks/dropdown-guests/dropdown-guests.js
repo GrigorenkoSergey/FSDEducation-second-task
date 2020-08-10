@@ -58,7 +58,7 @@ export default class DropdownGuests extends DropdownOrigin {
       this.resetButton.hidden = true;
     }
 
-    this.input.textContent = inputTextContent;
+    this.inputText.textContent = inputTextContent;
   }
 
   disableAddition() {

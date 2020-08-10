@@ -208,6 +208,9 @@ q:after {
   font-style: normal;
 }
 
+/* http://google.github.io/material-design-icon */
+@import 'src/assets/fonts/material-icons/material-icons.scss';
+
 body {
   background: white;
   font: $bodyFont;
