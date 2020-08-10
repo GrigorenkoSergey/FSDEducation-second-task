@@ -9,6 +9,6 @@ mixin buns(options = {})
   .buns
     each elem in items
       .buns__item
-        div(class= `buns__img_${elem.name}` class= nameClass)
-        .buns__title(class= titleClass) #{elem.title}
-        .buns__description(class= descriptionClass) #{elem.description}
+        .buns__img(class= `buns__img_${elem.name}`)
+        .buns__title #{elem.title}
+        .buns__description #{elem.description}

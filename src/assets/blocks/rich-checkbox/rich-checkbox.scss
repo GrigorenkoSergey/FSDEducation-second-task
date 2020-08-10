@@ -34,7 +34,7 @@
 
   &__input:checked + &__span::before {
     border-color: $purple;
-    background: url('assets/blocks/rich-checkbox/images/check.png') center no-repeat;
+    background: url('assets/blocks/rich-checkbox/images/check.svg') center no-repeat;
   }
 
   &__description {
