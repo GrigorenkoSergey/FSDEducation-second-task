@@ -1,25 +1,34 @@
-$types-width: 340px;
+$types-width: 403px;
 
 .types {
   width: $types-width;
-  position: relative;
 
   &__title {
-    position: absolute;
-    right: $types-width + 30px;
     font-family: montserrat;
     font-style: normal;
     font-weight: normal;
     color: $dark_25;
+    width: 37px;
+    text-align: right;
+    margin-right: 30px;
+    flex-shrink: 0;
   }
 
-  &__h2, 
+  &__h1,
+  &__h2,
+  &__h3,
+  &__p {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__h2,
   &__h3 {
     margin-top: 50px;
   }
 
   &__p {
     margin-top: 47px;
-    max-width: 310px;
+    max-width: 375px;
   }
 }

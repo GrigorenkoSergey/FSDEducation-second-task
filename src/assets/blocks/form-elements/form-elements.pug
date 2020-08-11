@@ -263,10 +263,11 @@ mixin form-elements(options = {})
         +dropdown-guests(dropdownGuest1)
 
       .form-elements__rich-checkbox-buttons
-        .form-elements__title 
+        .form-elements__title.form-elements__title_mb_16
           h3 #{richCheckboxButtons.h3Text}
         each argsArr in  richCheckboxButtons.items
-          +rich-checkbox(...argsArr)
+          .form-elements__rich-checkbox
+            +rich-checkbox(...argsArr)
 
     .form-elements__column-3
       +range-slider(rangeSlider)

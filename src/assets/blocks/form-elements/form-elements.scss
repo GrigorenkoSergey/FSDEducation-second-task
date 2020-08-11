@@ -123,6 +123,10 @@
 
   &__title {
     margin-bottom: 14px;
+
+    &_mb_16 {
+      margin-bottom: 16px;
+    }
   }
 
   &__radio-buttons {
@@ -131,6 +135,7 @@
 
   &__togglers {
     margin-top: 39px;
+    width: 260px;
   }
 
   &__toggle {
@@ -155,6 +160,10 @@
   &__dropdown-guests {
     margin-top: 198px;
     width: 320px;
+  }
+
+  &__rich-checkbox {
+    margin-bottom: 9px;
   }
 
   &__rich-checkbox-buttons {

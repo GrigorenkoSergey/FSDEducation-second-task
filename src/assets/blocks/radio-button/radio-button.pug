@@ -1,4 +1,5 @@
 mixin radio-button(id, name, value, checked)
   label.radio-button__label
     input.radio-button__input(type="radio" name= name checked= checked)   
-    span.radio-button__span !{value}
+    .radio-button__toggler
+    span.radio-button__span #{value}

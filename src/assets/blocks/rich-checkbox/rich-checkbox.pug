@@ -3,5 +3,5 @@ mixin rich-checkbox(name, value, description, checked)
   div.rich-checkbox
     label.rich-checkbox__label 
       input.rich-checkbox__input(type="checkbox" name= name checked= isChecked) 
-      span.rich-checkbox__span !{value}
+      span.rich-checkbox__span #{value}
     span.rich-checkbox__description !{description}

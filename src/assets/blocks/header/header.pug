@@ -3,6 +3,10 @@ include ../button/button.pug
 mixin header(options = {})
   - 
     const {
+      logo = {
+        imgSrc: "assets/blocks/header/images/logo-toxin.png",
+        link: "./landing-page.html",
+      },
       nav = [
         {text: "О нас", link: "#", currentPage: true},
         {text: "Услуги", link: "#",
@@ -40,8 +44,8 @@ mixin header(options = {})
     } = options;
 
   .header
-    a.header__logo(href="#")
-      img(src="assets/blocks/header/images/logo-toxin.png")
+    a.header__logo(href= logo.link)
+      img(src= logo.imgSrc)
     ul.header__nav
       each val in nav
         li.header__li(class = val.innerUl ? "header__li_submenu " : ""

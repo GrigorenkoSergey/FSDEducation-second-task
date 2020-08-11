@@ -226,7 +226,8 @@ mixin search-room(options = {})
       .search-room__rich-checkbox-buttons
         h3.search-room__title  #{richCheckboxButtons.title} 
         each argsArr in richCheckboxButtons.items
-          +rich-checkbox(...argsArr)
+          .search-room__rich-checkbox
+            +rich-checkbox(...argsArr)
       .search-room__dropdown-room
         +dropdown-rooms(dropdownRooms)
       .search-room__checkbox-buttons

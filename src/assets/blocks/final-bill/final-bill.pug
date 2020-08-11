@@ -8,7 +8,7 @@ mixin final-bill(description = {})
       roomNumber = 888,
       roomClass = "Люкс",
       priceValue = "9 990",
-      priceTerm = ["сутки", "суток"],
+      priceTerm = ["в сутки", "суток"],
       dateDropdownOptions = {
         arrivalName: "arrival_final-bill", 
         departureName: "departure_final-bill",
@@ -35,7 +35,7 @@ mixin final-bill(description = {})
 
     .final-bill__price 
       span #{priceValue}#{currency}
-      span  в #{priceTerm[0]}
+      span  #{priceTerm[0]}
 
     .final-bill__date-dropdown
       +date-dropdown(dateDropdownOptions)
