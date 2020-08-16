@@ -1,3 +1,5 @@
+@import "../template/variables";
+
 ::placeholder {
   color: $dark_25;
 }
@@ -29,6 +31,6 @@
   }
 
   &_theme_email {
-    background: url('assets/blocks/input/images/arrow-forward.png') right no-repeat;
+    background: url('./images/arrow-forward.png') right no-repeat;
   }
 }

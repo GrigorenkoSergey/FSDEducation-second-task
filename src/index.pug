@@ -3,7 +3,7 @@ mixin pagesList(dir)
   ul
     each val in dir.pages
       li
-        a(style="font-size: 20px" href=`./${val}.html`) !{val}
+        a(style="font-size: 20px" href=`./pages/${dir.title}/${val}/${val}.html`) !{val}
 
 -
   const UI_Kit = {

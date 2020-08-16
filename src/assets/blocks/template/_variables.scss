@@ -1,0 +1,20 @@
+/* colors */
+$dark_100: rgba(31, 32, 65, 1);
+$dark_75: rgba(31, 32, 65, 0.75);
+$dark_50: rgba(31, 32, 65, 0.5);
+$dark_25: rgba(31, 32, 65, 0.25);
+$dark_10: rgba(31, 32, 65, 0.1);
+$dark_5: rgba(31, 32, 65, 0.05);
+$purple: #bc9cff;
+$green: #6fcf97;
+
+$primary-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$primary-gradient_05: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+$secondary-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+/*стили текста */
+$bodyFont-family: montserrat;
+$bodyFont: normal 14px/24px montserrat;
+
+$titleFont-family: 'quicksand', 'open-sans', Arial, sans-serif;
+$titleFont: bold 19px/24px $titleFont-family;

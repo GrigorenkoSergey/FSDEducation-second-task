@@ -1,7 +1,9 @@
+@import "../template/variables";
+
 .button {
   padding: 0 20px;
   border-radius: 22px;
-  @extend h3;
+  // @extend h3;
   color: white;
   line-height: 44px;
   position: relative;

@@ -1,11 +1,30 @@
+// @font-face {
+//   font-family: 'material-icons';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url('assets/fonts/material-icons/material-icons-regular.eot'); 
+//   src: url('assets/fonts/material-icons/material-icons-regular.woff2') format('woff2'),
+//        url('assets/fonts/material-icons/material-icons-regular.woff') format('woff'),
+//        url('assets/fonts/material-icons/material-icons-regular.ttf') format('truetype');
+// }
+// @font-face {
+//   font-family: 'material-icons';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url('../../fonts/material-icons/material-icons-regular.eot'); 
+//   src: url('../../fonts/material-icons/material-icons-regular.woff2') format('woff2'),
+//        url('../../fonts/material-icons/material-icons-regular.woff') format('woff'),
+//        url('../../fonts/material-icons/material-icons-regular.ttf') format('truetype');
+// }
+
 @font-face {
   font-family: 'material-icons';
   font-style: normal;
   font-weight: 400;
-  src: url('assets/fonts/material-icons/material-icons-regular.eot'); 
-  src: url('assets/fonts/material-icons/material-icons-regular.woff2') format('woff2'),
-       url('assets/fonts/material-icons/material-icons-regular.woff') format('woff'),
-       url('assets/fonts/material-icons/material-icons-regular.ttf') format('truetype');
+  src: url('./material-icons-regular.eot'); 
+  src: url('./material-icons-regular.woff2') format('woff2'),
+       url('./material-icons-regular.woff') format('woff'),
+       url('./material-icons-regular.ttf') format('truetype');
 }
 
 .material-icons {

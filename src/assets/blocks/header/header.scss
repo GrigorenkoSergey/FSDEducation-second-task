@@ -1,4 +1,4 @@
-@import "../button/button.scss";
+@import "../template/variables";
 
 .header {
   position: relative;
@@ -62,7 +62,8 @@
       width: 24px;
       height: 18px;
       margin-top: 1px;
-      background: url("assets/blocks/header/images/expand-more.png") center no-repeat;
+      // background: url("assets/blocks/header/images/expand-more.png") center no-repeat;
+      background: url("./images/expand-more.png") center no-repeat;
     }
   }
 

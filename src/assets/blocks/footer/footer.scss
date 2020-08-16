@@ -1,5 +1,7 @@
-@import "src/assets/blocks/input/input.scss";
-@import "src/assets/blocks/list/list.scss";
+// @import "src/assets/blocks/input/input.scss";
+// @import "src/assets/blocks/list/list.scss";
+
+@import '../template/variables';
 
 .footer {
   background: white;
@@ -37,7 +39,6 @@
   }
 
   &__subscribe-title {
-    @extend h3;
     color: $dark_100;
     line-height: 15px;
   }
