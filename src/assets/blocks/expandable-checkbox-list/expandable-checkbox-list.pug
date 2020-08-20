@@ -58,7 +58,7 @@ mixin expandable-checkbox-list(options = {})
 
   - const className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
   .expandable-checkbox-list
-    .expandable-checkbox-list__title(class= `${className}`) #{title} 
+    h3.expandable-checkbox-list__title(class= `${className}`) #{title} 
       .expandable-checkbox-list__toggler
         - const icon = togglers[Number(expanded)];
         i.material-icons #{icon}

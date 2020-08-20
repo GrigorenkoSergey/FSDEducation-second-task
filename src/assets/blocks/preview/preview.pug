@@ -6,10 +6,10 @@ mixin preview(options = {})
       number = 888,
       type = "Люкс",
       imagesSrc = [
-        "assets/blocks/preview/images/888.png",
-        "assets/blocks/preview/images/888.png",
-        "assets/blocks/preview/images/888.png",
-        "assets/blocks/preview/images/888.png",
+        "888.png",
+        "888.png",
+        "888.png",
+        "888.png",
       ],
       imgWidth = "270px",
       imgHeight = "151px",
@@ -26,7 +26,7 @@ mixin preview(options = {})
   .preview
     ul.bxslider
       each imgSrc in imagesSrc
-        img(alt= imgAltText src= imgSrc width= imgWidth height = imgHeight)
+        img(alt= imgAltText src= require(`../../../assets/blocks/preview/images/${imgSrc}`) width= imgWidth height = imgHeight)
     .preview__information
       .preview__title
         span.preview__room-number #{number}

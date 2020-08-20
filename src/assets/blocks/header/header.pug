@@ -4,8 +4,8 @@ mixin header(options = {})
   - 
     const {
       logo = {
-        imgSrc: "assets/blocks/header/images/logo-toxin.png",
-        link: "./landing-page.html",
+        img: "logo-toxin.png",
+        link: "../landing-page/landing-page.html",
       },
       nav = [
         {text: "О нас", link: "#", currentPage: true},
@@ -30,12 +30,12 @@ mixin header(options = {})
       ],
       buttonLogin = {
         text: "Войти",
-        link: "./landing-page.html",
+        link: "../landing-page/landing-page.html",
         mod: {color: "white", theme: "slim"}
       },
       buttonRegister = {
         text: "Зарегистрироваться",
-        link: "./registration-page.html",
+        link: "../registration-page/registration-page.html",
         mod: {theme: "slim"}
       },
 
@@ -45,7 +45,7 @@ mixin header(options = {})
 
   .header
     a.header__logo(href= logo.link)
-      img(src= logo.imgSrc)
+      img(src= require(`../../../assets/blocks/header/images/${logo.img}`))
     ul.header__nav
       each val in nav
         li.header__li(class = val.innerUl ? "header__li_submenu " : ""

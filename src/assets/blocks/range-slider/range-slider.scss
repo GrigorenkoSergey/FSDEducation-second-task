@@ -1,15 +1,12 @@
+@import '../template/variables';
+
 .range-slider {
   width: 266px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  &__title {
-    @extend h3;
-  }
-
   &__range {
-    @extend h3;
     font-weight: normal;
     color: $dark_50;
   }

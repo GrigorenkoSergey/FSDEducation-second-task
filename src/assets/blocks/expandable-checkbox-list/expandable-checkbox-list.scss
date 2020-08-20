@@ -1,4 +1,4 @@
-@import "../checkbox-list/checkbox-list.scss";
+@import '../template/variables';
 
 .expandable-checkbox-list {
   width: 266px;
@@ -6,7 +6,6 @@
   user-select: none;
 
   &__title {
-    @extend h3;
     display: flex;
     justify-content: space-between;
     align-items: center;

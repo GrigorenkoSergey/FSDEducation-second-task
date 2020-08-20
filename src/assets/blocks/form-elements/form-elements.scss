@@ -1,23 +1,4 @@
-@import "../template/template.scss";
-@import "../input/input.scss";
-@import "../dropdown/dropdown.scss";
-@import "../filter-date/filter-date.scss";
-@import "../date-dropdown/date-dropdown.scss";
-@import "../rich-checkbox/rich-checkbox.scss";
-@import "../expandable-checkbox-list/expandable-checkbox-list.scss";
-@import "../checkbox-buttons/checkbox-buttons.scss";
-@import "../buns/buns.scss";
-@import "../radio-buttons-group/radio-buttons-group.scss";
-@import "../toggler/toggler.scss";
-@import "../like-button/like-button.scss";
-@import "../rate-button/rate-button.scss";
-@import "../comment/comment.scss";
-@import "../range-slider/range-slider.scss";
-@import "../button/button.scss";
-@import "../button-text/button-text.scss";
-@import "../button-payment/button-payment.scss";
-@import "../pagination/pagination.scss";
-@import "../bullet-list/bullet-list.scss";
+@import '../template/variables';
 
 ::placeholder {
   color: $dark_25;

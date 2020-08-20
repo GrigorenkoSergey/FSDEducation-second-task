@@ -1,3 +1,5 @@
+@import '../template/variables';
+
 .buns {
   box-sizing: border-box;
 
@@ -19,15 +21,15 @@
     margin-right: 10px;
 
     &_smile {
-      background: url("assets/blocks/buns/images/smile.svg") center no-repeat;
+      background: url("./images/smile.svg") center no-repeat;
     }
 
     &_city {
-      background: url("assets/blocks/buns/images/city.svg") center no-repeat;
+      background: url("./images/city.svg") center no-repeat;
     }
 
     &_fire {
-      background: url("assets/blocks/buns/images/fire.svg") center no-repeat;
+      background: url("./images/fire.svg") center no-repeat;
     }
 
   }

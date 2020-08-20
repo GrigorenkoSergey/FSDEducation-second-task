@@ -1,10 +1,6 @@
-@import "../template/template.scss";
-@import "../log-in/log-in.scss";
-
-
 .sign-in {
   &__body {
-    background: url("assets/images/Website-pages/sign-in/sign-in-page.png") no-repeat;
+    background: url("./images/sign-in-page.png") no-repeat;
   }
 
   &__main {

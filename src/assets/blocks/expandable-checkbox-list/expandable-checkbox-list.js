@@ -1,3 +1,7 @@
+import './expandable-checkbox-list.scss';
+
+import '../checkbox-list/checkbox-list.js';
+
 class ExpandableCheckbox {
   constructor(item) {
     this.el = item;

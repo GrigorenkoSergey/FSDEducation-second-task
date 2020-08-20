@@ -7,7 +7,7 @@ mixin footer(options = {})
       img = {
         height: "40px",
         alt: "Логотип",
-        src: "assets/blocks/footer/images/logo-toxin.png",
+        src: "logo-toxin.png",
       },
       description = `Бронирование номеров в лучшем отеле
         2019 года по версии ассоциации
@@ -42,7 +42,7 @@ mixin footer(options = {})
 
   .footer
     .footer__logo
-      img.footer__logo-img(alt = img.alt src= img.src height= img.height)
+      img.footer__logo-img(alt = img.alt src= require(`../../../assets/blocks/footer/images/${img.src}`) height= img.height)
       .footer__logo-description #{description}
     .footer__navigation
       +list(navigation)

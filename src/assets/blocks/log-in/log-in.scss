@@ -1,8 +1,6 @@
-@import '../input/input.scss';
-@import '../button/button.scss';
-@import '../button-payment/button-payment.scss';
-
 .log-in {
+  padding-bottom: 31px;
+
   &__email {
     margin-top: 20px;
     width: 100%;
@@ -18,11 +16,10 @@
   }
 
   &__account-create {
-    margin-top: 29px;
-    margin-bottom: 3px;
-    display: flex;
-    justify-content: space-between;
-    line-height: 44px;
+    margin-top: 31px;
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
     color: black;
   }
 }

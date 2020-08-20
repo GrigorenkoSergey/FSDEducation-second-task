@@ -1,3 +1,5 @@
+@import '../template/variables';
+
 .checkbox {
   position: relative;
   max-width: 240px;
@@ -29,6 +31,6 @@
 
   &__input:checked + &__span::before {
     border-color: $purple;
-    background: url('assets/blocks/checkbox/images/check.svg') center no-repeat;
+    background: url('./images/check.svg') center no-repeat;
   }
 }

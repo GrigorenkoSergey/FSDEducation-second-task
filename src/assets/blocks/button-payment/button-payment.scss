@@ -1,11 +1,32 @@
+@import '../template/variables';
+@import '../template/extenders';
+
 .button-payment {
-  @extend .button;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 22px;
+  color: white;
+  line-height: 44px;
+  position: relative;
+  z-index: 1;
+  background: $primary-gradient;
+  outline: none;
+  cursor: pointer;
   max-width: 320px;
   width: 100%;
   background: $primary-gradient;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    background: $primary-gradient_05;
+  }
+  &__span {
+    @extend %h3;
+    padding: 14px 0;
+    color: white;
+  }
 
   &__arrow {
     position: absolute;

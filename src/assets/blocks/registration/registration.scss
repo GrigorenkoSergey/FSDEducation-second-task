@@ -1,9 +1,3 @@
-@import '../input/input.scss';
-@import '../radio-buttons-group/radio-buttons-group.scss';
-@import '../toggler/toggler.scss';
-@import '../button/button.scss';
-@import '../button-payment/button-payment.scss';
-
 .registration {
   &__name-field {
     width: 100%;
@@ -16,7 +10,7 @@
   }
 
   &__radio-buttons {
-    margin-top: 7px;
+    margin-top: 8px;
   }
 
   &__birthday {
@@ -45,6 +39,7 @@
 
   &__toggle {
     margin-top: 7px;
+    width: 260px;
   }
 
   &__button-payment {
@@ -52,10 +47,10 @@
   }
   
   &__account-enter {
-    display: flex;
-    justify-content: space-between;
-    line-height: 44px;
-    margin-top: 29px;
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    margin-top: 30px;
     color: black;
   }
 }

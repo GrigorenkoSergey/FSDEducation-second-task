@@ -1,12 +1,4 @@
-@import "../template/template.scss";
-@import "../filter-date/filter-date.scss";
-@import "../dropdown/dropdown.scss";
-@import "../range-slider/range-slider.scss";
-@import "../rich-checkbox/rich-checkbox.scss";
-@import "../checkbox-buttons/checkbox-buttons.scss";
-@import "../expandable-checkbox-list/expandable-checkbox-list.scss";
-@import "../preview/preview.scss";
-@import "../pagination/pagination.scss";
+@import '../template/variables';
 
 .search-room {
   display: grid;

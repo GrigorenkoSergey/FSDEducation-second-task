@@ -5,11 +5,9 @@
   display: grid;
   grid-template-columns: auto auto min-content;
   grid-template-areas: "logo nav buttons";
-  padding-right: 140px;
-  padding-left: 140px;
+  padding: 15px 140px;
   background: white;
   box-shadow: 0px 10px 20px $dark_5;
-  line-height: 70px;
 
   &__logo {
     display: flex;
@@ -62,7 +60,6 @@
       width: 24px;
       height: 18px;
       margin-top: 1px;
-      // background: url("assets/blocks/header/images/expand-more.png") center no-repeat;
       background: url("./images/expand-more.png") center no-repeat;
     }
   }
@@ -95,7 +92,8 @@
     color: $dark_50;
     font: $bodyFont;
     white-space: nowrap;
-    line-height: 70px;
+    display: flex;
+    align-items: center;
 
     &::before {
       content: "";

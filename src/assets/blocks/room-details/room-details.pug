@@ -9,15 +9,15 @@ mixin room-details(options = {})
     const {
       photos = [
         {
-          src: "./assets/images/Website-pages/room-details/image-1.png",
+          src: "image-1.png",
           alt: "Изображение комнаты",
         },
         {
-          src: "./assets/images/Website-pages/room-details/image-2.png",
+          src: "image-2.png",
           alt: "Изображение комнаты",
         },
         {
-          src: "./assets/images/Website-pages/room-details/image-3.png",
+          src: "image-3.png",
           alt: "Изображение комнаты",
         },
       ],
@@ -40,7 +40,7 @@ mixin room-details(options = {})
         span: "2 отзыва",
         items: [
           {
-            avatarSrc: "assets/blocks/comment/images/comment-murad.png",
+            avatarSrc: "comment-murad.png",
             name: "Мурад Сарафанов",
             term: "5 дней назад", 
             likeButton: {
@@ -50,7 +50,7 @@ mixin room-details(options = {})
             content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
           },
           {
-            avatarSrc: "assets/blocks/comment/images/comment-patricia.png",
+            avatarSrc: "comment-patricia.png",
             name: "Патрисия Стеклышкова",
             term: "Неделю назад", 
             likeButton: {
@@ -75,10 +75,10 @@ mixin room-details(options = {})
 
   .room-details__photos
     .room-details__photos-box
-      img.room-details__photos-img(src= photos[0].src alt= photos[0].alt)
+      img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[0].src}`) alt= photos[0].alt)
     .room-details__photos-box
-      img.room-details__photos-img(src= photos[1].src alt= photos[1].alt)
-      img.room-details__photos-img(src= photos[2].src alt= photos[2].alt)
+      img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[1].src}`) alt= photos[0].alt)
+      img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[2].src}`) alt= photos[0].alt)
 
   main.room-details__main
     .room-details__column-1

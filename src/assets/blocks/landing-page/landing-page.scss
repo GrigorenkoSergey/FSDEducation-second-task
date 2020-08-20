@@ -1,9 +1,8 @@
-@import "../template/template.scss";
-@import "../search-form/search-form.scss";
+@import '../template/variables';
 
 .landing-page {
   &__body {
-    background: url("assets/images/Website-pages/landing-page/landing-page.png") no-repeat;
+    background: url("./images/landing-page.png") no-repeat;
   }
 
   &__main {

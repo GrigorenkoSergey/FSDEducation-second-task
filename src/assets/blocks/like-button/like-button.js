@@ -1,3 +1,5 @@
+import './like-button.scss';
+
 export default class LikeButton {
   constructor(item) {
     this.el = item;

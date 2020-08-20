@@ -1,3 +1,5 @@
+@import '../template/variables';
+
 .filter-date {
   &__select {
     width: 100%;
@@ -5,7 +7,7 @@
     border-radius: 4px;
     padding: 9px 0 9px 14px;
     color: $dark_75;
-    background: url("assets/blocks/filter-date/images/expand-more.png") no-repeat;
+    background: url("./images/expand-more.png") no-repeat;
     background-position: right;
     appearance: none;
     cursor: pointer;

@@ -12,7 +12,7 @@ mixin button(options = {})
     }, "button");
 
   if (link)
-    a(href= link)
+    a.button__a(href= link)
       button(class= summaryClasses)&attributes(attr) #{text}
   else
     button(class= summaryClasses)&attributes(attr) #{text}

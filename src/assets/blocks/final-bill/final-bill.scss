@@ -1,6 +1,4 @@
-@import "src/assets/blocks/dropdown-guests/dropdown-guests.scss";
-@import "src/assets/blocks/date-dropdown/date-dropdown.scss";
-@import "src/assets/blocks/button-payment/button-payment.scss";
+@import '../template/variables';
 
 .final-bill {
   display: flex;
@@ -9,7 +7,7 @@
   flex-wrap: wrap;
 
   &__number {
-    @extend h1;
+    display: inline;
 
     &::before {
       content: "№ ";

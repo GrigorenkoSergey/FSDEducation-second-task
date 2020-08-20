@@ -1,9 +1,4 @@
-@import "../template/template.scss";
-@import "../buns/buns.scss";
-@import "../comment/comment.scss";
-@import "../final-bill/final-bill.scss";
-@import "../bullet-list/bullet-list.scss";
-@import "../diagram/diagram.scss";
+@import '../template/variables';
 
 .room-details {
   &__main {

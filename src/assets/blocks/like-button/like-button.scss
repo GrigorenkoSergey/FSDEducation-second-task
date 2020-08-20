@@ -1,3 +1,5 @@
+@import '../template/variables';
+
 .like-button {
   min-width: 40px;
   height: 20px;
@@ -20,7 +22,7 @@
     content: "";
     width: 20px;
     height: 20px;
-    background: url("assets/blocks/like-button/images/favorite-border.png") center center no-repeat;
+    background: url("./images/favorite-border.png") center center no-repeat;
   }
 
   &_pushed {
@@ -42,7 +44,7 @@
 
     &::before {
       // pink heart
-      background: url("assets/blocks/like-button/images/favorite.png") center center no-repeat;
+      background: url("./images/favorite.png") center center no-repeat;
       z-index: 1;
     }
   }

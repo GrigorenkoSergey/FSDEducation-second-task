@@ -1,16 +1,31 @@
 @import "../template/variables";
 
 .button {
-  padding: 0 20px;
-  border-radius: 22px;
-  // @extend h3;
-  color: white;
-  line-height: 44px;
+  display: flex;
+  align-items: center;;
+  justify-content: center;
+  
   position: relative;
+  border: none;
+  border-radius: 22px;
   z-index: 1;
+
+  padding: 10px 20px;
   background: $primary-gradient;
+
   outline: none;
   cursor: pointer;
+
+  color: white;
+  font-family: montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &__a {
+    text-decoration: none;
+  }
 
   &_theme_hovered {
     background: $primary-gradient_05;
@@ -20,11 +35,7 @@
   }
 
   &_theme_slim {
-    line-height: 34px;
-  }
-
-  &_width_100px {
-    width: 100px;
+    line-height: 14px;
   }
 
   &_color_white {

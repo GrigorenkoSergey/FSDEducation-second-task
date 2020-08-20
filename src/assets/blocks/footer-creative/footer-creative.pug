@@ -5,13 +5,13 @@ mixin footer-creative(options = {})
     const {
       copyrightText = "Copyright &#169 2018 Toxin отель. Все права зачищены.",
       img = {
-        src: "assets/blocks/footer-creative/images/logo-toxin.png",
+        src: "logo-toxin.png",
         width: "106px",
         height: "40px",
       },
     } = options;
   .footer-creative
-    img.footer-creative__logo(width= img.width height= img.height src= img.src)
+    img.footer-creative__logo(width= img.width height= img.height src= require(`../../../assets/blocks/footer-creative/images/${img.src}`))
     span.footer-creative__span !{copyrightText}
     +social-networks()
 

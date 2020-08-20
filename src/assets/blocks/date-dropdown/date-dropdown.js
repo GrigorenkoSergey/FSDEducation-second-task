@@ -1,3 +1,6 @@
+import './date-dropdown.scss';
+
+import '../datepicker/datepicker.js';
 import DateDropdown from './date-dropdown-class.js';
 
 export const arrivals = [];

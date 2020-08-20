@@ -1,3 +1,5 @@
+import './diagram.scss';
+
 class Diagram {
   constructor(itemCanvas, votes) {
     this.canvas = itemCanvas;

@@ -1,3 +1,5 @@
+import './range-slider.scss';
+
 export default class RangeSlider {
   constructor(item) {
     this.el = item;

@@ -3,7 +3,7 @@ include ../like-button/like-button.pug
 mixin comment(options = {})
   - 
     const {
-      avatarSrc = "assets/blocks/comment/images/comment-murad.png",
+      avatarSrc = "comment-murad.png",
       name = "Ирина Иванов",
       term = "600 лет назад", 
       likeButton = {
@@ -14,7 +14,7 @@ mixin comment(options = {})
     } = options;
 
   .comment
-    img.comment__avatar(src= avatarSrc)
+    img.comment__avatar(src= require(`../../../assets/blocks/comment/images/${avatarSrc}`))
     span.comment__name #{name}
     span.comment__term #{term}
     .comment__like-button

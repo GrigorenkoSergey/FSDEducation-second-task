@@ -1,3 +1,5 @@
+import './rate-button.scss';
+
 class RateButton {
   constructor(item) {
     this.el = item;
