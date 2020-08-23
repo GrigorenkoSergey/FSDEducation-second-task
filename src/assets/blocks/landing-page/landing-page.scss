@@ -11,6 +11,18 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+
+    @media (max-width: 480px) {
+      padding-left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 360px) {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
   }
 
   &__slogan {
@@ -23,48 +35,26 @@
     padding-right: 134px;
     text-align: end;
 
+    @media (max-width: 768px) {
+      margin-top: 190px;
+    }
+
+    @media (max-width: 480px) {
+      padding-bottom: 50px;
+      padding-right: 10px;
+      margin-top: 160px;
+    }
+
+    @media (max-width: 360px) {
+      margin-top: 130px;
+    }
+
     &-p {
       max-width: 297px;
     }
   }
 }
 
-@media (max-width: 768px) {
-  .landing-page {
-    &__slogan {
-      margin-top: 190px;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .landing-page {
-    &__main {
-      padding-left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    &__slogan {
-      padding-bottom: 50px;
-      padding-right: 10px;
-      margin-top: 160px;
-    }
-  }
-}
-
-@media (max-width: 360px) {
-  .landing-page {
-    &__main {
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-    &__slogan {
-      margin-top: 130px;
-    }
-  }
-}
-// На width: 240 уже ломается, перенастройка слишком трудоемка.
+// На ширине экрана 240  весь дизайн ломается, перенастройка слишком трудоемка.
 // Потребуется поменять дизайн почти полностью.
 // Вероятнее всего, что пользователь просто перевернет телефон.

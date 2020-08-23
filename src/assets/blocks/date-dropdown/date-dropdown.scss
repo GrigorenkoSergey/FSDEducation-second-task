@@ -5,9 +5,8 @@
   display: flex;
   justify-content: space-between;
 
-  .qs-datepicker-container {
-    height: auto;
-    box-shadow: 0px 10px 20px $dark_5;
+  @media (max-width: 320px) {
+    width: auto;
   }
 
   &:focus,
@@ -53,21 +52,25 @@
   &__button-apply {
     color: $purple;
   }
-}
 
-@media (max-width: 320px) {
-  .date-dropdown {
-    width: auto;
-  }
-  .qs-datepicker-container {
-    padding-left: 0;
-    padding-right: 0;
-    max-width: 320px;
-    min-width: 290px;
-    width: 100%;
-  }
-
+  // к сожалению, здесь придется использовать каскадность,
+  // т.к. она используется в исходном файле datepicker.scss
   .qs-datepicker .qs-squares {
-    padding-left: 0;
+    @media (max-width: 320px) {
+      padding-left: 0;
+    }
+  }
+
+  .qs-datepicker-container {
+    height: auto;
+    box-shadow: 0px 10px 20px $dark_5;
+
+    @media (max-width: 320px) {
+      padding-left: 0;
+      padding-right: 0;
+      max-width: 320px;
+      min-width: 290px;
+      width: 100%;
+    }
   }
 }

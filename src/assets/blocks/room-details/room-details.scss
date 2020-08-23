@@ -6,6 +6,32 @@
     display: flex;
     border-bottom: 1px solid $dark_25;
     box-sizing: border-box;
+
+    @media (max-width: 1280px) {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      padding-left: 60px;
+      padding-right: 60px;
+      padding-top: 30px;
+    }
+
+    @media (max-width: 640px) {
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: 360px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @media (max-width: 320px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__photos {
@@ -22,16 +48,52 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    @media (max-width: 1024px) {
+      flex-grow: 1;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 360px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 320px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
   &__column-2 {
     flex-grow: 1;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      margin-top: 40px;
+      justify-content: center;
+    }
+    @media (max-width: 320px) {
+      width: 100%;
+    }
   }
 
   &__buns-and-impressions {
     display: flex;
     width: 100%;
     margin-left: 2px;
+
+    @media (max-width: 1024px) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: 640px) {
+      flex-wrap: wrap-reverse;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 360px) {
+      margin-left: 0;
+    }
   }
 
   &__title {
@@ -45,6 +107,10 @@
   &__buns {
     width: 280px;
     margin-right: 20px;
+
+    @media (max-width: 640px) {
+      margin-top: 30px;
+    }
   }
 
   &__comments {
@@ -56,10 +122,18 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+      }
     }
 
     &-comment {
       margin-top: 20px;
+    }
+
+    @media (max-width: 640px) {
+      padding-right: 0px;
     }
   }
 
@@ -68,26 +142,51 @@
     width: 100%;
     margin-top: 35px;
     padding-right: 70px;
-  }
 
-  &__rules,
-  &__cancel {
-    width: 50%;
+    @media (max-width: 1024px) {
+      padding-right: 0;
+    }
+
+    @media (max-width: 640px) {
+      padding-right: 0px;
+    }
+
+    @media (max-width: 360px) {
+      flex-direction: column;
+    }
   }
 
   &__rules {
+    width: 50%;
     padding-right: 70px;
+
+    @media (max-width: 640px) {
+      padding-right: 10px;
+    }
+
+    @media (max-width: 360px) {
+      width: 100%;
+    }
   }
 
   &__cancel {
+    width: 50%;
     padding-left: 6px;
     padding-right: 10px;
+
+    @media (max-width: 360px) {
+      width: 100%;
+    }
   }
 
   &__rules-title,
   &__cancel-title {
     margin-left: 20px;
     margin-bottom: 16px;
+
+    @media (max-width: 360px) {
+      margin-left: 0;
+    }
   }
 
   &__cancel-title {
@@ -98,145 +197,20 @@
     width: 312px;
     margin-left: 60px;
     margin-right: 60px;
-  }
-}
 
-@media (max-width: 1280px) {
-  .room-details {
-    &__main {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-
-    &__impressions {
+    @media (max-width: 1280px) {
       margin-left: auto;
     }
-  }
-}
 
-@media (max-width: 1024px) {
-  .room-details {
-    &__main {
-      flex-wrap: wrap;
-      padding-left: 60px;
-      padding-right: 60px;
-      padding-top: 30px;
-    }
-
-    &__column-1,
-    &__column-2 {
-      flex-grow: 1;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    &__column-2 {
-      margin-top: 40px;
-      justify-content: center;
-    }
-
-    &__rules-and-cancel {
-      padding-right: 0;
-    }
-
-    &__buns-and-impressions {
-      justify-content: space-between;
-    }
-
-    &__impressions {
+    @media (max-width: 1024px) {
       margin-left: 0;
     }
-  }
-}
 
-@media (max-width: 768px) {
-  .room-details {
-    &__impressions {
+    @media (max-width: 768px) {
       margin-right: 0;
     }
-  }
-}
 
-@media (max-width: 640px) {
-  .room-details {
-    &__main {
-      padding-bottom: 30px;
-    }
-
-    &__buns-and-impressions {
-      flex-wrap: wrap-reverse;
-      justify-content: flex-start;
-    }
-
-    &__rules_and_cancel,
-    &__comments {
-      padding-right: 0px;
-    }
-
-    &__rules {
-      padding-right: 10px;
-    }
-
-    &__buns {
-      margin-top: 30px;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .room-details {
-    &__comments-title {
-      flex-direction: column;
-    }
-  }
-}
-
-@media (max-width: 360px) {
-  .room-details {
-    &__main {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    &__buns-and-impressions {
-      margin-left: 0;
-    }
-    &__column-1,
-    &__column-2 {
-      justify-content: center;
-    }
-
-    &__rules-and-cancel {
-      flex-direction: column;
-    }
-
-    &__rules,
-    &__cancel {
-      width: 100%;
-
-      &-title {
-        margin-left: 0;
-      }
-    }
-  }
-}
-
-@media (max-width: 320px) {
-  .room-details {
-    &__main {
-      padding-left: 0;
-      padding-right: 0;
-    }
-    &__column-1 {
-      width: 100%;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    &__column-2 {
-      width: 100%;
-    }
-
-    &__impression {
+    @media (max-width: 320px) {
       width: 100%;
     }
   }

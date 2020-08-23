@@ -8,12 +8,59 @@
   padding-bottom: 72px;
   border-bottom: 1px solid $dark_25;
 
+  @media (max-width: 1366px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+
+  @media (max-width: 640px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__description {
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+      gap: 10px 10px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      gap: 10px 10px;
+      justify-content: center;
+    }
+  }
+
   &__dropdown {
     margin-top: 20px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+
+    @media (max-width: 480px) {
+      margin-top: 10px;
+    }
   }
 
   &__range-slider {
     margin-top: 30px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+
+    @media (max-width: 480px) {
+      margin-top: 10px;
+    }
 
     &-p {
       margin-top: 15px;
@@ -24,26 +71,54 @@
 
   &__checkboxes {
     margin-top: 29px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+
+    @media (max-width: 480px) {
+      margin-top: 10px;
+    }
   }
 
   &__rich-checkbox-buttons {
     margin-top: 32px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+
+    @media (max-width: 480px) {
+      margin-top: 10px;
+    }
   }
 
   &__rich-checkbox {
     margin-bottom: 9px;
   }
 
+  &__dropdown-room {
+    margin-top: 30px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+  }
+
   &__title {
     margin-bottom: 14px;
   }
 
-  &__dropdown-room {
-    margin-top: 30px;
-  }
-
   &__checkbox-buttons {
     margin-top: 25px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+
+    @media (max-width: 480px) {
+      margin-top: 10px;
+    }
   }
 
   &__rooms-list {
@@ -52,8 +127,33 @@
     gap: 21px 12px;
     justify-content: end;
 
+    @media (max-width: 1024px) {
+      grid-template-columns: 270px 270px;
+    }
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: auto;
+      justify-items: center;
+    }
+
     &-title {
       grid-column: 1/4;
+
+      @media (max-width: 1024px) {
+        grid-column: 1 / 3;
+      }
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+
+      @media (max-width: 480px) {
+        grid-column: 1 / 2;
+      }
     }
   }
 
@@ -63,99 +163,14 @@
     display: flex;
     justify-content: center;
     margin-top: 19px;
-  }
-}
 
-@media (max-width: 1366px) {
-  .search-room {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .search-room {
-    &__rooms-list {
-      grid-template-columns: 270px 270px;
-
-      &-title {
-        grid-column: 1 / 3;
-      }
-    }
-
-    &__pagination {
+    @media (max-width: 1024px) {
       grid-column: 1 / 3;
     }
-  }
-}
 
-@media (max-width: 768px) {
-  .search-room {
-    grid-template-columns: auto;
-    gap: 20px;
-
-    &__rooms-list {
-      justify-content: center;
-
-      &-title {
-        text-align: center;
-      }
-    }
-
-    &__description {
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-template-rows: auto;
-      gap: 10px 10px;
-    }
-
-    &__dropdown,
-    &__range-slider,
-    &__checkboxes,
-    &__rich-checkbox-buttons,
-    &__dropdown-room,
-    &__checkbox-buttons {
-      margin-top: 0;
-    }
-  }
-}
-
-@media (max-width: 640px) {
-  .search-room {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-@media (max-width: 480px) {
-  .search-room {
-    &__rooms-list {
-      grid-template-columns: auto;
-      justify-items: center;
-
-      &-title {
-        grid-column: 1 / 2;
-      }
-    }
-
-    &__pagination {
+    @media (max-width: 480px) {
       grid-column: 1 / 2;
       margin-left: 0;
-    }
-
-    &__description {
-      grid-template-columns: auto;
-      grid-template-rows: auto;
-      gap: 10px 10px;
-      justify-content: center;
-    }
-
-    &__dropdown,
-    &__range-slider,
-    &__checkboxes,
-    &__rich-checkbox-buttons,
-    &__dropdown-rooms,
-    &__checkbox-buttons {
-      margin-top: 10px;
     }
   }
 }
