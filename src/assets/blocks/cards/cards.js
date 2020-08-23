@@ -7,12 +7,12 @@ import '../registration/registration.js';
 import '../log-in/log-in.js';
 
 let [arrival] = arrivals.filter((item) => item.el.dataset.name === 'arrival_calendar');
-arrival.el.classList.add('_invisible');
+arrival.el.style = 'visibility: hidden';
 arrival.alwaysShow = true;
 arrival.show();
 
 let [departure] = departures.filter((item) => item.el.dataset.name === 'departure_calendar');
-departure.el.classList.add('_invisible');
+departure.el.style = 'visibility: hidden';
 
 arrival.setDate(new Date(2019, 7, 19), true);
 departure.setDate(new Date(2019, 7, 23), true);
