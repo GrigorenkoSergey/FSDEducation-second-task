@@ -1,9 +1,5 @@
 @import '../template/variables';
 
-::placeholder {
-  color: $dark_25;
-}
-
 .form-elements {
   &__main {
     display: grid;
