@@ -24,14 +24,14 @@
     background: $primary-gradient;
   }
 
-  &__a {
+  &__link {
     text-decoration: none;
     color: $dark_50;
     font: $bodyFont;
     line-height: 15px;
     font-size: 12px;
   }
-  &__a_selected {
+  &__link_selected {
     font-weight: bold;
     color: white;
   }

@@ -11,7 +11,7 @@
     position: absolute;
   }
 
-  &__span {
+  &__text {
     display: flex;
     color: $dark_50;
     cursor: pointer;
@@ -29,7 +29,7 @@
     }
   }
 
-  &__input:checked + &__span::before {
+  &__input:checked + &__text::before {
     border-color: $purple;
     background: url('./images/check.svg') center no-repeat;
   }

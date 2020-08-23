@@ -8,10 +8,10 @@ mixin pagination(options = {})
   .pagination
     ul.pagination__list
       li.pagination__li.pagination__li_selected
-        a.pagination__a.pagination__a_selected(href = "#") !{pages[0]}
+        a.pagination__link.pagination__link_selected(href = "#") !{pages[0]}
       each val in pages.slice(1)
         li.pagination__li
-          a.pagination__a(href = "#") !{val}
+          a.pagination__link(href = "#") !{val}
       li.pagination__next-arrow
         i.material-icons arrow_forward
     span.pagination__description #{description}

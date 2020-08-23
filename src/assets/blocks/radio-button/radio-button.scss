@@ -37,11 +37,11 @@
     border-radius: 50%;
   }
 
-  &__input:checked ~ &__span {
+  &__input:checked ~ &__text{
     color: $dark_75;
   }
 
-  &__span {
+  &__text {
     margin-left: 10px;
     color: $dark_50;
     line-height: 24px;

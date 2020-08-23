@@ -54,8 +54,8 @@ mixin header(options = {})
             ul.header__submenu
               each subVal in val.innerUl
                 li 
-                  a.header__a(href= subVal.link) !{subVal.text}
-          a.header__a(href=`${val.link}` class= val.currentPage ? "header_current-page" : "") #{val.text}
+                  a.header__link(href= subVal.link) !{subVal.text}
+          a.header__link(href=`${val.link}` class= val.currentPage ? "header_current-page" : "") #{val.text}
     if (logged) 
       .header__user-name #{userName}
     else 

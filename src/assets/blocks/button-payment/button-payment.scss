@@ -22,7 +22,8 @@
   &:hover {
     background: $primary-gradient_05;
   }
-  &__span {
+
+  &__text {
     @extend %h3;
     padding: 14px 0;
     color: white;

@@ -3,7 +3,7 @@
 .rich-checkbox {
   user-select: none;
 
-  &__span {
+  &__main-text {
     line-height: 18px;
     font-weight: bold;
     color: $dark_75;
@@ -28,7 +28,7 @@
     position: absolute;
   }
 
-  &__input:checked + &__span::before {
+  &__input:checked + &__main-text::before {
     border-color: $purple;
     background: url('./images/check.svg') center no-repeat;
   }
