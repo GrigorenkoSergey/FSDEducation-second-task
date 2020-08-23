@@ -1,10 +1,10 @@
-@import "../template/variables";
+@import '../template/variables';
 
 .header {
   position: relative;
   display: grid;
   grid-template-columns: auto auto min-content;
-  grid-template-areas: "logo nav buttons";
+  grid-template-areas: 'logo nav buttons';
   padding: 15px 140px;
   background: white;
   box-shadow: 0px 10px 20px $dark_5;
@@ -56,11 +56,11 @@
     justify-content: space-between;
 
     &::after {
-      content: "";
+      content: '';
       width: 24px;
       height: 18px;
       margin-top: 1px;
-      background: url("./images/expand-more.png") center no-repeat;
+      background: url('./images/expand-more.png') center no-repeat;
     }
   }
 
@@ -96,7 +96,7 @@
     align-items: center;
 
     &::before {
-      content: "";
+      content: '';
       display: inline-block;
       width: 1px;
       height: 30px;
@@ -119,8 +119,8 @@
     grid-template-columns: auto auto;
     grid-template-rows: 30px 50px;
     grid-template-areas:
-      "logo nav"
-      "logo buttons";
+      'logo nav'
+      'logo buttons';
     line-height: normal;
 
     &__li:last-child {
@@ -146,8 +146,8 @@
   .header {
     grid-template-rows: 50px 60px;
     grid-template-areas:
-      "logo buttons"
-      "nav nav";
+      'logo buttons'
+      'nav nav';
     &__nav {
       margin-left: 20px;
       display: flex;

@@ -19,10 +19,10 @@
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     width: 20px;
     height: 20px;
-    background: url("./images/favorite-border.png") center center no-repeat;
+    background: url('./images/favorite-border.png') center center no-repeat;
   }
 
   &_pushed {
@@ -32,7 +32,7 @@
 
     &::after {
       // white background inside
-      content: "";
+      content: '';
       width: 100%;
       height: 18px;
       border-radius: 10px;
@@ -44,7 +44,7 @@
 
     &::before {
       // pink heart
-      background: url("./images/favorite.png") center center no-repeat;
+      background: url('./images/favorite.png') center center no-repeat;
       z-index: 1;
     }
   }

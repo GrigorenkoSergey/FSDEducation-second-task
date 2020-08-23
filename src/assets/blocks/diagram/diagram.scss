@@ -16,9 +16,10 @@
     align-items: center;
     position: relative;
     flex-shrink: 0;
-}
+  }
 
-  &__canvas { // не переименовывать, связан с селекторм js
+  &__canvas {
+    // не переименовывать, связан с селекторм js
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +31,8 @@
     line-height: 30px;
   }
 
-  &__voices { // не переименовывать, связан с селектором js
+  &__voices {
+    // не переименовывать, связан с селектором js
     font-size: 12px;
     line-height: 18px;
     font-family: $bodyFont-family;
@@ -46,7 +48,7 @@
 
   &__estimate {
     &::before {
-      content: "";
+      content: '';
       display: inline-block;
       width: 10px;
       height: 10px;

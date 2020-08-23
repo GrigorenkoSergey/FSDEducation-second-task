@@ -10,7 +10,6 @@
     box-shadow: 0px 10px 20px $dark_5;
   }
 
-
   &:focus,
   &:hover {
     border-color: $dark_50;
@@ -19,6 +18,7 @@
   &__item {
     width: 150px;
   }
+
   &__input {
     width: 100%;
     margin-top: 5px;
