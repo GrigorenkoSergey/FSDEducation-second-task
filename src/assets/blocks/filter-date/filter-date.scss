@@ -1,4 +1,4 @@
-@import '../template/variables';
+@import "../template/variables";
 
 .filter-date {
   &__select {
@@ -11,17 +11,12 @@
     background-position: right;
     appearance: none;
     cursor: pointer;
-  }
 
-  &:focus,
-  &:hover {
-    border-color: $dark_50;
-    outline: none;
-  }
-
-  &.hover {
-    border-color: $dark_75;
-    outline: none;
+    &:focus,
+    &:hover {
+      border-color: $dark_50;
+      outline: none;
+    }
   }
 
   &__title {
