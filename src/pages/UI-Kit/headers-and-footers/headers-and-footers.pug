@@ -1,12 +1,12 @@
 extends ../../../assets/blocks/template/template.pug
 
+block includes
+  include ../../../assets/blocks/headers-and-footers/headers-and-footers.pug
+
 block variables
   - 
     const titleName = "headers-and-footers";
     const blockName = "headers-and-footers";
-
-block includes
-  include ../../../assets/blocks/headers-and-footers/headers-and-footers.pug
 
 block content
   +headers-and-footers()
