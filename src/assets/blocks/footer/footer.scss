@@ -13,11 +13,6 @@
     padding-right: 60px;
   }
 
-  @media (max-width: 1080px) {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
   @media (max-width: 768px) {
     flex-wrap: wrap;
     padding-top: 20px;
@@ -31,11 +26,6 @@
   }
 
   @media (max-width: 480px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  @media (max-width: 320px) {
     padding-left: 10px;
     padding-right: 10px;
   }
