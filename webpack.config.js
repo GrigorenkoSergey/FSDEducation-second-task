@@ -42,7 +42,7 @@ module.exports = (env, options) => ({
 
   devServer: {
     overlay: true,
-    port: 3002,
+    port: 3000,
   },
 
   devtool: options.mode === 'development' ? 'inline-source-map' : false,
