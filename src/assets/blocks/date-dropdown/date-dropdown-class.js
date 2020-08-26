@@ -13,8 +13,10 @@ export default class DateDropdown {
       overlayPlaceholder: new Date().getFullYear().toString(),
       showAllDates: true,
       id: 1,
-      events: [new Date(2019, 7, 8)],
+      events: [new Date()],
+      minDate: new Date(),
       onShow: this.onShow.bind(this),
+      onHide: this.onHide.bind(this),
       formatter: this.formatter.bind(this),
     };
 
@@ -34,6 +36,19 @@ export default class DateDropdown {
     if (!container.querySelector('.date-dropdown__buttons')) {
       this.renderButtons(container);
     }
+  }
+
+  onHide() {
+    const dateMask = /^\d{2}\.\d{2}\.20\d{2}$/;
+
+    let input = this.datepicker.el.value.trim();
+    if (!dateMask.test(input)) {
+      input = 'ДД.ММ.ГГГГ';
+      this.datepicker.setDate();
+      this.datepicker.el.value = input;
+      return;
+    }
+    this.datepicker.setDate(new Date(input.split('.').map((item) => Number(item)).reverse()));
   }
 
   renderButtons(container) {
@@ -58,7 +73,7 @@ export default class DateDropdown {
 
   handleButtonResetClick(e) {
     this.datepicker.setDate();
-    this.el.value = 'ДД.ММ.ГГГГ.';
+    this.datepicker.el.value = 'ДД.ММ.ГГГГ.';
   }
 
   handleButtonApplyClick(e) {

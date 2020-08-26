@@ -18,7 +18,4 @@ import '../button-text/button-text.js';
 import '../button-payment/button-payment.js';
 import '../pagination/pagination.js';
 import '../bullet-list/bullet-list.js';
-
-import { departures } from '../date-dropdown/date-dropdown.js';
-
-departures[0].setDate(new Date(2019, 7, 19));
+import '../date-dropdown/date-dropdown.js';
