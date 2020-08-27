@@ -2,8 +2,10 @@
 /* eslint-disable class-methods-use-this */
 import datepicker from 'js-datepicker';
 
+const defaultInputValue = 'ДД.ММ.ГГГГ.';
+
 export default class DateDropdown {
-  constructor(item, options) {
+  constructor(instance, options = {}) {
     const defaultOptions = {
       startDay: 1,
       customDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
@@ -20,35 +22,32 @@ export default class DateDropdown {
       formatter: this.formatter.bind(this),
     };
 
-    const optionsUpdated = { ...defaultOptions, ...options };
-    this.datepicker = datepicker(item, optionsUpdated);
+    this.el = instance; // DOM-element
+    this.options = { ...defaultOptions, ...options };
+    this.init();
 
-    return this.datepicker;
+    return this;
   }
 
-  onShow() {
-    const container = this.datepicker.el.parentNode.querySelector('.qs-datepicker-container');
+  init() {
+    this.arrival = datepicker(this.el.querySelector('[data-id=arrival]'), this.options);
+    this.departure = datepicker(this.el.querySelector('[data-id=departure]'), { ...this.options, position: 'br' });
 
-    // Подвинем на 5.56 пикселей ниже и сгенерируем кнопки
+    this.renderButtons(this.arrival.calendarContainer);
+    this.renderButtons(this.departure.calendarContainer);
+  }
+
+  onShow(instance) {
+    const container = instance.calendarContainer;
+
+    // Подвинем на 5.56 пикселей ниже
     container.style.top = `${parseFloat(container.style.top) + 5.56}px`;
 
-    // если у нас еще не сгенерированы кнопки "Очистить" и "Применить", то сгенерируем их
-    if (!container.querySelector('.date-dropdown__buttons')) {
-      this.renderButtons(container);
+    if (this.arrival.dateSelected && !this.departure.dateSelected) {
+      this.departure.setDate(this.arrival.dateSelected);
+    } else if (!this.arrival.dateSelected && this.departure.dateSelected) {
+      this.arrival.setDate(this.departure.dateSelected);
     }
-  }
-
-  onHide() {
-    const dateMask = /^\d{2}\.\d{2}\.20\d{2}$/;
-
-    let input = this.datepicker.el.value.trim();
-    if (!dateMask.test(input)) {
-      input = 'ДД.ММ.ГГГГ';
-      this.datepicker.setDate();
-      this.datepicker.el.value = input;
-      return;
-    }
-    this.datepicker.setDate(new Date(input.split('.').map((item) => Number(item)).reverse()));
   }
 
   renderButtons(container) {
@@ -64,16 +63,16 @@ export default class DateDropdown {
     buttonsContainer.append(buttonReset, buttonApply);
     container.append(buttonsContainer);
 
-    this.handleButtonApplyClick = this.handleButtonApplyClick.bind(this);
-    this.handleButtonResetClick = this.handleButtonResetClick.bind(this);
-
-    buttonReset.addEventListener('click', this.handleButtonResetClick);
-    buttonApply.addEventListener('click', this.handleButtonApplyClick);
+    buttonReset.addEventListener('click', this.handleButtonResetClick.bind(this));
+    buttonApply.addEventListener('click', this.handleButtonApplyClick.bind(this));
   }
 
   handleButtonResetClick(e) {
-    this.datepicker.setDate();
-    this.datepicker.el.value = 'ДД.ММ.ГГГГ.';
+    this.arrival.setDate();
+    this.arrival.el.value = defaultInputValue;
+
+    this.departure.setDate();
+    this.departure.el.value = defaultInputValue;
   }
 
   handleButtonApplyClick(e) {
@@ -82,7 +81,28 @@ export default class DateDropdown {
   }
 
   formatter(input, date) {
-    const value = date.toLocaleDateString('ru-RU');
-    input.value = value;
+    input.value = date.toLocaleDateString('ru-RU');
+  }
+
+  onHide(instance) {
+    const dateMask = /^\d{2}\.\d{2}\.20\d{2}$/;
+    const input = instance.el.value.trim();
+    const dateSelected = new Date(input.split('.').reverse());
+    const { minDate, maxDate } = instance;
+
+    const dateIsValid = dateSelected >= minDate
+      && (!maxDate || maxDate >= dateSelected);
+
+    if (dateMask.test(input) && dateIsValid) {
+      instance.setDate(dateSelected);
+    } else {
+      instance.setDate();
+      instance.el.value = defaultInputValue;
+    }
+  }
+
+  departureOnHide(instance) {
+    const dateMask = /^\d{2}\.\d{2}\.20\d{2}$/;
+    const input = instance.el.value.trim();
   }
 }

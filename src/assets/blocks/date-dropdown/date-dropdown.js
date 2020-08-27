@@ -1,23 +1,18 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-new */
+import datepicker from 'js-datepicker';
 import './date-dropdown.scss';
 
 import '../datepicker/datepicker.js';
 import DateDropdown from './date-dropdown-class.js';
 
-export const arrivals = [];
-export const departures = [];
+const dateDropdowns = [];
 
-let arrivalId = 1;
-[...document.querySelectorAll("[data-id='arrival']")]
+let id = 1;
+[...document.querySelectorAll('.date-dropdown')]
   .forEach((item) => {
-    const arrival = new DateDropdown(item, { id: arrivalId });
-    arrivals.push(arrival);
-    arrivalId += 1;
+    dateDropdowns.push(new DateDropdown(item, { id }));
+    id += 1;
   });
 
-let departureId = 1;
-[...document.querySelectorAll("[data-id='departure']")]
-  .forEach((item) => {
-    const departure = new DateDropdown(item, { id: departureId, position: 'br' });
-    departures.push(departure);
-    departureId += 1;
-  });
+export { dateDropdowns as default };
