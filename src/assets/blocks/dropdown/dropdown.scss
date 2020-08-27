@@ -15,7 +15,7 @@
     border: 1px solid $dark_25;
     border-radius: 4px;
     padding: 8px 10px 10px 14px;
-    color: $dark_75;
+    color: $dark_50;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -25,6 +25,10 @@
     border-color: $dark_50;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  &__input-text {
+    color: $dark_75;
   }
 
   &__minus,
