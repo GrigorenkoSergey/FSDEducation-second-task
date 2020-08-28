@@ -55,7 +55,13 @@ module.exports = (env, options) => ({
     {
       test: /\.css$/,
       use: [
-        MiniCssExtractPlugin.loader,
+        // MiniCssExtractPlugin.loader,
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath: (resourcePath, ctx) => `${path.relative(path.dirname(resourcePath), ctx)}/`,
+          },
+        },
         'css-loader',
       ],
     },
