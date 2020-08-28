@@ -1,4 +1,5 @@
 include ../../../assets/blocks/input/input.pug
+include ../../../assets/blocks/masked-text-field/masked-text-field.pug
 include ../../../assets/blocks/date-dropdown/date-dropdown.pug
 include ../../../assets/blocks/dropdown/dropdown.pug
 include ../../../assets/blocks/filter-date/filter-date.pug
@@ -52,10 +53,7 @@ mixin form-elements(options = {})
       maskedTextField = {
         h3Text: "masked text field",
         spanText: "default",
-        inputOptions: {
-          attr: {type: "date"},
-          mod: {type: "date"},
-        },
+        inputOptions,
       },
       dateDropdown = {
         arrivalTitle: "date dropdown", 
@@ -197,7 +195,8 @@ mixin form-elements(options = {})
         .form-elements__input-title
           h3 #{maskedTextField.h3Text}
           span #{maskedTextField.spanText}
-        +input(maskedTextField.inputOptions)
+        //- +input(maskedTextField.inputOptions)
+        +masked-text-field(maskedTextField.inputOptions)
 
       .form-elements__date-dropdown  
         +date-dropdown(dateDropdown)

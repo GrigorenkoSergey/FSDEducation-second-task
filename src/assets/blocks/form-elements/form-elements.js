@@ -1,6 +1,7 @@
 import './form-elements.scss';
 
 import '../input/input.js';
+import '../masked-text-field/masked-text-field.js';
 import '../dropdown/dropdown.js';
 import '../filter-date/filter-date.js';
 import '../like-button/like-button.js';

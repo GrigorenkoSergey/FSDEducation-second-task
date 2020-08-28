@@ -7,3 +7,24 @@
   text-transform: uppercase;
   color: $dark_100;
 }
+
+%input {
+  width: 100%;
+  padding: 9px 14px;
+  border: 1px solid $dark_25;
+  border-radius: 4px;
+  color: $dark_75;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border-color: $dark_50;
+    outline: none;
+  }
+
+  &_action_hover {
+    border-color: $dark_75;
+    outline: none;
+  }
+}
