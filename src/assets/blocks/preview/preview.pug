@@ -15,6 +15,7 @@ mixin preview(options = {})
       imgHeight = "151px",
       cost = "9 990",
       stars = 5,
+      reviewLink = "#",
       reviewsNum = 145,
       reviewWord = "Отзывов",
       arrowsHidden = false,
@@ -36,6 +37,6 @@ mixin preview(options = {})
         span #{priceTerm}
       .preview__stars
         +rate-button(stars)
-        .preview__reviews
+        a.preview__reviews(href= reviewLink)
           b #{reviewsNum}
           span #{` ${reviewWord}`} 
