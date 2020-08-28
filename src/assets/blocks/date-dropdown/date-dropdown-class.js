@@ -100,9 +100,4 @@ export default class DateDropdown {
       instance.el.value = defaultInputValue;
     }
   }
-
-  departureOnHide(instance) {
-    const dateMask = /^\d{2}\.\d{2}\.20\d{2}$/;
-    const input = instance.el.value.trim();
-  }
 }

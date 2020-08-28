@@ -103,18 +103,19 @@
   &__buttons {
     width: 100%;
     padding: 19px 5px 7px 13px;
-    cursor: pointer;
   }
 
   &__button-reset {
     float: left;
     color: $dark_50;
     text-align: left;
+    cursor: pointer;
   }
 
   &__button-apply {
     float: right;
     color: $purple;
     margin-right: 1px;
+    cursor: pointer;
   }
 }
