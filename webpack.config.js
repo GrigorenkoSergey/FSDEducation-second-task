@@ -37,7 +37,7 @@ module.exports = (env, options) => ({
   entry: entries,
 
   output: {
-    filename: (pathData) => `${entries[pathData.chunk.name]}.js`,
+    filename: (pathData) => `${entries[pathData.chunk.name]}.[contenthash].js`,
   },
 
   devServer: {
