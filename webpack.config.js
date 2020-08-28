@@ -107,7 +107,7 @@ module.exports = (env, options) => ({
         {
           loader: 'file-loader',
           options: {
-            name: '[path][name].[ext]',
+            name: '[path][name].[contenthash].[ext]',
             publicPath: (pathFromRoot) => `../../../${pathFromRoot}`,
             esModule: false,
           },
@@ -120,7 +120,7 @@ module.exports = (env, options) => ({
         {
           loader: 'file-loader',
           options: {
-            name: '[path][name].[ext]',
+            name: '[path][name].[contenthash].[ext]',
             publicPath: (pathFromRoot) => `../../../${pathFromRoot}`,
           },
         },
@@ -151,7 +151,7 @@ module.exports = (env, options) => ({
     })),
 
     new MiniCssExtractPlugin({
-      moduleFilename: ({ name }) => `${entries[name]}.css`,
+      moduleFilename: ({ name }) => `${entries[name]}.[contenthash].css`,
     }),
 
     new webpack.ProvidePlugin({
