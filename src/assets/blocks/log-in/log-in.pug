@@ -7,10 +7,15 @@ mixin log-in(options = {})
     const {
       title = "Войти",
       inputEmail = {
-        attr: {placeholder: "Email"},
+        attr: {
+          placeholder: "Email",
+          type: "email"
+        },
       },
       inputPassword = {
-        attr: {placeholder: "Пароль"},
+        attr: {
+          placeholder: "Пароль",
+          type: "password"},
       },
       buttonPayment = {
         text: "Войти",

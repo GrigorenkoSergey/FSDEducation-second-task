@@ -9,24 +9,36 @@ mixin registration(options = {})
     const {
       title = "Регистрация аккаунта",
       inputName = {
-        attr: {placeholder: "Имя"},
+        attr: {
+          placeholder: "Имя",
+        },
       },
       inputSurname = {
-        attr: {placeholder: "Фамилия"},
+        attr: {
+          placeholder: "Фамилия",
+        },
       },
       radioButtonsGroup,
       titleBirthday = "Дата рождения",
 
       inputBirthday = {
-        attr: {placeholder: "ДД.ММ.ГГГГ"},
+        attr: {
+          placeholder: "ДД.ММ.ГГГГ",
+        },
       },
 
       titleAuthorisation = "Данные для входа в сервис",
       inputEmail = {
-        attr: {placeholder: "Email"},
+        attr: {
+          placeholder: "Email",
+          type: "email",
+        },
       },
       inputPassword = {
-        attr: {placeholder: "Пароль"},
+        attr: {
+          placeholder: "Пароль",
+          type: "password",
+        },
       },
       toggler = {
         name: "get_offers",
@@ -74,4 +86,3 @@ mixin registration(options = {})
     .registration__account-enter
       span #{accountEnterText}
       +button(buttonAccountEnter)
-      

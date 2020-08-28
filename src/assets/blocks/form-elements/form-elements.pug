@@ -27,7 +27,10 @@ mixin form-elements(options = {})
         h3Text: "text field",
         spanText: "default",
         inputOptions: {
-          attr: {placeholder: "Email"},
+          attr: {
+            placeholder: "Email",
+            type: "email",
+          },
         },
       },
       inputHover = {
