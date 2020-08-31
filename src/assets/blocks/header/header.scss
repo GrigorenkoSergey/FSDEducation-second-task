@@ -48,6 +48,7 @@
     display: flex;
     align-items: center;
     grid-area: logo;
+    margin-right: 30px;
   }
 
   &__nav {
@@ -88,6 +89,25 @@
     margin-right: 21px;
     position: relative;
 
+    &_current-page {
+      color: $dark_75;
+      font-weight: bold;
+    }
+
+    &_submenu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &::after {
+        content: '';
+        width: 24px;
+        height: 18px;
+        margin-top: 1px;
+        background: url('./images/expand-more.png') center no-repeat;
+      }
+    }
+
     @media (max-width: 768px) {
       &:last-child {
         margin-right: 0;
@@ -99,33 +119,15 @@
     }
   }
 
-  &__li_current-page {
-    color: $dark_75;
-  }
-
   &__link {
     text-decoration: none;
-    color: $dark_50;
+    color: inherit;
     font: $bodyFont;
-  }
+    font-weight: inherit;
 
-  &__li_submenu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &::after {
-      content: '';
-      width: 24px;
-      height: 18px;
-      margin-top: 1px;
-      background: url('./images/expand-more.png') center no-repeat;
+    &:hover {
+      color: $dark_75;
     }
-  }
-
-  &_current-page {
-    font-weight: bold;
-    color: $dark_75;
   }
 
   &__submenu {

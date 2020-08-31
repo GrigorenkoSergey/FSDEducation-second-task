@@ -2,10 +2,25 @@ mixin list(options = {})
   - 
     const {
       title = "someTitle",
-      list = ["item1", "item2", "item3"],
+      list = [
+        {
+          text: "item1",
+          link: "/valhalla/feast-table/",
+        }, 
+        {
+          text: "item2",
+        },
+        {
+          text: "item3",
+        },
+      ],
     } = options;
 
   .list__title #{title}
   ul.list__ul
     each val in list
-      li.list__li #{val}
+      if (val.link)
+        li.list__li
+          a.list__link(href= val.link) #{val.text}
+      else
+        li.list__li #{val.text}

@@ -55,9 +55,14 @@
     font-weight: bold;
   }
 
-  &__reviews {
+  &__reviews-link {
     padding-top: 2px;
     color: $dark_50;
     text-decoration: none;
+
+    &:hover {
+      color: $dark_75;
+      font-weight: bold;
+    }
   }
 }

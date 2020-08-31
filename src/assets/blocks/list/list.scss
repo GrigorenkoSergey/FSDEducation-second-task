@@ -16,4 +16,10 @@
       color: $dark_100;
     }
   }
+
+  &__link {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+  }
 }

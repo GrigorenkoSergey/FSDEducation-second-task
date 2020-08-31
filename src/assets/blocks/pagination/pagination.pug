@@ -2,16 +2,39 @@ mixin pagination(options = {})
   - 
     const {
       description = "1 - 12 из 100+ вариантов аренды",
-      pages = [1, 2, 3, "...", 15],
+      pages = [
+        {
+          num: 1,
+          link: "/valhalla/feast-table/",
+          selected: true,
+        }, 
+        {
+          num: 2,
+          link: "/valhalla/feast-table/",
+        }, 
+        {
+          num: 3,
+          link: "/valhalla/feast-table/",
+        }, 
+        {
+          num: "...", 
+          link: "/valhalla/feast-table/",
+        },
+        {
+          num: 15,
+          link: "/valhalla/feast-table/",
+        },
+      ],
     } = options;
-      
+
   .pagination
     ul.pagination__list
-      li.pagination__li.pagination__li_selected
-        a.pagination__link.pagination__link_selected(href = "#") !{pages[0]}
-      each val in pages.slice(1)
-        li.pagination__li
-          a.pagination__link(href = "#") !{val}
+      each page in pages
+        - const selectedLi = page.selected ? "pagination__li_selected" : "";
+        - const selectedLink = page.selected ? "pagination__link_selected" : "";
+
+        li.pagination__li(class= selectedLi)
+          a.pagination__link(class= selectedLink href= page.link) !{page.num}
       li.pagination__next-arrow
         i.material-icons arrow_forward
     span.pagination__description #{description}

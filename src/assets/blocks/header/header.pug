@@ -6,25 +6,26 @@ mixin header(options = {})
       logo = {
         img: "logo-toxin.png",
         link: "../landing-page/landing-page.html",
+        alt: "Логотип",
       },
       nav = [
-        {text: "О нас", link: "#", currentPage: true},
-        {text: "Услуги", link: "#",
+        {text: "О нас", link: "/valhalla/feast-table/", currentPage: true},
+        {text: "Услуги", link: "/valhalla/feast-table/",
           innerUl:
             [
-              { text: "service_1", link: "#" },
-              { text: "service_2", link: "#" }, 
-              { text: "service_3", link: "#" },
+              { text: "service_1", link: "/valhalla/feast-table/" },
+              { text: "service_2", link: "/valhalla/feast-table/" }, 
+              { text: "service_3", link: "/valhalla/feast-table/" },
             ],
         },
-        { text: "Вакансии", link: "#"},
-        { text: "Новости", link: "#"},
+        { text: "Вакансии", link: "/valhalla/feast-table/"},
+        { text: "Новости", link: "/valhalla/feast-table/"},
         {
-          text: "Соглашения", link: "#",
+          text: "Соглашения", link: "/valhalla/feast-table/",
           innerUl: [
-            { text: "item-1", link: "#" },
-            { text: "item-2", link: "#" },
-            { text: "item-3", link: "#" },
+            { text: "item-1", link: "/valhalla/feast-table/" },
+            { text: "item-2", link: "/valhalla/feast-table/" },
+            { text: "item-3", link: "/valhalla/feast-table/" },
             ],
         },
       ],
@@ -45,7 +46,7 @@ mixin header(options = {})
 
   .header
     a.header__logo(href= logo.link)
-      img(src= require(`../../../assets/blocks/header/images/${logo.img}`))
+      img(src= require(`../../../assets/blocks/header/images/${logo.img}`) alt= `${logo.alt}`)
     ul.header__nav
       each val in nav
         li.header__li(class = val.innerUl ? "header__li_submenu " : ""
@@ -55,7 +56,8 @@ mixin header(options = {})
               each subVal in val.innerUl
                 li 
                   a.header__link(href= subVal.link) !{subVal.text}
-          a.header__link(href=`${val.link}` class= val.currentPage ? "header_current-page" : "") #{val.text}
+          //- a.header__link(href=`${val.link}` class= val.currentpage ? "header_current-page" : "") #{val.text}
+          a.header__link(href=`${val.link}`) #{val.text}
     if (logged) 
       .header__user-name #{userName}
     else 

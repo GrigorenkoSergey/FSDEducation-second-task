@@ -18,10 +18,11 @@
     align-items: center;
     width: 40px;
     height: 40px;
-  }
-  &__li_selected {
-    border-radius: 50%;
-    background: $primary-gradient;
+
+    &_selected {
+      border-radius: 50%;
+      background: $primary-gradient;
+    }
   }
 
   &__link {
@@ -30,10 +31,16 @@
     font: $bodyFont;
     line-height: 15px;
     font-size: 12px;
-  }
-  &__link_selected {
-    font-weight: bold;
-    color: white;
+
+    &:hover {
+      color: $dark_75;
+      font-weight: bold;
+    }
+
+    &_selected {
+      font-weight: bold;
+      color: white;
+    }
   }
 
   &__next-arrow {
@@ -46,6 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
 
   &__description {
