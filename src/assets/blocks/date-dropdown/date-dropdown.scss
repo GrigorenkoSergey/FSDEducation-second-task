@@ -47,48 +47,9 @@
     cursor: pointer;
     outline: none;
     background-color: transparent;
-  }
 
-  &__buttons {
-    cursor: pointer;
-    font-family: $bodyFont-family;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
-
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    z-index: 9002;
-  }
-
-  &__button-reset {
-    color: $dark_50;
-  }
-
-  &__button-apply {
-    color: $purple;
-  }
-
-  // к сожалению, здесь придется использовать каскадность,
-  // т.к. она используется в исходном файле datepicker.scss
-  .qs-datepicker .qs-squares {
-    @media (max-width: 320px) {
-      padding-left: 0;
-    }
-  }
-
-  .qs-datepicker-container {
-    height: auto;
-    box-shadow: 0px 10px 20px $dark_5;
-
-    @media (max-width: 320px) {
-      padding-left: 0;
-      padding-right: 0;
-      max-width: 320px;
-      min-width: 290px;
-      width: 100%;
+    &::placeholder {
+      color: $dark_75;
     }
   }
 }

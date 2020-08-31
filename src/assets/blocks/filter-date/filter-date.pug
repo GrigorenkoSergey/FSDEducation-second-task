@@ -2,12 +2,10 @@ mixin filter-date(options = {})
   - 
     const {
       title = "filter date dropdown",
-      range = "19 авг - 23 авг",
       } = options;
 
   .filter-date
     if (title.length !== 0)
       .filter-date__title
         h3 !{title}
-    select.filter-date__select
-      option(selected) !{range}  
+    input.filter-date__input(readonly placeholder= 'ДД ММ - ДД ММ') 

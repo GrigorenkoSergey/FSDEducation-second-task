@@ -1,320 +1,166 @@
 @import '../template/variables';
+// Передедал исходную таблицу стилей air-datepicker
 
-// Передедал исходную таблицу стилей
 $width: 320px;
-$transition: 0.3s;
-$font-size: 19px;
 
-.qs-datepicker-container {
-  position: absolute;
-  transition: top $transition;
+.datepicker {
   width: $width;
-  display: flex;
-  flex-direction: column;
-  z-index: 9001;
-  user-select: none;
-  border: 1px solid $dark_25;
-  border-radius: 4px;
-  overflow: hidden;
-  background: white;
+  box-sizing: border-box;
 
-  &.qs-centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &.qs-hidden {
+  &--pointer {
     display: none;
   }
-}
 
-.qs-datepicker {
-  .qs-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-    width: 100%;
-    z-index: 1;
-    opacity: 1;
-    transition: opacity $transition;
-    display: flex;
-    flex-direction: column;
-
-    &.qs-hidden {
-      opacity: 0;
-      z-index: -1;
-    }
-
-    .qs-overlay-year {
-      // Overlay year input element.
-      border: none;
-      background: transparent;
-      border-bottom: 1px solid white;
-      border-radius: 0;
-      color: white;
-      font-size: $font-size;
-      padding: 0.25em 0;
-      width: 80%;
-      text-align: center;
-      margin: 0 auto;
-      display: block;
-
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-      }
-    }
-
-    .qs-close {
-      cursor: pointer;
-      position: absolute;
-      top: 3px;
-      right: 7px;
-    }
-
-    .qs-submit {
-      border: 1px solid white;
-      border-radius: 4px;
-      padding: 0.5em;
-      margin: 0 auto auto;
-      cursor: pointer;
-      background: rgba(128, 128, 128, 0.4);
-
-      &.qs-disabled {
-        color: $dark_25;
-        border-color: gray;
-        cursor: not-allowed;
-      }
-    }
-
-    .qs-overlay-month-container {
-      display: flex;
-      flex-wrap: wrap;
-      flex-grow: 1;
-    }
-
-    .qs-overlay-month {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: calc(100% / 3);
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity $transition / 2;
-
-      &.active,
-      &:hover {
-        opacity: 1;
-      }
-    }
+  &--nav {
+    border-bottom: none;
   }
 
-  .qs-controls {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &--nav-title {
+    padding: 15px 8px;
     font: $titleFont;
-    margin-top: 19px;
-    filter: blur(0px);
-    transition: filter $transition;
-
-    &.qs-blur {
-      filter: blur(5px);
-    }
-  }
-
-  .qs-arrow {
-    position: relative;
-    cursor: pointer;
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: -12px;
-      display: inline-block;
-      width: 23.93px;
-      height: 24px;
-      background: url('./images/arrow-forward.png') center no-repeat;
-    }
-
-    &.qs-left:after {
-      left: 19px;
-      transform: rotate(180deg);
-    }
-
-    &.qs-right:after {
-      right: 19px;
-    }
-  }
-
-  .qs-month-year {
-    cursor: pointer;
-    text-align: center;
-    color: $dark_100;
-
-    &:focus,
-    &:active:focus {
-      outline: none;
-    }
-  }
-
-  .qs-squares {
-    display: flex;
-    flex-wrap: wrap;
-    filter: blur(0px);
-    transition: filter $transition;
-    padding-top: 30px;
-    padding-left: 20.2px;
-    font: $bodyFont;
-    font-size: 12px;
-    line-height: 40px;
-
-    &.qs-blur {
-      filter: blur(5px);
-    }
-  }
-
-  .qs-square {
-    width: 39.88px;
-    height: 40px;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    color: $dark_50;
-
-    &.qs-current {
-      font-weight: bold;
-      background: $secondary-gradient;
-      border-radius: 50%;
-      span {
-        color: white;
-        font-weight: bold;
-      }
-    }
-
-    &.qs-active {
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 100%;
-        height: inherit;
-        position: absolute;
-        left: 0px;
-        background: $primary-gradient;
-        border-radius: 50%;
-      }
-
-      span {
-        color: white;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-        right: 0;
-      }
-    }
-
-    &.qs-range-date-start {
-      span::after {
-        content: '';
-        display: inline-block;
-        width: 39.88px;
-        height: 40px;
-        position: absolute;
-        left: 0;
-        background: $primary-gradient;
-        opacity: 0.25;
-        z-index: -1;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-      }
-    }
-
-    &.qs-range-date-middle {
-      position: relative;
-      span::before {
-        content: '';
-        display: inline-block;
-        width: 39.88px;
-        height: 40px;
-        position: absolute;
-        left: 0;
-        background: $primary-gradient;
-        opacity: 0.25;
-      }
-
-      &:not(.qs-range-date-0):not(.qs-range-date-6):not(.qs-current) {
-        border-radius: 0;
-      }
-    }
-
-    &.qs-range-date-end {
-      span::after {
-        content: '';
-        display: inline-block;
-        width: 39.88px;
-        height: 40px;
-        position: absolute;
-        left: 0;
-        background: $primary-gradient;
-        opacity: 0.25;
-        z-index: -1;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-      }
-    }
-
-    &.qs-empty {
-      cursor: default;
-      color: $dark_25;
-    }
-
-    &.qs-disabled {
-      cursor: not-allowed;
-    }
-
-    &.qs-day {
-      cursor: default;
-      font-weight: bold;
-      color: $purple;
-    }
-
-    &:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active) {
-      &:hover {
-        background: $purple;
-        border-radius: 50%;
-        color: white;
-        font-weight: bold;
-      }
-    }
-  }
-
-  .qs-event {
-    position: relative;
-    color: white;
     font-weight: bold;
 
-    // Пришлось переделать исключительно для того, чтобы выделить дату как в макете
-    &:after {
-      content: '';
-      position: absolute;
-      width: 39.88px;
-      height: 40px;
-      border-radius: 50%;
+    i {
+      color: inherit;
+    }
+  }
+
+  &--nav-action {
+    width: auto;
+    padding: 0 15px;
+    color: $purple;
+  }
+
+  &--cells {
+    margin-top: 8px;
+  }
+
+  &--cell {
+    height: auto;
+    padding: 8px 0;
+    font: $bodyFont;
+    font-size: 12px;
+    color: $dark_50;
+    border-radius: 50%;
+
+    &.-current- {
       background: $secondary-gradient;
-      bottom: 0;
-      right: 0;
-      z-index: -1;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
     }
 
-    &.qs-disabled,
-    &.qs-empty {
-      &:after {
-        background: lighten(#07f, 40);
+    &.-selected- {
+      background: $primary-gradient;
+      color: white;
+      font-weight: bold;
+
+      &.-focus- {
+        background: $primary-gradient;
       }
     }
+
+    &.-range-to-,
+    &.-range-from- {
+      position: relative;
+      border-radius: 50%;
+      border: none;
+      background: $primary-gradient;
+      color: white;
+      font-weight: bold;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+        z-index: -1;
+        background: $primary-gradient_025;
+      }
+    }
+
+    &.-range-to- {
+      &::before {
+        left: 0;
+        right: 50%;
+      }
+    }
+
+    &.-in-range- {
+      background: $primary-gradient_025;
+    }
+  }
+
+  &--cell-day {
+    &.-other-month- {
+      color: $dark_25;
+
+      &:hover {
+        color: white;
+      }
+
+      &.-selected- {
+        background: $primary-gradient;
+      }
+    }
+
+    &.-current- {
+      color: white;
+    }
+  }
+
+  &--cell-month {
+    &.-range-from-.-range-to- {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &--cell-year {
+    &.-other-decade- {
+      color: $dark_25;
+
+      &.-selected {
+        background: $primary-gradient;
+      }
+    }
+  }
+
+  &--content {
+    padding: 11px 20px;
+  }
+
+  &--day-name {
+    font: $bodyFont;
+    font-weight: bold;
+    font-size: 12px;
+    color: $purple;
+    text-transform: inherit;
+  }
+
+  &--buttons {
+    cursor: pointer;
+    font-family: $bodyFont-family;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    padding: 5px 20px 14px;
+    border-top: none;
+  }
+
+  &--button-reset {
+    color: $dark_50;
+  }
+
+  &--button-apply {
+    color: $purple;
   }
 }

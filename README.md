@@ -63,7 +63,7 @@
 
   [jquery 3.5.1](https://jquery.com/)
 
-  [js-datepicker 5.12.0](https://www.npmjs.com/package/js-datepicker)
+  [air-datepicker 2.2.3](http://t1m0n.name/air-datepicker/docs/index-ru.html)
 
 **Примечания:**  
 При импорте из scss-файл нужно указывать относительный путь именно от этого файла.

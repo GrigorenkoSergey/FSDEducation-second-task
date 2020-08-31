@@ -11,8 +11,22 @@ mixin date-dropdown(options = {})
     .date-dropdown__item
       h3 !{arrivalTitle}
       .date-dropdown__input-container
-        input.date-dropdown__input(type="text"  autocomplete="off" value="ДД.ММ.ГГГГ." data-id="arrival" data-name= arrivalName name= arrivalName)
+        input.date-dropdown__input(
+          type="text" readonly 
+          autocomplete="off" value="ДД.ММ.ГГГГ." 
+          data-id="arrival" data-name= arrivalName 
+          name= arrivalName
+          placeholder= 'ДД.ММ.ГГГГ.'
+          )
+
     .date-dropdown__item
       h3 !{departureTitle}
       .date-dropdown__input-container
-        input.date-dropdown__input(type="text" autocomplete= "off" value="ДД.ММ.ГГГГ." data-id="departure" data-name= departureName name= departureName)
+        input.date-dropdown__input(
+          type="text" readonly
+          autocomplete= "off" value="ДД.ММ.ГГГГ." 
+          data-id="departure" data-name= departureName 
+          name= departureName
+          placeholder= 'ДД.ММ.ГГГГ.'
+          tabindex= '-1'
+          )

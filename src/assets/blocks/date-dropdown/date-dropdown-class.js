@@ -1,103 +1,43 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable class-methods-use-this */
-import datepicker from 'js-datepicker';
-
-const defaultInputValue = 'ДД.ММ.ГГГГ.';
+import $ from 'jquery';
+import Datepicker from '../datepicker/datepicker.js';
 
 export default class DateDropdown {
-  constructor(instance, options = {}) {
+  constructor(elem, options = {}) {
     const defaultOptions = {
-      startDay: 1,
-      customDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-      customMonths: ['Январь ', 'Февраль ', 'Март ', 'Апрель ', 'Май ', 'Июнь ',
-        'Июль ', 'Август ', 'Сентябрь ', 'Октябрь ', 'Ноябрь ', 'Декабрь '],
-      overlayButton: 'Принять',
-      overlayPlaceholder: new Date().getFullYear().toString(),
-      showAllDates: true,
-      id: 1,
-      events: [new Date()],
-      minDate: new Date(),
-      onShow: this.onShow.bind(this),
-      onHide: this.onHide.bind(this),
-      formatter: this.formatter.bind(this),
+      dateFormat: 'dd.mm.yyyy',
+      multipleDatesSeparator: '/',
     };
 
-    this.el = instance; // DOM-element
-    this.options = { ...defaultOptions, ...options };
-    this.init();
-
-    return this;
+    this.el = elem;
+    this.init({ ...defaultOptions, ...options });
   }
 
-  init() {
-    this.arrival = datepicker(this.el.querySelector('[data-id=arrival]'), this.options);
-    this.departure = datepicker(this.el.querySelector('[data-id=departure]'), { ...this.options, position: 'br' });
+  init(options) {
+    const start = this.el.querySelector('[data-id=arrival]');
+    const end = this.el.querySelector('[data-id=departure]');
 
-    this.renderButtons(this.arrival.calendarContainer);
-    this.renderButtons(this.departure.calendarContainer);
+    this.datepicker = new Datepicker(start, {
+      ...options,
+      onSelect: this.handleStartSelect.bind(this),
+    }).datepicker;
+
+    this.start = start;
+    this.end = end;
+    this.end.addEventListener('click', this.handleEndClick.bind(this));
   }
 
-  onShow(instance) {
-    const container = instance.calendarContainer;
+  handleStartSelect(formattedDate, date, inst) {
+    const [start, end] = formattedDate.split(inst.opts.multipleDatesSeparator);
+    this.start.value = start;
 
-    // Подвинем на 5.56 пикселей ниже
-    container.style.top = `${parseFloat(container.style.top) + 5.56}px`;
-
-    if (this.arrival.dateSelected && !this.departure.dateSelected) {
-      this.departure.setDate(this.arrival.dateSelected);
-    } else if (!this.arrival.dateSelected && this.departure.dateSelected) {
-      this.arrival.setDate(this.departure.dateSelected);
-    }
-  }
-
-  renderButtons(container) {
-    const [buttonsContainer, buttonReset, buttonApply] = new Array(3).fill(1).map(() => document.createElement('div'));
-
-    buttonsContainer.classList.add('date-dropdown__buttons');
-    buttonReset.classList.add('date-dropdown__button-reset');
-    buttonApply.classList.add('date-dropdown__button-apply');
-
-    buttonReset.innerHTML = 'Очистить';
-    buttonApply.innerHTML = 'Применить';
-
-    buttonsContainer.append(buttonReset, buttonApply);
-    container.append(buttonsContainer);
-
-    buttonReset.addEventListener('click', this.handleButtonResetClick.bind(this));
-    buttonApply.addEventListener('click', this.handleButtonApplyClick.bind(this));
-  }
-
-  handleButtonResetClick(e) {
-    this.arrival.setDate();
-    this.arrival.el.value = defaultInputValue;
-
-    this.departure.setDate();
-    this.departure.el.value = defaultInputValue;
-  }
-
-  handleButtonApplyClick(e) {
-    // eslint-disable-next-line no-console
-    console.log('sending data to server');
-  }
-
-  formatter(input, date) {
-    input.value = date.toLocaleDateString('ru-RU');
-  }
-
-  onHide(instance) {
-    const dateMask = /^\d{2}\.\d{2}\.20\d{2}$/;
-    const input = instance.el.value.trim();
-    const dateSelected = new Date(input.split('.').reverse());
-    const { minDate, maxDate } = instance;
-
-    const dateIsValid = dateSelected >= minDate
-      && (!maxDate || maxDate >= dateSelected);
-
-    if (dateMask.test(input) && dateIsValid) {
-      instance.setDate(dateSelected);
+    if (end) {
+      this.end.value = end;
     } else {
-      instance.setDate();
-      instance.el.value = defaultInputValue;
+      this.end.value = '';
     }
+  }
+
+  handleEndClick(e) {
+    this.datepicker.show();
   }
 }
