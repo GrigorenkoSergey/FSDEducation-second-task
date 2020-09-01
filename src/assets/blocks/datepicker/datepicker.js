@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import 'air-datepicker/dist/js/datepicker.js';
-import 'air-datepicker/dist/css/datepicker.css';
+import 'air-datepicker/dist/js/datepicker.min.js';
+import 'air-datepicker/dist/css/datepicker.min.css';
 import './datepicker.scss';
 
 export default class Datepicker {
