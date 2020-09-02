@@ -88,6 +88,7 @@
     list-style: none;
     margin-right: 21px;
     position: relative;
+    color: $dark_50;
 
     &_current-page {
       color: $dark_75;
@@ -98,13 +99,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      cursor: pointer;
 
       &::after {
-        content: '';
-        width: 24px;
-        height: 18px;
+        font-family: 'material-icons';
+        content: 'expand_more';
+        font-feature-settings: 'liga';
+        font-size: 24px;
+        color: $dark_50;
         margin-top: 1px;
-        background: url('./images/expand-more.png') center no-repeat;
+      }
+
+      &:hover {
+        color: $dark_100;
+        &::after {
+          color: $dark_100;
+        }
       }
     }
 
@@ -126,7 +136,7 @@
     font-weight: inherit;
 
     &:hover {
-      color: $dark_75;
+      color: $dark_100;
     }
   }
 

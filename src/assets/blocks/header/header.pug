@@ -10,7 +10,8 @@ mixin header(options = {})
       },
       nav = [
         {text: "О нас", link: "/valhalla/feast-table/", currentPage: true},
-        {text: "Услуги", link: "/valhalla/feast-table/",
+        {
+          text: "Услуги", 
           innerUl:
             [
               { text: "service_1", link: "/valhalla/feast-table/" },
@@ -21,7 +22,7 @@ mixin header(options = {})
         { text: "Вакансии", link: "/valhalla/feast-table/"},
         { text: "Новости", link: "/valhalla/feast-table/"},
         {
-          text: "Соглашения", link: "/valhalla/feast-table/",
+          text: "Соглашения",
           innerUl: [
             { text: "item-1", link: "/valhalla/feast-table/" },
             { text: "item-2", link: "/valhalla/feast-table/" },
@@ -47,17 +48,20 @@ mixin header(options = {})
   .header
     a.header__logo(href= logo.link)
       img(src= require(`../../../assets/blocks/header/images/${logo.img}`) alt= `${logo.alt}`)
+
     ul.header__nav
       each val in nav
         li.header__li(class = val.innerUl ? "header__li_submenu " : ""
-        class = val.currentPage ? "header__li_current-page" : "")  
+        class = val.currentPage ? "header__li_current-page" : "")
           if (val.innerUl) 
+            span #{val.text}
             ul.header__submenu
               each subVal in val.innerUl
                 li 
                   a.header__link(href= subVal.link) !{subVal.text}
-          //- a.header__link(href=`${val.link}` class= val.currentpage ? "header_current-page" : "") #{val.text}
-          a.header__link(href=`${val.link}`) #{val.text}
+          else
+            a.header__link(href=`${val.link}`) #{val.text}
+
     if (logged) 
       .header__user-name #{userName}
     else 
