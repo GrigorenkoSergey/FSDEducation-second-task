@@ -16,7 +16,7 @@ mixin preview(options = {})
       cost = "9 990",
       stars = 5,
       reviewLink = "/valhalla/feast-table/",
-      reviewsNum = 145,
+      reviews = 145,
       reviewWord = "Отзывов",
       arrowsHidden = false,
       currency = "₽",
@@ -38,5 +38,5 @@ mixin preview(options = {})
       .preview__stars
         +rate-button(stars)
         a.preview__reviews-link(href= reviewLink)
-          b #{reviewsNum}
+          b #{reviews}
           span #{` ${reviewWord}`} 
