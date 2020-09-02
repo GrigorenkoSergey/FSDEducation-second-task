@@ -1,6 +1,8 @@
 .cards {
   &__main {
+    width: 1440px;
     padding-left: 140px;
+    padding-right: 100px;
     padding-bottom: 140px;
     display: flex;
     flex-flow: column wrap;
@@ -12,7 +14,6 @@
   &__column-2,
   &__column-3 {
     margin-top: 150px;
-    margin-right: 40px;
   }
 
   &__registration {

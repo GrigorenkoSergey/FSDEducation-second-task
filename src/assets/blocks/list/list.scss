@@ -1,7 +1,9 @@
 @import '../template/variables';
+@import '../template/extenders';
 
 .list {
   &__title {
+    @extend %h3;
     color: $dark_100;
     line-height: 15px;
   }

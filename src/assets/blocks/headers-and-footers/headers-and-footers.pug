@@ -16,7 +16,8 @@ mixin headers-and-footers(options = {})
       footerCreative,
     } = options;
   main.headers-and-footers__main
-    +header(headerStandard)
+    .headers-and-footers__component
+      +header(headerStandard)
     .headers-and-footers__component
       +header(headerLoggedIn)
     .headers-and-footers__component
