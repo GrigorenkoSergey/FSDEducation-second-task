@@ -4,6 +4,8 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');
 
 let entries = {
@@ -38,6 +40,20 @@ module.exports = (env, options) => ({
 
   output: {
     filename: (pathData) => `${entries[pathData.chunk.name]}.[contenthash].js`,
+  },
+
+  optimization: { // довольно бесполезно, но все-таки..
+    minimize: options.mode === 'production',
+    minimizer: [new TerserPlugin({
+      parallel: true,
+      terserOptions: {
+        output: {
+          comments: false,
+        },
+      },
+      extractComments: false,
+    }),
+    new OptimizeCssAssetsPlugin({})],
   },
 
   devServer: {
