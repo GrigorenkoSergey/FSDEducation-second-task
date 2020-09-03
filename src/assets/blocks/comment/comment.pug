@@ -14,7 +14,12 @@ mixin comment(options = {})
     } = options;
 
   .comment
-    img.comment__avatar(src= require(`../../../assets/blocks/comment/images/${avatarSrc}`))
+    img.comment__avatar(
+      src= require(`../../../assets/blocks/comment/images/${avatarSrc}`) 
+      width="48" 
+      height="48"
+      alt= "Аватар"
+    )
     span.comment__name #{name}
     span.comment__term #{term}
     .comment__like-button
