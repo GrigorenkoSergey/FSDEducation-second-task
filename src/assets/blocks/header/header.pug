@@ -46,27 +46,28 @@ mixin header(options = {})
     } = options;
 
   .header
-    a.header__logo(href= logo.link)
-      img(src= require(`../../../assets/blocks/header/images/${logo.img}`) alt= `${logo.alt}`)
+    .header__content
+      a.header__logo(href= logo.link)
+        img(src= require(`../../../assets/blocks/header/images/${logo.img}`) alt= `${logo.alt}`)
 
-    ul.header__nav
-      each val in nav
-        li.header__li(class = val.innerUl ? "header__li_submenu " : ""
-        class = val.currentPage ? "header__li_current-page" : "")
-          if (val.innerUl) 
-            span #{val.text}
-            ul.header__submenu
-              each subVal in val.innerUl
-                li 
-                  a.header__link(href= subVal.link) !{subVal.text}
-          else
-            a.header__link(href=`${val.link}`) #{val.text}
+      ul.header__nav
+        each val in nav
+          li.header__li(class = val.innerUl ? "header__li_submenu " : ""
+          class = val.currentPage ? "header__li_current-page" : "")
+            if (val.innerUl) 
+              span #{val.text}
+              ul.header__submenu
+                each subVal in val.innerUl
+                  li 
+                    a.header__link(href= subVal.link) !{subVal.text}
+            else
+              a.header__link(href=`${val.link}`) #{val.text}
 
-    if (logged) 
-      .header__user-name #{userName}
-    else 
-      .header__buttons
-        .header__button-enter
-          +button(buttonLogin)
-        .header__button-register
-          +button(buttonRegister)
+      if (logged) 
+        .header__user-name #{userName}
+      else 
+        .header__buttons
+          .header__button-enter
+            +button(buttonLogin)
+          .header__button-register
+            +button(buttonRegister)

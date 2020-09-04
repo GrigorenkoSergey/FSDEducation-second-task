@@ -7,5 +7,6 @@ mixin copyright(options = {})
     } = options;
 
   .copyright
-    span !{text}
-    +social-networks()
+    .copyright__content
+      span !{text}
+      +social-networks()

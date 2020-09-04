@@ -1,6 +1,7 @@
 .sign-in {
   &__body {
     background: url('./images/sign-in-page.jpg') no-repeat;
+    background-size: 100% auto;
   }
 
   &__main {
@@ -8,5 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
