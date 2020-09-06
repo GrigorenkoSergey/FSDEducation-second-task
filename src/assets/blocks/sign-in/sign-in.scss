@@ -1,7 +1,10 @@
 .sign-in {
   &__body {
     background: url('./images/sign-in-page.jpg') no-repeat;
-    background-size: 100% auto;
+
+    @media (min-width: 1440px) {
+      background-size: 100% auto;
+    }
   }
 
   &__main {

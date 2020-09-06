@@ -1,6 +1,10 @@
 .registration-page {
   &__body {
     background: url('./images/registration-page.jpg') no-repeat;
+
+    @media (min-width: 1440px) {
+      background-size: 100% auto;
+    }
   }
 
   &__main {
