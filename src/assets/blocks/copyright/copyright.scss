@@ -21,4 +21,10 @@
       text-align: center;
     }
   }
+
+  &__social-networks {
+    @media (max-width: 800px) {
+      margin-top: 25px;
+    }
+  }
 }

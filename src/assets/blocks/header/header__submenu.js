@@ -21,7 +21,7 @@ export default class HeaderSubmenu {
 
   handleTitleClick(e) {
     this.menu.classList.toggle('header__submenu_visible');
-    this.title.classList.add('header__submenu-title_hovered');
+    this.title.classList.toggle('header__submenu-title_hovered');
 
     document.addEventListener('click', this.handlers.handleDocumentClick);
   }
@@ -29,6 +29,7 @@ export default class HeaderSubmenu {
   handleDocumentClick(e) {
     if (!this.el.contains(e.target)) {
       document.removeEventListener('click', this.handlers.handleDocumentClick);
+
       this.menu.classList.remove('header__submenu_visible');
       this.title.classList.remove('header__submenu-title_hovered');
     }

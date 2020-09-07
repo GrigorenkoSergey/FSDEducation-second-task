@@ -8,5 +8,6 @@ mixin copyright(options = {})
 
   .copyright
     .copyright__content
-      span !{text}
-      +social-networks()
+      span.copyright__text !{text}
+      .copyright__social-networks
+        +social-networks()
