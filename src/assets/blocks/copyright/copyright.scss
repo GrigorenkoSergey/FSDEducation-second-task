@@ -3,6 +3,11 @@
 .copyright {
   box-shadow: 0px 10px 20px $dark_10;
   background: white;
+  border-top: 1px solid $dark_25;
+
+  @media (max-width: 800px) {
+    border-top: none;
+  }
 
   &__content {
     max-width: 1440px;
@@ -20,11 +25,19 @@
       padding: 20px 10px;
       text-align: center;
     }
+
+    @media (max-width: 800px) {
+      padding-bottom: 120px;
+      padding-top: 18px;
+    }
   }
 
   &__social-networks {
+    display: flex;
+    align-items: center;
+
     @media (max-width: 800px) {
-      margin-top: 25px;
+      margin-top: 20px;
     }
   }
 }

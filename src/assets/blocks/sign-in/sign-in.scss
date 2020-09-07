@@ -14,5 +14,21 @@
     align-items: center;
     max-width: 1440px;
     margin: 0 auto;
+
+    @media (max-width: 1366px) {
+      padding: 120px 0;
+    }
+
+    @media (max-width: 1280px) {
+      padding: 100px 0;
+    }
+
+    @media (max-width: 1024px) {
+      padding: 60px 0;
+    }
+
+    @media (max-width: 800px) {
+      padding: 20px 0;
+    }
   }
 }

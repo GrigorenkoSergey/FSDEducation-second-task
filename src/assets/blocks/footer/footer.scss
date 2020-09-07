@@ -4,7 +4,6 @@
 .footer {
   background: white;
   box-shadow: 0px 1px 0px $dark_10;
-  border-bottom: 1px solid $dark_25;
 
   @media (max-width: 800px) {
     border-bottom: none;

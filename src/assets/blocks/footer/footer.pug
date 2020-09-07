@@ -1,5 +1,6 @@
 include ../input/input.pug
 include ../list/list.pug
+include ../copyright/copyright.pug
 
 mixin footer(options = {})
   - 
@@ -72,3 +73,5 @@ mixin footer(options = {})
         .footer__subscribe-description #{text}
         .footer__subscribe-email
           +input(inputOptions)
+    .footer__copyright
+      +copyright({innerText: "Copyright &#169 2018 Toxin отель. Все права зачищены." })
