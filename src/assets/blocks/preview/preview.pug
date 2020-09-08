@@ -11,8 +11,6 @@ mixin preview(options = {})
         "888.jpg",
         "888.jpg",
       ],
-      imgWidth = "270px",
-      imgHeight = "151px",
       cost = "9 990",
       stars = 5,
       reviewLink = "/valhalla/feast-table/",
@@ -27,7 +25,7 @@ mixin preview(options = {})
   .preview
     ul.bxslider
       each imgSrc in imagesSrc
-        img(alt= imgAltText src= require(`../../../assets/blocks/preview/images/${imgSrc}`) width= imgWidth height = imgHeight)
+        img(alt= imgAltText src= require(`../../../assets/blocks/preview/images/${imgSrc}`))
     .preview__information
       .preview__title
         span.preview__room-number #{number}

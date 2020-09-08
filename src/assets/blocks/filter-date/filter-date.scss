@@ -3,6 +3,7 @@
 .filter-date {
   &__input {
     width: 100%;
+    max-width: 320px;
     border: 1px solid $dark_25;
     border-radius: 4px;
     padding: 9px 0 9px 14px;
