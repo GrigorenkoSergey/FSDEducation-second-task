@@ -22,7 +22,7 @@ mixin room-details(options = {})
         },
       ],
       buns = {
-        title: "Сведение о номере",
+        title: "Сведения о номере",
         bunsOptions:  {
           items: [
             {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
@@ -80,35 +80,69 @@ mixin room-details(options = {})
       img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[1].src}`) alt= photos[0].alt)
       img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[2].src}`) alt= photos[0].alt)
 
+  //- main.room-details__main
+  //-   .room-details__column-1
+  //-     .room-details__buns-and-impressions
+  //-       .room-details__buns
+  //-         .room-details__title
+  //-           h2 #{buns.title}
+  //-         +buns(buns.bunsOptions)
+  //-       .room-details__impressions
+  //-         .room-details__title
+  //-           h2 #{impressions.title}
+  //-         .room-details__diagram
+  //-           +diagram(impressions.diagramOptions)
+
+  //-     .room-details__comments
+  //-       .room-details__comments-title
+  //-         h2 #{comments.h2Text}
+  //-         span #{comments.span} 
+  //-       each val in comments.items
+  //-         .room-details__comments-comment
+  //-           +comment(val)
+  //-     .room-details__rules-and-cancel
+  //-       .room-details__rules
+  //-         .room-details__rules-title
+  //-           h2 #{rules.title}
+  //-         +bullet-list(rules.bulletListOptions)
+  //-       .room-details__cancel
+  //-         .room-details__cancel-title
+  //-           h2 #{cancel.h2Text}
+  //-         p #{cancel.pText}
+
+  //-   .room-details__column-2
+  //-     +final-bill(finalBill)
+
   main.room-details__main
-    .room-details__column-1
-      .room-details__buns-and-impressions
-        .room-details__buns
-          .room-details__title
-            h2 #{buns.title}
-          +buns(buns.bunsOptions)
-        .room-details__impressions
-          .room-details__title
-            h2 #{impressions.title}
-          .room-details__diagram
-            +diagram(impressions.diagramOptions)
 
-      .room-details__comments
-        .room-details__comments-title
-          h2 #{comments.h2Text}
-          span #{comments.span} 
-        each val in comments.items
-          .room-details__comments-comment
-            +comment(val)
-      .room-details__rules-and-cancel
-        .room-details__rules
-          .room-details__rules-title
-            h2 #{rules.title}
-          +bullet-list(rules.bulletListOptions)
-        .room-details__cancel
-          .room-details__cancel-title
-            h2 #{cancel.h2Text}
-          p #{cancel.pText}
+    .room-details__buns-and-impressions
+      .room-details__buns
+        .room-details__title
+          h2 #{buns.title}
+        +buns(buns.bunsOptions)
+      .room-details__impressions
+        .room-details__title
+          h2 #{impressions.title}
+        .room-details__diagram
+          +diagram(impressions.diagramOptions)
 
-    .room-details__column-2
+    .room-details__comments
+      .room-details__comments-title
+        h2 #{comments.h2Text}
+        span #{comments.span} 
+      each val in comments.items
+        .room-details__comments-comment
+          +comment(val)
+
+    .room-details__rules-and-cancel
+      .room-details__rules
+        .room-details__rules-title
+          h2 #{rules.title}
+        +bullet-list(rules.bulletListOptions)
+      .room-details__cancel
+        .room-details__cancel-title
+          h2 #{cancel.h2Text}
+        p #{cancel.pText}
+
+    .room-details_final-bill
       +final-bill(finalBill)

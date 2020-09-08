@@ -4,6 +4,7 @@
 .footer {
   background: white;
   box-shadow: 0px 1px 0px $dark_10;
+  border-top: 1px solid $dark_25;
 
   &__content {
     max-width: 1200px;
@@ -31,7 +32,7 @@
   &__about-us,
   &__support,
   &__subscribe {
-    margin-top: 4px;
+    margin-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
     flex: 1 1 150px;

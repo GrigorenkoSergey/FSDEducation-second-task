@@ -1,41 +1,12 @@
 @import '../template/variables';
 
+body {
+  width: 1440px;
+}
 .room-details {
-  &__main {
-    padding: 70px 140px 63px 138px;
-    display: flex;
-    border-bottom: 1px solid $dark_25;
-    box-sizing: border-box;
-
-    @media (max-width: 1280px) {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-
-    @media (max-width: 1024px) {
-      flex-wrap: wrap;
-      padding-left: 60px;
-      padding-right: 60px;
-      padding-top: 30px;
-    }
-
-    @media (max-width: 640px) {
-      padding-bottom: 30px;
-    }
-
-    @media (max-width: 360px) {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    @media (max-width: 320px) {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
   &__photos {
     display: flex;
+    justify-content: center;
 
     &-img {
       display: block;
@@ -43,58 +14,85 @@
     }
   }
 
-  &__column-1 {
-    flex-grow: 2;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  &__main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 70px 140px 61px;
 
-    @media (max-width: 1024px) {
-      flex-grow: 1;
-      justify-content: flex-start;
-    }
-
-    @media (max-width: 360px) {
-      justify-content: center;
-    }
-
-    @media (max-width: 320px) {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-
-  &__column-2 {
-    flex-grow: 1;
-
-    @media (max-width: 1024px) {
-      display: flex;
-      margin-top: 40px;
-      justify-content: center;
-    }
-
-    @media (max-width: 320px) {
-      width: 100%;
-    }
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'buns bill'
+      'comments bill'
+      'rules bill';
   }
 
   &__buns-and-impressions {
+    grid-area: buns;
     display: flex;
-    width: 100%;
-    margin-left: 2px;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
 
-    @media (max-width: 1024px) {
+  &__comments {
+    grid-area: comments;
+    margin-top: 14px;
+    padding-right: 70px;
+
+    &-title {
+      display: flex;
       justify-content: space-between;
+      margin-bottom: 19px;
     }
 
-    @media (max-width: 640px) {
-      flex-wrap: wrap-reverse;
-      justify-content: flex-start;
+    &-comment {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__rules-and-cancel {
+    grid-area: rules;
+    display: flex;
+    margin-top: 10px;
+  }
+
+  &__rules {
+    flex: 0 0 260px;
+    margin-right: 100px;
+
+    &-title {
+      padding-left: 20px;
+      padding-bottom: 17px;
     }
 
-    @media (max-width: 360px) {
-      margin-left: 0;
+
+  }
+
+  &__cancel {
+    flex: 0 0 340px;
+
+
+    &-title {
+      padding-bottom: 17px;
     }
+  }
+
+  &_final-bill {
+    grid-area: bill;
+  }
+
+  &__buns {
+    flex: 1 0 auto;
+    max-width: 270px;
+  }
+
+  &__impressions {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 90px;
+    
   }
 
   &__title {
@@ -102,126 +100,6 @@
   }
 
   &__diagram {
-    max-width: 350px;
-  }
-
-  &__buns {
-    width: 280px;
-    margin-right: 20px;
-
-    @media (max-width: 640px) {
-      margin-top: 30px;
-    }
-  }
-
-  &__comments {
-    margin-top: 14px;
-    position: relative;
-    padding-right: 70px;
-
-    &-title {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 19px;
-
-      @media (max-width: 480px) {
-        flex-direction: column;
-      }
-    }
-
-    &-comment {
-      margin-bottom: 23px;
-    }
-
-    @media (max-width: 640px) {
-      padding-right: 0px;
-    }
-  }
-
-  &__rules-and-cancel {
     display: flex;
-    width: 100%;
-    margin-top: 10px;
-    padding-right: 70px;
-
-    @media (max-width: 1024px) {
-      padding-right: 0;
-    }
-
-    @media (max-width: 640px) {
-      padding-right: 0px;
-    }
-
-    @media (max-width: 360px) {
-      flex-direction: column;
-    }
-  }
-
-  &__rules {
-    width: 50%;
-    padding-right: 100px;
-
-    @media (max-width: 1366px) {
-      padding-right: 70px;
-    }
-
-    @media (max-width: 1280px) {
-      padding-right: 60px;
-    }
-
-    @media (max-width: 640px) {
-      padding-right: 10px;
-    }
-
-    @media (max-width: 360px) {
-      width: 100%;
-    }
-  }
-
-  &__cancel {
-    width: 50%;
-    padding-left: 6px;
-    padding-right: 10px;
-
-    @media (max-width: 360px) {
-      width: 100%;
-    }
-  }
-
-  &__rules-title,
-  &__cancel-title {
-    margin-left: 20px;
-    margin-bottom: 16px;
-
-    @media (max-width: 360px) {
-      margin-left: 0;
-    }
-  }
-
-  &__cancel-title {
-    margin-left: 0;
-  }
-
-  &__impressions {
-    width: 312px;
-    margin-left: 60px;
-    margin-right: 60px;
-
-    @media (max-width: 1280px) {
-      margin-left: auto;
-    }
-
-    @media (max-width: 1024px) {
-      margin-left: 0;
-    }
-
-    @media (max-width: 768px) {
-      margin-right: 0;
-    }
-
-    @media (max-width: 320px) {
-      width: 100%;
-    }
   }
 }
