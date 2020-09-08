@@ -7,6 +7,10 @@ $width: 320px;
   width: $width;
   box-sizing: border-box;
 
+  @media (max-width: 380px) {
+    width: 300px;
+  }
+
   &--pointer {
     display: none;
   }

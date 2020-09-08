@@ -6,6 +6,15 @@
   align-items: baseline;
   flex-wrap: wrap;
 
+  @media (max-width: 380px) {
+    width: 100%;
+  }
+
+  @media (max-width: 370px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   &__number {
     display: inline;
 
@@ -39,6 +48,11 @@
     z-index: 2;
     width: 100%;
     margin-top: 17px;
+
+    @media (max-width: 380px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__dropdown {
@@ -122,5 +136,14 @@
   &__button-payment {
     width: 320px;
     margin-top: 20px;
+
+    @media (max-width: 380px) {
+      width: auto;
+      max-width: 320px;
+      min-width: 290px;
+
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

@@ -1,12 +1,15 @@
 @import '../template/variables';
 
-body {
-  width: 1440px;
-}
 .room-details {
   &__photos {
     display: flex;
     justify-content: center;
+
+    &-box_2 {
+      @media (max-width: 1150px) {
+        display: none;
+      }
+    }
 
     &-img {
       display: block;
@@ -25,6 +28,44 @@ body {
       'buns bill'
       'comments bill'
       'rules bill';
+
+    @media (max-width: 1366px) {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @media (max-width: 1280px) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media (max-width: 1150px) {
+      padding-top: 50px;
+      max-width: 900px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'buns bill'
+        'comments comments'
+        'rules rules';
+    }
+
+    @media (max-width: 780px) {
+      padding-bottom: 20px;
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'buns buns'
+        'comments comments'
+        'bill bill'
+        'rules rules';
+    }
+
+    @media (max-width: 450px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__buns-and-impressions {
@@ -32,6 +73,25 @@ body {
     display: flex;
     justify-content: space-between;
     padding-right: 20px;
+
+    @media (max-width: 1150px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 780px) {
+      flex-direction: row;
+    }
+
+    @media (max-width: 670px) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 450px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__comments {
@@ -39,10 +99,23 @@ body {
     margin-top: 14px;
     padding-right: 70px;
 
+    @media (max-width: 1150px) {
+      margin-top: 25px;
+    }
+
+    @media (max-width: 450px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
     &-title {
       display: flex;
       justify-content: space-between;
       margin-bottom: 19px;
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+      }
     }
 
     &-comment {
@@ -54,23 +127,44 @@ body {
     grid-area: rules;
     display: flex;
     margin-top: 10px;
+
+    @media (max-width: 780px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 450px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__rules {
     flex: 0 0 260px;
     margin-right: 100px;
 
+    @media (max-width: 780px) {
+      margin-top: 20px;
+      margin-right: 0;
+      margin-bottom: 20px;
+      flex-basis: auto;
+    }
+
     &-title {
       padding-left: 20px;
       padding-bottom: 17px;
+
+      @media (max-width: 780px) {
+        padding-left: 0;
+      }
     }
-
-
   }
 
   &__cancel {
     flex: 0 0 340px;
 
+    @media (max-width: 780px) {
+      flex-basis: auto;
+    }
 
     &-title {
       padding-bottom: 17px;
@@ -79,11 +173,19 @@ body {
 
   &_final-bill {
     grid-area: bill;
+
+    @media (max-width: 780px) {
+      margin: 0 auto;
+    }
   }
 
   &__buns {
-    flex: 1 0 auto;
-    max-width: 270px;
+    flex: 0 0 270px;
+    min-width: 270px; // чтобы не ломалось при flex-direction: column
+
+    @media (max-width: 1150px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__impressions {
@@ -92,7 +194,18 @@ body {
     flex-direction: column;
     align-items: flex-start;
     margin-left: 90px;
-    
+
+    @media (max-width: 1280px) {
+      margin-left: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 1150px) {
+      margin-left: 0;
+      margin-bottom: 20px;
+      flex-grow: 0;
+      align-items: flex-start;
+    }
   }
 
   &__title {
