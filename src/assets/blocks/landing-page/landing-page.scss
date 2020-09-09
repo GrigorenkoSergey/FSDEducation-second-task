@@ -3,31 +3,46 @@
 .landing-page {
   &__body {
     background: url('./images/landing-page.jpg') no-repeat;
+      background-size: 100% auto;
+
+    @media (max-width: 1440px) {
+      background-size: auto;
+    }
+
+    @media (max-width: 960px) {
+      background-position-y: -130px;
+    }
+
+    @media (max-width: 768px) {
+      background-position-y: -230px;
+    }
   }
 
   &__main {
+    max-width: 1440px;
+    min-height: 830px;
+    margin: 0 auto;
+    position: relative;
+
     padding-top: 70px;
     padding-left: 140px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
 
-    @media (max-width: 480px) {
+    @media (max-width: 960px) {
       padding-left: 0;
-      display: flex;
       justify-content: center;
-      align-items: flex-start;
+      min-height: 600px;
     }
 
-    @media (max-width: 360px) {
-      padding-left: 5px;
-      padding-right: 5px;
+    @media (max-width: 768px) {
+      min-height: 550px;
     }
   }
 
   &__slogan {
     width: 100%;
-    margin-top: 316px;
     align-self: flex-end;
     display: flex;
     justify-content: flex-end;
@@ -35,18 +50,13 @@
     padding-right: 134px;
     text-align: end;
 
-    @media (max-width: 768px) {
-      margin-top: 190px;
+    @media (max-width: 960px) {
+      padding-right: 34px;
     }
 
     @media (max-width: 480px) {
-      padding-bottom: 50px;
-      padding-right: 10px;
-      margin-top: 160px;
-    }
-
-    @media (max-width: 360px) {
-      margin-top: 130px;
+      justify-content: center;
+      padding-right: 0;
     }
 
     &-p {
@@ -54,7 +64,3 @@
     }
   }
 }
-
-// На ширине экрана 240  весь дизайн ломается, перенастройка слишком трудоемка.
-// Потребуется поменять дизайн почти полностью.
-// Вероятнее всего, что пользователь просто перевернет телефон.

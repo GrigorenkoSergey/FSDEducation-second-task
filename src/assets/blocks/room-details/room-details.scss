@@ -5,8 +5,16 @@
     display: flex;
     justify-content: center;
 
+    &-box_1 {
+      width: 68.125%;
+      @media (max-width: 800px) {
+        width: 100%;
+      }
+    }
+
     &-box_2 {
-      @media (max-width: 1150px) {
+      width: 31.875%;
+      @media (max-width: 800px) {
         display: none;
       }
     }

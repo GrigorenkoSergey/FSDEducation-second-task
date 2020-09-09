@@ -1,4 +1,13 @@
 .search-form {
+  @media (max-width: 380px) {
+    width: 100%;
+  }
+
+  @media (max-width: 370px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   &__dropdown {
     margin-top: 21px;
     position: relative;
@@ -8,6 +17,11 @@
     margin-top: 20px;
     position: relative;
     z-index: 2;
+
+    @media (max-width: 380px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__payment {
