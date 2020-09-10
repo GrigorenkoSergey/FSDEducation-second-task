@@ -27,7 +27,7 @@
       padding-right: 20px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
       padding-top: 120px;
       padding-bottom: 0px;
     }
@@ -40,9 +40,13 @@
     margin-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    flex: 1 1 150px;
+    flex: 1 1 160px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1080px) {
+      flex-basis: 150px;
+    }
+
+    @media (max-width: 768px) {
       opacity: 0;
       z-index: -1;
       position: absolute;
@@ -53,7 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1 0 260px;
+    flex: 1 0 250px;
     padding-right: 20px;
 
     @media (max-width: 1080px) {
@@ -64,7 +68,7 @@
       margin-bottom: 20px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
       justify-content: center;
       margin-bottom: 0;
     }
@@ -83,7 +87,7 @@
       margin-left: 50px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
       opacity: 0;
       z-index: -1;
       position: absolute;
@@ -91,6 +95,8 @@
   }
 
   &__subscribe {
+    padding-right: 0;
+
     &-email {
       margin-top: 23px;
       width: 260px;
