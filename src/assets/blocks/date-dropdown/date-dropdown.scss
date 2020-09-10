@@ -5,9 +5,10 @@
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 380px) {
+  @media (max-width: 400px) {
+    // расчет на внешние padding
+    // по 10px
     width: 100%;
-    min-width: 290px;
   }
 
   &:focus,
