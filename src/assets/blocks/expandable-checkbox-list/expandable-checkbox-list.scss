@@ -1,7 +1,9 @@
 @import '../template/variables';
 
 .expandable-checkbox-list {
-  width: 266px;
+  width: 100%;
+  max-width: 266px;
+  
   padding-right: 10px;
   user-select: none;
 
