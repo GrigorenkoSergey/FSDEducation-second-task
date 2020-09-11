@@ -1,20 +1,15 @@
 @import '../template/variables';
 
 .footer-creative {
+  width: 100%;
   background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 10px 20px $dark_5;
-  padding: 120px 104px 120px 104px;
+  padding: 120px 20px;
+  text-align: center;
   max-width: 768px;
-  margin: 0 auto;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-    padding: 20px 10px;
-    text-align: center;
-  }
 
   &__text {
     margin-top: 20px;

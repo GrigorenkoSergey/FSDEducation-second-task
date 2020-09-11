@@ -2,20 +2,16 @@
   &__body {
     background: url('./images/sign-in-page.jpg') no-repeat;
 
+    background-size: 1534px auto;
+    background-position: -44px -166px;
+
     @media (min-width: 1440px) {
-      background-size: 100% auto;
-    }
-
-    @media (max-width: 1024px) {
-      background-position-y: -101px;
-    }
-
-    @media (max-width: 768px) {
-      background-position-y: -201px;
+      background-size: 1534/1440 * 100% auto;
     }
   }
 
   &__main {
+    flex-grow: 1;
     min-height: 701px;
 
     display: flex;
@@ -24,14 +20,13 @@
     max-width: 1440px;
     margin: 0 auto;
 
-    @media (max-width: 1024px) {
-      min-height: 600px;
+    @media (max-width: 1440px) {
+      margin: 0;
     }
 
     @media (max-width: 768px) {
-      min-height: 500px;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 }

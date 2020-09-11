@@ -2,21 +2,27 @@
   &__body {
     background: url('./images/registration-page.jpg') no-repeat;
 
+    background-size: 1534px auto;
+    background-position: -44px -166px;
+
     @media (min-width: 1440px) {
-      background-size: 100% auto;
+      background-size: 1534/1440 * 100% auto;
     }
   }
 
   &__main {
+    flex-grow: 1;
+
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 19px;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     padding-left: 5px;
 
     @media (max-width: 768px) {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 }

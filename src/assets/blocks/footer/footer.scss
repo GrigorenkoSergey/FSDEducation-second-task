@@ -2,13 +2,29 @@
 @import '../template/extenders';
 
 .footer {
-  background: white;
-  box-shadow: 0px 1px 0px $dark_10;
-  border-top: 1px solid $dark_25;
+  &__footer-creative {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__footer-standard {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    box-shadow: 0px 1px 0px $dark_10;
+    border-top: 1px solid $dark_25;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 
   &__content {
     max-width: 1440px;
-    padding: 100px 140px 101px;
+    padding: 100px 140px 100px;
     margin: 0 auto;
 
     background: white;
@@ -23,13 +39,7 @@
 
     @media (max-width: 1080px) {
       flex-wrap: wrap;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    @media (max-width: 768px) {
-      padding-top: 120px;
-      padding-bottom: 0px;
+      padding: 70px 20px;
     }
   }
 
@@ -44,12 +54,6 @@
 
     @media (max-width: 1080px) {
       flex-basis: 150px;
-    }
-
-    @media (max-width: 768px) {
-      opacity: 0;
-      z-index: -1;
-      position: absolute;
     }
   }
 
@@ -67,11 +71,6 @@
       justify-content: flex-start;
       margin-bottom: 20px;
     }
-
-    @media (max-width: 768px) {
-      justify-content: center;
-      margin-bottom: 0;
-    }
   }
 
   &__logo-img {
@@ -85,12 +84,6 @@
       margin-top: 0;
       width: 60%;
       margin-left: 50px;
-    }
-
-    @media (max-width: 768px) {
-      opacity: 0;
-      z-index: -1;
-      position: absolute;
     }
   }
 

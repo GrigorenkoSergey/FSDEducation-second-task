@@ -39,7 +39,7 @@
   &__text {
     line-height: 24px;
     color: $dark_75;
-    flex-shrink: 0;
+    padding-left: 10px;
   }
 
   &__input:checked + &__switcher {

@@ -1,10 +1,4 @@
 .registration {
-  @media (max-width: 400px) {
-    // расчет на минимальные отступы 
-    // внешнего контейнера по 10px
-    width: 100%;
-  }
-
   &__name-field {
     width: 100%;
     margin-top: 20px;
@@ -45,7 +39,8 @@
 
   &__toggle {
     margin-top: 7px;
-    width: 260px;
+    max-width: 260px;
+    width: 100%;
   }
 
   &__button-payment {

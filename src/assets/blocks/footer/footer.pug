@@ -1,6 +1,7 @@
 include ../input/input.pug
 include ../list/list.pug
 include ../copyright/copyright.pug
+include ../footer-creative/footer-creative.pug
 
 mixin footer(options = {})
   - 
@@ -53,25 +54,30 @@ mixin footer(options = {})
           },
         },
       },
+      footerCreativeOptions,
     } = options;
 
   .footer
-    .footer__content
-      .footer__logo
-        img.footer__logo-img(alt = img.alt src= require(`../../../assets/blocks/footer/images/${img.src}`) height= img.height)
-        .footer__logo-description #{description}
-      .footer__navigation
-        +list(navigation)
-      .footer__about-us
-        +list(aboutUs)
-      .footer__support
-        +list(support)
+    .footer__footer-standard
+      .footer__content
+        .footer__logo
+          img.footer__logo-img(alt = img.alt src= require(`../../../assets/blocks/footer/images/${img.src}`) height= img.height)
+          .footer__logo-description #{description}
+        .footer__navigation
+          +list(navigation)
+        .footer__about-us
+          +list(aboutUs)
+        .footer__support
+          +list(support)
 
-      .footer__subscribe
-        - const {title, text, inputOptions} = subscribe;
-        .footer__subscribe-title #{title}
-        .footer__subscribe-description #{text}
-        .footer__subscribe-email
-          +input(inputOptions)
-    .footer__copyright
-      +copyright({innerText: "Copyright &#169 2018 Toxin отель. Все права зачищены." })
+        .footer__subscribe
+          - const {title, text, inputOptions} = subscribe;
+          .footer__subscribe-title #{title}
+          .footer__subscribe-description #{text}
+          .footer__subscribe-email
+            +input(inputOptions)
+      .footer__copyright
+        +copyright({innerText: "Copyright &#169 2018 Toxin отель. Все права зачищены." })
+
+    .footer__footer-creative
+      +footer-creative(footerCreativeOptions)

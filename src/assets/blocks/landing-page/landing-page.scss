@@ -3,7 +3,7 @@
 .landing-page {
   &__body {
     background: url('./images/landing-page.jpg') no-repeat;
-      background-size: 100% auto;
+    background-size: 100% auto;
 
     @media (max-width: 1440px) {
       background-size: auto;
@@ -19,8 +19,11 @@
   }
 
   &__main {
+    flex-grow: 1;
+
+    width: 100%;
     max-width: 1440px;
-    min-height: 830px;
+    min-height: 829px;
     margin: 0 auto;
     position: relative;
 
