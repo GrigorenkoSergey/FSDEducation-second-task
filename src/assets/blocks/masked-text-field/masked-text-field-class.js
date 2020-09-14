@@ -1,5 +1,4 @@
 /* eslint-disable class-methods-use-this */
-// пока может только проверять дату
 
 export default class MaskedText {
   constructor(domElem) {

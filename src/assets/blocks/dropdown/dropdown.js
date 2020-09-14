@@ -1,6 +1,4 @@
 import './dropdown.scss';
-// вставлять этот файл, если нужна автоматическая
-// инициализация dropdowns
 
 import DropdownGuests from '../dropdown-guests/dropdown-guests.js';
 import DropdownRooms from '../dropdown-rooms/dropdown-rooms.js';

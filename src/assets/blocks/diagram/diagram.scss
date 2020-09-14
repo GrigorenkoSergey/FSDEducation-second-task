@@ -19,7 +19,6 @@
   }
 
   &__canvas {
-    // не переименовывать, связан с селекторм js
     position: absolute;
     top: 0;
     left: 0;
@@ -32,7 +31,6 @@
   }
 
   &__voices {
-    // не переименовывать, связан с селектором js
     font-size: 12px;
     line-height: 18px;
     font-family: $bodyFont-family;
@@ -62,20 +60,19 @@
       margin-right: 5px;
     }
 
-    // пришлось вводить ручками...
-    &_magnificently::before {
+    &_value_magnificently::before {
       background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
     }
 
-    &_good::before {
+    &_value_good::before {
       background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     }
 
-    &_satisfactory::before {
+    &_value_satisfactory::before {
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     }
 
-    &_disapointed::before {
+    &_value_disapointed::before {
       background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
     }
   }

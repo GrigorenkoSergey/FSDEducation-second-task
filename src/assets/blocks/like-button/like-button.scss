@@ -26,12 +26,10 @@
   }
 
   &_pushed {
-    // for gradient border
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     color: $purple;
 
     &::after {
-      // white background inside
       content: '';
       width: 100%;
       height: 18px;
@@ -43,7 +41,6 @@
     }
 
     &::before {
-      // pink heart
       background: url('./images/favorite.png') center center no-repeat;
       z-index: 1;
     }

@@ -1,6 +1,5 @@
 @import './variables';
 
-/* сброс стилей браузера */
 * {
   box-sizing: border-box;
 }
@@ -134,18 +133,12 @@ q:after {
   content: none;
 }
 
-/* Cбросим инпуты.
-Если напишем input[type=checkbox],
-то приоритет будет выше, чем у класса,
-но запись ниже перебьет встроенные стили браузера
- */
 [type='checkbox'],
 [type='text'] {
   margin: 0;
   padding: 0;
 }
 
-/* конец кода сброса стилей браузера */
 @font-face {
   font-family: 'montserrat';
   src: url('../../fonts/montserrat-regular/montserrat-regular.eot');
@@ -271,7 +264,6 @@ form {
 
   @media (max-width: 400px) {
     width: 100%;
-    // по бокам должны быть padding по 10px
   }
 }
 

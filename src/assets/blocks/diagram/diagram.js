@@ -29,7 +29,6 @@ class Diagram {
     });
 
     c.save();
-    // теперь отдельно нарисуем белые линии на границах результатов голосования
     c.translate(canvas.width / 2, canvas.height / 2);
     startAngle = -PI / 2;
     c.rotate(startAngle);
@@ -51,7 +50,6 @@ class Diagram {
 
     c.lineWidth = 4;
 
-    // рисуем по часовой стрелке
     let xPrev = r * Math.cos(startAngle) + xc;
     let yPrev = r * Math.sin(startAngle) + yc;
 
@@ -61,7 +59,6 @@ class Diagram {
       const yCurr = r * Math.sin(angle) + yc;
 
       const d = ((xCurr - xPrev) ** 2 + (yCurr - yPrev) ** 2) ** 0.5;
-      // угол A - угол пересечения секущей с ось X
       const sinA = (xCurr - xPrev) / d;
       const cosA = (yCurr - yPrev) / d;
 
@@ -82,12 +79,10 @@ class Diagram {
       yPrev = yCurr;
 
       c.lineCap = 'square';
-      // без этой строчки появляются белые полоски на градиенте
     }
   }
 }
 
-// пример объекта, полученного с сервера
 const votes = [
   {
     rate: 'disapointed', votes: 0, colorStart: '#919191', colorEnd: '#3D4975',

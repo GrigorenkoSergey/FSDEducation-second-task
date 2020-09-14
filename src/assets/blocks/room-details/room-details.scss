@@ -191,7 +191,7 @@
 
   &__buns {
     flex: 0 0 270px;
-    min-width: 270px; // чтобы не ломалось при flex-direction: column
+    min-width: 270px;
 
     @media (max-width: 1150px) {
       margin-bottom: 20px;
