@@ -1,5 +1,4 @@
 export default class EventObserver {
-  // every subscriber should have method "update(eventType, data)"
   constructor() {
     this.observers = {};
   }

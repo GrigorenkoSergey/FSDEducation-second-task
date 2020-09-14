@@ -57,7 +57,6 @@ export default class RangeSlider {
   }
 
   handleRollerRightMouseDown(e) {
-    // отсчет начинаем с правого края
     const elem = e.target;
     const startX = this.el.offsetParent.getBoundingClientRect().left
     + this.el.offsetParent.clientLeft + this.el.offsetParent.clientWidth;
@@ -89,8 +88,6 @@ export default class RangeSlider {
   }
 
   countRange() {
-    // коэффициенты 5 / 74 и 10 / 175 взяты, чтобы соответствовать масштабу макета.
-    // В общем, я так и не понял, как разбить шкалу...
     let lowRange = Math.floor((5 / 74) * this.el.offsetLeft) * 1000;
     let topRange = Math.floor((10 / 175) * (this.el.offsetLeft + this.el.offsetWidth)) * 1000;
 

@@ -12,9 +12,6 @@ let entries = {
   index: './index',
 };
 
-// Далее я сознательно не автоматизировал создание точек входа,
-// и работу html-webpack-plugin, т.к. при отладке это сильно запутывает.
-
 const UIKitEntries = {
   'UI-Kit-common': './pages/UI-Kit/UI-Kit-common/UI-Kit-common',
   'colors-and-type': './pages/UI-Kit/colors-and-type/colors-and-type',
@@ -42,7 +39,7 @@ module.exports = (env, options) => ({
     filename: (pathData) => `${entries[pathData.chunk.name]}.[contenthash].js`,
   },
 
-  optimization: { // довольно бесполезно, но все-таки..
+  optimization: {
     minimize: options.mode === 'production',
     minimizer: [new TerserPlugin({
       parallel: true,

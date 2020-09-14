@@ -6,7 +6,6 @@ class ExpandableCheckbox {
   constructor(item) {
     this.el = item;
     this.blockName = 'expandable-checkbox-list';
-    // воспользуемся material-icons от google
     this.tokens = ['expand_more', 'expand_less'];
     this.expanded = false;
     this.init();
