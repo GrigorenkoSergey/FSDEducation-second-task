@@ -1,7 +1,7 @@
 import './dropdown.scss';
 
-import DropdownGuests from '../dropdown-guests/dropdown-guests.js';
-import DropdownRooms from '../dropdown-rooms/dropdown-rooms.js';
+import DropdownGuests from '../dropdown-guests/DropdownGuests.js';
+import DropdownRooms from '../dropdown-rooms/DropdownRooms.js';
 
 [...document.querySelectorAll('[data-name=guests]')]
   .forEach((item) => new DropdownGuests(item));

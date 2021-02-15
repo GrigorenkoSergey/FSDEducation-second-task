@@ -4,7 +4,7 @@ import '../button/button.js';
 import '../footer/footer.js';
 import '../copyright/copyright.js';
 
-import HeaderSubmenu from './header__submenu.js';
+import HeaderSubmenu from './HeaderSubmenu.js';
 
 class Header {
   constructor() {

@@ -1,7 +1,7 @@
 import './search-room.scss';
 
 import '../dropdown/dropdown.js';
-import '../range-slider/range-slider.js';
+import '../range-slider/RangeSlider.js';
 import '../preview/preview.js';
 import '../expandable-checkbox-list/expandable-checkbox-list.js';
 import dateFilters from '../filter-date/filter-date.js';

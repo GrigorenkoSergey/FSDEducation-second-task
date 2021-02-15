@@ -1,6 +1,6 @@
 import './date-dropdown.scss';
 
-import DateDropdown from './date-dropdown-class.js';
+import DateDropdown from './DateDropdown.js';
 
 const dateDropdowns = [...document.querySelectorAll('.date-dropdown')]
   .map((item) => new DateDropdown(item));

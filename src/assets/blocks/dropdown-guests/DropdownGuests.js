@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import '../dropdown/dropdown.scss';
 
-import DropdownOrigin from '../dropdown/dropdown-origin.js';
+import DropdownOrigin from '../dropdown/DropdownOrigin.js';
 
 const MAX_ITEMS_VALUE = 10;
 const MAX_GUESTS_VALUE = 10;

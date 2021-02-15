@@ -1,4 +1,4 @@
-import EventObserver from '../event-observer/event-observer.js';
+import EventObserver from '../event-observer/EventObserver.js';
 
 const MAX_ITEMS_VALUE = 10;
 const MIN_ITEMS_VALUE = 0;
