@@ -3,8 +3,8 @@ import '../dropdown/dropdown.scss';
 import DropdownOrigin from '../dropdown/DropdownOrigin.js';
 
 export default class DropdownRooms extends DropdownOrigin {
-  init() {
-    super.init();
+  _init() {
+    super._init();
     this.update();
   }
 

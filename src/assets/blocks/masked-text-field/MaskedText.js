@@ -4,19 +4,19 @@ export default class MaskedText {
   constructor(domElem) {
     this.el = domElem;
     this.format = this.el.dataset.format;
-    this.init();
+    this._init();
   }
 
-  init() {
-    this.el.addEventListener('change', this.handleMaskedTextFieldChange.bind(this));
+  _init() {
+    this.el.addEventListener('change', this._handleMaskedTextFieldChange.bind(this));
   }
 
-  handleMaskedTextFieldChange(e) {
-    const methodName = `${this.format}Check`;
+  _handleMaskedTextFieldChange(e) {
+    const methodName = `_${this.format}Check`;
     this[methodName](e);
   }
 
-  dateCheck(e) {
+  _dateCheck(e) {
     let date = e.target.value;
     const regexp = /^(\d{2}).(\d{2}).(\d{4})$/;
 

@@ -19,15 +19,15 @@ export default class Datepicker {
       },
     };
     this.el = el;
-    this.init(el, { ...defaultOptions, ...options });
+    this._init(el, { ...defaultOptions, ...options });
   }
 
-  init(el, options) {
+  _init(el, options) {
     this.datepicker = $(el).datepicker(options).data('datepicker');
-    this.renderButtons(this.datepicker.$datepicker[0]);
+    this._renderButtons(this.datepicker.$datepicker[0]);
   }
 
-  renderButtons(container) {
+  _renderButtons(container) {
     const [buttonsContainer, buttonReset, buttonApply] = new Array(3).fill(1).map(() => document.createElement('div'));
 
     buttonsContainer.classList.add('datepicker--buttons');
@@ -40,15 +40,15 @@ export default class Datepicker {
     buttonsContainer.append(buttonReset, buttonApply);
     container.append(buttonsContainer);
 
-    buttonReset.addEventListener('click', this.handleButtonResetClick.bind(this));
-    buttonApply.addEventListener('click', this.handleButtonApplyClick.bind(this));
+    buttonReset.addEventListener('click', this._handleButtonResetClick.bind(this));
+    buttonApply.addEventListener('click', this._handleButtonApplyClick.bind(this));
   }
 
-  handleButtonResetClick() {
+  _handleButtonResetClick() {
     this.datepicker.clear();
   }
 
-  handleButtonApplyClick() {
+  _handleButtonApplyClick() {
     this.datepicker.hide();
   }
 }

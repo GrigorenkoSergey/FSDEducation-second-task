@@ -5,10 +5,10 @@ class Diagram {
     this.canvas = itemCanvas;
     this.context = this.canvas.getContext('2d');
     this.votes = votes;
-    this.draw();
+    this._draw();
   }
 
-  draw() {
+  _draw() {
     const { canvas, votes } = this;
     const c = this.context;
     const { PI } = Math;
@@ -21,7 +21,7 @@ class Diagram {
 
     votes.forEach((item) => {
       endAngle = startAngle + (item.votes / total) * 2 * PI;
-      this.arcGradient(canvas.width / 2, canvas.height / 2, r,
+      this._arcGradient(canvas.width / 2, canvas.height / 2, r,
         startAngle, endAngle,
         item.colorStart, item.colorEnd,
         PI / 36);
@@ -45,7 +45,7 @@ class Diagram {
     c.restore();
   }
 
-  arcGradient(xc, yc, r, startAngle, endAngle, colorStart, colorEnd, step = Math.PI / 36) {
+  _arcGradient(xc, yc, r, startAngle, endAngle, colorStart, colorEnd, step = Math.PI / 36) {
     const c = this.context;
 
     c.lineWidth = 4;

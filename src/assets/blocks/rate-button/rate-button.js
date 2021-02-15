@@ -3,14 +3,14 @@ import './rate-button.scss';
 class RateButton {
   constructor(item) {
     this.el = item;
-    this.init();
+    this._init();
   }
 
-  init() {
-    this.el.addEventListener('click', this.handleClick.bind(this));
+  _init() {
+    this.el.addEventListener('click', this._handleClick.bind(this));
   }
 
-  handleClick(e) {
+  _handleClick(e) {
     const stars = Number(e.target.dataset.star);
 
     [...this.el.children].forEach((item, index) => {

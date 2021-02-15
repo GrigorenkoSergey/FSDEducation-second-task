@@ -8,24 +8,24 @@ export default class DateDropdown {
     };
 
     this.el = elem;
-    this.init({ ...defaultOptions, ...options });
+    this._init({ ...defaultOptions, ...options });
   }
 
-  init(options) {
+  _init(options) {
     const start = this.el.querySelector('[data-id=arrival]');
     const end = this.el.querySelector('[data-id=departure]');
 
     this.datepicker = new Datepicker(start, {
       ...options,
-      onSelect: this.handleStartSelect.bind(this),
+      onSelect: this._handleStartSelect.bind(this),
     }).datepicker;
 
     this.start = start;
     this.end = end;
-    this.end.addEventListener('click', this.handleEndClick.bind(this));
+    this.end.addEventListener('click', this._handleEndClick.bind(this));
   }
 
-  handleStartSelect(formattedDate, date, inst) {
+  _handleStartSelect(formattedDate, date, inst) {
     const [start, end] = formattedDate.split(inst.opts.multipleDatesSeparator);
     this.start.value = start;
 
@@ -36,7 +36,7 @@ export default class DateDropdown {
     }
   }
 
-  handleEndClick() {
+  _handleEndClick() {
     this.datepicker.show();
   }
 }

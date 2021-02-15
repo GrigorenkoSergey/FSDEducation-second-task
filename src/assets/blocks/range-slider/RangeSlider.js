@@ -4,16 +4,16 @@ export default class RangeSlider {
   constructor(item) {
     this.el = item;
     this.handlers = {};
-    this.bindHandlers();
-    this.init();
+    this._bindHandlers();
+    this._init();
   }
 
-  bindHandlers() {
-    this.handlers.hanleRollerLeftMouseDown = this.hanleRollerLeftMouseDown.bind(this);
-    this.handlers.handleRollerRightMouseDown = this.handleRollerRightMouseDown.bind(this);
+  _bindHandlers() {
+    this.handlers.hanleRollerLeftMouseDown = this._hanleRollerLeftMouseDown.bind(this);
+    this.handlers.handleRollerRightMouseDown = this._handleRollerRightMouseDown.bind(this);
   }
 
-  init() {
+  _init() {
     this.leftRoller = this.el.querySelector('.range-slider__roller-left');
     this.rightRoller = this.el.querySelector('.range-slider__roller-right');
     this.rangeSlider = this.el.closest('.range-slider');
@@ -24,7 +24,7 @@ export default class RangeSlider {
     this.range = this.rangeSlider.querySelector('.range-slider__range');
   }
 
-  hanleRollerLeftMouseDown(e) {
+  _hanleRollerLeftMouseDown(e) {
     const elem = e.target;
     const startX = this.el.offsetParent.getBoundingClientRect().left
     + this.el.offsetParent.clientLeft;
@@ -44,7 +44,7 @@ export default class RangeSlider {
       newLeft = Math.min(newLeft, boundaries.right);
       this.el.style.left = `${newLeft}px`;
 
-      this.countRange();
+      this._countRange();
     };
 
     const handleDocumentMouseUp = () => {
@@ -56,7 +56,7 @@ export default class RangeSlider {
     document.addEventListener('mouseup', handleDocumentMouseUp);
   }
 
-  handleRollerRightMouseDown(e) {
+  _handleRollerRightMouseDown(e) {
     const elem = e.target;
     const startX = this.el.offsetParent.getBoundingClientRect().left
     + this.el.offsetParent.clientLeft + this.el.offsetParent.clientWidth;
@@ -76,7 +76,7 @@ export default class RangeSlider {
       newRight = Math.min(newRight, boundaries.left);
       this.el.style.right = `${newRight}px`;
 
-      this.countRange();
+      this._countRange();
     };
     const handleDocumentMouseUp = () => {
       document.removeEventListener('mousemove', handleDocumentMouseMove);
@@ -87,7 +87,7 @@ export default class RangeSlider {
     document.addEventListener('mouseup', handleDocumentMouseUp);
   }
 
-  countRange() {
+  _countRange() {
     let lowRange = Math.floor((5 / 74) * this.el.offsetLeft) * 1000;
     let topRange = Math.floor((10 / 175) * (this.el.offsetLeft + this.el.offsetWidth)) * 1000;
 

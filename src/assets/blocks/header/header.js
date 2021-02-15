@@ -10,16 +10,16 @@ class Header {
   constructor() {
     this.handlers = {};
     this.menuExpanded = false;
-    this.init();
+    this._init();
   }
 
-  bindHandlers() {
-    this.handlers.handleDocumentClick = this.handleDocumentClick.bind(this);
-    this.handlers.handleTriggerClick = this.handleTriggerClick.bind(this);
+  _bindHandlers() {
+    this.handlers.handleDocumentClick = this._handleDocumentClick.bind(this);
+    this.handlers.handleTriggerClick = this._handleTriggerClick.bind(this);
   }
 
-  init() {
-    this.bindHandlers();
+  _init() {
+    this._bindHandlers();
 
     this.el = document.querySelector('.header');
     this.trigger = this.el.querySelector('.header__trigger');
@@ -31,7 +31,7 @@ class Header {
     this.trigger.addEventListener('click', this.handlers.handleTriggerClick);
   }
 
-  handleTriggerClick() {
+  _handleTriggerClick() {
     this.menu.classList.toggle('header__menu_visible');
     this.menuExpanded = !this.menuExpanded;
 
@@ -40,7 +40,7 @@ class Header {
     }
   }
 
-  handleDocumentClick(e) {
+  _handleDocumentClick(e) {
     if (this.el.contains(e.target)) return;
 
     this.menu.classList.remove('header__menu_visible');

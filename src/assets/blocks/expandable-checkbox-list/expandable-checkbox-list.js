@@ -8,18 +8,18 @@ class ExpandableCheckbox {
     this.blockName = 'expandable-checkbox-list';
     this.tokens = ['expand_more', 'expand_less'];
     this.expanded = false;
-    this.init();
+    this._init();
   }
 
-  init() {
+  _init() {
     this.ul = this.el.querySelector('.checkbox-list');
     this.title = this.el.querySelector(`.${this.blockName}__title`);
     this.toggler = this.el.querySelector('.material-icons');
 
-    this.title.addEventListener('click', this.handleTitleClick.bind(this));
+    this.title.addEventListener('click', this._handleTitleClick.bind(this));
   }
 
-  handleTitleClick() {
+  _handleTitleClick() {
     this.expanded = !this.expanded;
     this.toggler.textContent = this.tokens[Number(this.expanded)];
     this.ul.hidden = !this.ul.hidden;

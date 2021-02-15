@@ -5,16 +5,16 @@ export default class DropdownOrigin {
     this.el = item;
     this.items = [];
     this.handlers = {};
-    this.init();
+    this._init();
   }
 
-  bindHandlers() {
-    this.handlers.handleInputClick = this.handleInputClick.bind(this);
-    this.handlers.handleDocumentClick = this.handleDocumentClick.bind(this);
+  _bindHandlers() {
+    this.handlers.handleInputClick = this._handleInputClick.bind(this);
+    this.handlers.handleDocumentClick = this._handleDocumentClick.bind(this);
   }
 
-  init() {
-    this.bindHandlers();
+  _init() {
+    this._bindHandlers();
 
     this.input = this.el.querySelector('.dropdown__input');
     this.inputText = this.el.querySelector('.dropdown__input-text');
@@ -31,14 +31,14 @@ export default class DropdownOrigin {
     }));
   }
 
-  handleInputClick() {
+  _handleInputClick() {
     this.itemsContainer.classList.toggle('dropdown__items-container_expanded');
     this.input.classList.toggle('dropdown__input_expanded');
 
     document.addEventListener('click', this.handlers.handleDocumentClick);
   }
 
-  handleDocumentClick(e) {
+  _handleDocumentClick(e) {
     if (this.el.contains(e.target)) return;
 
     document.removeEventListener('click', this.handlers.handleDocumentClick);
