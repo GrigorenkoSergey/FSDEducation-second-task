@@ -24,7 +24,7 @@ export default class DropdownGuests extends DropdownOrigin {
     this.update();
   }
 
-  update(eventType, item) {
+  update() {
     this.resetButton.hidden = false;
     const guestsSuffix = ['ей', 'ь', 'я', 'я', 'я', 'ей',
       'ей', 'ей', 'ей', 'ей', 'ей', 'ей'];
@@ -83,7 +83,7 @@ export default class DropdownGuests extends DropdownOrigin {
     this.itemsContainer.classList.remove('dropdown__items-container_expanded');
   }
 
-  handleResetButtonClick(e) {
+  handleResetButtonClick() {
     this.items.forEach((item) => {
       item.value = 0;
       item.counter.textContent = 0;

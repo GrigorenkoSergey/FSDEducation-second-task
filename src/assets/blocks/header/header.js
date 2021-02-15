@@ -31,7 +31,7 @@ class Header {
     this.trigger.addEventListener('click', this.handlers.handleTriggerClick);
   }
 
-  handleTriggerClick(e) {
+  handleTriggerClick() {
     this.menu.classList.toggle('header__menu_visible');
     this.menuExpanded = !this.menuExpanded;
 
@@ -50,4 +50,5 @@ class Header {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 const header = new Header();

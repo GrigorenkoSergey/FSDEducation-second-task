@@ -8,7 +8,7 @@ export default class DropdownRooms extends DropdownOrigin {
     this.update();
   }
 
-  update(eventType, data) {
+  update() {
     const roomsSuffix = ['ен', 'ьня', 'ьни', 'ьни', 'ьни',
       'ен', 'ен', 'ен', 'ен', 'ен', 'ен'];
     const bedsSuffix = ['ей', 'ь', 'и', 'и', 'и',

@@ -11,7 +11,7 @@ export default class LikeButton {
     this.el.addEventListener('click', this.handleLikeButtonClick.bind(this));
   }
 
-  handleLikeButtonClick(e) {
+  handleLikeButtonClick() {
     const { el, counter } = this;
 
     el.classList.toggle('like-button_pushed');

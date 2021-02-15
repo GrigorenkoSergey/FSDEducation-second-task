@@ -19,7 +19,7 @@ class ExpandableCheckbox {
     this.title.addEventListener('click', this.handleTitleClick.bind(this));
   }
 
-  handleTitleClick(e) {
+  handleTitleClick() {
     this.expanded = !this.expanded;
     this.toggler.textContent = this.tokens[Number(this.expanded)];
     this.ul.hidden = !this.ul.hidden;

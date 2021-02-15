@@ -4,7 +4,7 @@ const MAX_ITEMS_VALUE = 10;
 const MIN_ITEMS_VALUE = 0;
 
 export default class DropdownItem extends EventObserver {
-  constructor(item, value, input) {
+  constructor(item, value) {
     super();
     this.el = item;
     this.value = value;
@@ -31,7 +31,7 @@ export default class DropdownItem extends EventObserver {
     }
   }
 
-  handleMinusClick(e) {
+  handleMinusClick() {
     if (this.minus.classList.contains('dropdown__minus_disabled')) return;
 
     if (this.value === MAX_ITEMS_VALUE) {
@@ -44,7 +44,7 @@ export default class DropdownItem extends EventObserver {
     this.update();
   }
 
-  handlePlusClick(e) {
+  handlePlusClick() {
     if (this.plus.classList.contains('dropdown__plus_disabled')) return;
 
     if (this.value === MIN_ITEMS_VALUE) {

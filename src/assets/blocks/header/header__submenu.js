@@ -19,7 +19,7 @@ export default class HeaderSubmenu {
     this.title.addEventListener('click', this.handlers.handleTitleClick);
   }
 
-  handleTitleClick(e) {
+  handleTitleClick() {
     this.menu.classList.toggle('header__submenu_visible');
     this.title.classList.toggle('header__submenu-title_hovered');
 

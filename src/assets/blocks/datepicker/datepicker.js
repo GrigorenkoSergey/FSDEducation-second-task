@@ -44,11 +44,11 @@ export default class Datepicker {
     buttonApply.addEventListener('click', this.handleButtonApplyClick.bind(this));
   }
 
-  handleButtonResetClick(e) {
+  handleButtonResetClick() {
     this.datepicker.clear();
   }
 
-  handleButtonApplyClick(e) {
+  handleButtonApplyClick() {
     this.datepicker.hide();
   }
 }

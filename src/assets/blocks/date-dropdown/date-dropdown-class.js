@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import Datepicker from '../datepicker/datepicker.js';
 
 export default class DateDropdown {
@@ -37,7 +36,7 @@ export default class DateDropdown {
     }
   }
 
-  handleEndClick(e) {
+  handleEndClick() {
     this.datepicker.show();
   }
 }

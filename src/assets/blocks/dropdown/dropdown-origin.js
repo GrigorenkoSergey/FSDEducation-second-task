@@ -31,7 +31,7 @@ export default class DropdownOrigin {
     }));
   }
 
-  handleInputClick(e) {
+  handleInputClick() {
     this.itemsContainer.classList.toggle('dropdown__items-container_expanded');
     this.input.classList.toggle('dropdown__input_expanded');
 

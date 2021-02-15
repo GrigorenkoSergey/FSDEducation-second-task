@@ -47,7 +47,7 @@ export default class RangeSlider {
       this.countRange();
     };
 
-    const handleDocumentMouseUp = (event) => {
+    const handleDocumentMouseUp = () => {
       document.removeEventListener('mousemove', handleDocumentMouseMove);
       document.removeEventListener('mouseup', handleDocumentMouseUp);
     };
@@ -78,7 +78,7 @@ export default class RangeSlider {
 
       this.countRange();
     };
-    const handleDocumentMouseUp = (event) => {
+    const handleDocumentMouseUp = () => {
       document.removeEventListener('mousemove', handleDocumentMouseMove);
       document.removeEventListener('mouseup', handleDocumentMouseUp);
     };
