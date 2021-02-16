@@ -26,7 +26,6 @@ module.exports = {
       js: 'always',
     }],
     indent: [2, 2],
-    'no-unused-vars': 'off',
     'require-jsdoc': 0,
     'fsd/hof-name-prefix': 'error',
     'fsd/no-heavy-constructor': 'error',
