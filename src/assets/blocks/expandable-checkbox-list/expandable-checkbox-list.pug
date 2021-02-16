@@ -47,10 +47,10 @@ mixin expandable-checkbox-list(options = {})
     }
 
   - const className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
-  .expandable-checkbox-list
-    h3.expandable-checkbox-list__title(class= `${className}`) #{title} 
+  .expandable-checkbox-list.js-expandable-checkbox-list
+    h3.expandable-checkbox-list__title.js-expandable-checkbox-list__title(class= `${className}`) #{title} 
       .expandable-checkbox-list__toggler
         - const icon = togglers[Number(expanded)];
-        i.material-icons #{icon}
+        i.material-icons.js-material-icons #{icon}
     .expandable-checkbox-list__list
       +checkbox-list({items, expanded})

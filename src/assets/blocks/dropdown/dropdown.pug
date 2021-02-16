@@ -39,19 +39,19 @@ mixin dropdown(options = {})
   .dropdown(data-name= name)
     if (title.length !== 0)
       .dropdown__title #{title}
-    .dropdown__input(class= inputClass)
-      span.dropdown__input-text #{input}
+    .dropdown__input(class= inputClass).js-dropdown__input
+      span.dropdown__input-text.js-dropdown__input-text #{input}
       i.material-icons expand_more
-    .dropdown__items-container(class= containerClass)
+    .dropdown__items-container(class= containerClass).js-dropdown__items-container
       each elem in items
         - const {text, counter} = elem;
-        .dropdown__item
+        .dropdown__item.js-dropdown__item
           span.dropdown__item-name #{text}
           .dropdown__trigger
-            .dropdown__minus -
-            span.dropdown__counter  #{counter} 
-            .dropdown__plus +
+            .dropdown__minus.js-dropdown__minus -
+            span.dropdown__counter.js-dropdown__counter  #{counter} 
+            .dropdown__plus.js-dropdown__plus +
       if (showButtons)
         .dropdown__buttons
-          .dropdown__button-reset(hidden= !showReset) #{buttonResetText}                   
-          .dropdown__button-apply #{buttonApplyText}
+          .dropdown__button-reset.js-dropdown__button-reset(hidden= !showReset) #{buttonResetText}                   
+          .dropdown__button-apply.js-dropdown__button-apply #{buttonApplyText}

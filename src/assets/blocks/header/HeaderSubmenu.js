@@ -13,8 +13,8 @@ export default class HeaderSubmenu {
   _init() {
     this._bindHandlers();
 
-    this.title = this.el.querySelector('.header__submenu-title');
-    this.menu = this.el.querySelector('.header__submenu');
+    this.title = this.el.querySelector('.js-header__submenu-title');
+    this.menu = this.el.querySelector('.js-header__submenu');
 
     this.title.addEventListener('click', this.handlers.handleTitleClick);
   }

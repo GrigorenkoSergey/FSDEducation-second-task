@@ -14,14 +14,14 @@ export default class RangeSlider {
   }
 
   _init() {
-    this.leftRoller = this.el.querySelector('.range-slider__roller-left');
-    this.rightRoller = this.el.querySelector('.range-slider__roller-right');
+    this.leftRoller = this.el.querySelector('.js-range-slider__roller-left');
+    this.rightRoller = this.el.querySelector('.js-range-slider__roller-right');
     this.rangeSlider = this.el.closest('.range-slider');
 
     this.leftRoller.addEventListener('mousedown', this.handlers.hanleRollerLeftMouseDown);
     this.rightRoller.addEventListener('mousedown', this.handlers.handleRollerRightMouseDown);
 
-    this.range = this.rangeSlider.querySelector('.range-slider__range');
+    this.range = this.rangeSlider.querySelector('.js-range-slider__range');
   }
 
   _hanleRollerLeftMouseDown(e) {
@@ -98,5 +98,5 @@ export default class RangeSlider {
   }
 }
 
-[...document.getElementsByClassName('range-slider__roller')]
+[...document.getElementsByClassName('js-range-slider__roller')]
   .forEach((item) => new RangeSlider(item));

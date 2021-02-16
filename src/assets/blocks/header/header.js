@@ -21,11 +21,11 @@ class Header {
   _init() {
     this._bindHandlers();
 
-    this.el = document.querySelector('.header');
-    this.trigger = this.el.querySelector('.header__trigger');
-    this.menu = this.el.querySelector('.header__menu');
+    this.el = document.querySelector('.js-header');
+    this.trigger = this.el.querySelector('.js-header__trigger');
+    this.menu = this.el.querySelector('.js-header__menu');
 
-    [...this.el.querySelectorAll('.header__submenu-title')]
+    [...this.el.querySelectorAll('.js-header__submenu-title')]
       .map((item) => new HeaderSubmenu(item.parentNode));
 
     this.trigger.addEventListener('click', this.handlers.handleTriggerClick);

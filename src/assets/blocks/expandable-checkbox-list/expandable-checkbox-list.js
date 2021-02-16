@@ -12,9 +12,9 @@ class ExpandableCheckbox {
   }
 
   _init() {
-    this.ul = this.el.querySelector('.checkbox-list');
-    this.title = this.el.querySelector(`.${this.blockName}__title`);
-    this.toggler = this.el.querySelector('.material-icons');
+    this.ul = this.el.querySelector('.js-checkbox-list');
+    this.title = this.el.querySelector(`.js-${this.blockName}__title`);
+    this.toggler = this.el.querySelector('.js-material-icons');
 
     this.title.addEventListener('click', this._handleTitleClick.bind(this));
   }
@@ -26,5 +26,5 @@ class ExpandableCheckbox {
   }
 }
 
-[...document.querySelectorAll('.expandable-checkbox-list')]
+[...document.querySelectorAll('.js-expandable-checkbox-list')]
   .forEach((item) => new ExpandableCheckbox(item));

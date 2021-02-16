@@ -12,8 +12,8 @@ mixin diagram(options = {})
 
   .diagram
     .diagram__figure
-      canvas.diagram__canvas(width= width height= height)
-      span.diagram__total
+      canvas.diagram__canvas(width= width height= height).js-diagram__canvas
+      span.diagram__total.js-diagram__total
       span.diagram__voices #{voices}
     ul.diagram__description
       li.diagram__estimate.diagram__estimate_value_magnificently #{magnificently}  

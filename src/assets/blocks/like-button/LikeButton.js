@@ -7,7 +7,7 @@ export default class LikeButton {
   }
 
   _init() {
-    this.counter = this.el.querySelector('.like-button__counter');
+    this.counter = this.el.querySelector('.js-like-button__counter');
     this.el.addEventListener('click', this._handleLikeButtonClick.bind(this));
   }
 
@@ -23,5 +23,5 @@ export default class LikeButton {
   }
 }
 
-[...document.getElementsByClassName('like-button')]
+[...document.getElementsByClassName('js-like-button')]
   .forEach((item) => new LikeButton(item));

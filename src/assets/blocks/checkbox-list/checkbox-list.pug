@@ -15,7 +15,7 @@ mixin checkbox-list(options = {})
     } = options;
 
   - const isHidden = expanded !== true;
-  ul.checkbox-list(hidden= isHidden)
+  ul.checkbox-list(hidden= isHidden).js-checkbox-list
     each elem in items
       li.checkbox-list__li
         +checkbox({text: elem.labelText, attr: {checked: elem.checked, name: elem.name}})

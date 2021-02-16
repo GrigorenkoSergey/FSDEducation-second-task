@@ -45,19 +45,19 @@ mixin header(options = {})
       userName = "Юлий Цезарь",
     } = options;
 
-  .header
+  .header.js-header
     .header__content
       a.header__logo(href= logo.link)
         img(src= require(`../../../assets/blocks/header/images/${logo.img}`) alt= `${logo.alt}`)
 
-      .header__menu
+      .header__menu.js-header__menu
         ul.header__nav
           each val in nav
             li.header__li(class = val.innerUl ? "header__li_submenu " : ""
             class = val.currentPage ? "header__li_current-page" : "")
               if (val.innerUl) 
-                span.header__submenu-title #{val.text}
-                ul.header__submenu
+                span.header__submenu-title.js-header__submenu-title #{val.text}
+                ul.header__submenu.js-header__submenu
                   each subVal in val.innerUl
                     li 
                       a.header__link(href= subVal.link) !{subVal.text}
@@ -73,5 +73,5 @@ mixin header(options = {})
             .header__button-register
               +button(buttonRegister)
 
-      .header__trigger
+      .header__trigger.js-header__trigger
         i.material-icons.matirial-icons_36 menu

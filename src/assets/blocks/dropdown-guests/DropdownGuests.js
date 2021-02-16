@@ -16,8 +16,8 @@ export default class DropdownGuests extends DropdownOrigin {
 
   _init() {
     super._init();
-    this.applyButton = this.el.querySelector('.dropdown__button-apply');
-    this.resetButton = this.el.querySelector('.dropdown__button-reset');
+    this.applyButton = this.el.querySelector('.js-dropdown__button-apply');
+    this.resetButton = this.el.querySelector('.js-dropdown__button-reset');
 
     this.applyButton.addEventListener('click', this.handlers.handleApplyButtonClick);
     this.resetButton.addEventListener('click', this.handlers.handleResetButtonClick);

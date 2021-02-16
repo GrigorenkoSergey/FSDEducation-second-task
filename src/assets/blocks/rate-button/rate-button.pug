@@ -1,6 +1,6 @@
 mixin rate-button(starsNumDefault)
   - let n = 0;
-  .rate-button(data-stars_num= starsNumDefault)
+  .rate-button.js-rate-button(data-stars_num= starsNumDefault)
     while (++n < 6)
       - 
         let checked = "";

@@ -12,4 +12,4 @@ mixin masked-text-field( options = {})
       return str += ` masked-text-field${key}_${entry}`; 
     }, "masked-text-field");
 
-  input(class= summaryClasses type="text" placeholder= "ДД.ММ.ГГГГ" data-format= format)&attributes(attr)
+  input.js-masked-text-field(class= summaryClasses type="text" placeholder= "ДД.ММ.ГГГГ" data-format= format)&attributes(attr)

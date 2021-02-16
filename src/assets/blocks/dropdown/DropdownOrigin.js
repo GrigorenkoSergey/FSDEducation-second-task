@@ -16,15 +16,15 @@ export default class DropdownOrigin {
   _init() {
     this._bindHandlers();
 
-    this.input = this.el.querySelector('.dropdown__input');
-    this.inputText = this.el.querySelector('.dropdown__input-text');
+    this.input = this.el.querySelector('.js-dropdown__input');
+    this.inputText = this.el.querySelector('.js-dropdown__input-text');
     this.input.addEventListener('click', this.handlers.handleInputClick);
 
-    this.itemsContainer = this.el.querySelector('.dropdown__items-container');
-    const itemsDom = this.el.getElementsByClassName('dropdown__item');
+    this.itemsContainer = this.el.querySelector('.js-dropdown__items-container');
+    const itemsDom = this.el.getElementsByClassName('js-dropdown__item');
 
     [...itemsDom].forEach(((itemDom) => {
-      const value = Number(itemDom.querySelector('.dropdown__counter').textContent);
+      const value = Number(itemDom.querySelector('.js-dropdown__counter').textContent);
       const item = new DropdownItem(itemDom, value, this.inputHandler);
       this.items.push(item);
       item.addSubscriber('changeItemValue', this);

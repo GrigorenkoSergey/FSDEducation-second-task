@@ -12,9 +12,9 @@ export default class DropdownItem extends EventObserver {
   }
 
   _init() {
-    this.counter = this.el.querySelector('.dropdown__counter');
-    this.minus = this.el.querySelector('.dropdown__minus');
-    this.plus = this.el.querySelector('.dropdown__plus');
+    this.counter = this.el.querySelector('.js-dropdown__counter');
+    this.minus = this.el.querySelector('.js-dropdown__minus');
+    this.plus = this.el.querySelector('.js-dropdown__plus');
 
     this.minus.addEventListener('click', this._handleMinusClick.bind(this));
     this.plus.addEventListener('click', this._handlePlusClick.bind(this));

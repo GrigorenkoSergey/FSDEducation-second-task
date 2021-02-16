@@ -15,7 +15,7 @@ class Diagram {
 
     const r = 58;
     const total = votes.reduce((sum, item) => sum + item.votes, 0);
-    document.getElementsByClassName('diagram__total')[0].textContent = total;
+    document.getElementsByClassName('js-diagram__total')[0].textContent = total;
     let startAngle = -PI / 2;
     let endAngle;
 
@@ -98,6 +98,6 @@ const votes = [
   },
 ];
 
-const canvas = document.querySelector('.diagram__canvas');
+const canvas = document.querySelector('.js-diagram__canvas');
 // eslint-disable-next-line no-unused-vars
 const diargam = new Diagram(canvas, votes);
