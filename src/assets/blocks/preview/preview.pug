@@ -23,7 +23,7 @@ mixin preview(options = {})
     } = options;
 
   .preview
-    ul.bxslider
+    ul.bxslider.js-bxslider
       each imgSrc in imagesSrc
         img(alt= imgAltText src= require(`../../../assets/blocks/preview/images/${imgSrc}`))
     .preview__information

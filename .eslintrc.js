@@ -26,6 +26,7 @@ module.exports = {
       js: 'always',
     }],
     indent: [2, 2],
+    'no-underscore-dangle': 'off',
     'require-jsdoc': 0,
     'fsd/hof-name-prefix': 'error',
     'fsd/no-heavy-constructor': 'error',
