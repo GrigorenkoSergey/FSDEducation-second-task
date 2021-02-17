@@ -59,6 +59,12 @@ module.exports = (env, options) => ({
 
   devtool: options.mode === 'development' ? 'inline-source-map' : false,
 
+  resolve: {
+    alias: {
+      Blocks: path.resolve(__dirname, 'src/assets/blocks/'),
+    },
+  },
+
   module: {
     rules: [{
       test: /\.js$/,

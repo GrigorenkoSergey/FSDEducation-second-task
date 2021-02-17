@@ -1,0 +1,57 @@
+{
+  "colors": [
+    {
+      "title": "Dark Shade 100%",
+      "modifier": "shades__rect_bg-color_dark-100",
+      "hexCode": "#1F2041"
+    },
+    {
+      "title": "Dark Shade 75%",
+      "modifier": "shades__rect_bg-color_dark-75",
+      "hexCode": "#1F2041"
+    },
+    {
+      "title": "Dark Shade 50%",
+      "modifier": "shades__rect_bg-color_dark-50",
+      "hexCode": "#1F2041"
+    },
+    {
+      "title": "Dark Shade 25%",
+      "modifier": "shades__rect_bg-color_dark-25",
+      "hexCode": "#1F2041"
+    },
+    {
+      "title": "Dark Shade 5%",
+      "modifier": "shades__rect_bg-color_dark-5",
+      "hexCode": "#1F2041"
+    },
+    {
+      "title": "Purple",
+      "modifier": "shades__rect_bg-color_purple",
+      "hexCode": "#BC9CFF"
+    },
+    {
+      "title": "Green",
+      "modifier": "shades__rect_bg-color_green",
+      "hexCode": "#6FCF97"
+    }
+  ],
+  "typesList": [
+    {
+      "tag": "h1",
+      "text": "This one is the sub-section or widget title"
+    },
+    {
+      "tag": "h2",
+      "text": "Next one is the item title inside widgets"
+    },
+    {
+      "tag": "h3",
+      "text": "This is a label or cta text"
+    },
+    {
+      "tag": "Body",
+      "text": "This is the body text which is used for most of the design, like paragraphs, lists, etc."
+    }
+  ]
+}
