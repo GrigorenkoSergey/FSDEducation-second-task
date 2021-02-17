@@ -61,7 +61,7 @@ mixin footer(options = {})
     .footer__footer-standard
       .footer__content
         .footer__logo
-          img.footer__logo-img(alt = img.alt src= require(`../../../assets/blocks/footer/images/${img.src}`) height= img.height)
+          img.footer__logo-img(alt = img.alt src= require(`Blocks/footer/images/${img.src}`) height= img.height)
           .footer__logo-description #{description}
         .footer__navigation
           +list(navigation)

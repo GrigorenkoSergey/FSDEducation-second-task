@@ -1,8 +1,8 @@
-include ../../../assets/blocks/buns/buns.pug
-include ../../../assets/blocks/comment/comment.pug
-include ../../../assets/blocks/final-bill/final-bill.pug
-include ../../../assets/blocks/bullet-list/bullet-list.pug
-include ../../../assets/blocks/diagram/diagram.pug
+include ~Blocks/buns/buns.pug
+include ~Blocks/comment/comment.pug
+include ~Blocks/final-bill/final-bill.pug
+include ~Blocks/bullet-list/bullet-list.pug
+include ~Blocks/diagram/diagram.pug
 
 mixin room-details(options = {})
   -
@@ -75,10 +75,10 @@ mixin room-details(options = {})
 
   .room-details__photos
     .room-details__photos-box_1
-      img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[0].src}`) alt= photos[0].alt)
+      img.room-details__photos-img(src= require(`Blocks/room-details/images/${photos[0].src}`) alt= photos[0].alt)
     .room-details__photos-box_2
-      img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[1].src}`) alt= photos[0].alt)
-      img.room-details__photos-img(src= require(`../../../assets/blocks/room-details/images/${photos[2].src}`) alt= photos[0].alt)
+      img.room-details__photos-img(src= require(`Blocks/room-details/images/${photos[1].src}`) alt= photos[0].alt)
+      img.room-details__photos-img(src= require(`Blocks/room-details/images/${photos[2].src}`) alt= photos[0].alt)
 
   main.room-details__main
 

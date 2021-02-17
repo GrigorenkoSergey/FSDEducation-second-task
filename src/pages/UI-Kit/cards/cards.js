@@ -1,1 +1,1 @@
-import '../../../assets/blocks/cards/cards.js';
+import 'Blocks/cards/cards.js';

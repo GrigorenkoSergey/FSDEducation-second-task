@@ -25,7 +25,7 @@ mixin preview(options = {})
   .preview
     ul.bxslider.js-bxslider
       each imgSrc in imagesSrc
-        img(alt= imgAltText src= require(`../../../assets/blocks/preview/images/${imgSrc}`))
+        img(alt= imgAltText src= require(`Blocks/preview/images/${imgSrc}`))
     .preview__information
       .preview__title
         span.preview__room-number #{number}

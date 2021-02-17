@@ -23,6 +23,7 @@
     "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-google": "^0.14.0",
+    "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-fsd": "^1.0.1",
     "eslint-plugin-import": "^2.22.0",
@@ -30,6 +31,7 @@
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.10.0",
     "node-sass": "^4.14.1",
+    "npm-check-updates": "^7.1.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "pug": "^3.0.0",
@@ -39,8 +41,7 @@
     "terser-webpack-plugin": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "npm-check-updates": "^7.1.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
