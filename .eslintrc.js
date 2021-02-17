@@ -20,6 +20,9 @@ module.exports = {
   plugins: [
     'fsd',
   ],
+  settings: {
+    'import/resolver': 'webpack',
+  },
   rules: {
     'import/extensions': ['error', 'ignorePackages', {
       ts: 'always',
