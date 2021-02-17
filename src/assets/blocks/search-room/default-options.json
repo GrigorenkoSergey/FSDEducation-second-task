@@ -1,0 +1,203 @@
+
+{
+ "filterDate": {
+   "title": "Даты пребывания в отеле"
+ },
+ "dropdownGuests": {
+   "counters": [3, 0, 1]
+ },
+ "rangeSlider": {
+   "rangeSliderOptions": {
+     "title": "Диапазон цены"
+   },
+   "pText": "Стоимость за сутки пребывания в номере"
+ },
+ "checkboxButtons": {},
+ "richCheckboxButtons": {
+   "title": "Доступность",
+   "items": [
+     ["wide_hall", "Широкий коридор", "Ширина коридоров в номере<br />не менее 91 см"],
+     ["disabled_helper", "Помощник для инвалидов", "На 1 этаже вас встретит специалист<br/>и проводит до номера"]
+   ]
+ },
+ "dropdownRooms": {
+   "title": "Удобства номера"
+ },
+ "expandableCheckboxList": {
+   "title": "Дополнительные удобства"
+ },
+ "roomsList": {
+   "title": "Номера, которые мы для вас подобрали",
+   "previews": [
+     {
+       "number": 888,
+       "type": "Люкс",
+       "imagesSrc": [
+         "888.jpg",
+         "888.jpg",
+         "888.jpg",
+         "888.jpg"
+       ],
+       "cost": "9 990",
+       "stars": 5,
+       "reviews": 145,
+       "arrowsHidden": false
+     },
+     {
+       "number": 840,
+       "type": "",
+       "imagesSrc": [
+         "840.jpg",
+         "840.jpg",
+         "840.jpg",
+         "840.jpg"
+       ],
+       "cost": "9 900",
+       "stars": 4,
+       "reviews": 65,
+       "arrowsHidden": true
+     },
+     {
+       "number": 980,
+       "type": "Люкс",
+       "imagesSrc": [
+         "980.jpg",
+         "980.jpg",
+         "980.jpg",
+         "980.jpg"
+       ],
+       "cost": "8 500",
+       "stars": 3,
+       "reviews": 35,
+       "arrowsHidden": true
+     },
+     {
+       "number": 856,
+       "type": "",
+       "imagesSrc": [
+         "856.jpg",
+         "856.jpg",
+         "856.jpg",
+         "856.jpg"
+       ],
+       "cost": "7 300",
+       "stars": 5,
+       "reviews": 19,
+       "arrowsHidden": true
+     },
+     {
+       "number": 740,
+       "type": "",
+       "imagesSrc": [
+         "740.jpg",
+         "740.jpg",
+         "740.jpg",
+         "740.jpg"
+       ],
+       "cost": "6 000",
+       "stars": 4,
+       "reviews": 44,
+       "arrowsHidden": true
+     },
+     {
+       "number": 982,
+       "type": "",
+       "imagesSrc": [
+         "982.jpg",
+         "982.jpg",
+         "982.jpg",
+         "982.jpg"
+       ],
+       "cost": "5 800",
+       "stars": 3,
+       "reviews": 56,
+       "arrowsHidden": true
+     },
+     {
+       "number": 678,
+       "type": "",
+       "imagesSrc": [
+         "678.jpg",
+         "678.jpg",
+         "678.jpg",
+         "678.jpg"
+       ],
+       "cost": "5 500",
+       "stars": 5,
+       "reviews": 45,
+       "arrowsHidden": true
+     },
+     {
+       "number": 450,
+       "type": "",
+       "imagesSrc": [
+         "450.jpg",
+         "450.jpg",
+         "450.jpg",
+         "450.jpg"
+       ],
+       "cost": "5 300",
+       "stars": 4,
+       "reviews": 39,
+       "arrowsHidden": true
+     },
+     {
+       "number": 350,
+       "type": "",
+       "imagesSrc": [
+         "350.jpg",
+         "350.jpg",
+         "350.jpg",
+         "350.jpg"
+       ], 
+       "cost": "5 000",
+       "stars": 3,
+       "reviews": 77,
+       "arrowsHidden": true
+     },
+     {
+       "number": 666,
+       "type": "",
+       "imagesSrc": [
+         "666.jpg",
+         "666.jpg",
+         "666.jpg",
+         "666.jpg"
+       ],
+       "cost": "5 000",
+       "stars": 5,
+       "reviews": 25,
+       "arrowsHidden": true
+     },
+     {
+       "number": 444,
+       "type": "",
+       "imagesSrc": [
+         "444.jpg",
+         "444.jpg",
+         "444.jpg",
+         "444.jpg"
+       ],
+       "cost": "5 000",
+       "stars": 3,
+       "reviews": 15,
+       "arrowsHidden": true
+     },
+     {
+       "number": 352,
+       "type": "",
+       "imagesSrc": [
+         "352.jpg",
+         "352.jpg",
+         "352.jpg",
+         "352.jpg"
+       ],
+       "cost": "5 000",
+       "stars": 3,
+       "reviews": 55,
+       "arrowsHidden": true
+     }
+   ]
+ },
+ "pagination": {}
+}

@@ -1,0 +1,26 @@
+{
+  "description": "1 - 12 из 100+ вариантов аренды",
+  "pages": [
+    {
+      "num": 1,
+      "link": "/valhalla/feast-table/",
+      "selected": true
+    },
+    {
+      "num": 2,
+      "link": "/valhalla/feast-table/"
+    },
+    {
+      "num": 3,
+      "link": "/valhalla/feast-table/"
+    },
+    {
+      "num": "...",
+      "link": "/valhalla/feast-table/"
+    },
+    {
+      "num": 15,
+      "link": "/valhalla/feast-table/"
+    }
+  ]
+}

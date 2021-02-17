@@ -1,0 +1,45 @@
+{
+  "title": "expandable checkbox list",
+  "expanded": false,
+  "togglers": [
+    "expand_more",
+    "expand_less"
+  ],
+  "items": [
+    {
+      "name": "breakfast",
+      "labelText": "Завтрак",
+      "checked": false
+    },
+    {
+      "name": "dest",
+      "labelText": "Письменный стол",
+      "checked": false
+    },
+    {
+      "name": "highchair",
+      "labelText": "Стул для кормления",
+      "checked": false
+    },
+    {
+      "name": "crib",
+      "labelText": "Кроватка",
+      "checked": false
+    },
+    {
+      "name": "tv",
+      "labelText": "Телевизор",
+      "checked": false
+    },
+    {
+      "name": "shampoo",
+      "labelText": "Шампунь",
+      "checked": false
+    }
+  ],
+  "checked": [
+    1,
+    2,
+    3
+  ]
+}

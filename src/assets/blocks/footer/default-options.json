@@ -1,0 +1,81 @@
+    {
+      "img": {
+        "height": "40px",
+        "alt": "Логотип",
+        "src": "logo-toxin.svg"
+      },
+      "description": "Бронирование номеров в лучшем отеле\n2019 года по версии ассоциации\n«Отельные взгляды»",
+      "navigation": {
+        "title": "Навигация",
+        "list": [
+          {
+            "text": "О нас",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Новости",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Служба поддержки",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Услуги",
+            "link": "/valhalla/feast-table/"
+          }
+        ]
+      },
+      "aboutUs": {
+        "title": "О нас",
+        "list": [
+          {
+            "text": "О сервисе",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Наша команда",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Вакансии",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Инвесторы",
+            "link": "/valhalla/feast-table/"
+          }
+        ]
+      },
+      "support": {
+        "title": "Служба поддержки",
+        "list": [
+          {
+            "text": "Соглашения",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Сообщества",
+            "link": "/valhalla/feast-table/"
+          },
+          {
+            "text": "Связь с нами",
+            "link": "/valhalla/feast-table/"
+          }
+        ]
+      },
+      "subscribe": {
+        "title": "Подписка",
+        "text": "Получайте специальные предложения\nи новости сервиса",
+        "inputOptions": {
+          "attr": {
+            "type": "Email",
+            "placeholder": "Email"
+          },
+          "mod": {
+            "theme": "email"
+          }
+        }
+      },
+      "footerCreativeOptions": {}
+    }

@@ -1,49 +1,10 @@
 include ../button/button.pug
 
 mixin header(options = {})
-  - 
-    const {
-      logo = {
-        img: "logo-toxin.svg",
-        link: "../landing-page/landing-page.html",
-        alt: "Логотип",
-      },
-      nav = [
-        {text: "О нас", link: "/valhalla/feast-table/", currentPage: true},
-        {
-          text: "Услуги", 
-          innerUl:
-            [
-              { text: "service_1", link: "/valhalla/feast-table/" },
-              { text: "service_2", link: "/valhalla/feast-table/" }, 
-              { text: "service_3", link: "/valhalla/feast-table/" },
-            ],
-        },
-        { text: "Вакансии", link: "/valhalla/feast-table/"},
-        { text: "Новости", link: "/valhalla/feast-table/"},
-        {
-          text: "Соглашения",
-          innerUl: [
-            { text: "item-1", link: "/valhalla/feast-table/" },
-            { text: "item-2", link: "/valhalla/feast-table/" },
-            { text: "item-3", link: "/valhalla/feast-table/" },
-            ],
-        },
-      ],
-      buttonLogin = {
-        text: "Войти",
-        link: "../landing-page/landing-page.html",
-        mod: {color: "white", theme: "slim"}
-      },
-      buttonRegister = {
-        text: "Зарегистрироваться",
-        link: "../registration-page/registration-page.html",
-        mod: {theme: "slim"}
-      },
-
-      logged = false,
-      userName = "Юлий Цезарь",
-    } = options;
+  -
+    const defaultOptions = require('Blocks/header/default-options.json');
+    const { logo, nav, buttonLogin, buttonRegister, logged, userName } 
+      = { ...defaultOptions, options};
 
   .header.js-header
     .header__content

@@ -3,11 +3,8 @@ include ../types/types.pug
 
 mixin colors-and-type(options = {})
   - 
-    const defaultOptions = require('Blocks/colors-and-type/data.json');
-    const {
-      colors = defaultOptions.colors,
-      typesList = defaultOptions.typeList
-    } = options;
+    const defaultOptions = require('Blocks/colors-and-type/default-options.json');
+    const { colors, typesList } = { ...defaultOptions, ...options };
 
   main.colors-and-type__main
     .colors-and-type__shades

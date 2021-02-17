@@ -2,51 +2,15 @@ include ../checkbox-list/checkbox-list.pug
 
 mixin expandable-checkbox-list(options = {})
   - 
-    const {
-      title = "expandable checkbox list",
-      expanded = false,
-      togglers = ["expand_more", "expand_less"],
-
-      items = [
-        {
-          name: "breakfast",
-          labelText: "Завтрак",
-          checked: false,
-        },
-        {
-          name: "dest",
-          labelText: "Письменный стол",
-          checked: false,
-        },
-        {
-          name: "highchair",
-          labelText: "Стул для кормления",
-          checked: false,
-        },
-        {
-          name: "crib",
-          labelText: "Кроватка",
-          checked: false,
-        },
-        {
-          name: "tv",
-          labelText: "Телевизор",
-          checked: false,
-        },
-        {
-          name: "shampoo",
-          labelText: "Шампунь",
-          checked: false,
-        },
-      ],
-      checked = [1, 2, 3],
-    } = options;
+    const defaultOptions = require('Blocks/expandable-checkbox-list/default-options.json');
+    const { title, expanded, togglers, items, checked } = { ...defaultOptions, ...options };
 
     if (items.length) {
       checked.forEach(itemsIndex => items[itemsIndex].checked = true);
     }
 
-  - const className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
+    const className = (expanded === true) ? "expandable-checkbox-list__title_expanded" : ""; 
+
   .expandable-checkbox-list.js-expandable-checkbox-list
     h3.expandable-checkbox-list__title.js-expandable-checkbox-list__title(class= `${className}`) #{title} 
       .expandable-checkbox-list__toggler
