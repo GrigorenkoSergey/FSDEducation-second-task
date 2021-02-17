@@ -62,6 +62,7 @@ module.exports = (env, options) => ({
   resolve: {
     alias: {
       Blocks: path.resolve(__dirname, 'src/assets/blocks/'),
+      Favicons: path.resolve(__dirname, 'src/favicons/'),
     },
   },
 
