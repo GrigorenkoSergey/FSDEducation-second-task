@@ -1,3 +1,2 @@
-import './sign-in.scss';
-
 import '../log-in/log-in.js';
+import './sign-in.scss';

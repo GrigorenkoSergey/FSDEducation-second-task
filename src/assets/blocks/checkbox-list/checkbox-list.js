@@ -1,2 +1,2 @@
-import './checkbox-list.scss';
 import '../checkbox/checkbox.js';
+import './checkbox-list.scss';

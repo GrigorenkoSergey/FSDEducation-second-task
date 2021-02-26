@@ -1,8 +1,7 @@
-import './header.scss';
-
 import '../button/button.js';
 import '../footer/footer.js';
 import '../copyright/copyright.js';
+import './header.scss';
 
 import HeaderSubmenu from './HeaderSubmenu.js';
 

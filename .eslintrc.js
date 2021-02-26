@@ -29,6 +29,7 @@ module.exports = {
       js: 'always',
     }],
     indent: [2, 2],
+    quotes: ['error', 'single'],
     'no-underscore-dangle': 'off',
     'require-jsdoc': 0,
     'fsd/hof-name-prefix': 'error',

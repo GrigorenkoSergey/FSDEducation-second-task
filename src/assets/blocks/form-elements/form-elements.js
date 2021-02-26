@@ -1,9 +1,7 @@
-import './form-elements.scss';
-
+import dateFilters from '../filter-date/filter-date.js';
 import '../input/input.js';
 import '../masked-text-field/masked-text-field.js';
 import '../dropdown/dropdown.js';
-import dateFilters from '../filter-date/filter-date.js';
 import '../like-button/LikeButton.js';
 import '../range-slider/RangeSlider.js';
 import '../rate-button/rate-button.js';
@@ -20,6 +18,7 @@ import '../button-payment/button-payment.js';
 import '../pagination/pagination.js';
 import '../bullet-list/bullet-list.js';
 import '../date-dropdown/date-dropdown.js';
+import './form-elements.scss';
 
 const filter = dateFilters[0];
 
