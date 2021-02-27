@@ -4,7 +4,7 @@ mixin header(options = {})
   -
     const defaultOptions = require('Blocks/header/default-options.json');
     const { logo, nav, buttonLogin, buttonRegister, logged, userName } 
-      = { ...defaultOptions, options};
+      = { ...defaultOptions, ...options};
 
   .header.js-header
     .header__content

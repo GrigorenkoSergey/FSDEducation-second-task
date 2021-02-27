@@ -1,10 +1,8 @@
 mixin bullet-list(options = {})
   -
-    const {
-      items = ["Нельзя с питомцами", 
-        "Без вечеринок и мероприятий", 
-        "Время прибытия — после 13:00, а выезд до 12:00"],
-          } = options;
+    const defaultOptions = require('Blocks/bullet-list/default-options.json');
+    const { items = [] } = { ...defaultOptions, ...options};
+
   ul.bullet-list
     each val in items
       li.bullet-list__li 
