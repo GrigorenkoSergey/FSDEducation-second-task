@@ -2,14 +2,9 @@ mixin button-payment(options = {})
   -
     const {
       text = "Оплатить",
-      mod = {},
-      attr = {type: "submit"},
+      attr = {},
     } = options;
 
-    const summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
-      return str += ` button-payment_${key}_${entry}`; 
-    }, "button-payment");
-
-  button(class= summaryClasses)&attributes(attr)
+  button.button-payment(type="submit")&attributes(attr)
     span.button-payment__text #{text}
     .button-payment__arrow.material-icons arrow_forward

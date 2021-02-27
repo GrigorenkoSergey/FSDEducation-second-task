@@ -3,13 +3,8 @@ include ../input/input.pug
 mixin masked-text-field( options = {})
   -
     const {
-      mod = {}, 
       attr = {},
       format = "date",
     } = options;
 
-    const summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
-      return str += ` masked-text-field${key}_${entry}`; 
-    }, "masked-text-field");
-
-  input.js-masked-text-field(class= summaryClasses type="text" placeholder= "ДД.ММ.ГГГГ" data-format= format)&attributes(attr)
+  input.masked-text-field.js-masked-text-field(type="text" placeholder= "ДД.ММ.ГГГГ" data-format= format)&attributes(attr)

@@ -5,8 +5,10 @@ mixin input(options = {})
       attr = {},
     } = options;
 
-    const summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
-      return str += ` input_${key}_${entry}`; 
-    }, "input");
+    const validModifiers = ["input_action_hover", "input_theme_email"];
 
-  input(class= summaryClasses type="text")&attributes(attr)
+    const modifiers = Object.entries(mod)
+      .map(([key, entry]) => `input_${key}_${entry}`)
+      .filter(modifier => validModifiers.includes(modifier));
+
+  input.input(class= modifiers type="text")&attributes(attr)

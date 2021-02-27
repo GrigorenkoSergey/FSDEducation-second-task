@@ -1,11 +1,8 @@
 mixin buns(options = {})
   -
-    const {
-      items = [
-        {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
-        {name: "city", title: "Удобство", description: "Окно в каждой из спален"},
-      ],
-    } = options;
+    const defaultOptions = require('Blocks/buns/default-options.json');
+    const { items } = { ...defaultOptions, ...options};
+
   .buns
     each elem in items
       .buns__item

@@ -2,12 +2,14 @@ mixin button-text(options = {})
   -
     const {
       text = "click me",
+      attr = {},
       mod = {},
-      attr = {type: "submit"},
     } = options;
 
-    const summaryClasses = Object.entries(mod).reduce((str, [key, entry]) => {
-      return str += ` button-text_${key}_${entry}`; 
-    }, "button-text");
+    const validModifiers = ["button-text_theme_hovered"];
 
-  button(class= summaryClasses)&attributes(attr) #{text}
+    const modifiers = Object.entries(mod)
+      .map(([key, entry]) => `button-text_${key}_${entry}`)
+      .filter(modifier => validModifiers.includes(modifier));
+
+  button.button-text(type="submit" class= modifier)&attributes(attr) #{text}
