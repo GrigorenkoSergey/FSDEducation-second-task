@@ -1,11 +1,5 @@
-mixin button-text(options = {})
-  -
-    const {
-      text = "click me",
-      attr = {},
-      mod = {},
-    } = options;
-
+mixin button-text({ text = "click me", attr = {}, mod = {} } = {})
+  - 
     const validModifiers = ["button-text_theme_hovered"];
 
     const modifiers = Object.entries(mod)

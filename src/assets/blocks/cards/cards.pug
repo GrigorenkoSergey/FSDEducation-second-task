@@ -6,34 +6,15 @@ include ../preview/preview.pug
 
 mixin cards(options = {})
   -
+    const defaultOptions = require('Blocks/buns/default-options.json');
     const {
       searchForm,
       finalBill,
-      dateDropdownOptions = {
-        arrivalTitle: "",
-        arrivalName: "arrival_calendar", 
-        departureTitle: "",
-        departureName: "departure_calendar",
-      },
       registration,
       logIn,
-
       preview1,
-      preview2 = {
-        number: 840,
-        type: "",
-        imagesSrc: [
-          "840.jpg",
-          "840.jpg",
-          "840.jpg",
-          "840.jpg",
-        ],
-        cost: "9 900",
-        stars: 4,
-        reviews: 65,
-        arrowsHidden: true,
-      }
-    } = options;
+      preview2,
+        } = { ...defaultOptions, ...options};
 
   main.cards__main
     .cards__column-1

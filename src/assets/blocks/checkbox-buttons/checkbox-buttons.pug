@@ -1,28 +1,9 @@
 include ../checkbox-list/checkbox-list.pug
 
 mixin checkbox-buttons(options = {})
-  - 
-    const {
-      title = "checkbox buttons",
-      expanded = true,
-      items = [
-        {
-          name: "smoking",
-          labelText: "Можно курить",
-          checked: false,
-        },
-        {
-          name: "pets",
-          labelText: "Можно с питомцами",
-          checked: true,
-        },
-        {
-          name: "guests",
-          labelText: "Можно пригласить гостей (до 10 человек)",
-          checked: true,
-        },
-      ],
-    } = options;
+  -
+    const defaultOptions = require('Blocks/checkbox-buttons/default-options.json');
+    const { title, expanded, items } = { ...defaultOptions, ...options};
     
   .checkbox-buttons
     h3.checkbox-buttons__title #{title} 

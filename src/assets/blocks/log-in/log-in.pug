@@ -4,29 +4,15 @@ include ../button-payment/button-payment.pug
 
 mixin log-in(options = {})
   -
+    const defaultOptions = require('Blocks/log-in/default-options.json');
     const {
-      title = "Войти",
-      inputEmail = {
-        attr: {
-          placeholder: "Email",
-          type: "email"
-        },
-      },
-      inputPassword = {
-        attr: {
-          placeholder: "Пароль",
-          type: "password"},
-      },
-      buttonPayment = {
-        text: "Войти",
-      },
-      mainQuestion = "Нет аккаунта на Toxin?",
-      buttonCreateAccount = {
-        text: "Создать",
-        link: "./registration-page.html",
-        mod: {color: "white"},
-      },
-    } = options;
+      title,
+      inputEmail,
+      inputPassword,
+      buttonPayment,
+      mainQuestion,
+      buttonCreateAccount
+        } = { ...defaultOptions, ...options};
 
   form.log-in
     h1 #{title}

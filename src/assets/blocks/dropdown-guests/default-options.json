@@ -1,0 +1,26 @@
+{
+  "name": "guests",
+  "title": "Гости",
+  "input": "Сколько гостей",
+  "items": [
+    {
+      "name": "adults",
+      "text": "Взрослые",
+      "counter": 0
+    },
+    {
+      "name": "kids",
+      "text": "Дети",
+      "counter": 0
+    },
+    {
+      "name": "babies",
+      "text": "Младенцы",
+      "counter": 0
+    }
+  ],
+  "counters": null,
+  "expanded": false,
+  "buttonResetText": null,
+  "buttonApplyText": null
+}

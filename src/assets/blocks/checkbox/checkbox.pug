@@ -1,10 +1,4 @@
-mixin checkbox(options = {})
-  - 
-    const {
-      text = "check it!",
-      attr = {},
-    } = options;
-
+mixin checkbox({ text = "check it!", attr = {} } = {})
   div.checkbox
     label.checkbox__label
       input.checkbox__input(type="checkbox")&attributes(attr)

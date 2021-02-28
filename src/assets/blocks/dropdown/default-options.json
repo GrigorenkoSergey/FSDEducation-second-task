@@ -1,0 +1,22 @@
+{
+  "name": "Имярек",
+  "title": "dropdown",
+  "input": "Щелкни на плюсе или на минусе...",
+  "items": [
+    {
+      "name": "item1",
+      "text": "item1 text",
+      "counter": 1
+    },
+    {
+      "name": "item2",
+      "text": "item2 text",
+      "counter": 2
+    }
+  ],
+  "showButtons": true,
+  "showReset": true,
+  "expanded": false,
+  "buttonResetText": "Очистить",
+  "buttonApplyText": "Применить"
+}

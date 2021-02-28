@@ -1,10 +1,5 @@
-mixin like-button(options = {})
-  - 
-    const {
-      counter = 0,
-      isPushed = false,
-    } = options;
-
+mixin like-button({ counter = {}, isPushed = {} } = {})
   - let additionalClass = (isPushed) ? "like-button_pushed" : "";
+
   button.like-button.js-like-button(class= additionalClass)
     span.like-button__counter.js-like-button__counter !{counter}

@@ -6,72 +6,16 @@ include ~Blocks/diagram/diagram.pug
 
 mixin room-details(options = {})
   -
+    const defaultOptions = require('Blocks/room-details/default-options.json');
     const {
-      photos = [
-        {
-          src: "image-1.jpg",
-          alt: "Изображение комнаты",
-        },
-        {
-          src: "image-2.jpg",
-          alt: "Изображение комнаты",
-        },
-        {
-          src: "image-3.jpg",
-          alt: "Изображение комнаты",
-        },
-      ],
-      buns = {
-        title: "Сведения о номере",
-        bunsOptions:  {
-          items: [
-            {name: "smile", title: "Комфорт", description: "Шумопоглощающие стены"},
-            {name: "city", title: "Удобство", description: "Окно в каждой из спален"},
-            {name: "fire", title: "Уют", description: "Номер оснащен камином"},
-          ],
-        },
-      },
-      impressions = {
-        title: "Впечатления от номера",
-        diagramOptions,
-      },
-      comments = {
-        h2Text: "Отзывы посетителей номера",
-        span: "2 отзыва",
-        items: [
-          {
-            avatarSrc: "comment-murad.png",
-            name: "Мурад Сарафанов",
-            term: "5 дней назад", 
-            likeButton: {
-              counter: 12,
-              isPushed: true,
-            },
-            content: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шупомодавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
-          },
-          {
-            avatarSrc: "comment-patricia.png",
-            name: "Патрисия Стёклышкова",
-            term: "Неделю назад", 
-            likeButton: {
-              counter: 2,
-              isPushed: false,
-            },
-            content: `Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер 
-              советую заказать, каждый день новое блюдо и десерт как комплимент`,
-          },
-        ],
-      },
-      rules = {
-        title: "Правила",
-        bulletListOptions,
-      },
-      cancel = {
-        h2Text: "Отмена",
-        pText: "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
-      },
+      photos,
+      buns,
+      impressions,
+      comments,
+      rules,
+      cancel,
       finalBill,
-    } = options;
+    } = { ...defaultOptions, ...options};
 
   .room-details__photos
     .room-details__photos-box_1

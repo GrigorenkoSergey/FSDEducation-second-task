@@ -1,31 +1,15 @@
 include ../dropdown/dropdown.pug
 
 mixin dropdown-rooms(options = {})
-  - 
-    const {
-      name =  "rooms", 
-      title = "dropdown",
-      items = [
-        {
-          name: "bedrooms",
-          text: "Спальни",
-          counter: 2,
-        },
-        {
-          name: "beds",
-          text: "Кровати",
-          counter: 2,
-        },
-        {
-          name: "bathrooms",
-          text: "Ванные комнаты",
-          counter: 0,
-        },
-      ],
+  -
+    const defaultOptions = require('Blocks/dropdown-rooms/default-options.json');
+    const { 
+      name,
+      title,
+      items,
       counters,
-
-      showButtons =  false,
-      expanded = false,
-    } = options;
+      showButtons,
+      expanded,
+        } = { ...defaultOptions, ...options};
 
   +dropdown({name, title, input, items, counters, showButtons, showReset, expanded})

@@ -1,9 +1,4 @@
-mixin filter-date(options = {})
-  - 
-    const {
-      title = "filter date dropdown",
-      } = options;
-
+mixin filter-date({ title = "filter date dropdown" } = {})
   .filter-date
     if (title.length !== 0)
       .filter-date__title

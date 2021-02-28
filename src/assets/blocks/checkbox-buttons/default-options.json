@@ -1,0 +1,21 @@
+{
+  "title": "checkbox buttons",
+  "expanded": true,
+  "items": [
+    {
+      "name": "smoking",
+      "labelText": "Можно курить",
+      "checked": false
+    },
+    {
+      "name": "pets",
+      "labelText": "Можно с питомцами",
+      "checked": true
+    },
+    {
+      "name": "guests",
+      "labelText": "Можно пригласить гостей (до 10 человек)",
+      "checked": true
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "searchForm": {},
+  "finalBill": {},
+  "registration": {},
+  "logIn": {},
+  "preview1": {},
+  "preview2": {
+    "number": 840,
+    "type": "",
+    "imagesSrc": [
+      "840.jpg",
+      "840.jpg",
+      "840.jpg",
+      "840.jpg"
+    ],
+    "cost": "9 900",
+    "stars": 4,
+    "reviews": 65,
+    "arrowsHidden": true
+  }
+}

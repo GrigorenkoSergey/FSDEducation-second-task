@@ -1,10 +1,5 @@
 include ~Blocks/log-in/log-in.pug
 
-mixin sign-in(options = {})
-  -
-    const {
-      logIn,
-    } = options;
-
+mixin sign-in({ logIn } = {})
   main.sign-in__main
     +log-in(logIn)

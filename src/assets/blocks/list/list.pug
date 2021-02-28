@@ -1,20 +1,7 @@
 mixin list(options = {}) 
-  - 
-    const {
-      title = "someTitle",
-      list = [
-        {
-          text: "item1",
-          link: "/valhalla/feast-table/",
-        }, 
-        {
-          text: "item2",
-        },
-        {
-          text: "item3",
-        },
-      ],
-    } = options;
+  -
+    const defaultOptions = require('Blocks/list/default-options.json');
+    const { title, list } = { ...defaultOptions, ...options};
 
   .list__title #{title}
   ul.list__ul

@@ -1,0 +1,24 @@
+{
+  "name": "rooms",
+  "title": "dropdown",
+  "items": [
+    {
+      "name": "bedrooms",
+      "text": "Спальни",
+      "counter": 2
+    },
+    {
+      "name": "beds",
+      "text": "Кровати",
+      "counter": 2
+    },
+    {
+      "name": "bathrooms",
+      "text": "Ванные комнаты",
+      "counter": 0
+    }
+  ],
+  "counters": null,
+  "showButtons": false,
+  "expanded": false
+}

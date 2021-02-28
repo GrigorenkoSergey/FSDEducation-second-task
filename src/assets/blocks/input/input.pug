@@ -1,10 +1,5 @@
-mixin input(options = {})
+mixin input({ mod = {}, attr = {} } = {})
   -
-    const {
-      mod = {}, 
-      attr = {},
-    } = options;
-
     const validModifiers = ["input_action_hover", "input_theme_email"];
 
     const modifiers = Object.entries(mod)

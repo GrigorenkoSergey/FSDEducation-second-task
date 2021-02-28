@@ -1,9 +1,4 @@
-mixin button-payment(options = {})
-  -
-    const {
-      text = "Оплатить",
-      attr = {},
-    } = options;
+mixin button-payment({ text = "Оплатить", attr = {} } = {})
 
   button.button-payment(type="submit")&attributes(attr)
     span.button-payment__text #{text}

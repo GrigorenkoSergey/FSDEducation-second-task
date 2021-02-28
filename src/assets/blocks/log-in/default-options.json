@@ -1,0 +1,26 @@
+{
+  "title": "Войти",
+  "inputEmail": {
+    "attr": {
+      "placeholder": "Email",
+      "type": "email"
+    }
+  },
+  "inputPassword": {
+    "attr": {
+      "placeholder": "Пароль",
+      "type": "password"
+    }
+  },
+  "buttonPayment": {
+    "text": "Войти"
+  },
+  "mainQuestion": "Нет аккаунта на Toxin?",
+  "buttonCreateAccount": {
+    "text": "Создать",
+    "link": "./registration-page.html",
+    "mod": {
+      "color": "white"
+    }
+  }
+}

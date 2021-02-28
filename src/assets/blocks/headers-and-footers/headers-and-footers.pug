@@ -2,7 +2,6 @@ include ~Blocks/header/header.pug
 include ~Blocks/footer/footer.pug
 include ~Blocks/footer-creative/footer-creative.pug
 
-
 mixin headers-and-footers(options = {})
   -
     const {
@@ -14,6 +13,7 @@ mixin headers-and-footers(options = {})
       copyright,
       footerCreative,
     } = options;
+    
   main.headers-and-footers__main
     .headers-and-footers__component
       +header(headerStandard)

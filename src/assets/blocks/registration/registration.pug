@@ -7,47 +7,23 @@ include ../button-payment/button-payment.pug
 
 mixin registration(options = {})
   -
+    const defaultOptions = require('Blocks/registration/default-options.json');
     const {
-      title = "Регистрация аккаунта",
-      inputName = {
-        attr: {
-          placeholder: "Имя",
-        },
-      },
-      inputSurname = {
-        attr: {
-          placeholder: "Фамилия",
-        },
-      },
+      title,
+      inputName,
+      inputSurname,
       radioButtonsGroup,
-      titleBirthday = "Дата рождения",
+      titleBirthday,
       inputBirthday,
-      titleAuthorisation = "Данные для входа в сервис",
-      inputEmail = {
-        attr: {
-          placeholder: "Email",
-          type: "email",
-        },
-      },
-      inputPassword = {
-        attr: {
-          placeholder: "Пароль",
-          type: "password",
-        },
-      },
-      toggler = {
-        name: "get_offers",
-        text: "Получать спецпредложения",
-      },
-      buttonPayment = {
-        text: "Перейти к оплате",
-      },
-      accountEnterText = "Уже есть аккаунт на Toxin",
-      buttonAccountEnter = {
-        text: "Войти", 
-        mod: {color: "white"},
-      },
-    } = options;
+      titleAuthorisation,
+      inputEmail,
+      inputPassword,
+      toggler,
+      buttonPayment,
+      accountEnterText,
+      buttonAccountEnter,
+        } = { ...defaultOptions, ...options};
+        
   form.registration
     h1 #{title}
     .registration__name-field

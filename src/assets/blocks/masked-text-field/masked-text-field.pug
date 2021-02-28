@@ -1,10 +1,8 @@
 include ../input/input.pug
 
-mixin masked-text-field( options = {})
-  -
-    const {
-      attr = {},
-      format = "date",
-    } = options;
-
-  input.masked-text-field.js-masked-text-field(type="text" placeholder= "ДД.ММ.ГГГГ" data-format= format)&attributes(attr)
+mixin masked-text-field({ attr = {}, format = "date" } = {})
+  input.masked-text-field.js-masked-text-field(
+    type="text" 
+    placeholder= "ДД.ММ.ГГГГ" 
+    data-format= format
+    )&attributes(attr)

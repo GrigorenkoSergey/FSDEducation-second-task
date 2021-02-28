@@ -1,9 +1,5 @@
 include ../registration/registration.pug
 
-mixin registration-page(options = {})
-  -
-    const {
-      registration,
-    } = options;
+mixin registration-page({ registration } = {})
   main.registration-page__main
     +registration(registration)

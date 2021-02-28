@@ -1,0 +1,15 @@
+{
+  "title": "someTitle",
+  "list": [
+    {
+      "text": "item1",
+      "link": "/valhalla/feast-table/"
+    },
+    {
+      "text": "item2"
+    },
+    {
+      "text": "item3"
+    }
+  ]
+}

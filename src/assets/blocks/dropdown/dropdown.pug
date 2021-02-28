@@ -1,31 +1,19 @@
 mixin dropdown(options = {})
-  -  
-    const {
-      name = "Имярек",
-      title = "dropdown", 
-      input = "Щелкни на плюсе или на минусе...",
-      items = [
-        {
-          name: "item1",
-          text: "item1 text",
-          counter: 1,
-        },
-        {
-          name: "item2",
-          text: "item2 text",
-          counter: 2,
-        },
-      ],
+  -
+    const defaultOptions = require('Blocks/dropdown/default-options.json');
+    const { 
+      name,
+      title,
+      input,
+      items,
+      showButtons,
+      showReset,
+      expanded,
+      buttonResetText,
+      buttonApplyText,
+        } = { ...defaultOptions, ...options};
 
-      counters = items.map((elem) => elem.counter),
-
-      showButtons = true,
-      showReset = true,
-      expanded = false,
-      buttonResetText = "Очистить",
-      buttonApplyText = "Применить",
-    } = options;
-
+    const counters = items.map((elem) => elem.counter);
     items.map((elem, i) => elem.counter = counters[i]);
 
     let inputClass = "";

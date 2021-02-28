@@ -1,0 +1,43 @@
+{
+  "title": "Регистрация аккаунта",
+  "inputName": {
+    "attr": {
+      "placeholder": "Имя"
+    }
+  },
+  "inputSurname": {
+    "attr": {
+      "placeholder": "Фамилия"
+    }
+  },
+  "radioButtonsGroup": {},
+  "titleBirthday": "Дата рождения",
+  "inputBirthday": {},
+  "titleAuthorisation": "Данные для входа в сервис",
+  "inputEmail": {
+    "attr": {
+      "placeholder": "Email",
+      "type": "email"
+    }
+  },
+  "inputPassword": {
+    "attr": {
+      "placeholder": "Пароль",
+      "type": "password"
+    }
+  },
+  "toggler": {
+    "name": "get_offers",
+    "text": "Получать спецпредложения"
+  },
+  "buttonPayment": {
+    "text": "Перейти к оплате"
+  },
+  "accountEnterText": "Уже есть аккаунт на Toxin",
+  "buttonAccountEnter": {
+    "text": "Войти",
+    "mod": {
+      "color": "white"
+    }
+  }
+}
