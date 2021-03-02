@@ -15,6 +15,5 @@ const votes = [
   },
 ];
 
-const canvas = document.querySelector('.js-diagram__canvas');
-// eslint-disable-next-line no-unused-vars
-const diargam = new Diagram(canvas, votes);
+[...document.querySelectorAll('.js-diagram__canvas')]
+  .forEach((canvas) => new Diagram(canvas, votes));
