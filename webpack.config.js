@@ -11,7 +11,7 @@ let entries = {
   index: './index',
 };
 
-const UIKitEntries = {
+const UIKitPages = {
   'UI-Kit-common': './pages/UI-Kit/UI-Kit-common/UI-Kit-common',
   'colors-and-type': './pages/UI-Kit/colors-and-type/colors-and-type',
   cards: './pages/UI-Kit/cards/cards',
@@ -28,7 +28,7 @@ const WebsitePages = {
   'search-room': './pages/Website-pages/search-room/search-room',
 };
 
-entries = { ...entries, ...UIKitEntries, ...WebsitePages };
+entries = { ...entries, ...UIKitPages, ...WebsitePages };
 
 module.exports = (env, options) => ({
   context: path.resolve(__dirname, 'src'),
@@ -157,7 +157,7 @@ module.exports = (env, options) => ({
       chunks: ['index'],
     }),
 
-    ...Object.entries(UIKitEntries).map(([key, value]) => new HtmlWebpackPlugin({
+    ...Object.entries(UIKitPages).map(([key, value]) => new HtmlWebpackPlugin({
       template: `${value}.pug`,
       filename: `${value}.html`,
       chunks: [`${key}`, 'UI-Kit-common'],

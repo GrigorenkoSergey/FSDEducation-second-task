@@ -1,7 +1,7 @@
 import '../checkbox-list/checkbox-list.js';
 import './expandable-checkbox-list.scss';
 
-class ExpandableCheckbox {
+export default class ExpandableCheckbox {
   constructor(item) {
     this.el = item;
     this.blockName = 'expandable-checkbox-list';
@@ -24,6 +24,3 @@ class ExpandableCheckbox {
     this.ul.hidden = !this.ul.hidden;
   }
 }
-
-[...document.querySelectorAll('.js-expandable-checkbox-list')]
-  .forEach((item) => new ExpandableCheckbox(item));

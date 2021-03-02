@@ -1,6 +1,6 @@
 import './rate-button.scss';
 
-class RateButton {
+export default class RateButton {
   constructor(item) {
     this.el = item;
     this._init();
@@ -22,6 +22,3 @@ class RateButton {
     });
   }
 }
-
-[...document.getElementsByClassName('js-rate-button')]
-  .forEach((item) => new RateButton(item));

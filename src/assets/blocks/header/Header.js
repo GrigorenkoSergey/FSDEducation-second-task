@@ -5,7 +5,7 @@ import './header.scss';
 
 import HeaderSubmenu from './HeaderSubmenu.js';
 
-class Header {
+export default class Header {
   constructor() {
     this.handlers = {};
     this.menuExpanded = false;
@@ -48,6 +48,3 @@ class Header {
     document.removeEventListener('click', this.handlers.handleDocumentClick);
   }
 }
-
-// eslint-disable-next-line no-unused-vars
-const header = new Header();
