@@ -1,9 +1,9 @@
-mixin input({ mod = {}, attr = {} } = {})
+mixin input({ mods = {}, attrs = {} } = {})
   -
     const validModifiers = ["input_action_hover", "input_theme_email"];
 
-    const modifiers = Object.entries(mod)
+    const modifiers = Object.entries(mods)
       .map(([key, entry]) => `input_${key}_${entry}`)
       .filter(modifier => validModifiers.includes(modifier));
 
-  input.input(class= modifiers type="text")&attributes(attr)
+  input.input(class= modifiers type="text")&attributes(attrs)

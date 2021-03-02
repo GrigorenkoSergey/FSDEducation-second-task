@@ -1,6 +1,6 @@
-mixin button-payment({ text = "Оплатить", attr = {} } = {})
+mixin button-payment({ text = "Оплатить", attrs = {} } = {})
 
-  button.button-payment(type="submit")&attributes(attr)
+  button.button-payment(type="submit")&attributes(attrs)
     span.button-payment__text #{text}
     .button-payment__arrow
       .material-icons arrow_forward

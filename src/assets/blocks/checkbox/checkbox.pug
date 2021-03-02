@@ -1,5 +1,5 @@
-mixin checkbox({ text = "check it!", attr = {} } = {})
+mixin checkbox({ text = "check it!", attrs = {} } = {})
   div.checkbox
     label.checkbox__label
-      input.checkbox__input(type="checkbox")&attributes(attr)
+      input.checkbox__input(type="checkbox")&attributes(attrs)
       span.checkbox__text !{text}

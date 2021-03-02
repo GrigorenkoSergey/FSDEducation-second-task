@@ -1,9 +1,9 @@
-mixin button-text({ text = "click me", attr = {}, mod = {} } = {})
+mixin button-text({ text = "click me", attrs = {}, mods = {} } = {})
   - 
     const validModifiers = ["button-text_theme_hovered"];
 
-    const modifiers = Object.entries(mod)
+    const modifiers = Object.entries(mods)
       .map(([key, entry]) => `button-text_${key}_${entry}`)
       .filter(modifier => validModifiers.includes(modifier));
 
-  button.button-text(type="submit" class= modifier)&attributes(attr) #{text}
+  button.button-text(type="submit" class= modifier)&attributes(attrs) #{text}

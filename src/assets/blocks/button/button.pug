@@ -1,19 +1,19 @@
 mixin button(options = {})
   -
     const {
-      link,
+      isLink,
       text = "click me",
-      mod = {}, 
-      attr = {},
+      mods = {}, 
+      attrs = {},
       } = options;
 
     const validModifiers = ["button_theme_slim", "button_theme_hovered", "button_color_white"];
 
-    const modifiers = Object.entries(mod)
+    const modifiers = Object.entries(mods)
       .map(([key, entry]) => `button_${key}_${entry}`)
       .filter(modifier => validModifiers.includes(modifier));
 
-  if (link)
-    a.button.button__link(href= link class= modifiers)&attributes(attr) #{text}
+  if (isLink)
+    a.button.button__link(href= isLink class= modifiers)&attributes(attrs) #{text}
   else
-    button.button(type="button" class= modifiers)&attributes(attr) #{text}
+    button.button(type="button" class= modifiers)&attributes(attrs) #{text}
