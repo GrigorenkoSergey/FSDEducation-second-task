@@ -68,11 +68,11 @@
         "title": "Подписка",
         "text": "Получайте специальные предложения\nи новости сервиса",
         "inputOptions": {
-          "attr": {
+          "attrs": {
             "type": "Email",
             "placeholder": "Email"
           },
-          "mod": {
+          "mods": {
             "theme": "email"
           }
         }

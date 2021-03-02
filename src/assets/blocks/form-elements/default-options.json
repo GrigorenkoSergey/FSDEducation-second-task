@@ -3,7 +3,7 @@
     "h3Text": "text field",
     "spanText": "default",
     "inputOptions": {
-      "attr": {
+      "attrs": {
         "placeholder": "Email",
         "type": "email"
       }
@@ -13,10 +13,10 @@
     "h3Text": "text field",
     "spanText": "hover / focus",
     "inputOptions": {
-      "attr": {
+      "attrs": {
         "value": "This is pretty awesome"
       },
-      "mod": {
+      "mods": {
         "action": "hover"
       }
     }
@@ -42,11 +42,11 @@
   "inputSubscribe": {
     "h3Text": "subscription text field",
     "inputOptions": {
-      "attr": {
+      "attrs": {
         "type": "email",
         "placeholder": "Email"
       },
-      "mod": {
+      "mods": {
         "theme": "email"
       }
     }
@@ -149,21 +149,21 @@
     "items": [
       {},
       {
-        "mod": {
+        "mods": {
           "theme": "hovered"
         }
       },
       {
-        "mod": {
+        "mods": {
           "color": "white"
         }
       },
       {
-        "mod": {
+        "mods": {
           "color": "white",
           "theme": "hovered"
         },
-        "attr": {
+        "attrs": {
           "disabled": true
         }
       }
@@ -172,7 +172,7 @@
   "buttonsText": [
     {},
     {
-      "mod": {
+      "mods": {
         "theme": "hovered"
       }
     }

@@ -1,12 +1,12 @@
 {
   "title": "Регистрация аккаунта",
   "inputName": {
-    "attr": {
+    "attrs": {
       "placeholder": "Имя"
     }
   },
   "inputSurname": {
-    "attr": {
+    "attrs": {
       "placeholder": "Фамилия"
     }
   },
@@ -15,13 +15,13 @@
   "inputBirthday": {},
   "titleAuthorisation": "Данные для входа в сервис",
   "inputEmail": {
-    "attr": {
+    "attrs": {
       "placeholder": "Email",
       "type": "email"
     }
   },
   "inputPassword": {
-    "attr": {
+    "attrs": {
       "placeholder": "Пароль",
       "type": "password"
     }
@@ -36,7 +36,7 @@
   "accountEnterText": "Уже есть аккаунт на Toxin",
   "buttonAccountEnter": {
     "text": "Войти",
-    "mod": {
+    "mods": {
       "color": "white"
     }
   }

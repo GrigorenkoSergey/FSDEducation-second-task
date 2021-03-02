@@ -1,13 +1,13 @@
 {
   "title": "Войти",
   "inputEmail": {
-    "attr": {
+    "attrs": {
       "placeholder": "Email",
       "type": "email"
     }
   },
   "inputPassword": {
-    "attr": {
+    "attrs": {
       "placeholder": "Пароль",
       "type": "password"
     }
@@ -19,7 +19,7 @@
   "buttonCreateAccount": {
     "text": "Создать",
     "link": "./registration-page.html",
-    "mod": {
+    "mods": {
       "color": "white"
     }
   }
