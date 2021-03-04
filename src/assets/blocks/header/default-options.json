@@ -55,7 +55,7 @@
   ],
   "buttonLogin": {
     "text": "Войти",
-    "link": "../landing-page/landing-page.html",
+    "isLink": "../landing-page/landing-page.html",
     "mods": {
       "color": "white",
       "theme": "slim"
@@ -63,7 +63,7 @@
   },
   "buttonRegister": {
     "text": "Зарегистрироваться",
-    "link": "../registration-page/registration-page.html",
+    "isLink": "../registration-page/registration-page.html",
     "mods": {
       "theme": "slim"
     }

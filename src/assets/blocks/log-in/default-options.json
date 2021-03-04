@@ -14,12 +14,13 @@
     }
   },
   "buttonPayment": {
-    "text": "Войти"
+    "text": "Войти",
+    "attrs": { "type": "submit"}
   },
   "mainQuestion": "Нет аккаунта на Toxin?",
   "buttonCreateAccount": {
     "text": "Создать",
-    "link": "./registration-page.html",
+    "isLink": "../registration-page/registration-page.html",
     "mods": {
       "color": "white"
     }

@@ -32,10 +32,14 @@
     "text": "Получать спецпредложения"
   },
   "buttonPayment": {
-    "text": "Перейти к оплате"
+    "text": "Перейти к оплате",
+    "attrs": {
+      "type": "submit"
+    }
   },
   "accountEnterText": "Уже есть аккаунт на Toxin",
   "buttonAccountEnter": {
+    "isLink": "../landing-page/landing-page.html",
     "text": "Войти",
     "mods": {
       "color": "white"
