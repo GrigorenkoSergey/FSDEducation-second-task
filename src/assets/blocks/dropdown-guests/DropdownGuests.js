@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+import { boundMethod } from 'autobind-decorator';
 import '../dropdown/dropdown.scss';
 
 import DropdownOrigin from '../dropdown/DropdownOrigin';
@@ -49,19 +50,13 @@ export default class DropdownGuests extends DropdownOrigin {
     this.inputText.textContent = inputTextContent;
   }
 
-  _bindHandlers() {
-    super._bindHandlers();
-    this.handlers.handleApplyButtonClick = this._handleApplyButtonClick.bind(this);
-    this.handlers.handleResetButtonClick = this._handleResetButtonClick.bind(this);
-  }
-
   _init() {
     super._init();
     this.applyButton = this.el.querySelector('.js-dropdown__button-apply');
     this.resetButton = this.el.querySelector('.js-dropdown__button-reset');
 
-    this.applyButton.addEventListener('click', this.handlers.handleApplyButtonClick);
-    this.resetButton.addEventListener('click', this.handlers.handleResetButtonClick);
+    this.applyButton.addEventListener('click', this._handleApplyButtonClick);
+    this.resetButton.addEventListener('click', this._handleResetButtonClick);
     this.update();
   }
 
@@ -80,11 +75,13 @@ export default class DropdownGuests extends DropdownOrigin {
       .forEach((item) => item.minus.classList.add('dropdown__minus_disabled'));
   }
 
+  @boundMethod
   _handleApplyButtonClick() {
     this.input.classList.remove('dropdown__input_expanded');
     this.itemsContainer.classList.remove('dropdown__items-container_expanded');
   }
 
+  @boundMethod
   _handleResetButtonClick() {
     this.items.forEach((item) => {
       item.value = 0;

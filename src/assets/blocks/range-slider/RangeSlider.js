@@ -1,16 +1,10 @@
+import { boundMethod } from 'autobind-decorator';
 import './range-slider.scss';
 
 export default class RangeSlider {
   constructor(item) {
     this.el = item;
-    this.handlers = {};
-    this._bindHandlers();
     this._init();
-  }
-
-  _bindHandlers() {
-    this.handlers.hanleRollerLeftMouseDown = this._hanleRollerLeftMouseDown.bind(this);
-    this.handlers.handleRollerRightMouseDown = this._handleRollerRightMouseDown.bind(this);
   }
 
   _init() {
@@ -18,12 +12,13 @@ export default class RangeSlider {
     this.rightRoller = this.el.querySelector('.js-range-slider__roller-right');
     this.rangeSlider = this.el.closest('.range-slider');
 
-    this.leftRoller.addEventListener('mousedown', this.handlers.hanleRollerLeftMouseDown);
-    this.rightRoller.addEventListener('mousedown', this.handlers.handleRollerRightMouseDown);
+    this.leftRoller.addEventListener('mousedown', this._hanleRollerLeftMouseDown);
+    this.rightRoller.addEventListener('mousedown', this._handleRollerRightMouseDown);
 
     this.range = this.rangeSlider.querySelector('.js-range-slider__range');
   }
 
+  @boundMethod
   _hanleRollerLeftMouseDown(e) {
     const elem = e.target;
     const startX = this.el.offsetParent.getBoundingClientRect().left
@@ -56,6 +51,7 @@ export default class RangeSlider {
     document.addEventListener('mouseup', handleDocumentMouseUp);
   }
 
+  @boundMethod
   _handleRollerRightMouseDown(e) {
     const elem = e.target;
     const startX = this.el.offsetParent.getBoundingClientRect().left

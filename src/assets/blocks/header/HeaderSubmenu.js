@@ -1,34 +1,30 @@
+import { boundMethod } from 'autobind-decorator';
+
 export default class HeaderSubmenu {
   constructor(el) {
     this.el = el;
-    this.handlers = {};
     this._init();
   }
 
-  _bindHandlers() {
-    this.handlers.handleTitleClick = this._handleTitleClick.bind(this);
-    this.handlers.handleDocumentClick = this._handleDocumentClick.bind(this);
-  }
-
   _init() {
-    this._bindHandlers();
-
     this.title = this.el.querySelector('.js-header__submenu-title');
     this.menu = this.el.querySelector('.js-header__submenu');
 
-    this.title.addEventListener('click', this.handlers.handleTitleClick);
+    this.title.addEventListener('click', this._handleTitleClick);
   }
 
+  @boundMethod
   _handleTitleClick() {
     this.menu.classList.toggle('header__submenu_visible');
     this.title.classList.toggle('header__submenu-title_hovered');
 
-    document.addEventListener('click', this.handlers.handleDocumentClick);
+    document.addEventListener('click', this._handleDocumentClick);
   }
 
+  @boundMethod
   _handleDocumentClick(e) {
     if (!this.el.contains(e.target)) {
-      document.removeEventListener('click', this.handlers.handleDocumentClick);
+      document.removeEventListener('click', this._handleDocumentClick);
 
       this.menu.classList.remove('header__submenu_visible');
       this.title.classList.remove('header__submenu-title_hovered');

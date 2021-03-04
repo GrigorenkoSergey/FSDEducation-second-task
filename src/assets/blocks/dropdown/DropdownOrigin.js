@@ -1,10 +1,10 @@
+import { boundMethod } from 'autobind-decorator';
 import DropdownItem from './DropdownItem';
 
 export default class DropdownOrigin {
   constructor(item) {
     this.el = item;
     this.items = [];
-    this.handlers = {};
     this._init();
   }
 
@@ -13,17 +13,10 @@ export default class DropdownOrigin {
     this.inputText.textContent = inputContent;
   }
 
-  _bindHandlers() {
-    this.handlers.handleInputClick = this._handleInputClick.bind(this);
-    this.handlers.handleDocumentClick = this._handleDocumentClick.bind(this);
-  }
-
   _init() {
-    this._bindHandlers();
-
     this.input = this.el.querySelector('.js-dropdown__input');
     this.inputText = this.el.querySelector('.js-dropdown__input-text');
-    this.input.addEventListener('click', this.handlers.handleInputClick);
+    this.input.addEventListener('click', this._handleInputClick);
 
     this.itemsContainer = this.el.querySelector('.js-dropdown__items-container');
     const itemsDom = this.el.getElementsByClassName('js-dropdown__item');
@@ -36,17 +29,19 @@ export default class DropdownOrigin {
     }));
   }
 
+  @boundMethod
   _handleInputClick() {
     this.itemsContainer.classList.toggle('dropdown__items-container_expanded');
     this.input.classList.toggle('dropdown__input_expanded');
 
-    document.addEventListener('click', this.handlers.handleDocumentClick);
+    document.addEventListener('click', this._handleDocumentClick);
   }
 
+  @boundMethod
   _handleDocumentClick(e) {
     if (this.el.contains(e.target)) return;
 
-    document.removeEventListener('click', this.handlers.handleDocumentClick);
+    document.removeEventListener('click', this._handleDocumentClick);
     this.input.classList.remove('dropdown__input_expanded');
     this.itemsContainer.classList.remove('dropdown__items-container_expanded');
   }
