@@ -17,6 +17,7 @@
   "showButtons": true,
   "showReset": true,
   "expanded": false,
+  "counters": [1, 2],
   "buttonResetText": "Очистить",
   "buttonApplyText": "Применить"
 }

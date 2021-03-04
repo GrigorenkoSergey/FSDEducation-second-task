@@ -9,4 +9,4 @@ mixin checkbox-list(options = {})
   ul.checkbox-list(hidden= isHidden).js-checkbox-list
     each elem in items
       li.checkbox-list__li
-        +checkbox({text: elem.labelText, attr: {checked: elem.checked, name: elem.name}})
+        +checkbox({text: elem.labelText, attrs: {checked: elem.checked, name: elem.name}})

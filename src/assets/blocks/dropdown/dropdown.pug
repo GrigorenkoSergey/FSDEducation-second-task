@@ -9,11 +9,11 @@ mixin dropdown(options = {})
       showButtons,
       showReset,
       expanded,
+      counters,
       buttonResetText,
       buttonApplyText,
         } = { ...defaultOptions, ...options};
 
-    const counters = items.map((elem) => elem.counter);
     items.map((elem, i) => elem.counter = counters[i]);
 
     let inputClass = "";

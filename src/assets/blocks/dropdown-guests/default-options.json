@@ -19,8 +19,8 @@
       "counter": 0
     }
   ],
-  "counters": null,
+  "counters": [0, 0, 0],
   "expanded": false,
-  "buttonResetText": null,
-  "buttonApplyText": null
+  "buttonResetText": "Очистить",
+  "buttonApplyText": "Применить"
 }
