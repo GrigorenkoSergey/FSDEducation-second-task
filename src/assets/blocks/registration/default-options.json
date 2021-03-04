@@ -23,7 +23,8 @@
   "inputPassword": {
     "attrs": {
       "placeholder": "Пароль",
-      "type": "password"
+      "type": "password",
+      "autocomplete": "on"
     }
   },
   "toggler": {
