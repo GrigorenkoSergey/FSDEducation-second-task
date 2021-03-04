@@ -22,6 +22,3 @@ export default class LikeButton {
     }
   }
 }
-
-[...document.getElementsByClassName('js-like-button')]
-  .forEach((item) => new LikeButton(item));

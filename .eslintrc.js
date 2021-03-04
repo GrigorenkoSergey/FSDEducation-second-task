@@ -24,10 +24,6 @@ module.exports = {
     'import/resolver': 'webpack',
   },
   rules: {
-    'import/extensions': ['error', 'ignorePackages', {
-      ts: 'always',
-      js: 'always',
-    }],
     indent: [2, 2],
     quotes: ['error', 'single'],
     'no-underscore-dangle': 'off',
