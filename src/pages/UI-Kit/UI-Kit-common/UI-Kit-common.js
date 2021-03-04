@@ -1,1 +1,1 @@
-import 'Blocks/template/template-UI-Kit.js';
+import 'Blocks/template/template-UI-Kit';

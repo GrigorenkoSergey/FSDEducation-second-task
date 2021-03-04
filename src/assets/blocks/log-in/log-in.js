@@ -1,4 +1,4 @@
-import '../input/input.js';
-import '../button/button.js';
-import '../button-payment/button-payment.js';
+import '../input/input';
+import '../button/button';
+import '../button-payment/button-payment';
 import './log-in.scss';

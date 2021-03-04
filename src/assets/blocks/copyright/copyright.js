@@ -1,2 +1,2 @@
-import '../social-networks/social-networks.js';
+import '../social-networks/social-networks';
 import './copyright.scss';

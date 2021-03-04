@@ -1,4 +1,4 @@
-import '../header/Header-init.js';
-import '../footer/footer.js';
-import '../footer-creative/footer-creative.js';
+import '../header/Header-init';
+import '../footer/footer';
+import '../footer-creative/footer-creative';
 import './headers-and-footers.scss';

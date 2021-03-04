@@ -1,4 +1,4 @@
-import MaskedText from './MaskedText.js';
+import MaskedText from './MaskedText';
 import './masked-text-field.scss';
 
 // eslint-disable-next-line no-unused-vars

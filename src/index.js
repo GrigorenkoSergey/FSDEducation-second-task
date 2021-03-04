@@ -1,1 +1,1 @@
-import './favicons/favicons.js';
+import './favicons/favicons';

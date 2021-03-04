@@ -1,1 +1,1 @@
-import 'Blocks/sign-in/sign-in.js';
+import 'Blocks/sign-in/sign-in';

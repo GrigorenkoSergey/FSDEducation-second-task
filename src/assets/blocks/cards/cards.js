@@ -1,9 +1,9 @@
-import Datepicker from '../datepicker/Datepicker.js';
-import '../search-form/search-form.js';
-import '../final-bill/final-bill.js';
-import '../preview/preview.js';
-import '../registration/registration.js';
-import '../log-in/log-in.js';
+import Datepicker from '../datepicker/Datepicker';
+import '../search-form/search-form';
+import '../final-bill/final-bill';
+import '../preview/preview';
+import '../registration/registration';
+import '../log-in/log-in';
 import './cards.scss';
 
 const calendar = new Datepicker(document.querySelector('.js-cards__calendar'));

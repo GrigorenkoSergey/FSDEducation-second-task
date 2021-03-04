@@ -1,5 +1,5 @@
-import '../input/input.js';
-import '../list/list.js';
-import '../copyright/copyright.js';
-import '../footer-creative/footer-creative.js';
+import '../input/input';
+import '../list/list';
+import '../copyright/copyright';
+import '../footer-creative/footer-creative';
 import './footer.scss';

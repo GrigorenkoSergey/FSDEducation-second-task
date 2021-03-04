@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import Datepicker from '../datepicker/Datepicker.js';
+import Datepicker from '../datepicker/Datepicker';
 import './filter-date.scss';
 
 const dateFilters = [...document.querySelectorAll('.js-filter-date__input')]

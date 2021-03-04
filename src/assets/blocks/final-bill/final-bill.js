@@ -1,4 +1,4 @@
-import '../date-dropdown/date-dropdown.js';
-import '../dropdown-guests/DropdownGuests.js';
-import '../button-payment/button-payment.js';
+import '../date-dropdown/date-dropdown';
+import '../dropdown-guests/DropdownGuests';
+import '../button-payment/button-payment';
 import './final-bill.scss';

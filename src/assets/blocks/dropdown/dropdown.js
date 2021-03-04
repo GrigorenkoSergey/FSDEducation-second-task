@@ -1,5 +1,5 @@
-import DropdownGuests from '../dropdown-guests/DropdownGuests.js';
-import DropdownRooms from '../dropdown-rooms/DropdownRooms.js';
+import DropdownGuests from '../dropdown-guests/DropdownGuests';
+import DropdownRooms from '../dropdown-rooms/DropdownRooms';
 import './dropdown.scss';
 
 [...document.querySelectorAll('[data-name=guests]')]

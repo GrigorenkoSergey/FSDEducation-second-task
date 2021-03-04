@@ -1,9 +1,9 @@
-import '../button/button.js';
-import '../footer/footer.js';
-import '../copyright/copyright.js';
+import '../button/button';
+import '../footer/footer';
+import '../copyright/copyright';
 import './header.scss';
 
-import HeaderSubmenu from './HeaderSubmenu.js';
+import HeaderSubmenu from './HeaderSubmenu';
 
 export default class Header {
   constructor() {

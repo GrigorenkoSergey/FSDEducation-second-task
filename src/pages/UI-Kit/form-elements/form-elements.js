@@ -1,1 +1,1 @@
-import 'Blocks/form-elements/form-elements.js';
+import 'Blocks/form-elements/form-elements';

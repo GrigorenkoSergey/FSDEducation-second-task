@@ -1,4 +1,4 @@
-import Diagram from './Diagram.js';
+import Diagram from './Diagram';
 
 const votes = [
   {

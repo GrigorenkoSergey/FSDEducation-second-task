@@ -1,2 +1,2 @@
-import '../search-form/search-form.js';
+import '../search-form/search-form';
 import './landing-page.scss';

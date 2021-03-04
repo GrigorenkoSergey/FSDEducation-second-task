@@ -1,1 +1,1 @@
-import 'Blocks/search-room/search-room.js';
+import 'Blocks/search-room/search-room';

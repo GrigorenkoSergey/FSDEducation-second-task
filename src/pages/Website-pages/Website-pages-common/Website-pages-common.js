@@ -1,1 +1,1 @@
-import 'Blocks/template/template-page.js';
+import 'Blocks/template/template-page';

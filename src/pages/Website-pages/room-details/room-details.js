@@ -1,1 +1,1 @@
-import 'Blocks/room-details/room-details.js';
+import 'Blocks/room-details/room-details';

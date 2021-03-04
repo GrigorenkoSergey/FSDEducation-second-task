@@ -1,4 +1,4 @@
-import DropdownOrigin from '../dropdown/DropdownOrigin.js';
+import DropdownOrigin from '../dropdown/DropdownOrigin';
 import '../dropdown/dropdown.scss';
 
 export default class DropdownRooms extends DropdownOrigin {

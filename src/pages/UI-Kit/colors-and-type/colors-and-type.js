@@ -1,1 +1,1 @@
-import 'Blocks/colors-and-type/colors-and-type.js';
+import 'Blocks/colors-and-type/colors-and-type';

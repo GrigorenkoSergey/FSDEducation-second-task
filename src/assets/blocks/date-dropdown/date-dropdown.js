@@ -1,4 +1,4 @@
-import DateDropdown from './DateDropdown.js';
+import DateDropdown from './DateDropdown';
 import './date-dropdown.scss';
 
 const dateDropdowns = [...document.querySelectorAll('.js-date-dropdown')]

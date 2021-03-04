@@ -1,4 +1,4 @@
-import '../checkbox-list/checkbox-list.js';
+import '../checkbox-list/checkbox-list';
 import './expandable-checkbox-list.scss';
 
 export default class ExpandableCheckbox {

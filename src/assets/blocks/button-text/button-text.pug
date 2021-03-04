@@ -6,4 +6,4 @@ mixin button-text({ text = "click me", attrs = {}, mods = {} } = {})
       .map(([key, entry]) => `button-text_${key}_${entry}`)
       .filter(modifier => validModifiers.includes(modifier));
 
-  button.button-text(type="submit" class= modifier)&attributes(attrs) #{text}
+  button.button-text(type="button" class= modifier)&attributes(attrs) #{text}

@@ -1,4 +1,4 @@
-import Datepicker from '../datepicker/Datepicker.js';
+import Datepicker from '../datepicker/Datepicker';
 
 export default class DateDropdown {
   constructor(elem, options = {}) {
