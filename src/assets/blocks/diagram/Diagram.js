@@ -9,11 +9,11 @@ export default class Diagram {
   }
 
   _draw() {
-    const { canvas, votes } = this;
     const c = this.context;
     const { PI } = Math;
 
     const r = 58;
+    const { canvas, votes } = this;
     const total = votes.reduce((sum, item) => sum + item.votes, 0);
     document.getElementsByClassName('js-diagram__total')[0].textContent = total;
     let startAngle = -PI / 2;

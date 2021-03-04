@@ -26,10 +26,6 @@ export default class DropdownGuests extends DropdownOrigin {
 
   update() {
     this.resetButton.hidden = false;
-    const guestsSuffix = ['ей', 'ь', 'я', 'я', 'я', 'ей',
-      'ей', 'ей', 'ей', 'ей', 'ей', 'ей'];
-    const babiesSuffix = ['', 'ец', 'ца', 'ца', 'ца', 'цев',
-      'цев', 'цев', 'цев', 'цев', 'цев'];
 
     const itemsNums = this.items.map((arg) => arg.value);
 
@@ -49,9 +45,15 @@ export default class DropdownGuests extends DropdownOrigin {
     const guestsNum = adultsNum + kidsNum;
     let inputTextContent = '';
 
+    const guestsSuffix = ['ей', 'ь', 'я', 'я', 'я', 'ей',
+      'ей', 'ей', 'ей', 'ей', 'ей', 'ей'];
+
     inputTextContent = `${guestsNum === 0 ? 'Нет' : guestsNum} гост${guestsSuffix[adultsNum + kidsNum]}`;
 
     if (babiesNum > 0) {
+      const babiesSuffix = ['', 'ец', 'ца', 'ца', 'ца', 'цев',
+        'цев', 'цев', 'цев', 'цев', 'цев'];
+
       inputTextContent += `, ${babiesNum} младен${babiesSuffix[babiesNum]}`;
     }
 

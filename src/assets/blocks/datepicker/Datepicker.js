@@ -31,16 +31,14 @@ export default class Datepicker {
     const [buttonsContainer, buttonReset, buttonApply] = new Array(3).fill(1).map(() => document.createElement('div'));
 
     buttonsContainer.classList.add('datepicker--buttons');
-    buttonReset.classList.add('datepicker--button-reset');
-    buttonApply.classList.add('datepicker--button-apply');
-
-    buttonReset.innerHTML = 'Очистить';
-    buttonApply.innerHTML = 'Применить';
-
-    buttonsContainer.append(buttonReset, buttonApply);
     container.append(buttonsContainer);
 
+    buttonReset.classList.add('datepicker--button-reset');
+    buttonReset.innerHTML = 'Очистить';
     buttonReset.addEventListener('click', this._handleButtonResetClick.bind(this));
+
+    buttonApply.classList.add('datepicker--button-apply');
+    buttonApply.innerHTML = 'Применить';
     buttonApply.addEventListener('click', this._handleButtonApplyClick.bind(this));
   }
 
