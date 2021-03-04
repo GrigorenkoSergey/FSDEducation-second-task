@@ -1,6 +1,6 @@
 import dateFilters from '../filter-date/filter-date';
 import '../dropdown/dropdown';
-import '../range-slider/RangeSlider';
+import '../range-slider/RangeSlider-init';
 import '../preview/preview';
 import '../expandable-checkbox-list/ExpandableCheckboxList-init';
 import '../rich-checkbox/rich-checkbox';

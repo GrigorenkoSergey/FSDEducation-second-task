@@ -97,6 +97,3 @@ export default class RangeSlider {
     this.range.textContent = `${lowRange}\u20BD - ${topRange}\u20BD`;
   }
 }
-
-[...document.getElementsByClassName('js-range-slider__roller')]
-  .forEach((item) => new RangeSlider(item));

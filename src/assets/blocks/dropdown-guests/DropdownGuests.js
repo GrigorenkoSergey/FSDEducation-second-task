@@ -8,22 +8,6 @@ const MAX_GUESTS_VALUE = 10;
 const MIN_ITEMS_VALUE = 0;
 
 export default class DropdownGuests extends DropdownOrigin {
-  _bindHandlers() {
-    super._bindHandlers();
-    this.handlers.handleApplyButtonClick = this._handleApplyButtonClick.bind(this);
-    this.handlers.handleResetButtonClick = this._handleResetButtonClick.bind(this);
-  }
-
-  _init() {
-    super._init();
-    this.applyButton = this.el.querySelector('.js-dropdown__button-apply');
-    this.resetButton = this.el.querySelector('.js-dropdown__button-reset');
-
-    this.applyButton.addEventListener('click', this.handlers.handleApplyButtonClick);
-    this.resetButton.addEventListener('click', this.handlers.handleResetButtonClick);
-    this.update();
-  }
-
   update() {
     this.resetButton.hidden = false;
 
@@ -63,6 +47,22 @@ export default class DropdownGuests extends DropdownOrigin {
     }
 
     this.inputText.textContent = inputTextContent;
+  }
+
+  _bindHandlers() {
+    super._bindHandlers();
+    this.handlers.handleApplyButtonClick = this._handleApplyButtonClick.bind(this);
+    this.handlers.handleResetButtonClick = this._handleResetButtonClick.bind(this);
+  }
+
+  _init() {
+    super._init();
+    this.applyButton = this.el.querySelector('.js-dropdown__button-apply');
+    this.resetButton = this.el.querySelector('.js-dropdown__button-reset');
+
+    this.applyButton.addEventListener('click', this.handlers.handleApplyButtonClick);
+    this.resetButton.addEventListener('click', this.handlers.handleResetButtonClick);
+    this.update();
   }
 
   _disableAddition() {

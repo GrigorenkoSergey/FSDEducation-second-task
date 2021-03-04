@@ -11,16 +11,6 @@ export default class DropdownItem extends EventObserver {
     this._init();
   }
 
-  _init() {
-    this.counter = this.el.querySelector('.js-dropdown__counter');
-    this.minus = this.el.querySelector('.js-dropdown__minus');
-    this.plus = this.el.querySelector('.js-dropdown__plus');
-
-    this.minus.addEventListener('click', this._handleMinusClick.bind(this));
-    this.plus.addEventListener('click', this._handlePlusClick.bind(this));
-    this.update();
-  }
-
   update() {
     if (this.value <= MIN_ITEMS_VALUE) {
       this.minus.classList.add('dropdown__minus_disabled');
@@ -29,6 +19,16 @@ export default class DropdownItem extends EventObserver {
     if (this.value >= MAX_ITEMS_VALUE) {
       this.plus.classList.add('dropdown__plus_disabled');
     }
+  }
+
+  _init() {
+    this.counter = this.el.querySelector('.js-dropdown__counter');
+    this.minus = this.el.querySelector('.js-dropdown__minus');
+    this.plus = this.el.querySelector('.js-dropdown__plus');
+
+    this.minus.addEventListener('click', this._handleMinusClick.bind(this));
+    this.plus.addEventListener('click', this._handlePlusClick.bind(this));
+    this.update();
   }
 
   _handleMinusClick() {

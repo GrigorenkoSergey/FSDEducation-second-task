@@ -8,6 +8,11 @@ export default class DropdownOrigin {
     this._init();
   }
 
+  update() {
+    const inputContent = this.items.map((item) => item.value);
+    this.inputText.textContent = inputContent;
+  }
+
   _bindHandlers() {
     this.handlers.handleInputClick = this._handleInputClick.bind(this);
     this.handlers.handleDocumentClick = this._handleDocumentClick.bind(this);
@@ -44,10 +49,5 @@ export default class DropdownOrigin {
     document.removeEventListener('click', this.handlers.handleDocumentClick);
     this.input.classList.remove('dropdown__input_expanded');
     this.itemsContainer.classList.remove('dropdown__items-container_expanded');
-  }
-
-  update() {
-    const inputContent = this.items.map((item) => item.value);
-    this.inputText.textContent = inputContent;
   }
 }

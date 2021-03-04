@@ -3,7 +3,7 @@ import '../input/input';
 import '../masked-text-field/masked-text-field';
 import '../dropdown/dropdown';
 import '../like-button/LikeButton-init';
-import '../range-slider/RangeSlider';
+import '../range-slider/RangeSlider-init';
 import '../rate-button/RateButton-init';
 import '../expandable-checkbox-list/ExpandableCheckboxList-init';
 import '../rich-checkbox/rich-checkbox';
