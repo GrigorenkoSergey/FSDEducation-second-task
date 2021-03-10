@@ -101,8 +101,8 @@ export default class RangeSlider {
     let lowRange = parseFloat(left) / scaleWidth;
     let topRange = 1 - parseFloat(right) / scaleWidth;
 
-    lowRange = Math.floor(lowRange * rangeValue);
-    topRange = Math.ceil(topRange * rangeValue);
+    lowRange = Math.round(lowRange * rangeValue);
+    topRange = Math.round(topRange * rangeValue);
 
     lowRange = lowRange.toLocaleString('ru-RU');
     topRange = topRange.toLocaleString('ru-RU');
