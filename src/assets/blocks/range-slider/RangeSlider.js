@@ -1,4 +1,5 @@
 import { boundMethod } from 'autobind-decorator';
+
 import './range-slider.scss';
 
 export default class RangeSlider {

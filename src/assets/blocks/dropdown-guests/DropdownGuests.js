@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import { boundMethod } from 'autobind-decorator';
-import '../dropdown/dropdown.scss';
 
 import DropdownOrigin from '../dropdown/DropdownOrigin';
+import '../dropdown/dropdown.scss';
 
 const MAX_ITEMS_VALUE = 10;
 const MAX_GUESTS_VALUE = 10;

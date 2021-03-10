@@ -1,4 +1,5 @@
 import { boundMethod } from 'autobind-decorator';
+
 import DropdownItem from './DropdownItem';
 
 export default class DropdownOrigin {

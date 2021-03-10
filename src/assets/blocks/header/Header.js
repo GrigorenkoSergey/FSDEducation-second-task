@@ -1,4 +1,5 @@
 import { boundMethod } from 'autobind-decorator';
+
 import '../button/button';
 import '../footer/footer';
 import '../copyright/copyright';
