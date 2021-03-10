@@ -51,6 +51,7 @@
   &__minus_disabled,
   &__plus_disabled {
     border-color: $dark_10;
+    cursor: auto;
   }
 
   &__items-container {
