@@ -108,16 +108,15 @@
   }
 
   &__button-reset {
+    @extend %button-text;
     float: left;
     color: $dark_50;
-    text-align: left;
-    cursor: pointer;
   }
 
   &__button-apply {
+    @extend %button-text;
     float: right;
     color: $purple;
     margin-right: 1px;
-    cursor: pointer;
   }
 }

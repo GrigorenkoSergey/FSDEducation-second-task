@@ -29,7 +29,13 @@ export default class Datepicker {
   }
 
   _renderButtons(container) {
-    const [buttonsContainer, buttonReset, buttonApply] = new Array(3).fill(1).map(() => document.createElement('div'));
+    const buttonsContainer = document.createElement('div');
+    const [buttonReset, buttonApply] = new Array(2).fill(1)
+      .map(() => {
+        const button = document.createElement('button');
+        button.setAttribute('type', 'button');
+        return button;
+      });
 
     buttonsContainer.classList.add('datepicker--buttons');
     buttonsContainer.append(buttonReset, buttonApply);

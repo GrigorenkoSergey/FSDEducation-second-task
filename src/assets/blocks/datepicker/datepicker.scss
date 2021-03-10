@@ -1,4 +1,5 @@
 @import '../template/variables';
+@import '../template/extenders';
 
 $width: 320px;
 
@@ -159,15 +160,17 @@ $width: 320px;
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
-    padding: 5px 20px 14px;
+    padding: 9px 19px 19px;
     border-top: none;
   }
 
   &--button-reset {
+    @extend %button-text;
     color: $dark_50;
   }
 
   &--button-apply {
+    @extend %button-text;
     color: $purple;
   }
 }

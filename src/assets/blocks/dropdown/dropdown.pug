@@ -41,5 +41,5 @@ mixin dropdown(options = {})
             .dropdown__plus.js-dropdown__plus +
       if (showButtons)
         .dropdown__buttons
-          .dropdown__button-reset.js-dropdown__button-reset(hidden= !showReset) #{buttonResetText}                   
-          .dropdown__button-apply.js-dropdown__button-apply #{buttonApplyText}
+          button.dropdown__button-reset.js-dropdown__button-reset(type="button" hidden= !showReset) #{buttonResetText}                   
+          button.dropdown__button-apply.js-dropdown__button-apply(type="button") #{buttonApplyText}

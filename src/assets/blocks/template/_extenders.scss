@@ -27,3 +27,11 @@
     outline: none;
   }
 }
+
+%button-text {
+  @extend %h3;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}

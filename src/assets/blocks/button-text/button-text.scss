@@ -2,13 +2,8 @@
 @import '../template/extenders';
 
 .button-text {
-  @extend %h3;
+  @extend %button-text;
   color: $purple;
-  border: none;
-  background: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0;
 
   &_theme_hovered {
     color: $dark_50;
