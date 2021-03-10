@@ -3,8 +3,10 @@ import { boundMethod } from 'autobind-decorator';
 import './range-slider.scss';
 
 export default class RangeSlider {
-  constructor(item) {
+  constructor({ item, range }) {
     this.el = item;
+    this.scaleWidth = this.el.parentNode.clientWidth;
+    this.range = range;
     this._init();
   }
 
@@ -16,7 +18,14 @@ export default class RangeSlider {
     this.leftRoller.addEventListener('mousedown', this._hanleRollerLeftMouseDown);
     this.rightRoller.addEventListener('mousedown', this._handleRollerRightMouseDown);
 
-    this.range = this.rangeSlider.querySelector('.js-range-slider__range');
+    this.rangeField = this.rangeSlider.querySelector('.js-range-slider__range');
+
+    const rangeValue = this.range[1] - this.range[0];
+    const rangeFieldContent = this.rangeField.textContent.replace(/ /g, '');
+    const [leftRangeSettled, rightRangeSettled] = rangeFieldContent.match(/\d+/g);
+    const { scaleWidth } = this;
+    this.el.style.left = `${(leftRangeSettled / rangeValue) * scaleWidth}px`;
+    this.el.style.right = `${scaleWidth * (1 - rightRangeSettled / rangeValue)}px`;
   }
 
   @boundMethod
@@ -85,12 +94,19 @@ export default class RangeSlider {
   }
 
   _countRange() {
-    let lowRange = Math.floor((5 / 74) * this.el.offsetLeft) * 1000;
-    let topRange = Math.floor((10 / 175) * (this.el.offsetLeft + this.el.offsetWidth)) * 1000;
+    const rangeValue = this.range[1] - this.range[0];
+    const { scaleWidth } = this;
+    const { left, right } = this.el.style;
+
+    let lowRange = parseFloat(left) / scaleWidth;
+    let topRange = 1 - parseFloat(right) / scaleWidth;
+
+    lowRange = Math.floor(lowRange * rangeValue);
+    topRange = Math.ceil(topRange * rangeValue);
 
     lowRange = lowRange.toLocaleString('ru-RU');
     topRange = topRange.toLocaleString('ru-RU');
 
-    this.range.textContent = `${lowRange}\u20BD - ${topRange}\u20BD`;
+    this.rangeField.textContent = `${lowRange}\u20BD - ${topRange}\u20BD`;
   }
 }
