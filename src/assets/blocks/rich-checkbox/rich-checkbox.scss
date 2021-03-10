@@ -3,6 +3,10 @@
 .rich-checkbox {
   user-select: none;
 
+  &__label {
+    display: table;
+  }
+
   &__main-text {
     line-height: 18px;
     font-weight: bold;
