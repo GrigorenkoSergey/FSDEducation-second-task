@@ -2,11 +2,12 @@
   &__body {
     background: url('./images/registration-page.jpg') no-repeat;
 
-    background-size: 1534px auto;
-    background-position: -44px -166px;
+    @media (min-width: 1534px) {
+      background-size: 100% auto;
+    }
 
-    @media (min-width: 1440px) {
-      background-size: 1534/1440 * 100% auto;
+    @media (min-width: 1920px) {
+      background-size: 1920px auto;
     }
   }
 

@@ -43,7 +43,7 @@ export default class MaskedText {
 
   _dateCheck(e) {
     let date = e.target.value;
-    const regexp = /^(\d{2}).(\d{2}).(\d{4})$/;
+    const regexp = /^(\d{2})\.(\d{2})\.(\d{4})$/;
 
     if (!regexp.test(date)) {
       this._showErrorMessage();
