@@ -137,7 +137,7 @@
   &__rooms-list {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 21px 12px;
+    grid-gap: 20.5px 12px;
     justify-content: end;
 
     @media (max-width: 1200px) {
