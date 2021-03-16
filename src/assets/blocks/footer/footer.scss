@@ -2,6 +2,9 @@
 @import '../template/extenders';
 
 .footer {
+  flex-grow: 1;
+  justify-content: center;
+
   &__footer-creative {
     display: none;
 
@@ -13,8 +16,8 @@
   &__footer-standard {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     background: white;
-    border-top: 1px solid $dark_25;
 
     @media (max-width: 768px) {
       display: none;
@@ -25,6 +28,7 @@
     max-width: 1440px;
     padding: 99px 140px 100px;
     margin: 0 auto;
+    border-top: 1px solid $dark_25;
 
     background: white;
     display: flex;

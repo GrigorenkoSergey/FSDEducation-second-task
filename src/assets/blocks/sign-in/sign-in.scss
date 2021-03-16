@@ -12,8 +12,9 @@
   }
 
   &__main {
-    flex-grow: 1;
     min-height: 701px;
+    max-height: 920px;
+    flex-grow: 1;
 
     display: flex;
     justify-content: center;
